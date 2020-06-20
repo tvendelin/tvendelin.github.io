@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on vendelin.org</title>
+    <link>http://vendelin.org/tags/</link>
+    <description>Recent content in Tags on vendelin.org</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 02 Jun 2020 19:53:32 +0200</lastBuildDate>
+    
+	<atom:link href="http://vendelin.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>featured</title>
+      <link>http://vendelin.org/tags/featured/</link>
+      <pubDate>Tue, 02 Jun 2020 19:53:32 +0200</pubDate>
+      
+      <guid>http://vendelin.org/tags/featured/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>subfeatured</title>
+      <link>http://vendelin.org/tags/subfeatured/</link>
+      <pubDate>Sat, 25 Apr 2020 08:04:27 +0200</pubDate>
+      
+      <guid>http://vendelin.org/tags/subfeatured/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

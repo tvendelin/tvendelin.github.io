@@ -1,0 +1,210 @@
+<!doctype html>
+<html>
+    <head>
+        <title>
+            GitHub for Foreign Language Students
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/css/perldoc.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <script src="/js/hamburger.js"></script>
+    </head>
+    <body>
+        <nav class="top">
+            <a href="javascript:void(0);" class="box-shadow-menu" onclick="menuDrop()"></a>
+            <a href="http://vendelin.org/" class="logo">
+                vendelin.org 
+            </a>
+        </nav>
+        <div id="mobile-menu"></div>
+        <div class="page">
+            <nav class="breadcrumbs">
+                <a href="http://vendelin.org/">vendelin.org</a><span>:</span><a href="http://vendelin.org/geeky/">Geeky Stuff</a><span>:</span><a href="http://vendelin.org/geeky/git-language-learn/">Git for foreign language students and teachers</a>
+            </nav>
+            <main class="container">
+            <nav class="menu" id="ndrop">
+    
+    <h2>Sections:</h2>
+    
+        <a href="http://vendelin.org/geeky/" class="menu-section">Geeky Stuff</a>
+    
+        <a href="http://vendelin.org/travel/" class="menu-section">Travel Accounts</a>
+    
+    
+        <a href="http://vendelin.org/about/" class="menu-section">About</a>
+    
+</nav>
+
+
+            
+    <article class="main-single">
+        
+
+
+        <h1 id="github-for-foreign-language-students">GitHub for Foreign Language Students</h1>
+<p>Grammar exercises published as a Git repository on GitHub can be forked by a student and completed
+on GitHub directly. Yuni, an online teacher of Indonesian, has created such a repository (see the
+<a href="http://vendelin.org/geeky/git-language-learn/grammar-exercise-repository-github/">previous chapter</a>). It contained just a single
+exercise. Now, after trying things out, she creates a repository with a set of exercises:</p>
+<p><a href="https://github.com/kartikayuni/Exercise-absolute-beginner">https://github.com/kartikayuni/Exercise-absolute-beginner</a></p>
+<p>Maria, a Yuni&rsquo;s student, got a link to that repository from her teacher, and is about to do her
+first homework on GitHub.</p>
+<h2 id="forking-and-collaborating">Forking and collaborating</h2>
+<p>Maria creates an account on <a href="https://github.com">GitHub</a>, and forks the repository with exercises.
+This is done with a click on the &lsquo;Fork&rsquo; button in the top-right corner of the Yuni&rsquo;s repository
+page.</p>
+<p><img src="/img/fork.png" alt="fork"></p>
+<p>Now Maria has her copy (or <em>fork</em>, in geeky speak) of Yuni&rsquo;s repository, which she is free to
+modify. In fact her homework <em>is</em> to modify a file with her first exercise: she has to insert
+missing words in a text.</p>
+<p>Maria is somewhat suspicious of geeky stuff, and decides to solve her homework task directly on
+GitHub. This doesn&rsquo;t differ much from just editing text in a web form, except that once she saves
+the changes, Maria is asked to add a <em>commit message</em> – a sentence describing the changes that were
+made.</p>
+<p><img src="/img/commit_github.png" alt="Commit"></p>
+<p>So, Maria types: &lsquo;Completed exercise indonesian_pronouns.md&rsquo; and pushes the &lsquo;Commit changes&rsquo; button.</p>
+<p>Oki-doki, now it&rsquo;s time to get her exercise checked and possibly corrected. For that, Maria a
+invites a <em>collaborator</em> to her repository. This collaborator is her teacher Yuni, of course.</p>
+<p><img src="/img/invite_collaborator.png" alt="Invite collaborator"></p>
+<p>To invite Yuni as a collaborator, Maria clicks the &lsquo;Settings&rsquo; button for her repository, then clicks
+&lsquo;Manage Access&rsquo;, then &lsquo;Invite collaborator&rsquo; and adds Yuni&rsquo;s user name on GitHub. Once she submits
+the form, Yuni will receive her invitation message. Once Yuni accepts the invitation, she will be
+able to change files and perform commits in Maria&rsquo;s repository.</p>
+<h2 id="reviewing-the-corrected-homework">Reviewing the Corrected Homework</h2>
+<p>After a while, Maria receives an automated e-mail from GitHub telling there&rsquo;s a new commit in her
+repository made by Yuni. Maria goes to her repository page on GitHub, and clicks the button saying
+&lsquo;4 commits&rsquo; (the actual number may be different):</p>
+<p><img src="/img/4commits.png" alt="Commits"></p>
+<p>This displays the history of all <em>commits</em> made to the files in this repository. She clicks the last
+one, &lsquo;Corrected exercise indonesian_pronouns.md&rsquo;. This displays the detailed commit message with
+Yuni&rsquo;s explanations, and also shows the differences between Maria&rsquo;s original version, and the
+corrected one – a <em>diff</em>, in geeky speak.</p>
+<p><img src="/img/diff_github.png" alt="GitHub diff, line by line"></p>
+<p>The line-by-line diff doesn&rsquo;t look appetizing for Maria&rsquo;s taste, so she clicks a page-like icon with
+a hint &lsquo;Display the rich diff&rsquo; (circled in the screenshot above). Much better!</p>
+<p><img src="/img/word_diff_github.png" alt="GitHub diff, word by word"></p>
+<p>The errors are now highlighted word-by-word, and it looks pretty much like in an office text-editing
+program. The difference is that Maria is not locked into any particular file format (proprietary or
+not). Her exercise versions are still just plain texts, meaning it is quite easy to manipulate them.
+For example, she can convert the <em>diff</em> into a Markdown file and include it in her blog like this:</p>
+<blockquote>
+<p>&hellip;  Dita: Tina, <del>kita</del><strong>kami</strong> pergi ke Jakarta. Saat <del>kita</del><strong>kami</strong> kembali mari kita pergi
+ke Kesuma restoran.</p>
+<p>Tina: Andy dan Ria pergi juga?  &hellip;</p>
+</blockquote>
+<h2 id="doing-things-like-the-grown-ups-do">Doing Things Like the Grown-Ups Do</h2>
+<p>Doing the homework on GitHub directly has its place under the sun: you can do your homework even
+using a smartphone.</p>
+<p>The regular approach, however, is to install Git on your computer (Windows), if it&rsquo;s not there
+already (Mac and Linux), to clone your fork of repository with exercises to your computer, do the
+homework using your favorite text editor, commit the changes, and push them back to the remote
+repository on GitHub. Once your exercises are corrected, pull from your your remote repository, and
+review the corrections using word-by word diff.</p>
+<p>These steps are done from command line and require some familiarity with Git.</p>
+<h3 id="the-very-short-version-for-mac-and-linux-users">The (very) short version for Mac and Linux Users</h3>
+<p>On GitHub repository page, click &lsquo;Clone or Download&rsquo; button, and copy the URL:</p>
+<p><img src="/img/clone_url.png" alt="Clone from GitHub"></p>
+<p>In your terminal emulator,</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"># Clone the repository to your computer
+git clone &lt;REPOSITORY URL&gt; my_exercises
+
+# Change to `my_exercises` directory
+cd my_exercises
+
+# Do your homework using a text editor for plain text files.
+
+# Stage your changes
+git add .
+
+#Commit your changes:
+git commit -m &#39;&lt;YOUR COMMIT MESSAGE HERE, MIND THE QUOTES&gt;&#39;
+
+# Push your changes to the remote repository 
+git push
+
+# Once your exercise is corrected, pull from the remote
+git pull
+
+# Review your teacher&#39;s corrections
+git diff HEAD^ --word-diff=color -- indonesian_pronouns.md
+
+# To see more context (or entire file), use -U&lt;NUMBER&gt; option
+git diff HEAD^ -U99 --word-diff=color -- indonesian_pronouns.md
+</code></pre></div><h2 id="further-reading">Further Reading</h2>
+<p>I strongly recommend to read up about Git instead of just blindly copying the commands. An excellent
+starting point is a book by Scott Chacon and Ben Straub <a href="https://git-scm.com/book/en/v2">Pro Git</a>.
+It is available online free of charge in quite a few languages.</p>
+
+        <nav class="nextprev">
+
+
+<p>
+    Previous: 
+    <br>
+    <a href="http://vendelin.org/geeky/git-language-learn/grammar-exercise-repository-github/">
+         GitHub for Foreign Language Teachers
+    </a>
+</p>
+
+</nav>
+
+        <div id="disqus_thread"></div>
+    </article>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.js" data-cfasync="false"></script>
+<script>
+window.addEventListener('load', function(){
+  window.cookieconsent.initialise({
+   revokeBtn: "<div class='cc-revoke'></div>",
+   type: "opt-in",
+   theme: "classic",
+   palette: {
+       popup: {
+           background: "#000",
+           text: "#fff"
+        },
+       button: {
+           background: "#fd0",
+           text: "#000"
+        }
+    },
+   content: {
+       message: "This website uses cookies to ensure you get the best experience on our website. Disabling cookies disables comments.",
+       link: "What are cookies",
+       href: "https://2gdpr.com/cookies"
+    },
+    onInitialise: function(status) {
+      if(status == cookieconsent.status.allow) myScripts();
+    },
+    onStatusChange: function(status) {
+      if (this.hasConsented()) myScripts();
+    }
+  })
+});
+
+function myScripts() {
+
+   
+    
+    var disqus_config = function () {
+        this.page.url = "http://vendelin.org/geeky/git-language-learn/fork-and-complete-grammar-exercise-github/";  
+        this.page.identifier = "6f05e6c0a6bc611731deb92ba43166f2";   
+    };
+    (function() {  
+        var d = document, s = d.createElement('script');
+
+        s.src = 'https://vendelin-org.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+
+}
+</script>
+
+
+            </main>
+        </div>
+    </body>
+</html>

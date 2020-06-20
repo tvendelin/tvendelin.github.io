@@ -1,0 +1,211 @@
+<!doctype html>
+<html>
+    <head>
+        <title>
+            Including Images in Multilingual Pages with Hugo
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/css/perldoc.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <script src="/js/hamburger.js"></script>
+    </head>
+    <body>
+        <nav class="top">
+            <a href="javascript:void(0);" class="box-shadow-menu" onclick="menuDrop()"></a>
+            <a href="http://vendelin.org/" class="logo">
+                vendelin.org 
+            </a>
+        </nav>
+        <div id="mobile-menu"></div>
+        <div class="page">
+            <nav class="breadcrumbs">
+                <a href="http://vendelin.org/">vendelin.org</a><span>:</span><a href="http://vendelin.org/geeky/">Geeky Stuff</a><span>:</span><a href="http://vendelin.org/geeky/hugo/">Hugo Cookbook for a Multilingual Site</a>
+            </nav>
+            <main class="container">
+            <nav class="menu" id="ndrop">
+    
+    <h2>Sections:</h2>
+    
+        <a href="http://vendelin.org/geeky/" class="menu-section">Geeky Stuff</a>
+    
+        <a href="http://vendelin.org/travel/" class="menu-section">Travel Accounts</a>
+    
+    
+        <a href="http://vendelin.org/about/" class="menu-section">About</a>
+    
+</nav>
+
+
+            
+    <article class="main-single">
+        
+
+
+        <h1 id="including-images-in-multilingual-pages-with-hugo">Including Images in Multilingual Pages with Hugo</h1>
+<p>To include images in multilingual pages, there are several approaches, none of them being perfect.
+This is where the simplicity of Markdown starts to bite.</p>
+<p>Of course, having an image under <code>static/img/IMAG0024.jpg</code>, you can include it anywhere in your Markdown file with</p>
+<div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">![<span class="nt">&#34;Me near Tantan in West Sahara&#34;</span>](<span class="na">/img/IMAG0024.jpg</span>)
+</code></pre></div><p>There are a couple of problems here. Should you decide to use another image, you will need to edit
+as many Markdown files as there are translations. Four translations – four edits. Looks WET (= &lsquo;We
+Enjoy Typing&rsquo;) rather than DRY (= &lsquo;Don&rsquo;t repeat yourself). Then, there are</p>
+<h2 id="problems-with-image-captions">Problems With Image Captions</h2>
+<p>First, they are likely to be styled differently, and here&rsquo;s where Markdown falls short of options.
+A dirty hack is to sacrifice an HTML tag supported by Markdown (say, <code>&lt;em&gt;</code>),
+and bend it to your needs with CSS. Of course, you may not be able to <em>emphasize</em> anymore if you
+take this path. And semantic Web pundits will certainly frown upon you.</p>
+<p>More important, though, is that the caption  logically belongs to the image, and <em>not</em> to the article, where
+both are used. If you run a website single-handed, and all photos are made by you, it&rsquo;s just some
+extra hurdle while changing an image in an article. In the common editorial workflow, however,
+images with their captions come from photographers and agencies, the articles are
+written by completely different people, and then everything is put together by editors.</p>
+<p>This opens doors to hilarious incidents in Mike Myers / Austin Powers style caused by image caption
+mismatch. Or just to sheer embarrassment.</p>
+<h2 id="shortcodes-flexibility-at-a-price-of-littering-markdown">Shortcodes: Flexibility at a Price of Littering Markdown</h2>
+<p>One approach is to use Hugo&rsquo;s
+<a href="https://gohugo.io/content-management/shortcodes/#use-hugos-built-in-shortcodes"><em>shortcodes</em></a> –
+variables representing special templates, that can be included into content in Markdown files. This
+approach can solve the caption styling problem (and many others).<br>
+However, I consider using the shortcodes as the
+last resort: they contradict the core concepts of Markdown – simplicity and readability. So, use
+them judiciously.</p>
+<h2 id="including-an-image-as-a-page-bundle-resource">Including an Image as a Page Bundle Resource</h2>
+<p>Another approach is to place an image outside – likely before – the content.  Sometimes, it&rsquo;s just
+enough. If it is, we can just include the picture in a template as a <em>page bundle resource</em>.</p>
+<p>How do we tell in the template, which image to include with which article? One way to do it is to
+configure it in front matter, as <a href="https://gohugo.io/content-management/page-resources/#resources-metadata-example">Hugo documentation
+suggests</a>. But
+remember: four translations – four edits. If we want a different image
+for each translation, that&rsquo;s exactly what we need, but this is a somewhat atypical case.
+What we typically want is to use the same image with all translations of an article.</p>
+<p>We can agree that an image would have some &lsquo;magic&rsquo; name, and will be
+planted into template by that name, conditionally:</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">{{ with .Resources.GetMatch &#34;main-img.jpg&#34; }}
+<span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;{{ .Permalink }}&#34;</span><span class="p">&gt;</span>
+{{ end }}
+</code></pre></div><p>There still are inconveniences. First, the image file name has become non-descriptive. Sure, there is
+usually a pile of metainfo hidden in the file, but the file name won&rsquo;t tell much anymore – neither
+about its content nor the origins. Secondly, we still need to solve the translated captions problem.</p>
+<h2 id="a-composite-page-resource-or-symlinks-to-the-rescue">A Composite Page Resource, or Symlinks to the Rescue</h2>
+<p>Let&rsquo;s create a directory (perhaps even outside our website project), and in this directory for
+each image that we might consider to use, let&rsquo;s create a subdirectory containing the image file
+itself and the captions in all necessary languages:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">images/
+└── tantan
+    ├── IMAG0024.jpg
+    ├── caption.md
+    └── caption.ru.md
+</code></pre></div><p>Tantan is a Moroccan town, often considered &lsquo;the gateway&rsquo; to West Sahara, just if you are curious.</p>
+<p>Now, in our page bundle directory, let&rsquo;s create a symlink with the &lsquo;magic&rsquo; name (assuming the
+<code>image</code> directory is in your <code>$HOME</code>):</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">ln -s ~/images/tantan &lt;PATH TO PAGE BUNDLE&gt;/main-image
+</code></pre></div><p>Finally, let&rsquo;s create a dedicated partial for planting an image with a caption in the relevant
+language on top of the content based on our naming convention:</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">{{ $caption := .Resources.GetMatch &#34;main-img/caption.*&#34; }}
+{{ with .Resources.GetMatch &#34;main-img/*.jpg&#34; }}
+<span class="p">&lt;</span><span class="nt">figure</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;main&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;{{ .Permalink }}&#34;</span><span class="p">&gt;</span>
+    {{ with $caption }}
+    <span class="p">&lt;</span><span class="nt">figcaption</span><span class="p">&gt;</span>
+        {{ .Content }}
+    <span class="p">&lt;/</span><span class="nt">figcaption</span><span class="p">&gt;</span>
+    {{ end }}
+<span class="p">&lt;/</span><span class="nt">figure</span><span class="p">&gt;</span>
+{{ end }}
+</code></pre></div><p>We need to capture the caption into a variable (<code>$caption</code>) while still in <code>.Page</code> context, so that
+we can refer to it from within the image resource&rsquo;s context later. If there happens to be no
+caption, the relevant block of code will be simply ignored.</p>
+<p>This solves our concern with descriptiveness of the image file name, since we can easily see where
+the symlink points to with <code>ls -l</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">main-img -&gt; /home/me/images/tantan
+</code></pre></div><p>The captions are unambiguously related to the image. Best of all, if we want to use a different
+image, all we need is to change a single symlink. This also guards us against the embarrassments of using
+a wrong caption.</p>
+<h2 id="thinking-out-loud">Thinking Out Loud</h2>
+<h3 id="i-wish-there-were-a-page-bundle-config-file">I Wish There Were A Page Bundle Config File</h3>
+<p>If a Hugo theme can be included with a single configuration parameter, probably a page bundle could
+have its own configuration file coupled with composite page resources, as described above.</p>
+<h3 id="i-wish-i-could-include-captioned-images-in-markdown-non-intrusively">I Wish I Could Include Captioned Images in Markdown Non-Intrusively</h3>
+<p>If I say: &lsquo;Place this image, with this caption, into that story right before the second <code>## Header</code>&rsquo;, you would understand me, unambiguously, won&rsquo;t you? So it should be possible to say the
+same in the page bundle config file, should any exist. The structure of headers and paragraphs
+usually persists across translations. So, that might be the way for a DRY-er handling of images and
+other resources.</p>
+<h2 id="further-reading">Further Reading</h2>
+<p>Hugo provides quite a few options for <a href="https://gohugo.io/content-management/image-processing/">image
+processing</a>, which I&rsquo;m not covering here.</p>
+<p><a href="https://gohugo.io/content-management/page-resources">Hugo documentation on page resources</a> is a
+must-read, of course.</p>
+
+        <nav class="nextprev">
+
+
+<p>
+    Previous: 
+    <br>
+    <a href="http://vendelin.org/geeky/hugo/create-multilingual-content-hugo/">
+         Multilingual Content With Hugo
+    </a>
+</p>
+
+</nav>
+
+        <div id="disqus_thread"></div>
+    </article>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.js" data-cfasync="false"></script>
+<script>
+window.addEventListener('load', function(){
+  window.cookieconsent.initialise({
+   revokeBtn: "<div class='cc-revoke'></div>",
+   type: "opt-in",
+   theme: "classic",
+   palette: {
+       popup: {
+           background: "#000",
+           text: "#fff"
+        },
+       button: {
+           background: "#fd0",
+           text: "#000"
+        }
+    },
+   content: {
+       message: "This website uses cookies to ensure you get the best experience on our website. Disabling cookies disables comments.",
+       link: "What are cookies",
+       href: "https://2gdpr.com/cookies"
+    },
+    onInitialise: function(status) {
+      if(status == cookieconsent.status.allow) myScripts();
+    },
+    onStatusChange: function(status) {
+      if (this.hasConsented()) myScripts();
+    }
+  })
+});
+
+function myScripts() {
+
+   
+    
+    var disqus_config = function () {
+        this.page.url = "http://vendelin.org/geeky/hugo/images-multilingual-pages-hugo/";  
+        this.page.identifier = "bc9516c2dbfd5ccd98772e2784fce292";   
+    };
+    (function() {  
+        var d = document, s = d.createElement('script');
+
+        s.src = 'https://vendelin-org.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+
+}
+</script>
+
+
+            </main>
+        </div>
+    </body>
+</html>

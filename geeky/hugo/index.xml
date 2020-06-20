@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo Cookbook for a Multilingual Site on vendelin.org</title>
+    <link>http://vendelin.org/geeky/hugo/</link>
+    <description>Recent content in Hugo Cookbook for a Multilingual Site on vendelin.org</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 17 May 2020 17:52:49 +0200</lastBuildDate>
+    
+	<atom:link href="http://vendelin.org/geeky/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Multilingual Blogging with Hugo - Introduction</title>
+      <link>http://vendelin.org/geeky/hugo/introduction-multilngual-blogging-hugo/</link>
+      <pubDate>Tue, 02 Jun 2020 19:53:32 +0200</pubDate>
+      
+      <guid>http://vendelin.org/geeky/hugo/introduction-multilngual-blogging-hugo/</guid>
+      <description>Hugo is a tool for building a multilingual static site with zero-budget, without the hurdles of maintaining any web- or database servers.
+What This Tutorial is, What it is Not, and How it has Come to Existence. A friend asked me to help her with a website, and after a quick discussion it was clear that what she needs is a static site generator. So I&amp;rsquo;ve decided to take Hugo on a test-ride.</description>
+    </item>
+    
+    <item>
+      <title>Install Hugo</title>
+      <link>http://vendelin.org/geeky/hugo/install-hugo/</link>
+      <pubDate>Thu, 23 Apr 2020 18:38:11 +0200</pubDate>
+      
+      <guid>http://vendelin.org/geeky/hugo/install-hugo/</guid>
+      <description>Install it Hugo comes in a single binary file. Download the archive from releases page to your ~/Downloads directory. The version and checksums in the examples will likely be different, of course.
+Calculate the checksum:
+openssl sha256 -hex -r ~/Downloads/hugo_0.69.2_macOS-64bit.tar.gz f58e9312ee292c082c5833a128e751c1d07c5fb0da1b7584c09131f18e2ccf52 */Users/you/Downloads/hugo_0.69.2_macOS-64bit.tar.gz Verify that the checksum matches the one listed in hugo_0.69.2_checksums.txt file, that can be found on the same releases page. Extract the archive you&amp;rsquo;ve just verified:
+tar zxvf ~/Downloads/hugo_0.</description>
+    </item>
+    
+    <item>
+      <title>Scaffoldings of a Hugo website</title>
+      <link>http://vendelin.org/geeky/hugo/scaffoldings/</link>
+      <pubDate>Mon, 04 May 2020 20:29:38 +0200</pubDate>
+      
+      <guid>http://vendelin.org/geeky/hugo/scaffoldings/</guid>
+      <description>Create the scaffoldings for your new website Choose a name for your project. It&amp;rsquo;s just a name of a directory and has no other significance. I have chosen &amp;lsquo;multilingua&amp;rsquo; for a name.
+In your terminal emulator, run
+hugo new site multilingua This will create multilingua directory and produce the output:
+Congratulations! Your new Hugo site is created in /Users/tom/learn/hugo/multilingua. Just a few more steps and you&amp;#39;re ready to go: 1. Download a theme into the same-named folder.</description>
+    </item>
+    
+    <item>
+      <title>Customizing Configuration for Multilingual Hugo-Managed Site</title>
+      <link>http://vendelin.org/geeky/hugo/custom-multilingual-configuration-hugo/</link>
+      <pubDate>Sat, 09 May 2020 07:34:50 +0200</pubDate>
+      
+      <guid>http://vendelin.org/geeky/hugo/custom-multilingual-configuration-hugo/</guid>
+      <description>Custom Multilingual Configuration for Hugo Managed Site A multilingual site managed with Hugo static generator requires a couple of extra steps. I essence, you just need to tell Hugo which languages are you going to use, and how these languages are called in these languages (Eesti keel for Estonian, Bahasa Indonesia for Indonesian, etc.). The rest is really optional.
+Before we begin, though, I&amp;rsquo;d like to suggest a few
+Configuration Adjustments I Choose YAML and config Directory Your project configuration sits by default in config.</description>
+    </item>
+    
+    <item>
+      <title>Creating a Theme for Hugo</title>
+      <link>http://vendelin.org/geeky/hugo/creating-a-theme-for-hugo/</link>
+      <pubDate>Tue, 05 May 2020 18:11:11 +0200</pubDate>
+      
+      <guid>http://vendelin.org/geeky/hugo/creating-a-theme-for-hugo/</guid>
+      <description>Creating a theme A &amp;lsquo;theme&amp;rsquo; in Hugo is a collection of HTML templates, stylesheets and other components that define what your site looks like, and are completely independent of your site content. That is, the very same theme can be used in many different websites. In software lingo this is known as the &amp;lsquo;separation of concerns&amp;rsquo; principle, which reminds of an old Swedish joke claiming that policemen always patrol in pairs because one can read and another can write.</description>
+    </item>
+    
+    <item>
+      <title>Create Your First Page With Hugo</title>
+      <link>http://vendelin.org/geeky/hugo/adding-content-hugo/</link>
+      <pubDate>Sat, 09 May 2020 15:20:12 +0200</pubDate>
+      
+      <guid>http://vendelin.org/geeky/hugo/adding-content-hugo/</guid>
+      <description>Create Your First Page We are finally ready to start adding content to our Hugo managed website. In your terminal, run:
+hugo new poetry/lewis-carroll/the-walrus-and-the-carpenter/index.md Hugo will create the following directory structure under kontent:
+kontent/ └── poetry └── lewis-carroll └── the-walrus-and-the-carpenter └── index.md Next, let&amp;rsquo;s open the kontent/poetry/lewis-carroll/the-walrus-and-the-carpenter/index.md. The section between the triple dashes is called &amp;lsquo;front matter&amp;rsquo; on planet Hugo. On my planet we might have called it &amp;lsquo;metadata&amp;rsquo; or &amp;lsquo;page parameters&amp;rsquo;.</description>
+    </item>
+    
+    <item>
+      <title>Multilingual Content With Hugo</title>
+      <link>http://vendelin.org/geeky/hugo/create-multilingual-content-hugo/</link>
+      <pubDate>Sat, 09 May 2020 15:20:12 +0200</pubDate>
+      
+      <guid>http://vendelin.org/geeky/hugo/create-multilingual-content-hugo/</guid>
+      <description>Multilingual Content With Hugo Handling Multilingual Content is where Hugo really shines. However, since internationalization (i18n for short) is a pretty complex task, let&amp;rsquo;s throw together a brief list of
+Requirements  The content translations should be added in an orderly manner. The content translations should be directly linkable to each other. Templates should not contain any hardcoded language-specific text. Instead, translations for such text should be defined separately and loaded according to the language of the content.</description>
+    </item>
+    
+    <item>
+      <title>Including Images in Multilingual Pages with Hugo</title>
+      <link>http://vendelin.org/geeky/hugo/images-multilingual-pages-hugo/</link>
+      <pubDate>Sun, 31 May 2020 19:15:26 +0200</pubDate>
+      
+      <guid>http://vendelin.org/geeky/hugo/images-multilingual-pages-hugo/</guid>
+      <description>Including Images in Multilingual Pages with Hugo To include images in multilingual pages, there are several approaches, none of them being perfect. This is where the simplicity of Markdown starts to bite.
+Of course, having an image under static/img/IMAG0024.jpg, you can include it anywhere in your Markdown file with
+![&amp;#34;Me near Tantan in West Sahara&amp;#34;](/img/IMAG0024.jpg) There are a couple of problems here. Should you decide to use another image, you will need to edit as many Markdown files as there are translations.</description>
+    </item>
+    
+  </channel>
+</rss>

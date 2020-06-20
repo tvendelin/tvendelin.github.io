@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Geeky Stuff on vendelin.org</title>
+    <link>http://vendelin.org/geeky/</link>
+    <description>Recent content in Geeky Stuff on vendelin.org</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 15 May 2020 16:16:14 +0200</lastBuildDate>
+    
+	<atom:link href="http://vendelin.org/geeky/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>

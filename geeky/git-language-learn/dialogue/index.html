@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+    <head>
+        <title>
+            Using Git: A Dialogue Between a Language Teacher and a Linux Sysadmin
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/css/perldoc.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <script src="/js/hamburger.js"></script>
+    </head>
+    <body>
+        <nav class="top">
+            <a href="javascript:void(0);" class="box-shadow-menu" onclick="menuDrop()"></a>
+            <a href="http://vendelin.org/" class="logo">
+                vendelin.org 
+            </a>
+        </nav>
+        <div id="mobile-menu"></div>
+        <div class="page">
+            <nav class="breadcrumbs">
+                <a href="http://vendelin.org/">vendelin.org</a><span>:</span><a href="http://vendelin.org/geeky/">Geeky Stuff</a><span>:</span><a href="http://vendelin.org/geeky/git-language-learn/">Git for foreign language students and teachers</a>
+            </nav>
+            <main class="container">
+            <nav class="menu" id="ndrop">
+    
+    <h2>Sections:</h2>
+    
+        <a href="http://vendelin.org/geeky/" class="menu-section">Geeky Stuff</a>
+    
+        <a href="http://vendelin.org/travel/" class="menu-section">Travel Accounts</a>
+    
+    
+        <a href="http://vendelin.org/about/" class="menu-section">About</a>
+    
+</nav>
+
+
+            
+    <article class="main-single">
+        
+
+
+        <h1 id="when-a-time-machine-met-a-kitchen-blender">When a Time Machine Met a Kitchen Blender&hellip;</h1>
+<p>&lsquo;What is Git?', Yuni asks. Yuni is an online teacher of Indonesian and an aspiring Linux user.</p>
+<p>&lsquo;Well, it&rsquo;s sort of a cross between a time machine and a kitchen blender, the one you make your
+smoothies with from all these exotic fruits that grow in your backyard&rsquo;, Toomas responds. Toomas is
+a programmer and a Linux sysadmin.</p>
+<p>&lsquo;I know my kitchen blender A to Z&rsquo;, says Yuni proudly. &lsquo;Why don&rsquo;t you tell me about time machine part first?&rsquo;</p>
+<h2 id="a-persistent-undo">A Persistent &lsquo;Undo&rsquo;</h2>
+<p>&lsquo;Well, suppose you are editing a text with some program, and then want to undo your edits. You just
+press <code>Ctrl-Z</code>, right? And then <code>Shift-Ctrl-Z</code> to redo, should you change your mind again. Git is an extention to
+that idea, if you will.</p>
+<p>&lsquo;When you close your file in an editor and reopen it again, the text editor won&rsquo;t remeber your actions, and undo
+won&rsquo;t work. With Git, you create something called a <em>commit</em>, which is a snapsot of all the files in
+a project at this point in time. Later you can jump back and forth in history between your commits on your or any other
+computer.</p>
+<p>That&rsquo;s the time machine part. I wouldn&rsquo;t be overconfident about the blender part, though: it&rsquo;s
+where beginners usually start pulling their hair out.&rsquo;</p>
+<p>He shares his screen with Yuni and says:</p>
+<p>&lsquo;Look, I&rsquo;m writing a Python script here, and here&rsquo;s my commit history so far&hellip;&rsquo;</p>
+<h2 id="no-programming-skills-required">No Programming Skills Required</h2>
+<p>&lsquo;Do I need to learn programming first?', asks Yuni cautiously.</p>
+<p>&lsquo;Not at all. It&rsquo;s all about text files. You can, for instance, create a set of exercises for your
+students, and maintain it using Git. That is, add new exercises or improve existing ones, being able
+to revert your changes at any time. You can push them to GitHub, and tell your students to get their
+exercises&hellip; Wait! And you can fork each other, and then pull&hellip;&rsquo;</p>
+<p>&lsquo;<em>Fork</em> each other!? Are you pulling my leg?&rsquo;</p>
+<p>&lsquo;Well, fork each other&rsquo;s repositories, that is. Oh, and you can make a good use word-by-word
+<em>diff</em>.  I think, you can bring your entire homework workflow to Git.  Look, you&rsquo;ve got a text with
+an exercise in a Git repo – say, that&rsquo;s one commit. A student completes the exercise – that could be the
+second commit. The third commit is your corrections to it. Now the difference (or <em>diff</em>, in geeky
+speak) between the third and the second commit will show the corrections, like this:</p>
+<blockquote>
+<p>Я сидел дома и, по <del>обокновению</del><strong>обыкновению</strong>, не знал, что с собой делать. Чего-то хотелось: не то конституции, не
+то севрюжины с хреном&hellip;</p>
+</blockquote>
+<p>&lsquo;I hardly understand a word, but I get the point. But will a student have to do all this
+mumbo-jumbo on the command line, in the terminal?&rsquo;</p>
+<p>&lsquo;They can do it on GitHub directly to an extent, and then it will be  just a matter of clicking some
+buttons on a web page, and editing text in a web form, essentially.&rsquo;</p>
+<p>&lsquo;Listen, I have to prepare for my lessons. Can we do it together tomorrow, step by step, slowly, and with explanations?&rsquo;</p>
+<p>&lsquo;We surely can.&rsquo;</p>
+<p>And so they did.</p>
+
+        <nav class="nextprev">
+
+<p>
+    Next: 
+    <br>
+    <a href="http://vendelin.org/geeky/git-language-learn/grammar-exercise-repository-github/">
+         GitHub for Foreign Language Teachers
+    </a>
+</p>
+
+
+</nav>
+
+        <div id="disqus_thread"></div>
+    </article>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.js" data-cfasync="false"></script>
+<script>
+window.addEventListener('load', function(){
+  window.cookieconsent.initialise({
+   revokeBtn: "<div class='cc-revoke'></div>",
+   type: "opt-in",
+   theme: "classic",
+   palette: {
+       popup: {
+           background: "#000",
+           text: "#fff"
+        },
+       button: {
+           background: "#fd0",
+           text: "#000"
+        }
+    },
+   content: {
+       message: "This website uses cookies to ensure you get the best experience on our website. Disabling cookies disables comments.",
+       link: "What are cookies",
+       href: "https://2gdpr.com/cookies"
+    },
+    onInitialise: function(status) {
+      if(status == cookieconsent.status.allow) myScripts();
+    },
+    onStatusChange: function(status) {
+      if (this.hasConsented()) myScripts();
+    }
+  })
+});
+
+function myScripts() {
+
+   
+    
+    var disqus_config = function () {
+        this.page.url = "http://vendelin.org/geeky/git-language-learn/dialogue/";  
+        this.page.identifier = "d318a24392c2fb410fe21a87aa557e35";   
+    };
+    (function() {  
+        var d = document, s = d.createElement('script');
+
+        s.src = 'https://vendelin-org.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+
+}
+</script>
+
+
+            </main>
+        </div>
+    </body>
+</html>

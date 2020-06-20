@@ -1,0 +1,221 @@
+<!doctype html>
+<html>
+    <head>
+        <title>
+            GitHub for Foreign Language Teachers
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/css/perldoc.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <script src="/js/hamburger.js"></script>
+    </head>
+    <body>
+        <nav class="top">
+            <a href="javascript:void(0);" class="box-shadow-menu" onclick="menuDrop()"></a>
+            <a href="http://vendelin.org/" class="logo">
+                vendelin.org 
+            </a>
+        </nav>
+        <div id="mobile-menu"></div>
+        <div class="page">
+            <nav class="breadcrumbs">
+                <a href="http://vendelin.org/">vendelin.org</a><span>:</span><a href="http://vendelin.org/geeky/">Geeky Stuff</a><span>:</span><a href="http://vendelin.org/geeky/git-language-learn/">Git for foreign language students and teachers</a>
+            </nav>
+            <main class="container">
+            <nav class="menu" id="ndrop">
+    
+    <h2>Sections:</h2>
+    
+        <a href="http://vendelin.org/geeky/" class="menu-section">Geeky Stuff</a>
+    
+        <a href="http://vendelin.org/travel/" class="menu-section">Travel Accounts</a>
+    
+    
+        <a href="http://vendelin.org/about/" class="menu-section">About</a>
+    
+</nav>
+
+
+            
+    <article class="main-single">
+        
+
+
+        <h1 id="github-for-foreign-language-teachers">GitHub for Foreign Language Teachers</h1>
+<p>A Git / GitHub workflow for foreign language students and teachers was briefly discussed in a Skype
+conversation between Yuni, an online teacher of Indonesian, and Toomas, a Linux system engineer.
+They have agreed to go though it step by step, and so they did. Here, we are discussing things from
+the teacher&rsquo;s perspective.</p>
+<h2 id="grammar-exercises-as-a-git-repository-published-on-github">Grammar exercises as a Git repository published on Github</h2>
+<p>Yuni creates a new folder on her computer, and initializes a Git repository inside it.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">mkdir sample_exercise
+cd sample_exercise
+git init
+</code></pre></div><p>In this folder, Yuni creates a sample exercise on Indonesian personal pronouns, <code>indonesian_pronouns.md</code>
+It is written in Markdown format:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"># Fill the gaps with appropriate pronouns in the following dialogue.
+
+## Peter dan Dita pergi ke Jakarta. Tina tinggal di Jogja.
+
+Dita: Tina, … pergi ke Jakarta. Saat ... kembali mari ... pergi ke Kesuma restoran.
+
+Tina: Andy dan Ria pergi juga?
+
+Dita: Tidak, ... harus bekerja.
+
+Tina: Dan Anto?
+
+Dita: ... bekerja juga.
+
+Tina: Berapa lama libur kalian?
+
+Dita: Empat hari.
+
+Tina: ... iri padamu.
+</code></pre></div><p>It&rsquo;s just a plain text file that can be edited with many editors (Atom, Notepad++, TextWrangler,
+Vim, etc.). It is quite human-readable as it is, but when viewed on GitHub, parts of the text
+between empty
+lines will become paragraphs, and lines prepended with one or more <code>#</code> symbols will become
+headers. The file name <em>must</em> end with <code>.md</code>. That&rsquo;s all you need to know for now, the full story is
+a three-minute read at <a href="https://guides.github.com/features/mastering-markdown/">GitHub</a>.</p>
+<p>For now, it is just a single file for simplicity of the example, but the intention is to maintain
+sets of exercises in Git repositories.</p>
+<p>Yuni adds the newly created file to be tracked by Git:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">git add *
+</code></pre></div><p>and creates the first commit:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">git ci -m &#39;Created an exercise on personal pronouns.&#39;
+</code></pre></div><p>She then creates a repository on GitHub, where she has a free account, sets it as a remote for her
+local repository, and pushes her local changes to the remote:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">git remote add origin git@github.com:&lt;USER NAME&gt;/&lt;REPOSITORY NAME&gt;.git
+git push -u origin master
+</code></pre></div><p>The sample repository that we are discussing here can be viewed at
+<a href="https://github.com/tvendelin/language-exercise-example">https://github.com/tvendelin/language-exercise-example</a>.</p>
+<p>From now on, anyone can view the exercises Yuni has created, but only Yuni, the repository owner,
+can change them. More importantly, each of her students can <em>fork</em> this repository, that is, to
+create their own repositories with the same content, but under their own accounts.</p>
+<p>Maria, a Yuni&rsquo;s student, does exactly that: she creates an account on GitHub, forks Yuni&rsquo;s repository
+with homework exercises, completes them, commits the changes, pushes them back to GitHub, and
+invites Yuni as a collaborator. The next chapter describes Maria&rsquo;s little adventure in detail.</p>
+<p>Yuni receives an e-mail with an invitation to collaborate on Maria&rsquo;s repository. This is a fancy way
+to say it&rsquo;s time for</p>
+<h2 id="correcting-a-students-homework">Correcting a Student&rsquo;s Homework</h2>
+<p>Yuni <em>clones</em> the repository with Maria&rsquo;s homework. <em>Cloning</em>  means
+creating a copy of a Git repository on your computer, locally. The cloned repository &lsquo;remembers&rsquo;
+where it came from, and this is the important difference between cloning and downloading.
+The URL for cloning can be obtained
+at repository page by clicking &lsquo;Clone or download&rsquo; button. The command is:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">git clone &lt;THE URL OF REPOSITORY&gt; maria_&lt;REPOSITORY NAME&gt;
+</code></pre></div><p>This creates a folder <code>maria_&lt;REPOSITORY NAME&gt;</code> with a Git repository&rsquo;s <em>working copy</em> in it.  It is
+a good idea to use a custom destination folder (<code>maria_&lt;REPOSITORY NAME&gt;</code> in our example) to
+distinct between different students.  Yuni changes into this folder, and runs <code>git log --pretty=reference</code> to identify <em>her</em> last commit. In our example, it is <code>c9ba48c</code>.</p>
+<p>To see which files changed since her last commit (that is, changed by her student), Yuni runs</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">git diff --compact-summary c9ba48c HEAD^ 
+</code></pre></div><p>The output tells her that one file, <code>indonesian_pronouns.md</code>, has been modified:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"> indonesian_pronouns.md | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+</code></pre></div><p>Now Yuni knows which files she must check and possibly correct. With a single student and a single
+exercise this may seem redundant, but later on with many exercises mutiplied by many students
+this step will become quite handy.</p>
+<p>Yuni corrects the exercise and commits the changes.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">git commit -a
+</code></pre></div><p>This opens the default editor on Yuni&rsquo;s computer, which allows Yuni to create a detailed,
+multi-lined commit message, with a brief feedback on Maria&rsquo;s mistakes:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">Corrected exercise indonesian_pronouns.md
+
+There are two pronouns for the first person plural: kita (inclusive),
+and kami (exclusive). Tina isn&#39;t going to Jakarta with Peter and Dita
+(Tina is not included = use kami), neither is she returning with them
+(Tina is not included = use kami). But, once Peter and Dita are back,
+they go all together to a restaurant. In this case, Tina is included, so
+use kita.
+</code></pre></div><p>The first line is the main commit message which is most often displayed in all kind of commit logs. The
+following lines are displayed more seldom, so in many cases (like creating a new exercise previously) a
+one-line commit message is all you need. Here, however, it&rsquo;s a good place to provide a feedback.</p>
+<p>Once the text is saved, the commit is created. Yuni then <em>pushes</em> her commit to the upstream
+remote repository on GitHub:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">git push
+</code></pre></div><p>If Maria didn&rsquo;t botch notification settings in her repository, she will shortly receive an automatic
+e-mail from GitHub notifying her about a new commit by Yuni, meaning she can now view the
+corrections to her homework.</p>
+
+        <nav class="nextprev">
+
+<p>
+    Next: 
+    <br>
+    <a href="http://vendelin.org/geeky/git-language-learn/fork-and-complete-grammar-exercise-github/">
+         GitHub for Foreign Language Students
+    </a>
+</p>
+
+
+<p>
+    Previous: 
+    <br>
+    <a href="http://vendelin.org/geeky/git-language-learn/dialogue/">
+         Using Git: A Dialogue Between a Language Teacher and a Linux Sysadmin
+    </a>
+</p>
+
+</nav>
+
+        <div id="disqus_thread"></div>
+    </article>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.js" data-cfasync="false"></script>
+<script>
+window.addEventListener('load', function(){
+  window.cookieconsent.initialise({
+   revokeBtn: "<div class='cc-revoke'></div>",
+   type: "opt-in",
+   theme: "classic",
+   palette: {
+       popup: {
+           background: "#000",
+           text: "#fff"
+        },
+       button: {
+           background: "#fd0",
+           text: "#000"
+        }
+    },
+   content: {
+       message: "This website uses cookies to ensure you get the best experience on our website. Disabling cookies disables comments.",
+       link: "What are cookies",
+       href: "https://2gdpr.com/cookies"
+    },
+    onInitialise: function(status) {
+      if(status == cookieconsent.status.allow) myScripts();
+    },
+    onStatusChange: function(status) {
+      if (this.hasConsented()) myScripts();
+    }
+  })
+});
+
+function myScripts() {
+
+   
+    
+    var disqus_config = function () {
+        this.page.url = "http://vendelin.org/geeky/git-language-learn/grammar-exercise-repository-github/";  
+        this.page.identifier = "28385189698173f33da023585103cb30";   
+    };
+    (function() {  
+        var d = document, s = d.createElement('script');
+
+        s.src = 'https://vendelin-org.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+
+}
+</script>
+
+
+            </main>
+        </div>
+    </body>
+</html>

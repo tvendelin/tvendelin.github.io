@@ -1,0 +1,225 @@
+<!doctype html>
+<html>
+    <head>
+        <title>
+            Create Your First Page With Hugo
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/css/perldoc.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <script src="/js/hamburger.js"></script>
+    </head>
+    <body>
+        <nav class="top">
+            <a href="javascript:void(0);" class="box-shadow-menu" onclick="menuDrop()"></a>
+            <a href="http://vendelin.org/" class="logo">
+                vendelin.org 
+            </a>
+        </nav>
+        <div id="mobile-menu"></div>
+        <div class="page">
+            <nav class="breadcrumbs">
+                <a href="http://vendelin.org/">vendelin.org</a><span>:</span><a href="http://vendelin.org/geeky/">Geeky Stuff</a><span>:</span><a href="http://vendelin.org/geeky/hugo/">Hugo Cookbook for a Multilingual Site</a>
+            </nav>
+            <main class="container">
+            <nav class="menu" id="ndrop">
+    
+    <h2>Sections:</h2>
+    
+        <a href="http://vendelin.org/geeky/" class="menu-section">Geeky Stuff</a>
+    
+        <a href="http://vendelin.org/travel/" class="menu-section">Travel Accounts</a>
+    
+    
+        <a href="http://vendelin.org/about/" class="menu-section">About</a>
+    
+</nav>
+
+
+            
+    <article class="main-single">
+        
+
+
+        <h1 id="create-your-first-page">Create Your First Page</h1>
+<p>We are finally ready to start adding content to our Hugo managed website. In your terminal, run:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo new poetry/lewis-carroll/the-walrus-and-the-carpenter/index.md
+</code></pre></div><p>Hugo will create the following directory structure under <code>kontent</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">kontent/
+└── poetry
+    └── lewis-carroll
+        └── the-walrus-and-the-carpenter
+            └── index.md
+</code></pre></div><p>Next, let&rsquo;s open the <code>kontent/poetry/lewis-carroll/the-walrus-and-the-carpenter/index.md</code>. The
+section between the triple dashes is called &lsquo;front matter&rsquo; on planet Hugo. On my planet
+we might have called it &lsquo;metadata&rsquo; or &lsquo;page parameters&rsquo;. Whatever it&rsquo;s called, it contains variables specific to your
+page in YAML format. The <code>title</code> holds the HTML title of your page, <code>date</code> is the timestamp of when
+the content file has been created, and <code>draft: false</code> tells Hugo not to generate the page yet when
+building your site. Drafts are visible, though, when you run Hugo server with <code>-D</code> option.</p>
+<p>Let&rsquo;s add some poetry to the bottom of the file. The result should look like this:</p>
+<div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">---
+title: &#34;The Walrus and the Carpenter&#34;
+date: 2020-05-09T15:26:09+02:00
+draft: false
+---
+
+<span class="gh"># The Walrus and the Carpenter
+</span><span class="gh"></span>
+The sun was shining on the sea,  
+Shining with all his might:  
+He did his very best to make  
+The billows smooth and bright –  
+And this was odd, because it was  
+The middle of the night.  
+</code></pre></div><p>The content, that is, the text below the front matter section, is written using the Markdown format,
+so we&rsquo;ve got two formats in one file, but that&rsquo;s fine.</p>
+<h2 id="say-hello-to-markdown">Say Hello to Markdown</h2>
+<p>Markdown is a incredibly simple format for those who need to write texts consisting primarily of
+headers, paragraphs, lists, links, and code fragments.  It is also quite readable in its source
+form. In the example above, <code>#</code> denotes the biggest header, the paragraphs are separated with an
+empty line, and line breaks are created by adding two spaces at the end of line.</p>
+<p>When Hugo builds your site, the markdown is converted to HTML, and then it replaces the variables in
+your templates.</p>
+<p>For more details refer to
+<a href="https://guides.github.com/features/mastering-markdown/">Mastering Markdown</a> at GitHub. It is claimed to be a
+three-minute read.</p>
+<h2 id="paving-the-path-to-your-fist-hugo-page">Paving the Path to Your Fist Hugo Page</h2>
+<p>If you take a look at <a href="http://localhost:1313">http://localhost:1313</a> now, you will see a link leading to &lsquo;Poetries&rsquo;. Wait
+a tick&hellip; Wasn&rsquo;t that &lsquo;poetry&rsquo;? I call it a &lsquo;creative default&rsquo;.  We
+shall fix it in a moment, but first let&rsquo;s explore a bit.</p>
+<p>By clicking the link, you will get to the page with a link to &lsquo;The Walrus and the Carpenter&rsquo;. Notice
+that this page was generated using <code>list.html</code> template. Finally, by clicking on yet another link,
+we shall get to the page with the poem. This page is generated using <code>single.html</code>.</p>
+<p>But wait – although the page URL is
+<a href="http://localhost:1313/poetry/lewis-carroll/the-walrus-and-the-carpenter">http://localhost:1313/poetry/lewis-carroll/the-walrus-and-the-carpenter</a>,
+we&rsquo;ve never saw a section for <code>lewis-carroll</code>. So, we&rsquo;ve got yet another issue to fix.</p>
+<p>Let&rsquo;s fix the &lsquo;Poetries&rsquo; issue first:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo new poetry/_index.md
+</code></pre></div><p>The file <code>kontent/poetry/_index.md</code> contains already familiar front matter parameters, but is
+otherwise empty. This time, Hugo didn&rsquo;t get creative with plurals, and the <code>title</code> reads &lsquo;Poetry&rsquo;.
+Let&rsquo;s add a header to the content part of the file:</p>
+<div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">---
+title: &#34;Poetry&#34;
+date: 2020-05-10T12:14:02+02:00
+draft: false
+---
+
+<span class="gh"># Some Poetry for the Sake of Example
+</span></code></pre></div><p>Now, if you start at <a href="http://localhost:1313">http://localhost:1313</a> you should see a link to &lsquo;Poetry&rsquo; section.</p>
+<p>The second issue – the missing <code>lewis-carroll</code> section – is addressed the very same way:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo new poetry/lewis-carroll/_index.md
+</code></pre></div><p>Even without any content in <code>_index.md</code>, the missing section now appears once you click the
+<a href="http://localhost:1313/poetry/">Poetry</a> link. It should be the single link on the page. You might want to
+restart the server, should it not be the case.</p>
+<p>Now you should be able to navigate all the way to the page with the poem normally.</p>
+<h2 id="a-brief-look-at-our-website-structure-so-far">A Brief Look at our Website Structure so far</h2>
+<p>There are several ways to provide structure (and navigation) for your Hugo-genegated website. The
+simplest is by the means of <em>sections</em>. Sections are just mapped to the directory structure under
+the content directory of your project (<code>kontent</code> in our case). Each section has its own section
+page, either impilicitly (as with our &lsquo;Poetries&rsquo; case earlier), or explicitly, if you create an
+<code>_index.md</code> in the section&rsquo;s directory (mind the underscore).</p>
+<p>The empty sections are skipped by Hugo, so it is probably a good idea to create an <code>_index.md</code> file in each
+subsection straight away.</p>
+<p>If, however, you will create an <code>index.md</code> file instead (without prepending underscore), the
+directory will become something else: a <em>page bundle</em>.</p>
+<h2 id="page-bundles-in-a-hugo-project">Page Bundles in a Hugo Project</h2>
+<p>Although it is possible to create a page by just creating a markdown file with an arbitrary name
+that ends with <code>.md</code>, more often than not a web page doesn&rsquo;t stand alone, but rather has other
+<em>resources</em> linked to it: images, video, etc. Page bundles cater for that. They also are very
+practical once it comes to multilingual content (see the next chapter).</p>
+<p>A page bundle represents one single page and its translations. Under a page bundle, only a file
+named <code>index.md</code> and its translations (like <code>index.ru.md</code>) are visible. Everything else is
+considered the page resources and can become visible only by inclusion into the page that a
+particular page bundle represents.</p>
+<p>A page bundle can also include text resources, and if they are Markdown files, the same translation
+rules as for the main page apply. More on that in the next chapter.</p>
+<p>By contrast, in a <em>section</em> all pages (or page bundles) are visible, plus the section&rsquo;s own page
+capable of listing the section contents if <code>list.html</code> template provides for that. For the
+sake of experiment, create a deeply nested page:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo new foo/bar/baz/index.md
+</code></pre></div><p>Try to navigate to it from the main page. It works, right? But if you now create an <code>index.md</code> file
+in one of the upstream directories, after restarting the Hugo server you will discover that you
+cannot get any further. And even if you type <a href="http://localhost:1313/foo/bar/baz">http://localhost:1313/foo/bar/baz</a> in browser by
+hand, you will get <code>404 page not found</code> error.</p>
+
+        <nav class="nextprev">
+
+<p>
+    Next: 
+    <br>
+    <a href="http://vendelin.org/geeky/hugo/create-multilingual-content-hugo/">
+         Multilingual Content With Hugo
+    </a>
+</p>
+
+
+<p>
+    Previous: 
+    <br>
+    <a href="http://vendelin.org/geeky/hugo/creating-a-theme-for-hugo/">
+         Creating a Theme for Hugo
+    </a>
+</p>
+
+</nav>
+
+        <div id="disqus_thread"></div>
+    </article>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.js" data-cfasync="false"></script>
+<script>
+window.addEventListener('load', function(){
+  window.cookieconsent.initialise({
+   revokeBtn: "<div class='cc-revoke'></div>",
+   type: "opt-in",
+   theme: "classic",
+   palette: {
+       popup: {
+           background: "#000",
+           text: "#fff"
+        },
+       button: {
+           background: "#fd0",
+           text: "#000"
+        }
+    },
+   content: {
+       message: "This website uses cookies to ensure you get the best experience on our website. Disabling cookies disables comments.",
+       link: "What are cookies",
+       href: "https://2gdpr.com/cookies"
+    },
+    onInitialise: function(status) {
+      if(status == cookieconsent.status.allow) myScripts();
+    },
+    onStatusChange: function(status) {
+      if (this.hasConsented()) myScripts();
+    }
+  })
+});
+
+function myScripts() {
+
+   
+    
+    var disqus_config = function () {
+        this.page.url = "http://vendelin.org/geeky/hugo/adding-content-hugo/";  
+        this.page.identifier = "77628f9f56ad14f5f132c730e1a38cc7";   
+    };
+    (function() {  
+        var d = document, s = d.createElement('script');
+
+        s.src = 'https://vendelin-org.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+
+}
+</script>
+
+
+            </main>
+        </div>
+    </body>
+</html>

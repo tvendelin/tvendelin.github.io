@@ -1,0 +1,350 @@
+<!doctype html>
+<html>
+    <head>
+        <title>
+            Multilingual Content With Hugo
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/css/perldoc.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <script src="/js/hamburger.js"></script>
+    </head>
+    <body>
+        <nav class="top">
+            <a href="javascript:void(0);" class="box-shadow-menu" onclick="menuDrop()"></a>
+            <a href="http://vendelin.org/" class="logo">
+                vendelin.org 
+            </a>
+        </nav>
+        <div id="mobile-menu"></div>
+        <div class="page">
+            <nav class="breadcrumbs">
+                <a href="http://vendelin.org/">vendelin.org</a><span>:</span><a href="http://vendelin.org/geeky/">Geeky Stuff</a><span>:</span><a href="http://vendelin.org/geeky/hugo/">Hugo Cookbook for a Multilingual Site</a>
+            </nav>
+            <main class="container">
+            <nav class="menu" id="ndrop">
+    
+    <h2>Sections:</h2>
+    
+        <a href="http://vendelin.org/geeky/" class="menu-section">Geeky Stuff</a>
+    
+        <a href="http://vendelin.org/travel/" class="menu-section">Travel Accounts</a>
+    
+    
+        <a href="http://vendelin.org/about/" class="menu-section">About</a>
+    
+</nav>
+
+
+            
+    <article class="main-single">
+        
+
+
+        <h1 id="multilingual-content-with-hugo">Multilingual Content With Hugo</h1>
+<p>Handling Multilingual Content is where Hugo really shines. However, since internationalization (i18n
+for short) is a pretty complex task, let&rsquo;s throw together a brief list of</p>
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li>The content translations should be added in an orderly manner.</li>
+<li>The content translations should be directly linkable to each other.</li>
+<li>Templates should not contain any hardcoded language-specific text. Instead, translations for such
+text should be defined separately and loaded according to the language of the content.</li>
+<li>The inclusion of bundled page resources must be configured in one place only, unless there is need
+to do otherwise. In other words, if the same picture should be included in all five translations
+of the same page, this should be configured in one rather than five places.</li>
+<li>Should a bundled resource have some multilingual dependencies of its own (examle: a photo and text
+captions in five languages), such dependencies must be bundled with the resource (captions with
+the photo in this example), rather than with the main page of the bundle.</li>
+</ul>
+<h2 id="adding-a-translation-of-a-content-unit">Adding a Translation of a Content Unit</h2>
+<p>This is the simplest part. Since <a href="http://vendelin.org/geeky/hugo/custom-multilingual-configuration-hugo/#create-a-very-basic-multilingual-configuration">we have configured two languages to be used at our site</a>, we can add the Russian translation of &lsquo;The Walrus and the Carpenter&rsquo; now by creating a new
+content file (notice <code>ru</code> in the file name):</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo new poetry/lewis-carroll/the-walrus-and-the-carpenter/index.ru.md
+</code></pre></div><p>&hellip; and adding the content:</p>
+<div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">---
+title: &#34;Морж и Плотник&#34;
+date: 2020-05-10T11:51:48+02:00
+draft: false
+slug: &#34;морж-и-плотник&#34;
+---
+<span class="gh"># Морж и Плотник
+</span><span class="gh"></span>
+Сияло солнце в небесах,
+Светило во всю мочь,
+Была светла морская гладь,
+Как зеркало точь-в-точь,
+Что очень странно — ведь тогда
+Была глухая ночь.
+</code></pre></div><p>If you now point your browser to
+<a href="http://localhost:1313/ru/poetry/lewis-carroll/%D0%BC%D0%BE%D1%80%D0%B6-%D0%B8-%D0%BF%D0%BB%D0%BE%D1%82%D0%BD%D0%B8%D0%BA/">http://localhost:1313/ru/poetry/lewis-carroll/морж-и-плотник/</a>, you will see a
+Russian translation of the immortal rhyme.</p>
+<p>Notice the custom <code>slug</code> parameter, that allows
+to make each translation&rsquo;s URL language-specific, even in a different alphabet. This should
+be helpful for search engine optimization of your site.</p>
+<h2 id="linking-the-translations">Linking the Translations</h2>
+<p>How many a time did you click on a &lsquo;language&rsquo; link, hoping to get the translation of the page, only
+to end up on the website&rsquo;s front page instead? With Hugo, this kind of hiccups can be eliminated
+once and for all.</p>
+<p>Let&rsquo;s create another partial in out theme, <code>translations.html</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">{{ if .IsTranslated }}
+<span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;translations&#34;</span><span class="p">&gt;</span>
+    {{ range .Translations }}
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ .Permalink }}&#34;</span><span class="p">&gt;</span>
+        {{ .Site.Language.LanguageName }}
+    <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+    {{ end }}
+<span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+{{ end }}
+</code></pre></div><p>and include it into our <code>themes/comic/layouts/_default/baseof.html</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">...
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    {{ partial &#34;breadcrumbs.html&#34; . }}
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container&#34;</span><span class="p">&gt;</span>
+        {{ partial &#34;translations.html&#34; . }}
+        <span class="p">&lt;</span><span class="nt">main</span><span class="p">&gt;</span>
+            {{ block &#34;main&#34; . }}
+            {{ end }}
+        <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+...
+</code></pre></div><p>The <code>{{ .Translations }}</code> variable contains a list of translations for this particular content
+(except the current language), each having the usual page properties, like <code>.Permalink</code>. The
+<code>.Site.Language.LanguageName</code> refers to the name of a particular language as configured in
+<code>config/languages.yaml</code>.  Now, each page on our site has links to its translations, if there are
+any. <code>{{ if .IsTranslated }}</code> checks if the page has translations, and if not, the entire <code>&lt;nav&gt;</code>
+element is skipped.</p>
+<p>Let&rsquo;s add another poem, this time without translation:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo new poetry/lewis-carroll/mad-gardeners-song/index.md
+</code></pre></div><p>with this content:</p>
+<div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">---
+title: &#34;Mad Gardeners Song&#34;
+date: 2020-05-11T18:58:10+02:00
+draft: false
+---
+
+<span class="gh"># The Mad Gardener’s Song
+</span><span class="gh"></span>
+He thought he saw an Elephant  
+That practised on a fife:  
+He looked again, and found it was  
+A letter from his wife.  
+&#34;At length I realise,&#34; he said,  
+&#34;The bitterness of Life!&#34;  
+</code></pre></div><p>If you look it up in a browser, no translation link would appear on the page.</p>
+<p>That was simple enough, as our template didn&rsquo;t contain any language-specific text strings. But what
+if we wanted to display some text next to our translation links, like saying &ldquo;Other languages:&rdquo; in
+English and &ldquo;Другие языки:&rdquo; in Russian?</p>
+<h2 id="translating-strings-in-templates">Translating Strings in Templates</h2>
+<p>Create an <code>i18n</code> directory in the root of your project:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">mkdir i18n
+</code></pre></div><p>In this directory, let&rsquo;s create YAML files with translations, <code>i18n/en.yaml</code> and
+<code>i18n/ru.yaml</code>.</p>
+<p><code>i18n/en.yaml</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml">- <span class="k">id</span><span class="p">:</span><span class="w"> </span>other_lang<span class="w">
+</span><span class="w">  </span><span class="k">translation</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Other languages:&#34;</span><span class="w">
+</span></code></pre></div><p><code>i18n/ru.yaml</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml">- <span class="k">id</span><span class="p">:</span><span class="w"> </span>other_lang<span class="w">
+</span><span class="w">  </span><span class="k">translation</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Другие языки:&#34;</span><span class="w">
+</span></code></pre></div><p>Let&rsquo;s improve our <code>translations.html</code> partial by adding an HTML header with <code>{{ i18n &quot;other_lang&quot; }}</code> as its text:</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">{{ if .IsTranslated }}
+<span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;translations&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;languages&#34;</span><span class="p">&gt;</span>
+        {{ i18n &#34;other_lang&#34; }}
+    <span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    {{ range .Translations }}
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ .Permalink }}&#34;</span><span class="p">&gt;</span>
+        {{ .Site.Language.LanguageName }}
+    <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+    {{ end }}
+<span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+{{ end }}
+</code></pre></div><p>Our translation should now be visible: <code>i18n</code> function takes care of that. It finds a translation
+file whose name matches the configured language code, and looks up a translation for <code>other_lang</code> in
+that file.</p>
+<p>In my experience, hugo server doesn&rsquo;t always pick the changes in translations, so you might need to
+restart it.</p>
+<p>Sometimes, you need to pass a numeric parameter to the translation. For instance, to say: &lsquo;There
+are 7 pages in this category&rsquo;.  Adding the magic dot after the string
+identifier <code>{{ i18n &quot;ship_count&quot; . }}</code> makes the entire page context available in the string
+translation. Just refer to page variables as you would from a template.</p>
+<p>This brings us to a daunting task of handling plurals. Adding &lsquo;s&rsquo; at the end of an English noun
+doesn&rsquo;t always work (think of <em>mouse – mice</em> or <em>goose – geese</em>), but if you thought it&rsquo;s the worst
+of your problems, let&rsquo;s have some</p>
+<h2 id="fun-with-russian-plurals">Fun With Russian Plurals</h2>
+<p>While <em>goose – geese</em> is an exception in English, in Russian having a singular and up to three plural forms
+for a noun is normal. Some nouns have <em>only</em> singular form, while others exist <em>only</em> in
+plural. This makes Russian probably the most tricky use case for handling plurals, and thus a perfect
+example for a tutorial. In this example, we shall be counting ships.</p>
+<p>Let&rsquo;s update our i18n file for Russian:</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml">- <span class="k">id</span><span class="p">:</span><span class="w"> </span>other_lang<span class="w">
+</span><span class="w">  </span><span class="k">translation</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Другие языки:&#34;</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span>- <span class="k">id</span><span class="p">:</span><span class="w"> </span>ship<span class="w">
+</span><span class="w">  </span><span class="k">translation</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="k">zero</span><span class="p">:</span><span class="w"> </span>ни<span class="w"> </span>одного<span class="w"> </span>корабля<span class="w">
+</span><span class="w">    </span><span class="k">one</span><span class="p">:</span><span class="w"> </span>корабль<span class="w">
+</span><span class="w">    </span><span class="k">few</span><span class="p">:</span><span class="w"> </span>корабля<span class="w">
+</span><span class="w">    </span><span class="k">many</span><span class="p">:</span><span class="w"> </span>кораблей<span class="w">
+</span><span class="w">    </span><span class="k">other</span><span class="p">:</span><span class="w"> </span>корабли<span class="w">
+</span><span class="w">
+</span><span class="w"></span>- <span class="k">id</span><span class="p">:</span><span class="w"> </span>from_page_context<span class="w">
+</span><span class="w">  </span><span class="k">translation</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Количество: {{ .Params.count }}&#34;</span><span class="w">
+</span></code></pre></div><p>Our <code>translation</code> for <code>ship</code> has got quite bushy now, as we have added all plural forms that
+<a href="https://github.com/nicksnyder/go-i18n">go-i18n</a> library supports as of this writing. Hugo will pick
+the correct variant for the number that you either pass to <code>i18n</code> function directly, like in
+<code>{{ i18n &quot;ship&quot; 2 }}</code>, or refer to from a translation, like for <code>from_page_context</code> string in the
+example above.</p>
+<p>Not all of the plural variants are supported for each language, as we shall see shortly. Most of the
+time it makes sense, too. The English version would contain only <code>one</code> and <code>other</code> keys, the latter
+being a sort of catch-all variant.</p>
+<p>This works for a single numeric parameter. There is no solution for handling &lsquo;1 ship and 3 geese&rsquo; in
+one string. Should things get too tricky, you can resort to a less natural form, that allows you
+assign the translation to <code>translation</code> key directly, dropping plural variants altogether.  We did
+so for <code>from_page_context</code> string (&ldquo;Количество&rdquo; means &lsquo;Quantity&rsquo;). Here, we pass a custom <code>count</code>
+parameter defined in the front matter part of a content file. Speaking of which, let&rsquo;s create one:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo new numerals/ships.ru.md
+</code></pre></div><p>In the front matter, let&rsquo;s add a custom parameter <code>count</code>. We do not need any actual content for our
+little experiment:</p>
+<div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">---
+title: &#34;Ships&#34;
+date: 2020-05-11T19:50:44+02:00
+draft: false
+count: 16
+---
+</code></pre></div><p>Hugo provides for defining your own front matter parameters. They can be accessed from templates and
+translations using expression <code>{{ .Params.&lt;parameter name&gt; }}</code>.</p>
+<p>The <code>layouts</code> directory provides the convenience of overriding default templates we created in our
+theme. In this case, we need to create a custom <code>single.html</code> template for our <code>numerals</code> section.
+Create a directory with the same name under <code>layouts</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">mkdir layouts/numerals/
+</code></pre></div><p>and add <code>layouts/numerals/single.html</code> with the following content:</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+        0: {{ i18n &#34;ship&#34; 0 }}
+    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+        1: {{ i18n &#34;ship&#34; 1 }}
+    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+        2: {{ i18n &#34;ship&#34; 2 }}
+    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+        5: {{ i18n &#34;ship&#34; 5 }}
+    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+        11: {{ i18n &#34;ship&#34; 11 }}
+    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+        23: {{ i18n &#34;ship&#34; 23 }}
+    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+        101171: {{ i18n &#34;ship&#34; 101171 }}
+    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+    {{ i18n &#34;from_page_context&#34; . }}
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div><p>Now, if you point your browser to <a href="http://localhost:1313/ru/numerals/ships">http://localhost:1313/ru/numerals/ships/</a>, you will see Russian
+plurals in action:</p>
+<pre><code>0: кораблей
+1: корабль
+2: корабля
+5: кораблей
+11: кораблей
+23: корабля
+101171: корабль
+</code></pre>
+<p>Notice that <code>zero</code> variant is not supported, and so there is no way to say neither &lsquo;no
+ship&rsquo; nor &lsquo;no ships&rsquo;, neither in English nor in Russian.</p>
+<h2 id="markdown-files-as-page-bundle-resources">Markdown Files as Page Bundle Resources</h2>
+<p>Should you include Markdown files as page resources, Hugo will look for a Markdown file for a
+particular language, and will not fall back to the default language version, if such file is
+missing. This is sane and useful feature, but sometimes you might want to include some
+language-agnostic Markdown. In such case, give that file a different suffix – <code>.txt</code> seems
+reasonable enough – and in the template pipe it through <code>markdownify</code> function, like this:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">{{ .Content | markdownify }}
+</code></pre></div><p>This way, you can both have a cake, and eat it, too!</p>
+
+        <nav class="nextprev">
+
+<p>
+    Next: 
+    <br>
+    <a href="http://vendelin.org/geeky/hugo/images-multilingual-pages-hugo/">
+         Including Images in Multilingual Pages with Hugo
+    </a>
+</p>
+
+
+<p>
+    Previous: 
+    <br>
+    <a href="http://vendelin.org/geeky/hugo/adding-content-hugo/">
+         Create Your First Page With Hugo
+    </a>
+</p>
+
+</nav>
+
+        <div id="disqus_thread"></div>
+    </article>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.js" data-cfasync="false"></script>
+<script>
+window.addEventListener('load', function(){
+  window.cookieconsent.initialise({
+   revokeBtn: "<div class='cc-revoke'></div>",
+   type: "opt-in",
+   theme: "classic",
+   palette: {
+       popup: {
+           background: "#000",
+           text: "#fff"
+        },
+       button: {
+           background: "#fd0",
+           text: "#000"
+        }
+    },
+   content: {
+       message: "This website uses cookies to ensure you get the best experience on our website. Disabling cookies disables comments.",
+       link: "What are cookies",
+       href: "https://2gdpr.com/cookies"
+    },
+    onInitialise: function(status) {
+      if(status == cookieconsent.status.allow) myScripts();
+    },
+    onStatusChange: function(status) {
+      if (this.hasConsented()) myScripts();
+    }
+  })
+});
+
+function myScripts() {
+
+   
+    
+    var disqus_config = function () {
+        this.page.url = "http://vendelin.org/geeky/hugo/create-multilingual-content-hugo/";  
+        this.page.identifier = "aac0bc6d482ab3c7d1bc269299e73293";   
+    };
+    (function() {  
+        var d = document, s = d.createElement('script');
+
+        s.src = 'https://vendelin-org.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+
+}
+</script>
+
+
+            </main>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,185 @@
+<!doctype html>
+<html>
+    <head>
+        <title>
+            Customizing Configuration for Multilingual Hugo-Managed Site
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/css/perldoc.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <script src="/js/hamburger.js"></script>
+    </head>
+    <body>
+        <nav class="top">
+            <a href="javascript:void(0);" class="box-shadow-menu" onclick="menuDrop()"></a>
+            <a href="http://vendelin.org/" class="logo">
+                vendelin.org 
+            </a>
+        </nav>
+        <div id="mobile-menu"></div>
+        <div class="page">
+            <nav class="breadcrumbs">
+                <a href="http://vendelin.org/">vendelin.org</a><span>:</span><a href="http://vendelin.org/geeky/">Geeky Stuff</a><span>:</span><a href="http://vendelin.org/geeky/hugo/">Hugo Cookbook for a Multilingual Site</a>
+            </nav>
+            <main class="container">
+            <nav class="menu" id="ndrop">
+    
+    <h2>Sections:</h2>
+    
+        <a href="http://vendelin.org/geeky/" class="menu-section">Geeky Stuff</a>
+    
+        <a href="http://vendelin.org/travel/" class="menu-section">Travel Accounts</a>
+    
+    
+        <a href="http://vendelin.org/about/" class="menu-section">About</a>
+    
+</nav>
+
+
+            
+    <article class="main-single">
+        
+
+
+        <h1 id="custom-multilingual-configuration-for-hugo-managed-site">Custom Multilingual Configuration for Hugo Managed Site</h1>
+<p>A multilingual site managed with Hugo static generator requires a couple of extra steps. I essence,
+you just need to tell Hugo which languages are you going to use, and how these languages are called
+in these languages (<em>Eesti keel</em> for Estonian, <em>Bahasa Indonesia</em> for Indonesian, etc.).
+The rest is really optional.</p>
+<p>Before we begin, though, I&rsquo;d like to suggest a few</p>
+<h2 id="configuration-adjustments">Configuration Adjustments</h2>
+<h3 id="i-choose-yaml-and-config-directory">I Choose YAML and config Directory</h3>
+<p>Your project configuration sits by default in <code>config.toml</code> file in the project root directory. This
+isn&rsquo;t the only choice, though. Instead of a single file you can create a <code>config</code> subdirectory, and
+split your configuration into several files under it, if your configuration will start getting bushy.</p>
+<p>Neither is your file format choice limited to TOML. The
+alternatives are YAML and JSON. I prefer YAML for its uniformity (and maybe out of habit), so I
+shall be using it throughout this tutorial.</p>
+<h3 id="i-call-it-kontent">I Call It &lsquo;kontent&rsquo;</h3>
+<p>There are two important directories in the root of your project, <code>config</code> and <code>content</code>, that
+compete with each other in terms of <code>&lt;TAB&gt;</code> completion when you work from a terminal. It would be
+rather practical to rename <code>content</code> directory into <code>kontent</code>. Now you will need to type <code>k&lt;TAB&gt;</code>
+instead of <code>cont&lt;TAB&gt;</code>, and <code>c&lt;TAB&gt;</code> instead of <code>conf&lt;TAB&gt;</code>). So,</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">mv content kontent
+</code></pre></div><p>You will need to reflect this move in your project configuration, speaking of which&hellip;</p>
+<h2 id="create-a-very-basic-multilingual-configuration">Create a very basic multilingual configuration</h2>
+<p>From your project root, create a subdirectory for default configuration:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">mkdir -p config/_default
+</code></pre></div><p>Create the file <code>config/_default/config.yaml</code> with the following content:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">baseURL: &#34;http://example.com/&#34;
+title: &#34;Multilingua&#34;
+contentDir: &#34;kontent&#34;
+languages:
+    en:
+        languageName: English
+        weight: 10
+    ru:
+        languageName: Русский
+        weight: 20
+</code></pre></div><p>For the time being, <code>baseURL</code> can be whatever you like, if you didn&rsquo;t buy a domain yet. The <code>title</code>
+parameter is what you want to append to every page title of your site.  The <code>languages</code> section
+tells Hugo that your site will be in two languages, English and Russian, and that when available
+languages are listed, English comes before Russian - this is dictated by <code>weight</code> parameter. The
+lower the weight, the higher the priority.</p>
+<h2 id="language-configuration-in-a-separate-file">Language configuration in a separate file.</h2>
+<p>To keep things tidy, you may choose to move the <code>languages</code> section into separate file. I recommend
+that you do, as it may grow substantially. In this case, create a file
+<code>config/_default/languages.yaml</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">en:
+    languageName: English
+    weight: 10
+ru:
+    languageName: Русский
+    weight: 20
+
+</code></pre></div><p>Notice, that <code>languages</code> key from the all-in-one config file has become the filename and it will be
+an error to include it into <code>config/_default/languages.yaml</code>. Also, don&rsquo;t forget to remove the
+language section from <code>config/_default/config.yaml</code>.</p>
+<h2 id="remove-the-generated-configuration-file">Remove the generated configuration file</h2>
+<p>&hellip; or it will take priority over the configuration you&rsquo;ve just created.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">rm config.toml
+</code></pre></div><h2 id="further-reading">Further Reading</h2>
+<p><a href="https://gohugo.io/getting-started/configuration/">Hugo configuration documentation</a></p>
+<p><a href="https://gohugo.io/content-management/multilingual/">Hugo multilingual documentation</a></p>
+
+        <nav class="nextprev">
+
+<p>
+    Next: 
+    <br>
+    <a href="http://vendelin.org/geeky/hugo/creating-a-theme-for-hugo/">
+         Creating a Theme for Hugo
+    </a>
+</p>
+
+
+<p>
+    Previous: 
+    <br>
+    <a href="http://vendelin.org/geeky/hugo/scaffoldings/">
+         Scaffoldings of a Hugo website
+    </a>
+</p>
+
+</nav>
+
+        <div id="disqus_thread"></div>
+    </article>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.js" data-cfasync="false"></script>
+<script>
+window.addEventListener('load', function(){
+  window.cookieconsent.initialise({
+   revokeBtn: "<div class='cc-revoke'></div>",
+   type: "opt-in",
+   theme: "classic",
+   palette: {
+       popup: {
+           background: "#000",
+           text: "#fff"
+        },
+       button: {
+           background: "#fd0",
+           text: "#000"
+        }
+    },
+   content: {
+       message: "This website uses cookies to ensure you get the best experience on our website. Disabling cookies disables comments.",
+       link: "What are cookies",
+       href: "https://2gdpr.com/cookies"
+    },
+    onInitialise: function(status) {
+      if(status == cookieconsent.status.allow) myScripts();
+    },
+    onStatusChange: function(status) {
+      if (this.hasConsented()) myScripts();
+    }
+  })
+});
+
+function myScripts() {
+
+   
+    
+    var disqus_config = function () {
+        this.page.url = "http://vendelin.org/geeky/hugo/custom-multilingual-configuration-hugo/";  
+        this.page.identifier = "3f032dcc717020d4b8afc02629c740fb";   
+    };
+    (function() {  
+        var d = document, s = d.createElement('script');
+
+        s.src = 'https://vendelin-org.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+
+}
+</script>
+
+
+            </main>
+        </div>
+    </body>
+</html>
