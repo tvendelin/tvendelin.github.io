@@ -20,7 +20,7 @@
         <div id="mobile-menu"></div>
         <div class="page">
             <nav class="breadcrumbs">
-                <a href="http://vendelin.org/">vendelin.org</a><span>:</span><a href="http://vendelin.org/geeky/">Geeky Stuff</a><span>:</span><a href="http://vendelin.org/geeky/hugo/">Hugo Cookbook for a Multilingual Site</a>
+                <a href="http://vendelin.org/">Home</a><span>:</span><a href="http://vendelin.org/geeky/">Geeky Stuff</a><span>:</span><a href="http://vendelin.org/geeky/hugo/">Hugo Cookbook for a Multilingual Site</a>
             </nav>
             <main class="container">
             <nav class="menu" id="ndrop">
@@ -206,10 +206,9 @@ for easier site navigation:</p>
 <div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">{{- with .Parent -}}
 {{ partial &#34;breadcrumbs.html&#34; . -}}
 {{- if .Parent -}}
-: <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ .Permalink }}&#34;</span><span class="p">&gt;</span>{{ .Title }}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-{{- else -}}
-<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ .Permalink }}&#34;</span><span class="p">&gt;</span>{{ .Site.Title }}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>:<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
 {{- end -}}
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ .Permalink }}&#34;</span><span class="p">&gt;</span>{{ .LinkTitle }}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 {{- end -}}
 </code></pre></div><p>In case you are not familiar with the jargon: breadcrumbs is a sequence of links starting (from the
 right) with the parent page, then the parent of the parent, and so on up to the home page. Dropping
