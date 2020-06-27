@@ -145,8 +145,9 @@ Page Title and Link Title Yes, a page can have more than one title. There are li
       
       <guid>http://vendelin.org/about/</guid>
       <description>About This Website The official public brain-dump of Toomas Vendelin would be the most accurate description.
-This is a personal website, that is, it is an unsystematic collection of texts and pictures that someone else might find useful and/or entertaining. It is not a blog, as I&amp;rsquo;m not logging anything in chronological order.
-About Me I&amp;rsquo;m a Linux system engineer and a certified Java developer in one package. Before that, for over 20 years I&amp;rsquo;ve been a professional photographer and a small publisher.</description>
+This is a personal website, that is, it is an unsystematic collection of texts and pictures that someone else might find useful and/or entertaining. It is not a blog, as I&amp;rsquo;m not logging anything in explicitly chronological order.
+About Me I&amp;rsquo;m a Linux system engineer and a certified Java developer in one package.
+I&amp;rsquo;m well versed in automating the infrastructure setups combining syslinux family, tfptp, DHCP, Kickstart, Autoyast, Preceed, Ansible and Puppet, also under strict security requirements; PKI management and encryption; various identity and access management setups.</description>
     </item>
     
     <item>
