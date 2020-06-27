@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+    <head>
+        <title>
+            Featured Content using Hugo: Page Summary and LinkTitle
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/css/perldoc.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <script src="/js/hamburger.js"></script>
+    </head>
+    <body>
+        <nav class="top">
+            <a href="javascript:void(0);" class="box-shadow-menu" onclick="menuDrop()"></a>
+            <a href="http://vendelin.org" class="logo">
+                vendelin.org 
+            </a>
+        </nav>
+        <div id="mobile-menu"></div>
+        <div class="page">
+            <nav class="breadcrumbs">
+                <a href="http://vendelin.org/">Home</a><span>:</span><a href="http://vendelin.org/geeky/">Geeky Stuff</a><span>:</span><a href="http://vendelin.org/geeky/hugo/">Hugo Cookbook for a Multilingual Site</a>
+            </nav>
+            <main class="container">
+            <nav class="menu" id="ndrop">
+    
+    <h2>Sections:</h2>
+    
+        <a href="http://vendelin.org/geeky/" class="menu-section">Geeky Stuff</a>
+    
+        <a href="http://vendelin.org/travel/" class="menu-section">Travel Accounts</a>
+    
+    
+        <a href="http://vendelin.org/about/" class="menu-section">About</a>
+    
+</nav>
+
+
+            
+    <article class="main-single">
+        
+
+
+        <h1 id="putting-the-best-foot-forward">Putting the Best Foot Forward</h1>
+<p>Promoting certain articles on the front page of your Hugo managed site will be the next step after
+creating some content. You will need a summary for each such page, and a text that will appear in
+links – a <em>link title</em>.</p>
+<h2 id="page-title-and-link-title">Page Title and Link Title</h2>
+<p>Yes, a page can have more than one title. There are <code>linkTitle</code> and <code>title</code> front matter parameters,
+and there are corresponding <code>{{.LinkTitle}}</code> and <code>{{.Title}}</code> template variables. Always define
+a <code>title</code> in the front matter, and always use <code>{{.LinkTitle}}</code> in templates for the link text. If
+<code>linkTitle</code> is not defined, <code>{{.LinkTitle}}</code> will fall back to the value of <code>title</code>. <code>{{.Title }}</code> template variable should be used for HTML <code>&lt;title&gt;</code> tag only.</p>
+<p>This way, you can have different link text and HTML <code>&lt;title&gt;</code> for a page, if need be.</p>
+<h2 id="summary-or-summaries">Summary (or Summaries)</h2>
+<p>Typically, you need a summary of an article – to feature it on your front page, or to display it
+next to a page link on a list page. Using page bundles allows for a flexible solution. Decide, what
+you woul call the summary files in your project (<code>summary.md</code> sounds particularly creative), fetch
+it as you would fetch any other page resource, and include its content where needed:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">{{- with .Resources.GetMatch &#34;summary.md&#34; -}} 
+{{- .Content -}} 
+{{- end -}} 
+</code></pre></div><p>The translations will be picked according to the language of the page, of course, so for
+<code>index.ru.md</code> the <code>summary.ru.md</code> will be looked up.</p>
+<p>This approach also allows to have multiple summaries if need be. Say, one for a &lsquo;featured&rsquo; section
+on the front page, and another for the listings.</p>
+<h2 id="selecting-what-to-feature">Selecting What to Feature</h2>
+<p>You need a way to select a few articles for the front page. I find using tags and weights the
+simplest solution.</p>
+<p>By default, Hugo creates two <a href="https://gohugo.io/content-management/taxonomies/"><em>taxonomies</em></a>:
+categories and tags. We shall make use of tags in this example. You can create any number of tags
+for any page in the front matter. For our particular purpose, we need to agree on some special tag
+names, and then use them as filters. If we agree that <code>featured</code> means exposure as a big box on the
+front page, then in the front matter of the page include:</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="k">tags</span><span class="p">:</span><span class="w">
+</span><span class="w"></span>- featured<span class="w">
+</span><span class="w"></span><span class="c"># ... other tags</span><span class="w">
+</span></code></pre></div><p>Since taxonomies have their own listing pages, we can get our &lsquo;featured&rsquo; articles by fetching a list
+page for the tag &lsquo;featured&rsquo;, and then iterating over the included pages, which will be first ordered by
+their weight, unless you <a href="https://gohugo.io/templates/lists/#order-content">define otherwise</a>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">{{- with .GetPage &#34;tags/featured&#34; -}} 
+{{- range .Pages  -}} 
+
+... deal with a featured page ...
+
+{{- end}}
+</code></pre></div>
+        <nav class="nextprev">
+
+
+<p>
+    Previous: 
+    <br>
+    <a href="http://vendelin.org/geeky/hugo/images-multilingual-pages-hugo/">
+         Including Images in Multilingual Pages with Hugo
+    </a>
+</p>
+
+</nav>
+
+        <div id="disqus_thread"></div>
+    </article>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.js" data-cfasync="false"></script>
+<script>
+window.addEventListener('load', function(){
+  window.cookieconsent.initialise({
+   revokeBtn: "<div class='cc-revoke'></div>",
+   type: "opt-in",
+   theme: "classic",
+   palette: {
+       popup: {
+           background: "#000",
+           text: "#fff"
+        },
+       button: {
+           background: "#fd0",
+           text: "#000"
+        }
+    },
+   content: {
+       message: "This website uses cookies to ensure you get the best experience on our website. Disabling cookies disables comments.",
+       link: "What are cookies",
+       href: "https://2gdpr.com/cookies"
+    },
+    onInitialise: function(status) {
+      if(status == cookieconsent.status.allow) myScripts();
+    },
+    onStatusChange: function(status) {
+      if (this.hasConsented()) myScripts();
+    }
+  })
+});
+
+function myScripts() {
+
+   
+    
+    var disqus_config = function () {
+        this.page.url = "http://vendelin.org/geeky/hugo/summary-linktitle-hugo/";  
+        this.page.identifier = "5cd0424f97d540f63a78085af1295627";   
+    };
+    (function() {  
+        var d = document, s = d.createElement('script');
+
+        s.src = 'https://vendelin-org.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+
+}
+</script>
+
+
+            </main>
+        </div>
+    </body>
+</html>

@@ -100,7 +100,7 @@ following:</p>
 <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>
-            {{ .Title }}
+            {{.Title}}
         <span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;/css/main.css&#34;</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;viewport&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;width=device-width, initial-scale=1&#34;</span><span class="p">&gt;</span>
@@ -108,28 +108,28 @@ following:</p>
     <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">main</span><span class="p">&gt;</span>
-            {{ block &#34;main&#34; . }}
-            {{ end }}
+            {{block &#34;main&#34; .}}
+            {{end}}
         <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div><p>It&rsquo;s the very top and the very bottom of any web page of your site. All pages of your website will
 be rendered using this template by default.  The code in double curly braces will be replaced with
-the parts of the actual content. <code>{{ .Title }}</code> will become the title of an actual page. The <code>{{ block &quot;main&quot; .  }}...{{ end }}</code> part will include template code from a different template file,
-depending on the type of the page – more on that in a moment.</p>
+the parts of the actual content. <code>{{.Title}}</code> will become the title of an actual page. The <code>{{block &quot;main&quot; .}}...{{end}}</code> part will include template code from a different template file, depending on
+the type of the page – more on that in a moment.</p>
 <h2 id="defining-the-singularity-singlehtml">Defining the singularity: <code>single.html</code></h2>
 <p>The <code>single.html</code> file defines how a page with a single unit of content (an article, a cooking
 recipy, etc.) is generated. Open the <code>themes/comic/layouts/_default/single.html</code> and put the
 following text into it:</p>
-<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">{{ define &#34;main&#34; }}
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">{{define &#34;main&#34;}}
 <span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
-    {{ .Content }}
+    {{.Content}}
 <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;debug&#34;</span><span class="p">&gt;</span>
     Page generated with <span class="p">&lt;</span><span class="nt">code</span><span class="p">&gt;</span>single.html<span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-{{ end }}
-</code></pre></div><p>The code between <code>{{ define &quot;main&quot; }}</code> and <code>{{ end }}</code> corresponds to the code block between <code>{{ block &quot;main&quot; . }}</code> and <code>{{ end }}</code> in <code>baseof.html</code>. Whenever a single page has to be generated,
+{{end}}
+</code></pre></div><p>The code between <code>{{define &quot;main&quot;}}</code> and <code>{{end}}</code> corresponds to the code block between <code>{{block &quot;main&quot; .}}</code> and <code>{{end}}</code> in <code>baseof.html</code>. Whenever a single page has to be generated,
 Hugo will look into the <code>single.html</code> file, look up a block named &ldquo;main&rdquo; in our example, render it
 (that is, replace variables with actual content and other data for that particular page), and nest it
 into <code>baseof.html</code>.</p>
@@ -140,45 +140,46 @@ added at the bottom. Remove it later on.</p>
 navigation.  For displaying multiple units of content – for instance, to list the links to all the
 articles in a section – a separate template is used: <code>list.html</code>. Open
 <code>themes/comic/layouts/_default/list.html</code> and put this text into it:</p>
-<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">{{ define &#34;main&#34; }}
-{{ .Content }}
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">{{define &#34;main&#34;}}
+{{.Content}}
 <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-{{ range .Pages }}
+{{range .Pages}}
     <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ .Permalink }}&#34;</span><span class="p">&gt;</span>
-            {{ .Title }}
+        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{.Permalink}}&#34;</span><span class="p">&gt;</span>
+            {{.LinkTitle}}
         <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-{{ end }}
+{{end}}
 <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;debug&#34;</span><span class="p">&gt;</span>
     Page generated with <span class="p">&lt;</span><span class="nt">code</span><span class="p">&gt;</span>list.html<span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-{{ end }}
-</code></pre></div><p>Iterating through a list of &lsquo;child&rsquo; pages (<code>{{ range .Pages }}</code> block) creates a list item for each page in turn
-with a link to a child page (<code>{{ .Permalink }}</code>) and the title of the page. As
+{{end}}
+</code></pre></div><p>Iterating through a list of &lsquo;child&rsquo; pages (<code>{{range .Pages}}</code> block) creates a list item for each page in turn
+with a link to a child page (<code>{{.Permalink}}</code>) and the (link) title of the page as the link text.
+<a href="http://vendelin.org/geeky/hugo/summary-linktitle-hugo/">Page titles and link titles are discussed in more details here</a>. As
 with a single page, the result is nested into <code>baseof.html</code>.</p>
 <p>A list page can have a content of its own (for instance, a description of a section, category,
-etc.). The <code>{{ .Content }}</code> variable at the top of the block displays such content.</p>
+etc.). The <code>{{.Content}}</code> variable at the top of the block displays such content.</p>
 <p>Notice that it doesn&rsquo;t matter, <em>what</em> exactly is being listed: it can be &lsquo;single&rsquo; pages, or
 sub-sections, sub-categories, sub-anything.</p>
 <h2 id="the-entry-point-indexhtml">The entry point: <code>index.html</code></h2>
 <p>That&rsquo;s the starting point of your website, and thus a separate template. Open
 <code>themes/comic/layouts/index.html</code> (empty by default) and put this into it:</p>
-<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">{{ define &#34;main&#34;}}
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">{{define &#34;main&#34;}}
 <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-{{ range .Site.Sections }}
+{{range .Site.Sections}}
     <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ .Permalink }}&#34;</span><span class="p">&gt;</span>
-            {{ .Title }}
+        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{.Permalink}}&#34;</span><span class="p">&gt;</span>
+            {{.LinkTitle}}
         <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-{{ end }}
+{{end}}
 <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
     Page generated with <span class="p">&lt;</span><span class="nt">code</span><span class="p">&gt;</span>index.html<span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-{{ end }}
+{{end}}
 </code></pre></div><p>This doesn&rsquo;t differ much from <code>list.html</code> template, but for the sake of diversity, we are iterating
 over a global variable, <code>.Site.Sections</code>, containing the top sections of your site. Needless to say,
 it is a rather unassuming front page for a website, and should be re-designed later. For now,
@@ -204,18 +205,18 @@ template code and a relatively small amount of HTML.</p>
 recurse endlessly. This allows us to create a partial that would produce the so-called breadcrumbs
 for easier site navigation:</p>
 <div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">{{- with .Parent -}}
-{{ partial &#34;breadcrumbs.html&#34; . -}}
+{{partial &#34;breadcrumbs.html&#34; . -}}
 {{- if .Parent -}}
 <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>:<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
 {{- end -}}
-<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ .Permalink }}&#34;</span><span class="p">&gt;</span>{{ .LinkTitle }}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{.Permalink}}&#34;</span><span class="p">&gt;</span>{{.LinkTitle}}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 {{- end -}}
 </code></pre></div><p>In case you are not familiar with the jargon: breadcrumbs is a sequence of links starting (from the
 right) with the parent page, then the parent of the parent, and so on up to the home page. Dropping
 breadcrumbs to mark a path in a labyrinth is probably where the terms originates from.</p>
 <p>Save this partial under <code>layouts/partials/breadcrumbs.html</code> subdirectory of your theme.
 It can be included into another template like this:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">{{ partial &#34;breadcrumbs.html&#34; . }}
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">{{partial &#34;breadcrumbs.html&#34; .}}
 </code></pre></div><p><strong>Mind the dot!</strong> The &lsquo;dot&rsquo; passes the context to the partial. Without it, no variables will be
 available there.</p>
 <p>Since we want breadcrumbs on every page of our site, let&rsquo;s include it into
@@ -224,18 +225,18 @@ available there.</p>
 <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>
-            {{ .Title }}
+            {{.Title}}
         <span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;/css/main.css&#34;</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;viewport&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;width=device-width, initial-scale=1&#34;</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;utf-8&#34;</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-        {{ partial &#34;breadcrumbs.html&#34; . }}
+        {{partial &#34;breadcrumbs.html&#34; .}}
         <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container&#34;</span><span class="p">&gt;</span>
             <span class="p">&lt;</span><span class="nt">main</span><span class="p">&gt;</span>
-                {{ block &#34;main&#34; . }}
-                {{ end }}
+                {{block &#34;main&#34; .}}
+                {{end}}
             <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
         <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>

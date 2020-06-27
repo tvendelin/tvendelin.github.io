@@ -129,12 +129,22 @@ Of course, having an image under static/img/IMAG0024.jpg, you can include it any
     </item>
     
     <item>
+      <title>Featured Content using Hugo: Page Summary and LinkTitle</title>
+      <link>http://vendelin.org/geeky/hugo/summary-linktitle-hugo/</link>
+      <pubDate>Mon, 22 Jun 2020 19:23:27 +0200</pubDate>
+      
+      <guid>http://vendelin.org/geeky/hugo/summary-linktitle-hugo/</guid>
+      <description>Putting the Best Foot Forward Promoting certain articles on the front page of your Hugo managed site will be the next step after creating some content. You will need a summary for each such page, and a text that will appear in links – a link title.
+Page Title and Link Title Yes, a page can have more than one title. There are linkTitle and title front matter parameters, and there are corresponding {{.</description>
+    </item>
+    
+    <item>
       <title>The Official Public Brain-Dump of Toomas Vendelin</title>
       <link>http://vendelin.org/about/</link>
       <pubDate>Tue, 16 Jun 2020 16:06:51 +0200</pubDate>
       
       <guid>http://vendelin.org/about/</guid>
-      <description>About This Website The official public brain-dump of Toomas Vendelin is the most accurate description.
+      <description>About This Website The official public brain-dump of Toomas Vendelin would be the most accurate description.
 This is a personal website, that is, it is an unsystematic collection of texts and pictures that someone else might find useful and/or entertaining. It is not a blog, as I&amp;rsquo;m not logging anything in chronological order.
 About Me I&amp;rsquo;m a Linux system engineer and a certified Java developer in one package. Before that, for over 20 years I&amp;rsquo;ve been a professional photographer and a small publisher.</description>
     </item>

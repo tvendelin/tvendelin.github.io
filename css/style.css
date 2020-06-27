@@ -19,7 +19,7 @@ body{
 }
 
 div.page {
-    margin: 2rem;
+    margin: 1rem;
 }
 
 h1, h2, h3, h4, h5, h6
@@ -100,7 +100,8 @@ h3 > code {
 }
 
 p > code {
-    font-size: 0.8rem;
+    font-family: "Source Code Pro", monospace;
+    font-size: 0.9rem;
     background-color: #eee;
     padding: 0.1rem 0.2rem;
 }
@@ -209,7 +210,7 @@ a:hover.teaser {
 }
 
 .sbox p {
-    font-size: 0.9rem;
+    font-size: 1rem;
     margin-top: 0;
 }
 
@@ -396,6 +397,10 @@ nav.dropdown{
 
 @media screen and (min-width: 850px) {
 
+    div.page {
+        margin: 2rem;
+    }
+
     /* grid */
     .container{
         display: grid;
@@ -441,6 +446,12 @@ nav.dropdown{
         grid-column: 12/17;
         grid-row: 1;
     }
+
+    .sbox p {
+        font-size: 0.9rem;
+        margin-top: 0;
+    }
+
 
     /* Sections and Site translations nav bar */
 
