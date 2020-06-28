@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
     <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162948019-2"></script>
         <title>
             Using Git: A Dialogue Between a Language Teacher and a Linux Sysadmin
         </title>
@@ -99,42 +100,9 @@ buttons on a web page, and editing text in a web form, essentially.&rsquo;</p>
 
         <div id="disqus_thread"></div>
     </article>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.js" data-cfasync="false"></script>
-<script>
-window.addEventListener('load', function(){
-  window.cookieconsent.initialise({
-   revokeBtn: "<div class='cc-revoke'></div>",
-   type: "opt-in",
-   theme: "classic",
-   palette: {
-       popup: {
-           background: "#000",
-           text: "#fff"
-        },
-       button: {
-           background: "#fd0",
-           text: "#000"
-        }
-    },
-   content: {
-       message: "This website uses cookies to ensure you get the best experience on our website. Disabling cookies disables comments.",
-       link: "What are cookies",
-       href: "https://2gdpr.com/cookies"
-    },
-    onInitialise: function(status) {
-      if(status == cookieconsent.status.allow) myScripts();
-    },
-    onStatusChange: function(status) {
-      if (this.hasConsented()) myScripts();
-    }
-  })
-});
+    <script>
+function disqus() {
 
-function myScripts() {
-
-   
-    
     var disqus_config = function () {
         this.page.url = "http://vendelin.org/geeky/git-language-learn/dialogue/";  
         this.page.identifier = "d318a24392c2fb410fe21a87aa557e35";   
@@ -149,10 +117,35 @@ function myScripts() {
     })();
 
 }
+
+window.addEventListener('load', function(event){
+    var decn = cookieDecision();
+
+    if(decn) {
+        const accept = decn.split('=')[1];
+        if( accept == 1 ){
+            disqus();
+        }
+    }
+
+    document.getElementById('accept').addEventListener('click', function (){
+        disqus();
+    });
+});
 </script>
 
 
             </main>
+        </div>
+        <div id="gdpr">
+        <div class="cookie-consent">
+            <p>
+                We use third-party cookies for analytics and comments. Disabling cookies disables comments.
+            </p>
+            <a id="reject" href="#">Reject</a>
+            <a id="accept" href="#">Accept</a>
+
+        </div>
         </div>
     </body>
 </html>

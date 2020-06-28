@@ -1,9 +1,11 @@
 /*
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;400;500;600;700;900&display=swap');
-*/
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans+Condensed:wght@300;700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Source+Code+Pro:wght@200;300;400;500;600;700&family=Source+Serif+Pro:wght@400;600;700&display=swap');
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital@0;1&family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&family=Open+Sans:ital@0;1&family=Source+Code+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
 * {
     margin-block-start: 0em;
     margin-block-end: 0em;
@@ -20,6 +22,54 @@ body{
 
 div.page {
     margin: 1rem;
+}
+
+#gdpr {
+    color: white;
+    background-color: #333;
+    z-index: 20;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#gdpr a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    padding: 0.3rem 1rem;
+    width: min-content;
+}
+
+.cookie-consent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+    margin: 0.5rem 2rem;
+}
+
+.cookie-consent > p {
+    grid-column: 1/3;
+    grid-row: 1;
+    max-width: max-content;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+#reject {
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: center;
+    background-color: #666;
+    color: #ccc;
+}
+
+#accept {
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: center;
+    background-color: #090;
 }
 
 h1, h2, h3, h4, h5, h6
@@ -486,4 +536,31 @@ nav.dropdown{
     .box-shadow-menu {
         display: none;
     }
+
+    .cookie-consent {
+        display: grid;
+        grid-template-columns: auto min-content min-content;
+        column-gap: 2rem;
+        margin: 0.5rem 2rem;
+    }
+
+    .cookie-consent > p {
+        grid-column: 1;
+        max-width: max-content;
+        margin: 0;
+    }
+
+    #reject {
+        grid-column: 2;
+        grid-row: 1;
+        background-color: #666;
+        color: #ccc;
+    }
+
+    #accept {
+        grid-column: 3;
+        grid-row: 1;
+        background-color: #090;
+    }
+
 }
