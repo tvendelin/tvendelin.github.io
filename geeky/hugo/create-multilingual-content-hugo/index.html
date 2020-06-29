@@ -1,14 +1,15 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162948019-2"></script>
         <title>
             Multilingual Content With Hugo
         </title>
+        <meta name="description" content="Content translation, template internationalization, plurals in other languages">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="utf-8">
         <link rel="stylesheet" href="/css/perldoc.css">
         <link rel="stylesheet" href="/css/style.css">
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162948019-2"></script>
         <script src="/js/hamburger.js"></script>
     </head>
     <body>
@@ -66,7 +67,7 @@ content file (notice <code>ru</code> in the file name):</p>
 <div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">---
 title: &#34;Морж и Плотник&#34;
 date: 2020-05-10T11:51:48+02:00
-draft: false
+draft: true
 slug: &#34;морж-и-плотник&#34;
 ---
 <span class="gh"># Морж и Плотник
@@ -122,7 +123,7 @@ element is skipped.</p>
 <div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">---
 title: &#34;Mad Gardeners Song&#34;
 date: 2020-05-11T18:58:10+02:00
-draft: false
+draft: true
 ---
 
 <span class="gh"># The Mad Gardener’s Song
@@ -211,7 +212,7 @@ little experiment:</p>
 <div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">---
 title: &#34;Ships&#34;
 date: 2020-05-11T19:50:44+02:00
-draft: false
+draft: true
 count: 16
 ---
 </code></pre></div><p>Hugo provides for defining your own front matter parameters. They can be accessed from templates and

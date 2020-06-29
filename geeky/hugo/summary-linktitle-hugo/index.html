@@ -1,14 +1,15 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162948019-2"></script>
         <title>
-            Featured Content using Hugo: Page Summary and LinkTitle
+            Featuring Content with Hugo: Page Summary and LinkTitle
         </title>
+        <meta name="description" content="Promoting articles on the front page and customizing links">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="utf-8">
         <link rel="stylesheet" href="/css/perldoc.css">
         <link rel="stylesheet" href="/css/style.css">
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162948019-2"></script>
         <script src="/js/hamburger.js"></script>
     </head>
     <body>
@@ -53,8 +54,8 @@ a <code>title</code> in the front matter, and always use <code>{{.LinkTitle}}</c
 <code>linkTitle</code> is not defined, <code>{{.LinkTitle}}</code> will fall back to the value of <code>title</code>. <code>{{.Title }}</code> template variable should be used for HTML <code>&lt;title&gt;</code> tag only.</p>
 <p>This way, you can have different link text and HTML <code>&lt;title&gt;</code> for a page, if need be.</p>
 <h2 id="summary-or-summaries">Summary (or Summaries)</h2>
-<p>Typically, you need a summary of an article – to feature it on your front page, or to display it
-next to a page link on a list page. Using page bundles allows for a flexible solution. Decide, what
+<p>Typically, you need a summary of an article – to feature it on your front page.
+Using page bundles allows for a flexible solution. Decide, what
 you would call the summary files in your project (<code>summary.md</code> sounds particularly creative), fetch
 it as you would fetch any other page resource, and include its content where needed:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">{{- with .Resources.GetMatch &#34;summary.md&#34; -}} 
@@ -62,8 +63,7 @@ it as you would fetch any other page resource, and include its content where nee
 {{- end -}} 
 </code></pre></div><p>The translations will be picked according to the language of the page, of course, so for
 <code>index.ru.md</code> the <code>summary.ru.md</code> will be looked up.</p>
-<p>This approach also allows to have multiple summaries if need be. Say, one for a &lsquo;featured&rsquo; section
-on the front page, and another for the listings.</p>
+<p>This approach also allows to have multiple summaries if need be.</p>
 <h2 id="selecting-what-to-feature">Selecting What to Feature</h2>
 <p>You need a way to select a few articles for the front page. I find using tags and weights the
 simplest solution.</p>

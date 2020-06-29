@@ -1,14 +1,15 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162948019-2"></script>
         <title>
             Create Your First Page With Hugo
         </title>
+        <meta name="description" content="Creating content with Hugo – the basics">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="utf-8">
         <link rel="stylesheet" href="/css/perldoc.css">
         <link rel="stylesheet" href="/css/style.css">
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162948019-2"></script>
         <script src="/js/hamburger.js"></script>
     </head>
     <body>
@@ -55,13 +56,13 @@
 section between the triple dashes is called &lsquo;front matter&rsquo; on planet Hugo. On my planet
 we might have called it &lsquo;metadata&rsquo; or &lsquo;page parameters&rsquo;. Whatever it&rsquo;s called, it contains variables specific to your
 page in YAML format. The <code>title</code> holds the HTML title of your page, <code>date</code> is the timestamp of when
-the content file has been created, and <code>draft: false</code> tells Hugo not to generate the page yet when
+the content file has been created, and <code>draft: true</code> tells Hugo not to generate the page yet when
 building your site. Drafts are visible, though, when you run Hugo server with <code>-D</code> option.</p>
 <p>Let&rsquo;s add some poetry to the bottom of the file. The result should look like this:</p>
 <div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">---
 title: &#34;The Walrus and the Carpenter&#34;
 date: 2020-05-09T15:26:09+02:00
-draft: false
+draft: true
 ---
 
 <span class="gh"># The Walrus and the Carpenter
@@ -102,7 +103,7 @@ Let&rsquo;s add a header to the content part of the file:</p>
 <div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">---
 title: &#34;Poetry&#34;
 date: 2020-05-10T12:14:02+02:00
-draft: false
+draft: true
 ---
 
 <span class="gh"># Some Poetry for the Sake of Example
