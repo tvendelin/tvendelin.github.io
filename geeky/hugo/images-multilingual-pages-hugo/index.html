@@ -86,11 +86,11 @@ planted into template by that name, conditionally:</p>
 <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;{{.Permalink}}&#34;</span><span class="p">&gt;</span>
 {{end}}
 </code></pre></div><p>There still are inconveniences. First, the image file name has become non-descriptive. Sure, there is
-usually a pile of metainfo hidden in the file, but the file name won&rsquo;t tell much anymore – neither
+usually a pile of meta-info hidden in the file, but the file name won&rsquo;t tell much anymore – neither
 about its content nor the origins. Secondly, we still need to solve the translated captions problem.</p>
 <h2 id="a-composite-page-resource-or-symlinks-to-the-rescue">A Composite Page Resource, or Symlinks to the Rescue</h2>
 <p>Let&rsquo;s create a directory (perhaps even outside our website project), and in this directory for
-each image that we might consider to use, let&rsquo;s create a subdirectory containing the image file
+each image that we might consider to use, let&rsquo;s create a sub-directory containing the image file
 itself and the captions in all necessary languages:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">images/
 └── tantan

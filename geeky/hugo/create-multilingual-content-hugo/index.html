@@ -50,12 +50,12 @@ for short) is a pretty complex task, let&rsquo;s throw together a brief list of<
 <ul>
 <li>The content translations should be added in an orderly manner.</li>
 <li>The content translations should be directly linkable to each other.</li>
-<li>Templates should not contain any hardcoded language-specific text. Instead, translations for such
+<li>Templates should not contain any hard-coded language-specific text. Instead, translations for such
 text should be defined separately and loaded according to the language of the content.</li>
 <li>The inclusion of bundled page resources must be configured in one place only, unless there is need
 to do otherwise. In other words, if the same picture should be included in all five translations
 of the same page, this should be configured in one rather than five places.</li>
-<li>Should a bundled resource have some multilingual dependencies of its own (examle: a photo and text
+<li>Should a bundled resource have some multilingual dependencies of its own (example: a photo and text
 captions in five languages), such dependencies must be bundled with the resource (captions with
 the photo in this example), rather than with the main page of the bundle.</li>
 </ul>
@@ -68,6 +68,7 @@ content file (notice <code>ru</code> in the file name):</p>
 title: &#34;Морж и Плотник&#34;
 date: 2020-05-10T11:51:48+02:00
 draft: true
+description: TBD
 slug: &#34;морж-и-плотник&#34;
 ---
 <span class="gh"># Морж и Плотник
@@ -124,6 +125,7 @@ element is skipped.</p>
 title: &#34;Mad Gardeners Song&#34;
 date: 2020-05-11T18:58:10+02:00
 draft: true
+description: TBD
 ---
 
 <span class="gh"># The Mad Gardener’s Song
@@ -165,7 +167,7 @@ English and &ldquo;Другие языки:&rdquo; in Russian?</p>
 </code></pre></div><p>Our translation should now be visible: <code>i18n</code> function takes care of that. It finds a translation
 file whose name matches the configured language code, and looks up a translation for <code>other_lang</code> in
 that file.</p>
-<p>In my experience, hugo server doesn&rsquo;t always pick the changes in translations, so you might need to
+<p>In my experience, Hugo server doesn&rsquo;t always pick the changes in translations, so you might need to
 restart it.</p>
 <p>Sometimes, you need to pass a numeric parameter to the translation. For instance, to say: &lsquo;There
 are 7 pages in this category&rsquo;.  Adding the magic dot after the string
@@ -213,6 +215,7 @@ little experiment:</p>
 title: &#34;Ships&#34;
 date: 2020-05-11T19:50:44+02:00
 draft: true
+description: TBD
 count: 16
 ---
 </code></pre></div><p>Hugo provides for defining your own front matter parameters. They can be accessed from templates and

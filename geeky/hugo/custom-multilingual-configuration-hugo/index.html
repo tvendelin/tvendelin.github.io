@@ -52,11 +52,24 @@ The rest is really optional.</p>
 <h2 id="configuration-adjustments">Configuration Adjustments</h2>
 <h3 id="i-choose-yaml-and-config-directory">I Choose YAML and config Directory</h3>
 <p>Your project configuration sits by default in <code>config.toml</code> file in the project root directory. This
-isn&rsquo;t the only choice, though. Instead of a single file you can create a <code>config</code> subdirectory, and
+isn&rsquo;t the only choice, though. Instead of a single file you can create a <code>config</code> sub-directory, and
 split your configuration into several files under it, if your configuration will start getting bushy.</p>
 <p>Neither is your file format choice limited to TOML. The
 alternatives are YAML and JSON. I prefer YAML for its uniformity (and maybe out of habit), so I
 shall be using it throughout this tutorial.</p>
+<h3 id="adjust-the-default-archetype">Adjust the Default Archetype</h3>
+<p>An <em>archetype</em> is a boilerplate code for your content files. By default, there is one created
+automatically for you, and it is located under <code>archetypes/default.md</code>. It includes a few parameters
+to for each article you are going to create: title (to become HTML <code>&lt;title&gt;</code> of a generated page),
+date, and draft. Since in all likelihood you would like your pages to have a proper description to
+be exposed in search engine results, add <code>description: TBD</code> parameter as shown here:</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml">---<span class="w">
+</span><span class="w"></span><span class="k">title</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;{{ replace .Name &#34;</span>-<span class="s2">&#34; &#34;</span><span class="w"> </span><span class="s2">&#34; | title }}&#34;</span><span class="w">
+</span><span class="w"></span><span class="k">date</span><span class="p">:</span><span class="w"> </span>{{<span class="w"> </span>.Date<span class="w"> </span>}}<span class="w">
+</span><span class="w"></span><span class="k">draft</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w"></span><span class="k">description</span><span class="p">:</span><span class="w"> </span>TBD<span class="w">
+</span><span class="w"></span>---<span class="w">
+</span></code></pre></div><p>&hellip; where &lsquo;TBD&rsquo; is just a placeholder.</p>
 <h3 id="i-call-it-kontent">I Call It &lsquo;kontent&rsquo;</h3>
 <p>There are two important directories in the root of your project, <code>config</code> and <code>content</code>, that
 compete with each other in terms of <code>&lt;TAB&gt;</code> completion when you work from a terminal. It would be
@@ -65,7 +78,7 @@ instead of <code>cont&lt;TAB&gt;</code>, and <code>c&lt;TAB&gt;</code> instead o
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">mv content kontent
 </code></pre></div><p>You will need to reflect this move in your project configuration, speaking of which&hellip;</p>
 <h2 id="create-a-very-basic-multilingual-configuration">Create a very basic multilingual configuration</h2>
-<p>From your project root, create a subdirectory for default configuration:</p>
+<p>From your project root, create a sub-directory for default configuration:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">mkdir -p config/_default
 </code></pre></div><p>Create the file <code>config/_default/config.yaml</code> with the following content:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">baseURL: &#34;http://example.com/&#34;
@@ -119,7 +132,7 @@ language section from <code>config/_default/config.yaml</code>.</p>
     Previous: 
     <br>
     <a href="https://vendelin.org/geeky/hugo/scaffoldings/">
-         Scaffoldings of a Hugo website
+         Scaffolding of a Hugo website
     </a>
 </p>
 

@@ -56,13 +56,14 @@
 section between the triple dashes is called &lsquo;front matter&rsquo; on planet Hugo. On my planet
 we might have called it &lsquo;metadata&rsquo; or &lsquo;page parameters&rsquo;. Whatever it&rsquo;s called, it contains variables specific to your
 page in YAML format. The <code>title</code> holds the HTML title of your page, <code>date</code> is the timestamp of when
-the content file has been created, and <code>draft: true</code> tells Hugo not to generate the page yet when
+the content file has been created, and <code>draft: true description: TBD</code> tells Hugo not to generate the page yet when
 building your site. Drafts are visible, though, when you run Hugo server with <code>-D</code> option.</p>
 <p>Let&rsquo;s add some poetry to the bottom of the file. The result should look like this:</p>
 <div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">---
 title: &#34;The Walrus and the Carpenter&#34;
 date: 2020-05-09T15:26:09+02:00
 draft: true
+description: TBD
 ---
 
 <span class="gh"># The Walrus and the Carpenter
@@ -104,6 +105,7 @@ Let&rsquo;s add a header to the content part of the file:</p>
 title: &#34;Poetry&#34;
 date: 2020-05-10T12:14:02+02:00
 draft: true
+description: TBD
 ---
 
 <span class="gh"># Some Poetry for the Sake of Example
@@ -115,10 +117,10 @@ draft: true
 restart the server, should it not be the case.</p>
 <p>Now you should be able to navigate all the way to the page with the poem normally.</p>
 <h2 id="a-brief-look-at-our-website-structure-so-far">A Brief Look at our Website Structure so far</h2>
-<p>There are several ways to provide structure (and navigation) for your Hugo-genegated website. The
+<p>There are several ways to provide structure (and navigation) for your Hugo-generated website. The
 simplest is by the means of <em>sections</em>. Sections are just mapped to the directory structure under
 the content directory of your project (<code>kontent</code> in our case). Each section has its own section
-page, either impilicitly (as with our &lsquo;Poetries&rsquo; case earlier), or explicitly, if you create an
+page, either implicitly (as with our &lsquo;Poetries&rsquo; case earlier), or explicitly, if you create an
 <code>_index.md</code> in the section&rsquo;s directory (mind the underscore).</p>
 <p>The empty sections are skipped by Hugo, so it is probably a good idea to create an <code>_index.md</code> file in each
 subsection straight away.</p>

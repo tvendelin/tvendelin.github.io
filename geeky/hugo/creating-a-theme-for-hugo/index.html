@@ -4,7 +4,7 @@
         <title>
             Creating a Theme for Hugo
         </title>
-        <meta name="description" content="">
+        <meta name="description" content="Create custom Hugo Theme Step by Step">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="utf-8">
         <link rel="stylesheet" href="/css/perldoc.css">
@@ -49,14 +49,14 @@ site looks like, and are <em>completely independent of your site content</em>. T
 can be used in many different websites. In software lingo this is known as the &lsquo;separation of
 concerns&rsquo; principle, which reminds of an old Swedish joke claiming that policemen always patrol in
 pairs because one can read and another can write.</p>
-<p>Jokes aside, though, you can have several themes under <code>themes</code> subdirectory and switch between them
+<p>Jokes aside, though, you can have several themes under <code>themes</code> sub-directory and switch between them
 by changing a single parameter in your project configuration; or, if you so choose, you might share
 the theme you&rsquo;ve created with the world. As you can imagine, there is also a lot of Hugo themes
-available already, but it is still worth to explore a bit, how a Hugo theme is organised.</p>
+available already, but it is still worth to explore a bit, how a Hugo theme is organized.</p>
 <p>So, let&rsquo;s create a theme (I&rsquo;ll call it &lsquo;comic&rsquo; – it&rsquo;s just a name):</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ hugo new theme comic
 Creating theme at /Users/tom/learn/hugo/multilingua/themes/comic
-</code></pre></div><p>Running <code>tree</code> command reveals the new subtree under <code>themes/comic</code>. It&rsquo;s quite similar to the structure
+</code></pre></div><p>Running <code>tree</code> command reveals the new sub-tree under <code>themes/comic</code>. It&rsquo;s quite similar to the structure
 of our main project, but <code>content/</code> directory and <code>config.toml</code> file are missing:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ tree
 .
@@ -91,18 +91,19 @@ of our main project, but <code>content/</code> directory and <code>config.toml</
         │   ├── css
         │   └── js
         └── theme.toml
-</code></pre></div><p>The crucially important HTML template files are those under  <code>_default</code> subfolder and <code>index.html</code>.
+</code></pre></div><p>The crucially important HTML template files are those under  <code>_default</code> sub-folder and <code>index.html</code>.
 To generate your site with Hugo, these should be sensibly configured. It doesn&rsquo;t happen by default
 (all of them except <code>baseof.html</code> are just empty). So, let&rsquo;s get this done.</p>
 <h2 id="the-mother-of-all-templates-baseofhtml">The mother of all templates: <code>baseof.html</code></h2>
 <p>Open the <code>themes/comic/layouts/_default/baseof.html</code> file and replace its contents with the
 following:</p>
 <div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;{{ .Language.Lang }}&#34;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>
             {{.Title}}
         <span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;description&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;{{ .Description }}&#34;</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;/css/main.css&#34;</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;viewport&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;width=device-width, initial-scale=1&#34;</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;utf-8&#34;</span><span class="p">&gt;</span>
@@ -117,10 +118,10 @@ following:</p>
 </code></pre></div><p>It&rsquo;s the very top and the very bottom of any web page of your site. All pages of your website will
 be rendered using this template by default.  The code in double curly braces will be replaced with
 the parts of the actual content. <code>{{.Title}}</code> will become the title of an actual page. The <code>{{block &quot;main&quot; .}}...{{end}}</code> part will include template code from a different template file, depending on
-the type of the page – more on that in a moment.</p>
+the type of the page – more on that in a moment. We shall discuss <code>{{.Language.Lang}} and </code>{{.Description}}` later, although you likely understand already what they do.</p>
 <h2 id="defining-the-singularity-singlehtml">Defining the singularity: <code>single.html</code></h2>
 <p>The <code>single.html</code> file defines how a page with a single unit of content (an article, a cooking
-recipy, etc.) is generated. Open the <code>themes/comic/layouts/_default/single.html</code> and put the
+recipe, etc.) is generated. Open the <code>themes/comic/layouts/_default/single.html</code> and put the
 following text into it:</p>
 <div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">{{define &#34;main&#34;}}
 <span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
@@ -215,7 +216,7 @@ for easier site navigation:</p>
 </code></pre></div><p>In case you are not familiar with the jargon: breadcrumbs is a sequence of links starting (from the
 right) with the parent page, then the parent of the parent, and so on up to the home page. Dropping
 breadcrumbs to mark a path in a labyrinth is probably where the terms originates from.</p>
-<p>Save this partial under <code>layouts/partials/breadcrumbs.html</code> subdirectory of your theme.
+<p>Save this partial under <code>layouts/partials/breadcrumbs.html</code> sub-directory of your theme.
 It can be included into another template like this:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">{{partial &#34;breadcrumbs.html&#34; .}}
 </code></pre></div><p><strong>Mind the dot!</strong> The &lsquo;dot&rsquo; passes the context to the partial. Without it, no variables will be
@@ -301,9 +302,9 @@ theme:</p>
 you&rsquo;ve got a clear idea about that, you should probably re-design your from page template to put
 your best foot forward, style your website properly, maybe add
 scripts under <code>static/js</code>, and create a <code>404.html</code> page, which will be handy if you host your site on
-Github.</p>
+GitHub.</p>
 <p>If you are at home with Git, consider making your theme a separate Git project and include it in
-your main site repository as a submodule.</p>
+your main site repository as a sub-module.</p>
 
         <nav class="nextprev">
 
