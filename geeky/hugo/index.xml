@@ -16,8 +16,8 @@
       <pubDate>Tue, 02 Jun 2020 19:53:32 +0200</pubDate>
       
       <guid>https://vendelin.org/geeky/hugo/introduction-multilngual-blogging-hugo/</guid>
-      <description>Hugo is a tool for building a multilingual static site with zero-budget, without the hurdles of maintaining any web- or database servers.
-What This Tutorial is, What it is Not, and How it has Come to Existence. A friend asked me to help her with a website, and after a quick discussion it was clear that what she needs is a static site generator. So I&amp;rsquo;ve decided to take Hugo on a test-ride.</description>
+      <description>What is Hugo Hugo is a tool for building a multilingual static site. Combined with hosting on GitHub, your site will run on zero-budget, and without the hurdles of maintaining any web- or database servers. You will also enjoy the full control over your code.
+Hugo allows you to separate writing content (you travel stories, cooking recipes, etc.) from designing your web site. You will need to design your HTML templates, write your stories, and Hugo will make the two a happy marriage with just a single four-letter word you type in a terminal.</description>
     </item>
     
     <item>
