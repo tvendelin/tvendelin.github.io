@@ -2,9 +2,9 @@
 <html lang="en">
     <head>
         <title>
-            Install Hugo
+            Customize Web Page Layout: Hugo Content Types
         </title>
-        <meta name="description" content="Quickest Hugo installation possible">
+        <meta name="description" content="Different type of content may require a different page design. Hugo Content Types provide for that.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="utf-8">
         <link rel="stylesheet" href="/css/perldoc.css">
@@ -44,47 +44,42 @@
     <article class="main-single">
         
 
-        <h1 id="install-it">Install it</h1>
-<p>Hugo comes in a single binary file. Download the archive from  <a href="https://github.com/gohugoio/hugo/releases" target="_blank">releases
-page</a>
- to your <code>~/Downloads</code> directory.  The version and
-checksums in the examples will likely be different, of course.</p>
-<p>Calculate the checksum:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">openssl sha256 -hex -r ~/Downloads/hugo_0.69.2_macOS-64bit.tar.gz
-f58e9312ee292c082c5833a128e751c1d07c5fb0da1b7584c09131f18e2ccf52 */Users/you/Downloads/hugo_0.69.2_macOS-64bit.tar.gz
-</code></pre></div><p>Verify that the checksum matches the one listed in <code>hugo_0.69.2_checksums.txt</code> file, that can
-be found on the same releases page. Extract the archive you&rsquo;ve just verified:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">tar zxvf ~/Downloads/hugo_0.69.2_macOS-64bit.tar.gz
-</code></pre></div><p>Copy the <code>hugo</code> executable to a directory in your <code>$PATH</code>.  <code>/usr/local/bin</code> should fit the bill.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo cp ~/Downloads/hugo_0.69.2_macOS-64bit/hugo /usr/local/bin/
-</code></pre></div><p>Make sure the file is globally executable (so far, it has been by default):</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo chmod 0755 /usr/local/bin/hugo
-</code></pre></div><p>Verify by running</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo help
-</code></pre></div><p>If you see a message like the one below (shortened here), you are done!</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo is the main command, used to build your Hugo site.
-
-Hugo is a Fast and Flexible Static Site Generator
-built with love by spf13 and friends in Go.
-
-... snip ...
-</code></pre></div>
-        <nav class="nextprev">
-
-<p>
-    Next: 
-    <br>
-    <a href="https://vendelin.org/geeky/hugo/scaffoldings/">
-         Scaffolding of a Hugo website
-    </a>
+        <h1 id="stretching-the-procrustean-bed-custom-layouts-by-hugo-content-types">Stretching the Procrustean Bed: Custom Layouts by Hugo Content Types</h1>
+<p>Style consistency is important, and one of the benefits of generating pages with Hugo (as opposed to
+editing HTML code for each page directly) is a very little amount of HTML code to handle.  So far,
+all the HTML we used were just four (!) template files plus a partial for the breadcrumbs and an
+image markdown hook. However, some types of content inevitably won&rsquo;t fit the Procrustean bed of a
+simplistic theme.</p>
+<h2 id="example-problems">Example Problems</h2>
+<p>Let&rsquo;s assume you will blog about programming, cooking and traveling – pretty usual
+blogging topics. Now, you want each of your travel page to start with a theme-setting photo, and at
+the bottom there should be included a map of the area you are writing about. Your cooking articles
+should include a YouTube video and appropriately formatted list of ingredients, and a photo of the
+dish you are writing about. It might make sense to include the list of ingredients as a separate
+page resource.</p>
+<p>You can chop your content in a manner of the legendary Procrustes, but
+some may argue you should instead customize the bed, that is, your templates.</p>
+<h2 id="hugo-content-types">Hugo Content Types</h2>
+<p>Each page in Hugo has a <em>content type</em>. By default, it is the name of the top-most section the page
+belongs to. However, this can be overridden with the built-in <code>type:</code> front matter parameter.</p>
+<p>Both the theme and the project directories contain a <code>layouts</code> sub-directory. These are the places
+where you define your custom templates. Just create a directory <code>layouts/&lt;TYPE&gt;</code>, and create any of
+<code>baseof.html</code>, <code>single.html</code> or <code>list.html</code> – whichever you need to customize. And you can even
+create the <a href="https://gohugo.io/getting-started/configuration-markup#markdown-render-hooks" target="_blank">markdown
+hooks</a>
+ for images,
+links and headings.</p>
+<p>Read up on <a href="https://gohugo.io/templates/lookup-order" target="_blank">Hugo template lookup order</a>
 </p>
+
+        <nav class="nextprev">
 
 
 <p>
     Previous: 
     <br>
-    <a href="https://vendelin.org/geeky/hugo/introduction-multilngual-blogging-hugo/">
-         Multilingual Blogging with Hugo - Introduction
+    <a href="https://vendelin.org/geeky/hugo/summary-linktitle-hugo/">
+         Featuring Content with Hugo: Page Summary and LinkTitle
     </a>
 </p>
 
@@ -96,8 +91,8 @@ built with love by spf13 and friends in Go.
 function disqus() {
 
     var disqus_config = function () {
-        this.page.url = "https://vendelin.org/geeky/hugo/install-hugo/";  
-        this.page.identifier = "abfddf0564575cc9105f80c700dee659";   
+        this.page.url = "https://vendelin.org/geeky/hugo/layout-customize-hugo/";  
+        this.page.identifier = "2c9e6d355ed29d8dfc1769f7be09f889";   
     };
     (function() {  
         var d = document, s = d.createElement('script');

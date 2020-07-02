@@ -16,7 +16,7 @@
       <pubDate>Fri, 15 May 2020 16:24:41 +0200</pubDate>
       
       <guid>https://vendelin.org/geeky/git-language-learn/dialogue/</guid>
-      <description>When a Time Machine Met a Kitchen Blender&amp;hellip; &amp;lsquo;What is Git?&#39;, Yuni asks. Yuni is an online teacher of Indonesian and an aspiring Linux user.
+      <description>When a Time Machine Met a Kitchen Blender&amp;hellip; &amp;lsquo;What is Git?&amp;rsquo;, Yuni asks. Yuni is an online teacher of Indonesian and an aspiring Linux user.
 &amp;lsquo;Well, it&amp;rsquo;s sort of a cross between a time machine and a kitchen blender, the one you make your smoothies with from all these exotic fruits that grow in your backyard&amp;rsquo;, Toomas responds. Toomas is a programmer and a Linux sysadmin.
 &amp;lsquo;I know my kitchen blender A to Z&amp;rsquo;, says Yuni proudly.</description>
     </item>
@@ -71,7 +71,7 @@ Congratulations! Your new Hugo site is created in /Users/tom/learn/hugo/multilin
       <pubDate>Fri, 15 May 2020 16:24:41 +0200</pubDate>
       
       <guid>https://vendelin.org/geeky/git-language-learn/fork-and-complete-grammar-exercise-github/</guid>
-      <description>GitHub for Foreign Language Students Grammar exercises published as a Git repository on GitHub can be forked by a student and completed on GitHub directly. Yuni, an online teacher of Indonesian, has created such a repository (see the previous chapter). It contained just a single exercise. Now, after trying things out, she creates a repository with a set of exercises:
+      <description>GitHub for Foreign Language Students Grammar exercises published as a Git repository on GitHub can be forked by a student and completed on GitHub directly. Yuni, an online teacher of Indonesian, has created such a repository (see the previous chapter ). It contained just a single exercise. Now, after trying things out, she creates a repository with a set of exercises:
 https://github.com/kartikayuni/Exercise-absolute-beginner
 Maria, a Yuni&amp;rsquo;s student, got a link to that repository from her teacher, and is about to do her first homework on GitHub.</description>
     </item>
@@ -123,9 +123,7 @@ Requirements  The content translations should be added in an orderly manner. The
       <pubDate>Sun, 31 May 2020 19:15:26 +0200</pubDate>
       
       <guid>https://vendelin.org/geeky/hugo/images-multilingual-pages-hugo/</guid>
-      <description>Including Images in Multilingual Pages with Hugo To include images in multilingual pages, there are several approaches, none of them being perfect. This is where the simplicity of Markdown starts to bite.
-Of course, having an image under static/img/IMAG0024.jpg, you can include it anywhere in your Markdown file with
-![&amp;#34;Me near Tantan in West Sahara&amp;#34;](/img/IMAG0024.jpg) There are a couple of problems here. Should you decide to use another image, you will need to edit as many Markdown files as there are translations.</description>
+      <description>Including Images in Multilingual Pages with Hugo Including images in multilingual context is a tricky business. The trick is, an image is a piece of content in its own right, with its own attributes, most important being the caption, which for N languages translates into N captions. In a typical editorial workflow, photos and articles come from two different types of sources (photographers and writers, respectively), and it is a photographer, who writes the captions (in one language at least).</description>
     </item>
     
     <item>
@@ -136,6 +134,15 @@ Of course, having an image under static/img/IMAG0024.jpg, you can include it any
       <guid>https://vendelin.org/geeky/hugo/summary-linktitle-hugo/</guid>
       <description>Putting the Best Foot Forward Promoting certain articles on the front page of your Hugo managed site will be the next step after creating some content. You will need a summary for each such page, and a text that will appear in links – a link title.
 Page Title and Link Title Yes, a page can have more than one title. There are linkTitle and title front matter parameters, and there are corresponding {{.</description>
+    </item>
+    
+    <item>
+      <title>Customize Web Page Layout: Hugo Content Types</title>
+      <link>https://vendelin.org/geeky/hugo/layout-customize-hugo/</link>
+      <pubDate>Thu, 02 Jul 2020 07:36:06 +0200</pubDate>
+      
+      <guid>https://vendelin.org/geeky/hugo/layout-customize-hugo/</guid>
+      <description>Stretching the Procrustean Bed: Custom Layouts by Hugo Content Types Style consistency is important, and one of the benefits of generating pages with Hugo (as opposed to editing HTML code for each page directly) is a very little amount of HTML code to handle. So far, all the HTML we used were just four (!) template files plus a partial for the breadcrumbs and an image markdown hook. However, some types of content inevitably won&amp;rsquo;t fit the Procrustean bed of a simplistic theme.</description>
     </item>
     
     <item>

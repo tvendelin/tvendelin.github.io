@@ -160,7 +160,8 @@ articles in a section – a separate template is used: <code>list.html</code>. O
 {{end}}
 </code></pre></div><p>Iterating through a list of &lsquo;child&rsquo; pages (<code>{{range .Pages}}</code> block) creates a list item for each page in turn
 with a link to a child page (<code>{{.Permalink}}</code>) and the (link) title of the page as the link text.
-<a href="https://vendelin.org/geeky/hugo/summary-linktitle-hugo/">Page titles and link titles are discussed in more details here</a>. As
+<a href="https://vendelin.org/geeky/hugo/summary-linktitle-hugo/">Page titles and link titles are discussed in more details here</a>
+. As
 with a single page, the result is nested into <code>baseof.html</code>.</p>
 <p>A list page can have a content of its own (for instance, a description of a section, category,
 etc.). The <code>{{.Content}}</code> variable at the top of the block displays such content.</p>
@@ -193,7 +194,8 @@ though, we just need to get things working.</p>
 title: &#34;Multilingua&#34;
 contentDir: &#34;kontent&#34;
 theme: &#34;comic&#34;
-</code></pre></div><p>If you now check the <a href="http://localhost:1313">http://localhost:1313</a>, you will see a page saying
+</code></pre></div><p>If you now check the <a href="http://localhost:1313" target="_blank">http://localhost:1313</a>
+, you will see a page saying
 &lsquo;Page generated with index.html&rsquo; (reload may be required). Once you create some content, the page
 will display more than this debugging message, of course.</p>
 <h2 id="done-with-basics">Done with Basics</h2>

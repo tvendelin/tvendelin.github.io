@@ -85,17 +85,20 @@ empty line, and line breaks are created by adding two spaces at the end of line.
 <p>When Hugo builds your site, the markdown is converted to HTML, and then it replaces the variables in
 your templates.</p>
 <p>For more details refer to
-<a href="https://guides.github.com/features/mastering-markdown/">Mastering Markdown</a> at GitHub. It is claimed to be a
+<a href="https://guides.github.com/features/mastering-markdown/" target="_blank">Mastering Markdown</a>
+ at GitHub. It is claimed to be a
 three-minute read.</p>
 <h2 id="paving-the-path-to-your-fist-hugo-page">Paving the Path to Your Fist Hugo Page</h2>
-<p>If you take a look at <a href="http://localhost:1313">http://localhost:1313</a> now, you will see a link leading to &lsquo;Poetries&rsquo;. Wait
+<p>If you take a look at <a href="http://localhost:1313" target="_blank">http://localhost:1313</a>
+ now, you will see a link leading to &lsquo;Poetries&rsquo;. Wait
 a tick&hellip; Wasn&rsquo;t that &lsquo;poetry&rsquo;? I call it a &lsquo;creative default&rsquo;.  We
 shall fix it in a moment, but first let&rsquo;s explore a bit.</p>
 <p>By clicking the link, you will get to the page with a link to &lsquo;The Walrus and the Carpenter&rsquo;. Notice
 that this page was generated using <code>list.html</code> template. Finally, by clicking on yet another link,
 we shall get to the page with the poem. This page is generated using <code>single.html</code>.</p>
 <p>But wait – although the page URL is
-<a href="http://localhost:1313/poetry/lewis-carroll/the-walrus-and-the-carpenter">http://localhost:1313/poetry/lewis-carroll/the-walrus-and-the-carpenter</a>,
+<a href="http://localhost:1313/poetry/lewis-carroll/the-walrus-and-the-carpenter" target="_blank">http://localhost:1313/poetry/lewis-carroll/the-walrus-and-the-carpenter</a>
+,
 we&rsquo;ve never saw a section for <code>lewis-carroll</code>. So, we&rsquo;ve got yet another issue to fix.</p>
 <p>Let&rsquo;s fix the &lsquo;Poetries&rsquo; issue first:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo new poetry/_index.md
@@ -110,11 +113,13 @@ description: TBD
 ---
 
 <span class="gh"># Some Poetry for the Sake of Example
-</span></code></pre></div><p>Now, if you start at <a href="http://localhost:1313">http://localhost:1313</a> you should see a link to &lsquo;Poetry&rsquo; section.</p>
+</span></code></pre></div><p>Now, if you start at <a href="http://localhost:1313" target="_blank">http://localhost:1313</a>
+ you should see a link to &lsquo;Poetry&rsquo; section.</p>
 <p>The second issue – the missing <code>lewis-carroll</code> section – is addressed the very same way:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo new poetry/lewis-carroll/_index.md
 </code></pre></div><p>Even without any content in <code>_index.md</code>, the missing section now appears once you click the
-<a href="http://localhost:1313/poetry/">Poetry</a> link. It should be the single link on the page. You might want to
+<a href="http://localhost:1313/poetry/" target="_blank">Poetry</a>
+ link. It should be the single link on the page. You might want to
 restart the server, should it not be the case.</p>
 <p>Now you should be able to navigate all the way to the page with the poem normally.</p>
 <h2 id="a-brief-look-at-our-website-structure-so-far">A Brief Look at our Website Structure so far</h2>
@@ -144,7 +149,8 @@ sake of experiment, create a deeply nested page:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo new foo/bar/baz/index.md
 </code></pre></div><p>Try to navigate to it from the main page. It works, right? But if you now create an <code>index.md</code> file
 in one of the upstream directories, after restarting the Hugo server you will discover that you
-cannot get any further. And even if you type <a href="http://localhost:1313/foo/bar/baz">http://localhost:1313/foo/bar/baz</a> in browser by
+cannot get any further. And even if you type <a href="http://localhost:1313/foo/bar/baz" target="_blank">http://localhost:1313/foo/bar/baz</a>
+ in browser by
 hand, you will get <code>404 page not found</code> error.</p>
 
         <nav class="nextprev">

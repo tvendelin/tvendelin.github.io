@@ -61,7 +61,8 @@ captions in five languages), such dependencies must be bundled with the resource
 the photo in this example), rather than with the main page of the bundle.</li>
 </ul>
 <h2 id="adding-a-translation-of-a-content-unit">Adding a Translation of a Content Unit</h2>
-<p>This is the simplest part. Since <a href="https://vendelin.org/geeky/hugo/custom-multilingual-configuration-hugo/#create-a-very-basic-multilingual-configuration">we have configured two languages to be used at our site</a>, we can add the Russian translation of &lsquo;The Walrus and the Carpenter&rsquo; now by creating a new
+<p>This is the simplest part. Since <a href="https://vendelin.org/geeky/hugo/custom-multilingual-configuration-hugo/#create-a-very-basic-multilingual-configuration">we have configured two languages to be used at our site</a>
+, we can add the Russian translation of &lsquo;The Walrus and the Carpenter&rsquo; now by creating a new
 content file (notice <code>ru</code> in the file name):</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo new poetry/lewis-carroll/the-walrus-and-the-carpenter/index.ru.md
 </code></pre></div><p>&hellip; and adding the content:</p>
@@ -81,7 +82,8 @@ slug: &#34;морж-и-плотник&#34;
 Что очень странно — ведь тогда
 Была глухая ночь.
 </code></pre></div><p>If you now point your browser to
-<a href="http://localhost:1313/ru/poetry/lewis-carroll/%D0%BC%D0%BE%D1%80%D0%B6-%D0%B8-%D0%BF%D0%BB%D0%BE%D1%82%D0%BD%D0%B8%D0%BA/">http://localhost:1313/ru/poetry/lewis-carroll/морж-и-плотник/</a>, you will see a
+<a href="http://localhost:1313/ru/poetry/lewis-carroll/%d0%bc%d0%be%d1%80%d0%b6-%d0%b8-%d0%bf%d0%bb%d0%be%d1%82%d0%bd%d0%b8%d0%ba/" target="_blank">http://localhost:1313/ru/poetry/lewis-carroll/морж-и-плотник/</a>
+, you will see a
 Russian translation of the immortal rhyme.</p>
 <p>Notice the custom <code>slug</code> parameter, that allows
 to make each translation&rsquo;s URL language-specific, even in a different alphabet. This should
@@ -174,7 +176,7 @@ restart it.</p>
 are 7 pages in this category&rsquo;.  Adding the magic dot after the string
 identifier <code>{{i18n &quot;ship_count&quot; .}}</code> makes the entire page context available in the string
 translation. Just refer to page variables as you would from a template.</p>
-<p>This brings us to a daunting task of handling plurals. Adding &lsquo;s&rsquo; at the end of an English noun
+<p>This brings us to a daunting task of handling plurals. Adding &rsquo;s&rsquo; at the end of an English noun
 doesn&rsquo;t always work (think of <em>mouse – mice</em> or <em>goose – geese</em>), but if you thought it&rsquo;s the worst
 of your problems, let&rsquo;s have some</p>
 <h2 id="fun-with-russian-plurals">Fun With Russian Plurals</h2>
@@ -197,7 +199,8 @@ example for a tutorial. In this example, we shall be counting ships.</p>
 </span><span class="w"></span>- <span class="k">id</span><span class="p">:</span><span class="w"> </span>from_page_context<span class="w">
 </span><span class="w">  </span><span class="k">translation</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Количество: {{.Params.count}}&#34;</span><span class="w">
 </span></code></pre></div><p>Our <code>translation</code> for <code>ship</code> has got quite bushy now, as we have added all plural forms that
-<a href="https://github.com/nicksnyder/go-i18n">go-i18n</a> library supports as of this writing. Hugo will pick
+<a href="https://github.com/nicksnyder/go-i18n" target="_blank">go-i18n</a>
+ library supports as of this writing. Hugo will pick
 the correct variant for the number that you either pass to <code>i18n</code> function directly, like in
 <code>{{i18n &quot;ship&quot; 2}}</code>, or refer to from a translation, like for <code>from_page_context</code> string in the
 example above.</p>
@@ -252,7 +255,8 @@ Create a directory with the same name under <code>layouts</code></p>
 <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
     {{i18n &#34;from_page_context&#34; .}}
 <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</code></pre></div><p>Now, if you point your browser to <a href="http://localhost:1313/ru/numerals/ships">http://localhost:1313/ru/numerals/ships/</a>, you will see Russian
+</code></pre></div><p>Now, if you point your browser to <a href="http://localhost:1313/ru/numerals/ships" target="_blank">http://localhost:1313/ru/numerals/ships/</a>
+, you will see Russian
 plurals in action:</p>
 <pre><code>0: кораблей
 1: корабль

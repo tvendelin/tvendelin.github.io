@@ -47,16 +47,20 @@
         <h1 id="github-for-foreign-language-students">GitHub for Foreign Language Students</h1>
 <p>Grammar exercises published as a Git repository on GitHub can be forked by a student and completed
 on GitHub directly. Yuni, an online teacher of Indonesian, has created such a repository (see the
-<a href="https://vendelin.org/geeky/git-language-learn/grammar-exercise-repository-github/">previous chapter</a>). It contained just a single
+<a href="https://vendelin.org/geeky/git-language-learn/grammar-exercise-repository-github/">previous chapter</a>
+). It contained just a single
 exercise. Now, after trying things out, she creates a repository with a set of exercises:</p>
 <p><a href="https://github.com/kartikayuni/Exercise-absolute-beginner">https://github.com/kartikayuni/Exercise-absolute-beginner</a></p>
 <p>Maria, a Yuni&rsquo;s student, got a link to that repository from her teacher, and is about to do her
 first homework on GitHub.</p>
 <h2 id="forking-and-collaborating">Forking and collaborating</h2>
-<p>Maria creates an account on <a href="https://github.com">GitHub</a>, and forks the repository with exercises.
+<p>Maria creates an account on <a href="https://github.com" target="_blank">GitHub</a>
+, and forks the repository with exercises.
 This is done with a click on the &lsquo;Fork&rsquo; button in the top-right corner of the Yuni&rsquo;s repository
 page.</p>
-<p><img src="/img/fork.png" alt="fork"></p>
+<p><figure class="main">
+    <img src="/img/fork.png" alt="fork"></figure>
+</p>
 <p>Now Maria has her copy (or <em>fork</em>, in geeky speak) of Yuni&rsquo;s repository, which she is free to
 modify. In fact her homework <em>is</em> to modify a file with her first exercise: she has to insert
 missing words in a text.</p>
@@ -64,11 +68,15 @@ missing words in a text.</p>
 GitHub. This doesn&rsquo;t differ much from just editing text in a web form, except that once she saves
 the changes, Maria is asked to add a <em>commit message</em> – a sentence describing the changes that were
 made.</p>
-<p><img src="/img/commit_github.png" alt="Commit"></p>
+<p><figure class="main">
+    <img src="/img/commit_github.png" alt="Commit"></figure>
+</p>
 <p>So, Maria types: &lsquo;Completed exercise indonesian_pronouns.md&rsquo; and pushes the &lsquo;Commit changes&rsquo; button.</p>
 <p>Oki-doki, now it&rsquo;s time to get her exercise checked and possibly corrected. For that, Maria
 invites a <em>collaborator</em> to her repository. This collaborator is her teacher Yuni, of course.</p>
-<p><img src="/img/invite_collaborator.png" alt="Invite collaborator"></p>
+<p><figure class="main">
+    <img src="/img/invite_collaborator.png" alt="Invite collaborator"></figure>
+</p>
 <p>To invite Yuni as a collaborator, Maria clicks the &lsquo;Settings&rsquo; button for her repository, then clicks
 &lsquo;Manage Access&rsquo;, then &lsquo;Invite collaborator&rsquo; and adds Yuni&rsquo;s user name on GitHub. Once she submits
 the form, Yuni will receive her invitation message. Once Yuni accepts the invitation, she will be
@@ -77,15 +85,21 @@ able to change files and perform commits in Maria&rsquo;s repository.</p>
 <p>After a while, Maria receives an automated e-mail from GitHub telling there&rsquo;s a new commit in her
 repository made by Yuni. Maria goes to her repository page on GitHub, and clicks the button saying
 &lsquo;4 commits&rsquo; (the actual number may be different):</p>
-<p><img src="/img/4commits.png" alt="Commits"></p>
+<p><figure class="main">
+    <img src="/img/4commits.png" alt="Commits"></figure>
+</p>
 <p>This displays the history of all <em>commits</em> made to the files in this repository. She clicks the last
 one, &lsquo;Corrected exercise indonesian_pronouns.md&rsquo;. This displays the detailed commit message with
 Yuni&rsquo;s explanations, and also shows the differences between Maria&rsquo;s original version, and the
 corrected one – a <em>diff</em>, in geeky speak.</p>
-<p><img src="/img/diff_github.png" alt="GitHub diff, line by line"></p>
+<p><figure class="main">
+    <img src="/img/diff_github.png" alt="GitHub diff, line by line"></figure>
+</p>
 <p>The line-by-line diff doesn&rsquo;t look appetizing for Maria&rsquo;s taste, so she clicks a page-like icon with
 a hint &lsquo;Display the rich diff&rsquo; (circled in the screenshot above). Much better!</p>
-<p><img src="/img/word_diff_github.png" alt="GitHub diff, word by word"></p>
+<p><figure class="main">
+    <img src="/img/word_diff_github.png" alt="GitHub diff, word by word"></figure>
+</p>
 <p>The errors are now highlighted word-by-word, and it looks pretty much like in an office text-editing
 program. The difference is that Maria is not locked into any particular file format (proprietary or
 not). Her exercise versions are still just plain texts, meaning it is quite easy to manipulate them.
@@ -106,7 +120,9 @@ review the corrections using word-by word diff.</p>
 <p>These steps are done from command line and require some familiarity with Git.</p>
 <h3 id="the-very-short-version-for-mac-and-linux-users">The (very) short version for Mac and Linux Users</h3>
 <p>On GitHub repository page, click &lsquo;Clone or Download&rsquo; button, and copy the URL:</p>
-<p><img src="/img/clone_url.png" alt="Clone from GitHub"></p>
+<p><figure class="main">
+    <img src="/img/clone_url.png" alt="Clone from GitHub"></figure>
+</p>
 <p>In your terminal emulator,</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"># Clone the repository to your computer
 git clone &lt;REPOSITORY URL&gt; my_exercises
@@ -135,7 +151,8 @@ git diff HEAD^ --word-diff=color -- indonesian_pronouns.md
 git diff HEAD^ -U99 --word-diff=color -- indonesian_pronouns.md
 </code></pre></div><h2 id="further-reading">Further Reading</h2>
 <p>I strongly recommend to read up about Git instead of just blindly copying the commands. An excellent
-starting point is a book by Scott Chacon and Ben Straub <a href="https://git-scm.com/book/en/v2">Pro Git</a>.
+starting point is a book by Scott Chacon and Ben Straub <a href="https://git-scm.com/book/en/v2" target="_blank">Pro Git</a>
+.
 It is available online free of charge in quite a few languages.</p>
 
         <nav class="nextprev">
