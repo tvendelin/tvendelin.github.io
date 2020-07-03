@@ -105,6 +105,15 @@ Page Title and Link Title Yes, a page can have more than one title. There are li
     </item>
     
     <item>
+      <title>Spell Check, Build Your Site with Hugo, Publish to GitHub</title>
+      <link>https://vendelin.org/geeky/hugo/spell-check-build-publish-hugo/</link>
+      <pubDate>Fri, 03 Jul 2020 12:56:05 +0200</pubDate>
+      
+      <guid>https://vendelin.org/geeky/hugo/spell-check-build-publish-hugo/</guid>
+      <description>Ready, Spell-Check, Hugo! So, you are happy with the preview provided by the local Hugo server, and you want to publish your site. Make sure git status doesn&amp;rsquo;t show anything uncommitted changes (you do keep versions of your project under control, don&amp;rsquo;t you?). Then, manually or with some shell magic, change the draft front matter parameter to false for the pages you plan to publish. Restart your Hugo server without the -D option and check that nothing is missing.</description>
+    </item>
+    
+    <item>
       <title>Customize Web Page Layout: Hugo Content Types</title>
       <link>https://vendelin.org/geeky/hugo/layout-customize-hugo/</link>
       <pubDate>Thu, 02 Jul 2020 07:36:06 +0200</pubDate>
