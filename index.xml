@@ -127,13 +127,22 @@ Requirements  The content translations should be added in an orderly manner. The
     </item>
     
     <item>
-      <title>Featured Content, Page Summary, Link Text with Hugo</title>
+      <title>Featured Content, Page Summary, Link Texts with Hugo</title>
       <link>https://vendelin.org/geeky/hugo/summary-linktitle-hugo/</link>
       <pubDate>Mon, 22 Jun 2020 19:23:27 +0200</pubDate>
       
       <guid>https://vendelin.org/geeky/hugo/summary-linktitle-hugo/</guid>
       <description>Putting the Best Foot Forward Promoting certain articles on the front page of your Hugo managed site will be the next step after creating some content. You will need a summary for each such page, and a text that will appear in links – a link title.
 Page Title and Link Title Yes, a page can have more than one title. There are linkTitle and title front matter parameters, and there are corresponding {{.</description>
+    </item>
+    
+    <item>
+      <title>Customize Web Page Layout: Hugo Content Types</title>
+      <link>https://vendelin.org/geeky/hugo/layout-customize-hugo/</link>
+      <pubDate>Thu, 02 Jul 2020 07:36:06 +0200</pubDate>
+      
+      <guid>https://vendelin.org/geeky/hugo/layout-customize-hugo/</guid>
+      <description>Stretching the Procrustean Bed: Custom Layouts by Hugo Content Types Style consistency is important, and one of the benefits of generating pages with Hugo (as opposed to editing HTML code for each page directly) is a very little amount of HTML code to handle. So far, all the HTML we used were just four (!) template files plus a partial for the breadcrumbs and an image markdown hook. However, some types of content inevitably won&amp;rsquo;t fit the Procrustean bed of a simplistic theme.</description>
     </item>
     
     <item>
@@ -153,15 +162,6 @@ Internal Links Referencing pages of the same site is done with two shortcodes, r
       
       <guid>https://vendelin.org/geeky/hugo/spell-check-build-publish-hugo/</guid>
       <description>Ready, Spell-Check, Hugo! So, you are happy with the preview provided by the local Hugo server, and you want to publish your site. Make sure git status doesn&amp;rsquo;t show anything uncommitted changes (you do keep versions of your project under control, don&amp;rsquo;t you?). Then, manually or with some shell magic, change the draft front matter parameter to false for the pages you plan to publish. Restart your Hugo server without the -D option and check that nothing is missing.</description>
-    </item>
-    
-    <item>
-      <title>Customize Web Page Layout: Hugo Content Types</title>
-      <link>https://vendelin.org/geeky/hugo/layout-customize-hugo/</link>
-      <pubDate>Thu, 02 Jul 2020 07:36:06 +0200</pubDate>
-      
-      <guid>https://vendelin.org/geeky/hugo/layout-customize-hugo/</guid>
-      <description>Stretching the Procrustean Bed: Custom Layouts by Hugo Content Types Style consistency is important, and one of the benefits of generating pages with Hugo (as opposed to editing HTML code for each page directly) is a very little amount of HTML code to handle. So far, all the HTML we used were just four (!) template files plus a partial for the breadcrumbs and an image markdown hook. However, some types of content inevitably won&amp;rsquo;t fit the Procrustean bed of a simplistic theme.</description>
     </item>
     
     <item>
