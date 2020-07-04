@@ -127,13 +127,23 @@ Requirements  The content translations should be added in an orderly manner. The
     </item>
     
     <item>
-      <title>Featuring Content with Hugo: Page Summary and LinkTitle</title>
+      <title>Featured Content, Page Summary, Link Text with Hugo</title>
       <link>https://vendelin.org/geeky/hugo/summary-linktitle-hugo/</link>
       <pubDate>Mon, 22 Jun 2020 19:23:27 +0200</pubDate>
       
       <guid>https://vendelin.org/geeky/hugo/summary-linktitle-hugo/</guid>
       <description>Putting the Best Foot Forward Promoting certain articles on the front page of your Hugo managed site will be the next step after creating some content. You will need a summary for each such page, and a text that will appear in links – a link title.
 Page Title and Link Title Yes, a page can have more than one title. There are linkTitle and title front matter parameters, and there are corresponding {{.</description>
+    </item>
+    
+    <item>
+      <title>Internal and External Links with Hugo</title>
+      <link>https://vendelin.org/geeky/hugo/cross-reference-external-links-hugo/</link>
+      <pubDate>Sat, 04 Jul 2020 09:11:43 +0200</pubDate>
+      
+      <guid>https://vendelin.org/geeky/hugo/cross-reference-external-links-hugo/</guid>
+      <description>No Page is an Island The Markdown syntax for creating a link is straightforward, but you likely need to make sure that you are not creating any dead links at least internally to your site. You might also want to customize how different links behave. For instance, you may want the external links to open in a new tab, so that you site visitor stays at your site.
+Internal Links Referencing pages of the same site is done with two shortcodes, ref and relref.</description>
     </item>
     
     <item>

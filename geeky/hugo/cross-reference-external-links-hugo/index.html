@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>
+            Internal and External Links with Hugo
+        </title>
+        <meta name="description" content="Reference resources on your site, links to external pages, target=&#34;_blank&#34; attribute">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/css/perldoc.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162948019-2"></script>
+        <script data-ad-client="ca-pub-3806180398510128" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script src="/js/hamburger.js"></script>
+    </head>
+    <body>
+        <nav class="top">
+            <a href="javascript:void(0);" class="box-shadow-menu" onclick="menuDrop()" title="Menu"></a>
+            <a href="https://vendelin.org" class="logo">
+                vendelin.org 
+            </a>
+        </nav>
+        <div id="mobile-menu"></div>
+        <div class="page">
+            <nav class="breadcrumbs">
+                <a href="https://vendelin.org/">Home</a><span>:</span><a href="https://vendelin.org/geeky/">Geeky Stuff</a><span>:</span><a href="https://vendelin.org/geeky/hugo/">Hugo Cookbook for a Multilingual Site</a>
+            </nav>
+            <main class="container">
+            <nav class="menu" id="ndrop">
+    
+    <h2>Sections:</h2>
+    
+        <a href="https://vendelin.org/geeky/" class="menu-section">Geeky Stuff</a>
+    
+        <a href="https://vendelin.org/travel/" class="menu-section">Travel Accounts</a>
+    
+    
+        <a href="https://vendelin.org/about/" class="menu-section">About</a>
+    
+</nav>
+
+
+            
+    <article class="main-single">
+        
+
+        <h1 id="no-page-is-an-island">No Page is an Island</h1>
+<p>The Markdown syntax for creating a link is straightforward, but you likely need to make sure that you
+are not creating any dead links at least internally to your site. You might also want to customize
+how different links behave. For instance, you may want the external links to open in a new tab, so
+that you site visitor stays at your site.</p>
+<h2 id="internal-links">Internal Links</h2>
+<p>Referencing pages of the same site is done with two <em>shortcodes</em>, <code>ref</code> and <code>relref</code>. A shortcode is
+a variable that is mapped to a template, but is meant to be used within a Markdown file.
+You can refer to the full path of a page (that is, relative to your domain) like this:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">{{&lt; ref &#34;/PATH/TO/PAGE&#34; &gt;}}
+</code></pre></div><p>Do not use a trailing slash, it will result in an error.</p>
+<p>The <code>relref</code>, by contrast, uses the path relative to the current page. Place the shortcode into your
+Markdown where you would put the URL, and you are done. If the path is invalid, Hugo server will
+display an error, no matter which page you are at.</p>
+<p>Links to the same content in a different language are covered <a href="https://vendelin.org/geeky/hugo/create-multilingual-content-hugo/#linking-the-translations">here</a>
+</p>
+<p>Read the <a href="https://gohugo.io/content-management/cross-references/" target="_blank">official documentation</a>
+ for more
+details.</p>
+<h2 id="customizing-link-behavior">Customizing Link Behavior</h2>
+<p>The Markdown syntax for creating a link is this:</p>
+<div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">[<span class="nt">Link text</span>](<span class="na">URL &#34;Link title&#34;</span>)
+</code></pre></div><p>&hellip; which translates into this HTML:</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;URL&#34;</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;Link title&#34;</span><span class="p">&gt;</span>Link text<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></div><p>You might need more than that. For instance, as mentioned above, you might want
+to add a <code>target=&quot;_blank&quot;</code> attribute to external links, so that it opens in a new tab or window, and
+your users won&rsquo;t leave your site. The internal links, on the other hand, should probably open in the
+same window.</p>
+<p>Hugo allows you to create markup hooks to your links, images, and headings. A markup hook is a Hugo
+template that sits under <code>layouts/_markup</code> subdirectory either in your project tree or under a theme
+tree. This template receives the entire page context as <code>{{.Page}}</code> variable (<em>not</em> <code>{{.}}</code>, as in
+normal templates), and a number of other variables, referring to Markup parameters. To implement the
+desired behavior, create a
+<code>themes/&lt;NAME&gt;/layouts/_default/_markup/render-link.html</code> file with the following content:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;a href=&#34;{{ .Destination }}&#34; {{ with .Title }} title=&#34;{{ . }}&#34;{{ end }} {{ if strings.HasPrefix .Destination &#34;http&#34; }} target=&#34;_blank&#34;{{ end }}&gt;{{ .Text }}&lt;/a&gt;
+</code></pre></div><p>The gory details are <a href="https://gohugo.io/getting-started/configuration-markup#markdown-render-hooks" target="_blank">officially documented
+here</a>
+, but they do not
+lie exactly on the surface.</p>
+
+        <nav class="nextprev">
+
+<p>
+    Next: 
+    <br>
+    <a href="https://vendelin.org/geeky/hugo/spell-check-build-publish-hugo/">
+         Spell Check, Build Your Site with Hugo, Publish to GitHub
+    </a>
+</p>
+
+
+<p>
+    Previous: 
+    <br>
+    <a href="https://vendelin.org/geeky/hugo/summary-linktitle-hugo/">
+         Featured Content, Page Summary, Link Text with Hugo
+    </a>
+</p>
+
+</nav>
+
+        <div id="disqus_thread"></div>
+    </article>
+    <script>
+function disqus() {
+
+    var disqus_config = function () {
+        this.page.url = "https://vendelin.org/geeky/hugo/cross-reference-external-links-hugo/";  
+        this.page.identifier = "51ffdb020571ad9aded747c729a4899d";   
+    };
+    (function() {  
+        var d = document, s = d.createElement('script');
+
+        s.src = 'https://vendelin-org.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+
+}
+
+window.addEventListener('load', function(event){
+    var decn = cookieDecision();
+
+    if(decn) {
+        const accept = decn.split('=')[1];
+        if( accept == 1 ){
+            disqus();
+        }
+    }
+
+    document.getElementById('accept').addEventListener('click', function (){
+        disqus();
+    });
+});
+</script>
+
+
+            </main>
+        </div>
+        <div id="gdpr">
+        <div class="cookie-consent">
+            <p>
+                We use third-party cookies for analytics and comments. Disabling cookies disables comments.
+            </p>
+            <a id="reject" href="#">Reject</a>
+            <a id="accept" href="#">Accept</a>
+
+        </div>
+        </div>
+    </body>
+</html>
