@@ -118,6 +118,13 @@ in <code>{{.Destination}}</code> variable into the hook.</p>
 image, all we need is to change a single symlink. This also guards us against the embarrassments of using
 a wrong caption.</p>
 <p>A page bundle is a very convenient thing, but I&rsquo;m missing composite page resources.</p>
+<h2 id="and-then-there-are-shortcodes">And Then There are Shortcodes</h2>
+<p>Shortcodes are variables that can be included into Markdown. They have their own templates, which
+are rendered and included into the HTML generated from the Markdown. There is an elaborate built-in
+shortcode for images, <a href="https://gohugo.io/content-management/shortcodes/#figure" target="_blank">figure</a>
+. Though in
+certain cases shortcodes are inevitable, in this particular case it violates the core markdown
+principles – simplicity and readability. Besides, the introduction of markup hooks largely obsoletes it.</p>
 
         <nav class="nextprev">
 
