@@ -83,10 +83,10 @@ image in an article with four language versions. And changing it back ten minute
 change your mind. Four languages = four edits! And watch out for image-caption mismatches – this can
 lead to hilarious (or embarrassing) situations.</p>
 <h2 id="a-composite-page-resource-or-symlinks-to-the-rescue">A Composite Page Resource, or Symlinks to the Rescue</h2>
-<p>This works, if placing just one single image before or after content is enough. In this case, things
-can be resolved at template level.</p>
-<p>Let&rsquo;s create a directory (perhaps even outside our website project), and in this directory for
-each image that we might consider to use, let&rsquo;s create a subdirectory containing the image file
+<p>This approach is rather hackish, as it bluntly misuses the Markdown semantics. It does the trick,
+though.</p>
+<p>Let&rsquo;s create an <code>images</code> directory inside our website project, and in this directory for
+each image that we might consider to use, let&rsquo;s create a sub-directory containing the image file
 itself and the captions in all necessary languages:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">images/
 └── tantan
@@ -94,38 +94,29 @@ itself and the captions in all necessary languages:</p>
     ├── caption.md
     └── caption.ru.md
 </code></pre></div><p>Tantan is a Moroccan town, often considered &lsquo;the gateway&rsquo; to West Sahara, just if you are curious.</p>
-<p>Now, in our page bundle directory, let&rsquo;s create a symlink with a &lsquo;magic&rsquo; name:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">ln -s images/tantan &lt;PATH TO PAGE BUNDLE&gt;/main-image
-</code></pre></div><p>Finally, let&rsquo;s create a dedicated partial for planting an image with a caption in the relevant
-language on top of the content based on our naming convention:</p>
-<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">{{ $caption := .Resources.GetMatch &#34;main-img/caption.*&#34; }}
-{{ with .Resources.GetMatch &#34;main-img/*.jpg&#34; }}
+<p>Now, in our page bundle directory, let&rsquo;s create a symlink:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">ln -s ~/&lt;PATH TO PROJECT&gt;/images/tantan &lt;PATH TO PAGE BUNDLE&gt;/main-image
+</code></pre></div><p>Let&rsquo;s create an image markup hook:</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">{{ $img := .Page.Resources.GetMatch (print .Destination &#34;/*.jpg&#34;) }}
+{{ $cap := .Page.Resources.GetMatch (print .Destination &#34;/caption.*&#34;) }}
+{{ if $img }}
 <span class="p">&lt;</span><span class="nt">figure</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;main&#34;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;{{ .Permalink }}&#34;</span><span class="p">&gt;</span>
-    {{ with $caption }}
+    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;{{ $img.Permalink }}&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;{{ chomp $cap.Plain }}&#34;</span><span class="p">&gt;</span>
+    {{ with $cap }}
     <span class="p">&lt;</span><span class="nt">figcaption</span><span class="p">&gt;</span>
-        {{ .Content }}
+        {{ chomp $cap.Plain }}
     <span class="p">&lt;/</span><span class="nt">figcaption</span><span class="p">&gt;</span>
     {{ end }}
 <span class="p">&lt;/</span><span class="nt">figure</span><span class="p">&gt;</span>
 {{ end }}
-</code></pre></div><p>We need to capture the caption into a variable (<code>$caption</code>) while still in <code>.Page</code> context, so that
-we can refer to it from within the image resource&rsquo;s context later. If there happens to be no
-caption, the relevant block of code will be simply ignored.</p>
-<p>This solves our concern with descriptiveness of the image file name, since we can easily see where
-the symlink points to with <code>ls -l</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">main-img -&gt; /home/me/images/tantan
-</code></pre></div><p>The captions are unambiguously connected to the image. Best of all, if we want to use a different
-image, all we need is to change is a single symlink. This also guards us against the embarrassments of using
+</code></pre></div><p>Finally, let&rsquo;s refer to our image from the content file:</p>
+<div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">![](main-img)
+</code></pre></div><p>Again, this is ugly, as I&rsquo;ve just stuck a symlink name in the place of image URL (this is passed on
+in <code>{{.Destination}}</code> variable into the hook.</p>
+<p>On the bright side, the captions are unambiguously related to the image. Best of all, if we want to use a different
+image, all we need is to change a single symlink. This also guards us against the embarrassments of using
 a wrong caption.</p>
-<p>Unfortunately, it didn&rsquo;t work with markup render hooks (although it <em>seemed</em> to work with
-hugo server).</p>
-<h2 id="and-then-there-are-shortcodes">And Then There are Shortcodes</h2>
-<p>Shortcodes are variables that can be included into Markdown. They have their own templates, which
-are rendered and included into the HTML generated from the Markdown. There is an elaborate built-in
-shortcode for images, figure . Though in certain cases shortcodes are inevitable, in this particular
-case it violates the core markdown principles – simplicity and readability. Besides, the
-introduction of markup hooks largely obsoletes it.</p>
+<p>A page bundle is a very convenient thing, but I&rsquo;m missing, em&hellip; &ldquo;composite page resources&rdquo;?</p>
 
         <nav class="nextprev">
 
