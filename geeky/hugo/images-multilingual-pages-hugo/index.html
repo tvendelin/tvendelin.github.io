@@ -44,12 +44,15 @@
     <article class="main-single">
         
 
-        <h1 id="including-images-in-multilingual-pages-with-hugo">Including Images in Multilingual Pages with Hugo</h1>
-<p>Including images in multilingual context is a tricky business. The trick is, an image is a piece of
+        <h1 id="including-images-in-multilingual-pages">Including Images in Multilingual Pages</h1>
+<p>Including images in multilingual context is a tricky business. The problem is, an image is a piece of
 content in its own right, with its own attributes, most important being the caption, which for N
 languages translates into N captions. In a typical editorial workflow, photos and articles come from
 two different types of sources (photographers and writers, respectively), and it is a photographer,
-who writes the captions (in one language at least).</p>
+who writes the captions – in one language at least.</p>
+<p>It&rsquo;s usually an editor who decides, which images to use with which article. And sometimes, the same
+image might be used by more than one article. So, the number of places to edit to change anything
+about a single image can grow quite quickly.</p>
 <p>Of course, if you run your site single-handed, and all images are made by you, the problem is not
 that sharp. So, let&rsquo;s start with</p>
 <h2 id="a-simple-approach">A Simple Approach</h2>
@@ -82,9 +85,11 @@ type (more on that in a <a href="https://vendelin.org/geeky/hugo/layout-customiz
 image in an article with four language versions. And changing it back ten minutes later, as you
 change your mind. Four languages = four edits! And watch out for image-caption mismatches – this can
 lead to hilarious (or embarrassing) situations.</p>
+<p>Ideally, I&rsquo;d prefer to have&hellip; Let&rsquo;s call it a &lsquo;composite page resource&rsquo;.</p>
 <h2 id="a-composite-page-resource-or-symlinks-to-the-rescue">A Composite Page Resource, or Symlinks to the Rescue</h2>
-<p>This approach is rather hackish, as it bluntly misuses the Markdown semantics. It does the trick,
-though.</p>
+<p>The idea is to create a unit containing an image and associated texts translations, and then include
+such unit(s) as a resource into a page bundle with minimal effort as a whole. This is more or less
+the way you switch the Hugo theme for your project by changing a single configuration parameter.</p>
 <p>Let&rsquo;s create an <code>images</code> directory inside our website project, and in this directory for
 each image that we might consider to use, let&rsquo;s create a sub-directory containing the image file
 itself and the captions in all necessary languages:</p>
@@ -96,27 +101,42 @@ itself and the captions in all necessary languages:</p>
 </code></pre></div><p>Tantan is a Moroccan town, often considered &lsquo;the gateway&rsquo; to West Sahara, just if you are curious.</p>
 <p>Now, in our page bundle directory, let&rsquo;s create a symlink:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">ln -s ~/&lt;PATH TO PROJECT&gt;/images/tantan &lt;PATH TO PAGE BUNDLE&gt;/main-image
-</code></pre></div><p>Let&rsquo;s create an image markup hook:</p>
-<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">{{ $img := .Page.Resources.GetMatch (print .Destination &#34;/*.jpg&#34;) }}
-{{ $cap := .Page.Resources.GetMatch (print .Destination &#34;/caption.*&#34;) }}
-{{ if $img }}
+</code></pre></div><p>Let&rsquo;s create an image markup hook (empty lines are for better legibility and can be removed, of
+course):</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">{{- $link := .Destination -}}
+{{- $alt := .Text -}}
+{{- $cap := .Title -}}
+{{- if not $cap -}}{{- $cap = .Text -}}{{- end -}}
+
+{{- if (and (not (strings.HasPrefix .Destination &#34;/&#34;)) (not (path.Ext .Destination))) -}} 
+{{- $link = (.Page.Resources.GetMatch (print .Destination &#34;/*.jpg&#34;)).Permalink -}}
+{{- if not $cap -}}
+{{- $cap = chomp (.Page.Resources.GetMatch (print .Destination &#34;/caption.*&#34;)).Plain -}}
+{{- end -}}
+{{- if not $alt }}{{ $alt = $cap }}{{ end }}
+{{- end -}}
+
+{{- with $link -}}
 <span class="p">&lt;</span><span class="nt">figure</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;main&#34;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;{{ $img.Permalink }}&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;{{ chomp $cap.Plain }}&#34;</span><span class="p">&gt;</span>
-    {{ with $cap }}
+    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;{{ . }}&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;{{ $alt }}&#34;</span><span class="p">&gt;</span>
+    {{- with $cap -}}
     <span class="p">&lt;</span><span class="nt">figcaption</span><span class="p">&gt;</span>
-        {{ chomp $cap.Plain }}
+        {{ . }}
     <span class="p">&lt;/</span><span class="nt">figcaption</span><span class="p">&gt;</span>
-    {{ end }}
+    {{- end -}}
 <span class="p">&lt;/</span><span class="nt">figure</span><span class="p">&gt;</span>
-{{ end }}
-</code></pre></div><p>Finally, let&rsquo;s refer to our image from the content file:</p>
+{{- end -}}
+</code></pre></div><p>If the image URL either begins with <code>/</code> or has &lsquo;extension&rsquo;, that would mean we render everything as
+we did in the previous section. Otherwise, we consider it should be
+a symlink to a composite resource with an image and its captions.</p>
+<p>Finally, let&rsquo;s refer to our image from the content file:</p>
 <div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">![](main-img)
-</code></pre></div><p>Again, this is ugly, as I&rsquo;ve just stuck a symlink name in the place of image URL (this is passed on
-in <code>{{.Destination}}</code> variable into the hook.</p>
-<p>On the bright side, the captions are unambiguously related to the image. Best of all, if we want to use a different
+</code></pre></div><p>We can also override the captions in the Markdown if need be:</p>
+<div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">![<span class="nt">overriding alt text</span>](<span class="na">main-img &#34;overriding title&#34;</span>)
+</code></pre></div><p>The captions are now unambiguously related to the image. Best of all, if we want to use a different
 image, all we need is to change a single symlink. This also guards us against the embarrassments of using
-a wrong caption.</p>
-<p>A page bundle is a very convenient thing, but I&rsquo;m missing, em&hellip; &ldquo;composite page resources&rdquo;?</p>
+a wrong caption. On the other hand, for simpler cases – like including screenshots in a tutorial –
+the Markdown syntax can be used as usual.</p>
 
         <nav class="nextprev">
 

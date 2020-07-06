@@ -91,7 +91,7 @@ Requirements  The content translations should be added in an orderly manner. The
       <pubDate>Sun, 31 May 2020 19:15:26 +0200</pubDate>
       
       <guid>https://vendelin.org/geeky/hugo/images-multilingual-pages-hugo/</guid>
-      <description>Including Images in Multilingual Pages with Hugo Including images in multilingual context is a tricky business. The trick is, an image is a piece of content in its own right, with its own attributes, most important being the caption, which for N languages translates into N captions. In a typical editorial workflow, photos and articles come from two different types of sources (photographers and writers, respectively), and it is a photographer, who writes the captions (in one language at least).</description>
+      <description>Including Images in Multilingual Pages Including images in multilingual context is a tricky business. The problem is, an image is a piece of content in its own right, with its own attributes, most important being the caption, which for N languages translates into N captions. In a typical editorial workflow, photos and articles come from two different types of sources (photographers and writers, respectively), and it is a photographer, who writes the captions – in one language at least.</description>
     </item>
     
     <item>
