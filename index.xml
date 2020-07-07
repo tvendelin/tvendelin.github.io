@@ -88,12 +88,12 @@ Configuration Adjustments I Choose YAML and config Directory Your project config
     </item>
     
     <item>
-      <title>Creating a Theme for Hugo</title>
+      <title>Hugo Theme Tutorial</title>
       <link>https://vendelin.org/geeky/hugo/creating-a-theme-for-hugo/</link>
       <pubDate>Tue, 05 May 2020 18:11:11 +0200</pubDate>
       
       <guid>https://vendelin.org/geeky/hugo/creating-a-theme-for-hugo/</guid>
-      <description>Creating a theme A &amp;lsquo;theme&amp;rsquo; in Hugo is a collection of HTML templates, stylesheets and other components that define what your site looks like, and are completely independent of your site content. That is, the very same theme can be used in many different websites. In software lingo this is known as the &amp;lsquo;separation of concerns&amp;rsquo; principle, which reminds of an old Swedish joke claiming that policemen always patrol in pairs because one can read and another can write.</description>
+      <description>A Hugo Theme Tutorial - Very Brief A &amp;lsquo;theme&amp;rsquo; in Hugo is a collection of HTML templates, stylesheets and other components that define what your site looks like, and are completely independent of your site content. That is, the very same theme can be used in many different websites. In software lingo this is known as the &amp;lsquo;separation of concerns&amp;rsquo; principle, which reminds of an old Swedish joke claiming that policemen always patrol in pairs because one can read and another can write.</description>
     </item>
     
     <item>
