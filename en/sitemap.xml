@@ -13,6 +13,11 @@
   </url>
   
   <url>
+    <loc>https://vendelin.org/geeky/hugo/</loc>
+    <lastmod>2020-05-17T17:52:49+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://vendelin.org/geeky/</loc>
     <lastmod>2020-05-15T16:16:14+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -95,7 +100,7 @@
   </url>
   
   <url>
-    <loc>https://vendelin.org/tags/featured/</loc>
+    <loc>https://vendelin.org/tags/hugo/</loc>
     <lastmod>2020-06-02T19:53:32+02:00</lastmod>
   </url>
   
@@ -110,7 +115,7 @@
   </url>
   
   <url>
-    <loc>https://vendelin.org/geeky/hugo/</loc>
+    <loc>https://vendelin.org/tags/featured/</loc>
     <lastmod>2020-05-17T17:52:49+02:00</lastmod>
   </url>
   
