@@ -55,17 +55,21 @@ by changing a single parameter in your project configuration; or, if you so choo
 the theme you&rsquo;ve created with the world. As you can imagine, there is also a lot of Hugo themes
 available already, but it is still worth to explore a bit, how a Hugo theme is organized.</p>
 <p>So, let&rsquo;s create a theme (I&rsquo;ll call it &lsquo;comic&rsquo; – it&rsquo;s just a name):</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ hugo new theme comic
-Creating theme at /Users/tom/learn/hugo/multilingua/themes/comic
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo new theme comic
+</code></pre></div><p>Hugo will happily report:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">Creating theme at /PATH/TO/HOME/multilingua/themes/comic
 </code></pre></div><p>Running <code>tree</code> command reveals the new sub-tree under <code>themes/comic</code>. It&rsquo;s quite similar to the structure
-of our main project, but <code>content/</code> directory and <code>config.toml</code> file are missing:</p>
+of our main project, but <code>content/</code> directory is understandably missing:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ tree
 .
 ├── archetypes
 │   └── default.md
-├── config.toml
-├── content
+├── config
+│   └── _default
+│       ├── config.yaml
+│       └── languages.yaml
 ├── data
+├── kontent
 ├── layouts
 ├── resources
 │   └── _gen
