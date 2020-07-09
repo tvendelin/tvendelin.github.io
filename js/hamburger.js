@@ -20,20 +20,20 @@ function menuToggle(){
     }
 }
 
-function switchTab(ev, target){
+function switchTab(ev, target, tabclass){
     var i
     const ACTIVE = " active"
-    const TAB = "tab"
-    const TABCONTENT = "tabcontent"
+    const TAB = "tab "
+    const TABCONTENT = "tabcontent "
 
-    var tabcontent = document.getElementsByClassName(TABCONTENT);
+    var tabcontent = document.getElementsByClassName(TABCONTENT + tabclass);
     for( i = 0; i < tabcontent.length; i++ ){
         tabcontent[i].style.display = "none";
     }
 
-    var tabs = document.getElementsByClassName(TAB);
+    var tabs = document.getElementsByClassName(TAB + tabclass)
     for( i = 0; i < tabs.length; i++ ){
-        tabs[i].className = TAB
+        tabs[i].className = TAB + tabclass
     }
 
     document.getElementById(target).style.display = "block";
@@ -42,6 +42,10 @@ function switchTab(ev, target){
 
 function closeGdprBanner() {
     document.getElementById('gdpr').style.display = 'none'
+}
+
+function showGdprBanner() {
+    document.getElementById('gdpr').style.display = 'block'
 }
 
 function gdprOK(){
@@ -81,6 +85,7 @@ window.addEventListener('load', function(event){
         closeGdprBanner();
         const accept = decn.split('=')[1];
         accept == 1 ? gdprOK() : gdprNOK();
+        return;
     }
 
     document.getElementById('reject').addEventListener('click', function (){
@@ -94,6 +99,9 @@ window.addEventListener('load', function(event){
         gdprOK();
         closeGdprBanner();
     });
+
+    showGdprBanner();
+
 });
 
 window.addEventListener('unload', function(event){
