@@ -82,7 +82,7 @@ slug: &#34;морж-и-плотник&#34;
 Что очень странно — ведь тогда
 Была глухая ночь.
 </code></pre></div><p>If you now point your browser to
-<a href="http://localhost:1313/ru/poetry/lewis-carroll/%d0%bc%d0%be%d1%80%d0%b6-%d0%b8-%d0%bf%d0%bb%d0%be%d1%82%d0%bd%d0%b8%d0%ba/" target="_blank">http://localhost:1313/ru/poetry/lewis-carroll/морж-и-плотник/</a>
+<a href="http://localhost:1313/ru/poetry/lewis-carroll/%d0%bc%d0%be%d1%80%d0%b6-%d0%b8-%d0%bf%d0%bb%d0%be%d1%82%d0%bd%d0%b8%d0%ba/" target="_blank" rel="noopener">http://localhost:1313/ru/poetry/lewis-carroll/морж-и-плотник/</a>
 , you will see a
 Russian translation of the immortal rhyme.</p>
 <p>Notice the custom <code>slug</code> parameter, that allows
@@ -199,7 +199,7 @@ example for a tutorial. In this example, we shall be counting ships.</p>
 </span><span class="w"></span>- <span class="k">id</span><span class="p">:</span><span class="w"> </span>from_page_context<span class="w">
 </span><span class="w">  </span><span class="k">translation</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Количество: {{.Params.count}}&#34;</span><span class="w">
 </span></code></pre></div><p>Our <code>translation</code> for <code>ship</code> has got quite bushy now, as we have added all plural forms that
-<a href="https://github.com/nicksnyder/go-i18n" target="_blank">go-i18n</a>
+<a href="https://github.com/nicksnyder/go-i18n" target="_blank" rel="noopener">go-i18n</a>
  library supports as of this writing. Hugo will pick
 the correct variant for the number that you either pass to <code>i18n</code> function directly, like in
 <code>{{i18n &quot;ship&quot; 2}}</code>, or refer to from a translation, like for <code>from_page_context</code> string in the
@@ -255,7 +255,7 @@ Create a directory with the same name under <code>layouts</code></p>
 <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
     {{i18n &#34;from_page_context&#34; .}}
 <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</code></pre></div><p>Now, if you point your browser to <a href="http://localhost:1313/ru/numerals/ships" target="_blank">http://localhost:1313/ru/numerals/ships/</a>
+</code></pre></div><p>Now, if you point your browser to <a href="http://localhost:1313/ru/numerals/ships" target="_blank" rel="noopener">http://localhost:1313/ru/numerals/ships/</a>
 , you will see Russian
 plurals in action:</p>
 <pre><code>0: кораблей

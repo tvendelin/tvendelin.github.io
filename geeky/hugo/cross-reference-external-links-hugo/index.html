@@ -60,7 +60,7 @@ Markdown where you would put the URL, and you are done. If the path is invalid, 
 display an error, no matter which page you are at.</p>
 <p>Links to the same content in a different language are covered <a href="https://vendelin.org/geeky/hugo/create-multilingual-content-hugo/#linking-the-translations">here</a>
 </p>
-<p>Read the <a href="https://gohugo.io/content-management/cross-references/" target="_blank">official documentation</a>
+<p>Read the <a href="https://gohugo.io/content-management/cross-references/" target="_blank" rel="noopener">official documentation</a>
  for more
 details.</p>
 <h2 id="customizing-link-behavior">Customizing Link Behavior</h2>
@@ -79,7 +79,7 @@ normal templates), and a number of other variables, referring to Markup paramete
 desired behavior, create a
 <code>themes/&lt;NAME&gt;/layouts/_default/_markup/render-link.html</code> file with the following content:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;a href=&#34;{{ .Destination }}&#34; {{ with .Title }} title=&#34;{{ . }}&#34;{{ end }} {{ if strings.HasPrefix .Destination &#34;http&#34; }} target=&#34;_blank&#34;{{ end }}&gt;{{ .Text }}&lt;/a&gt;
-</code></pre></div><p>The gory details are <a href="https://gohugo.io/getting-started/configuration-markup#markdown-render-hooks" target="_blank">officially documented
+</code></pre></div><p>The gory details are <a href="https://gohugo.io/getting-started/configuration-markup#markdown-render-hooks" target="_blank" rel="noopener">officially documented
 here</a>
 , but they do not
 lie exactly on the surface.</p>

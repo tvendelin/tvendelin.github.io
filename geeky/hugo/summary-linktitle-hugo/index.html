@@ -65,13 +65,13 @@ it as you would fetch any other page resource, and include its content where nee
 </code></pre></div><p>The translations will be picked according to the language of the page, of course, so for
 <code>index.ru.md</code> the <code>summary.ru.md</code> will be looked up.</p>
 <p>This approach also allows to even have multiple summaries if need be.</p>
-<p><a href="https://gohugo.io/content-management/summaries/" target="_blank">Hugo docs on summaries</a>
+<p><a href="https://gohugo.io/content-management/summaries/" target="_blank" rel="noopener">Hugo docs on summaries</a>
  suggests a few other
 approaches, but I like mine better.</p>
 <h2 id="selecting-what-to-feature">Selecting What to Feature</h2>
 <p>You need a way to select a few articles for the front page. I find using tags and weights the
 simplest solution.</p>
-<p>By default, Hugo creates two <a href="https://gohugo.io/content-management/taxonomies/" target="_blank">taxonomies</a>
+<p>By default, Hugo creates two <a href="https://gohugo.io/content-management/taxonomies/" target="_blank" rel="noopener">taxonomies</a>
 :
 categories and tags. We shall make use of tags in this example. You can create any number of tags
 for any page in the front matter. For our particular purpose, we need to agree on some special tag
@@ -82,7 +82,7 @@ front page, then in the front matter of the page include:</p>
 </span><span class="w"></span><span class="c"># ... other tags</span><span class="w">
 </span></code></pre></div><p>Since taxonomies have their own listing pages, we can get our &lsquo;featured&rsquo; articles by fetching a list
 page for the tag &lsquo;featured&rsquo;, and then iterating over the included pages, which will be first ordered by
-their weight, unless you <a href="https://gohugo.io/templates/lists/#order-content" target="_blank">define otherwise</a>
+their weight, unless you <a href="https://gohugo.io/templates/lists/#order-content" target="_blank" rel="noopener">define otherwise</a>
 .</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">{{- with .GetPage &#34;tags/featured&#34; -}} 
 {{- range .Pages  -}} 

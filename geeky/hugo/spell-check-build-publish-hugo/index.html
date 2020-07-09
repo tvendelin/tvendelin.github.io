@@ -57,7 +57,7 @@ publishing is still a sane idea, since we, humans tend to forget and overlook th
 spell-check everything we are about to publish <em>en masse</em>, and make sure it&rsquo;s <em>everything</em>:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">grep -rlP &#39;draft:\s+false&#39; kontent/ | xargs -o -n1 aspell check --sug-mode=slow --mode=markdown
 </code></pre></div><p>The command above searches recursively the <code>kontent</code> directory for files where <code>draft</code> is set to
-<code>false</code> and pipes the file names as arguments to <a href="http://aspell.net" target="_blank">GNU Aspell</a>
+<code>false</code> and pipes the file names as arguments to <a href="http://aspell.net" target="_blank" rel="noopener">GNU Aspell</a>
  for interactive
 processing (<code>xargs -o</code>), one at a time (<code>-n1</code>). The GNU grep is used in this example. It is typically
 the default on Linux distros, but Mac users might want to install it from MacPorts, or drop the <code>-P</code>
@@ -72,7 +72,7 @@ tree altogether with <code>publishDir: &lt;PATH&gt;</code> in your main configur
 <p>There are plenty of other hosting options, but this one combines zero budget with full control over
 your code. The drawback is that you won&rsquo;t have an access to HTTP headers (at least as of this
 writing), and so caching for all content will be set rigidly to 10 minutes.</p>
-<p>Create an account at <a href="https://github.com" target="_blank">GitHub</a>
+<p>Create an account at <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
 , if you don&rsquo;t have any yet. It&rsquo;s free, and they
 won&rsquo;t spam you.</p>
 <p>Create a repository named <code>&lt;YOUR USER NAME&gt;.github.io</code>. Go to settings, and enable GitHub Pages for
@@ -80,7 +80,7 @@ this repository.</p>
 <p>In your project&rsquo;s publishing directory, initialize a new Git repository, add the files, and commit.
 Set the remote to be your <code>&lt;YOUR USER NAME&gt;.github.io</code>, and push to it. Your site will be available
 at <code>http://&lt;YOUR USER NAME&gt;.github.io</code>.</p>
-<p>Should this URL not satisfy your ego, you can use your own domain. There is an excellent <a href="https://pages.github.com" target="_blank">GitHub
+<p>Should this URL not satisfy your ego, you can use your own domain. There is an excellent <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub
 tutorial</a>
 , so I&rsquo;m not going into details here.</p>
 <p>That&rsquo;s it!</p>
