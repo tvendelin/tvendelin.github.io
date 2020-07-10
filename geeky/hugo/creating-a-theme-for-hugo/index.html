@@ -123,7 +123,8 @@ following:</p>
 </code></pre></div><p>It&rsquo;s the very top and the very bottom of any web page of your site. All pages of your website will
 be rendered using this template by default.  The code in double curly braces will be replaced with
 the parts of the actual content. <code>{{.Title}}</code> will become the title of an actual page. The <code>{{block &quot;main&quot; .}}...{{end}}</code> part will include template code from a different template file, depending on
-the type of the page – more on that in a moment. We shall discuss <code>{{.Language.Lang}} and </code>{{.Description}}` later, although you likely understand already what they do.</p>
+the type of the page – more on that in a moment. We shall discuss <code>{{.Language.Lang}}</code> and
+<code>{{.Description}}</code> later, although you likely understand already what they do.</p>
 <h2 id="defining-the-singularity-singlehtml">Defining the singularity: <code>single.html</code></h2>
 <p>The <code>single.html</code> file defines how a page with a single unit of content (an article, a cooking
 recipe, etc.) is generated. Open the <code>themes/comic/layouts/_default/single.html</code> and put the
@@ -304,7 +305,14 @@ theme:</p>
 <span class="p">.</span><span class="nc">translations</span> <span class="nt">a</span> <span class="p">{</span>
     <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div><h2 id="the-further-steps">The Further Steps</h2>
+</code></pre></div><h2 id="should-i-use-a-third-party-theme-or-build-my-own">Should I Use a Third-Party Theme, or Build My Own?</h2>
+<p>If you are just starting out with Hugo, make your own – I&rsquo;ve just shown you how to do it in about 15
+minutes. Get things working first, learn how they work, and then give it a thought again.</p>
+<p>Adding a complex third-party theme to the equation right in the beginning will introduce too many
+moving parts.</p>
+<p>Apart from the above, just consider which path will get you to the goal quicker, and be realistic
+about it.</p>
+<h2 id="the-further-steps">The Further Steps</h2>
 <p>At this point it would make sense to deal with the content and the structure of your website. Once
 you&rsquo;ve got a clear idea about that, you should probably re-design your from page template to put
 your best foot forward, style your website properly, maybe add

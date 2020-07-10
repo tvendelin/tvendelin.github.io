@@ -100,13 +100,13 @@ itself and the captions in all necessary languages:</p>
     └── caption.ru.md
 </code></pre></div><p>Tantan is a Moroccan town, often considered &lsquo;the gateway&rsquo; to West Sahara, just if you are curious.</p>
 <p>Now, in our page bundle directory, let&rsquo;s create a symlink:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">ln -s ~/&lt;PATH TO PROJECT&gt;/images/tantan &lt;PATH TO PAGE BUNDLE&gt;/main-image
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">cd &lt;PATH TO PAGE BUNDLE&gt;/
+ln -s &lt;RELATIVE PATH TO PROJECT ROOT&gt;/images/tantan main-image
 </code></pre></div><p>Let&rsquo;s create an image markup hook (empty lines are for better legibility and can be removed, of
 course):</p>
 <div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">{{- $link := .Destination -}}
 {{- $alt := .Text -}}
 {{- $cap := .Title -}}
-{{- if not $cap -}}{{- $cap = .Text -}}{{- end -}}
 
 {{- if (and (not (strings.HasPrefix .Destination &#34;/&#34;)) (not (path.Ext .Destination))) -}} 
 {{- $link = (.Page.Resources.GetMatch (print .Destination &#34;/*.jpg&#34;)).Permalink -}}
@@ -137,6 +137,40 @@ a symlink to a composite resource with an image and its captions.</p>
 image, all we need is to change a single symlink. This also guards us against the embarrassments of using
 a wrong caption. On the other hand, for simpler cases – like including screenshots in a tutorial –
 the Markdown syntax can be used as usual.</p>
+<h2 id="first-image-comes-free">First Image Comes Free</h2>
+<p>Of all images used in an article, there is probably one, that you would like to put on the top of
+the content, use when you feature the article on the front page, etc. A theme-setting thing. We can
+simplify our lives one step further, if we agree on a &lsquo;magic&rsquo; name for such composite resource, and
+include it in our template(s) as a partial with the following content:</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">{{ $c := &#34;&#34; }}
+{{ with .Resources.GetMatch &#34;main-img/caption.*&#34; }}
+{{- $c = trim .Plain &#34;\n&#34;  -}}
+{{end}}
+{{ with .Resources.GetMatch &#34;main-img/*.jpg&#34; }}
+<span class="p">&lt;</span><span class="nt">figure</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;main&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;{{ .Permalink }}&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;{{$c}}&#34;</span><span class="p">&gt;</span>
+    {{ if $c }}
+    <span class="p">&lt;</span><span class="nt">figcaption</span><span class="p">&gt;</span>
+        {{ $c }}
+    <span class="p">&lt;/</span><span class="nt">figcaption</span><span class="p">&gt;</span>
+    {{ end }}
+<span class="p">&lt;/</span><span class="nt">figure</span><span class="p">&gt;</span>
+{{ end }}
+</code></pre></div><p>Save it under <code>themes/&lt;THEME NAME&gt;/layouts/partials/main_img.html</code>, and then include it into, say,
+<code>single.html</code> like this:</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">{{ define &#34;main&#34; }}
+    <span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
+        {{ partial &#34;main_img.html&#34; . }}
+        {{ .Content }}
+    <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+    {{ partial &#34;disqus.html&#34; . }}
+{{ end }}
+</code></pre></div><p>Now, for the first (main) image, you don&rsquo;t have to make any edits to your Markdown at all. All you
+need to do is to create a symlink with a certain name. And thanks to the &lsquo;magic&rsquo; name,
+you can include this composite resource elsewhere - on a front page, for
+instance – without making any additional edits. And given that often times one single image in
+an article is all we need&hellip;</p>
+<p>Dare I call it &lsquo;efficient&rsquo;?</p>
 
         <nav class="nextprev">
 
