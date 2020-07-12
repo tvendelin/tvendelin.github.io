@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>
+                <title>
             Scaffolding of a Hugo website
         </title>
         <meta name="description" content="The structure of a Hugo managed web project">
@@ -9,9 +9,12 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="/css/perldoc.css">
         <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/gdpr.css">
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162948019-2"></script>
         <script data-ad-client="ca-pub-3806180398510128" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <script async src="/js/hamburger.js"></script>
+        <script async src="/js/gdpr.js"></script>
+
     </head>
     <body>
         <nav class="top">
@@ -21,12 +24,12 @@
             </a>
         </nav>
         <div id="mobile-menu"></div>
-        <div class="page">
-            <nav class="breadcrumbs">
-                <a href="https://vendelin.org/">Home</a><span>:</span><a href="https://vendelin.org/geeky/">Geeky Stuff</a><span>:</span><a href="https://vendelin.org/geeky/hugo/">Hugo Cookbook for a Multilingual Site</a>
-            </nav>
-            <main class="container">
-            <nav class="menu" id="ndrop">
+            <div class="page">
+                <nav class="breadcrumbs">
+                    <a href="https://vendelin.org/">Home</a><span>:</span><a href="https://vendelin.org/geeky/">Geeky Stuff</a><span>:</span><a href="https://vendelin.org/geeky/hugo/">Hugo Cookbook for a Multilingual Site</a>
+                </nav>
+                <main class="container">
+                <nav class="menu" id="ndrop">
     
     <h2>Sections:</h2>
     
@@ -40,10 +43,9 @@
 </nav>
 
 
-            
+                
     <article class="main-single">
         
-
         <h1 id="create-the-scaffoldings-for-your-new-website">Create the scaffolding&rsquo;s for your new website</h1>
 <p>Choose a name for your project. It&rsquo;s just a name of a directory and has no other significance. I
 have chosen &lsquo;multilingua&rsquo; for a name.</p>
@@ -103,20 +105,16 @@ inexplicable behavior, just restart the server and check if the problem is still
 
         <nav class="nextprev">
 
-<p>
-    Next: 
-    <br>
+<p class="next">
     <a href="https://vendelin.org/geeky/hugo/custom-multilingual-configuration-hugo/">
-         Customizing Configuration for Multilingual Hugo-Managed Site
+         Customizing Configuration for Multilingual Site &rarr;
     </a>
 </p>
 
 
-<p>
-    Previous: 
-    <br>
+<p class="prev">
     <a href="https://vendelin.org/geeky/hugo/install-hugo/">
-         Install Hugo
+         &larr; Install Hugo
     </a>
 </p>
 
@@ -159,17 +157,17 @@ window.addEventListener('load', function(event){
 </script>
 
 
-            </main>
-        </div>
+                </main>
+            </div>
         <div id="gdpr" style="display: none">
-            <div class="cookie-consent">
-            <p>
-                We use third-party cookies for analytics and comments. Disabling cookies disables comments.
-            </p>
-            <a id="reject" href="#">Reject</a>
-            <a id="accept" href="#">Accept</a>
+    <div class="cookie-consent">
+        <p>
+            We use third-party cookies for analytics and comments. Disabling cookies disables comments.
+        </p>
+        <a id="reject" href="#">Reject</a>
+        <a id="accept" href="#">Accept</a>
+    </div>
+</div>
 
-        </div>
-        </div>
     </body>
 </html>

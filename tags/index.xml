@@ -29,11 +29,29 @@
     </item>
     
     <item>
-      <title>subfeatured</title>
-      <link>https://vendelin.org/tags/subfeatured/</link>
+      <title>featured-minor</title>
+      <link>https://vendelin.org/tags/featured-minor/</link>
       <pubDate>Sat, 25 Apr 2020 08:04:27 +0200</pubDate>
       
-      <guid>https://vendelin.org/tags/subfeatured/</guid>
+      <guid>https://vendelin.org/tags/featured-minor/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>motorcycling</title>
+      <link>https://vendelin.org/tags/motorcycling/</link>
+      <pubDate>Sat, 25 Apr 2020 08:04:27 +0200</pubDate>
+      
+      <guid>https://vendelin.org/tags/motorcycling/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>travel</title>
+      <link>https://vendelin.org/tags/travel/</link>
+      <pubDate>Sat, 25 Apr 2020 08:04:27 +0200</pubDate>
+      
+      <guid>https://vendelin.org/tags/travel/</guid>
       <description></description>
     </item>
     

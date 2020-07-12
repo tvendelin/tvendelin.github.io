@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>
+                <title>
             Spell Check, Build Your Site with Hugo, Publish to GitHub
         </title>
         <meta name="description" content="Final steps to create and publish your website: spell-checking, building, and setting up the GitHub Pages">
@@ -9,9 +9,12 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="/css/perldoc.css">
         <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/gdpr.css">
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162948019-2"></script>
         <script data-ad-client="ca-pub-3806180398510128" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <script async src="/js/hamburger.js"></script>
+        <script async src="/js/gdpr.js"></script>
+
     </head>
     <body>
         <nav class="top">
@@ -21,12 +24,12 @@
             </a>
         </nav>
         <div id="mobile-menu"></div>
-        <div class="page">
-            <nav class="breadcrumbs">
-                <a href="https://vendelin.org/">Home</a><span>:</span><a href="https://vendelin.org/geeky/">Geeky Stuff</a><span>:</span><a href="https://vendelin.org/geeky/hugo/">Hugo Cookbook for a Multilingual Site</a>
-            </nav>
-            <main class="container">
-            <nav class="menu" id="ndrop">
+            <div class="page">
+                <nav class="breadcrumbs">
+                    <a href="https://vendelin.org/">Home</a><span>:</span><a href="https://vendelin.org/geeky/">Geeky Stuff</a><span>:</span><a href="https://vendelin.org/geeky/hugo/">Hugo Cookbook for a Multilingual Site</a>
+                </nav>
+                <main class="container">
+                <nav class="menu" id="ndrop">
     
     <h2>Sections:</h2>
     
@@ -40,10 +43,9 @@
 </nav>
 
 
-            
+                
     <article class="main-single">
         
-
         <h1 id="ready-spell-check-hugo">Ready, Spell-Check, Hugo!</h1>
 <p>So, you are happy with the preview provided by the local Hugo server, and you want to publish your
 site. Make sure <code>git status</code> doesn&rsquo;t show anything uncommitted changes (you <em>do</em> keep versions of your project
@@ -88,11 +90,9 @@ tutorial</a>
         <nav class="nextprev">
 
 
-<p>
-    Previous: 
-    <br>
+<p class="prev">
     <a href="https://vendelin.org/geeky/hugo/cross-reference-external-links-hugo/">
-         Internal and External Links with Hugo
+         &larr; Internal and External Links
     </a>
 </p>
 
@@ -135,17 +135,17 @@ window.addEventListener('load', function(event){
 </script>
 
 
-            </main>
-        </div>
+                </main>
+            </div>
         <div id="gdpr" style="display: none">
-            <div class="cookie-consent">
-            <p>
-                We use third-party cookies for analytics and comments. Disabling cookies disables comments.
-            </p>
-            <a id="reject" href="#">Reject</a>
-            <a id="accept" href="#">Accept</a>
+    <div class="cookie-consent">
+        <p>
+            We use third-party cookies for analytics and comments. Disabling cookies disables comments.
+        </p>
+        <a id="reject" href="#">Reject</a>
+        <a id="accept" href="#">Accept</a>
+    </div>
+</div>
 
-        </div>
-        </div>
     </body>
 </html>

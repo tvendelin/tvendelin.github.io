@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>
+                <title>
             Featured Content, Page Summary, Link Texts with Hugo
         </title>
         <meta name="description" content="Promoting articles on the front page and customizing links">
@@ -9,9 +9,12 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="/css/perldoc.css">
         <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/gdpr.css">
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162948019-2"></script>
         <script data-ad-client="ca-pub-3806180398510128" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <script async src="/js/hamburger.js"></script>
+        <script async src="/js/gdpr.js"></script>
+
     </head>
     <body>
         <nav class="top">
@@ -21,12 +24,12 @@
             </a>
         </nav>
         <div id="mobile-menu"></div>
-        <div class="page">
-            <nav class="breadcrumbs">
-                <a href="https://vendelin.org/">Home</a><span>:</span><a href="https://vendelin.org/geeky/">Geeky Stuff</a><span>:</span><a href="https://vendelin.org/geeky/hugo/">Hugo Cookbook for a Multilingual Site</a>
-            </nav>
-            <main class="container">
-            <nav class="menu" id="ndrop">
+            <div class="page">
+                <nav class="breadcrumbs">
+                    <a href="https://vendelin.org/">Home</a><span>:</span><a href="https://vendelin.org/geeky/">Geeky Stuff</a><span>:</span><a href="https://vendelin.org/geeky/hugo/">Hugo Cookbook for a Multilingual Site</a>
+                </nav>
+                <main class="container">
+                <nav class="menu" id="ndrop">
     
     <h2>Sections:</h2>
     
@@ -40,10 +43,9 @@
 </nav>
 
 
-            
+                
     <article class="main-single">
         
-
         <h1 id="putting-the-best-foot-forward">Putting the Best Foot Forward</h1>
 <p>Promoting certain articles on the front page of your Hugo managed site will be the next step after
 creating some content. You will need a summary for each such page, and a text that will appear in
@@ -93,20 +95,16 @@ their weight, unless you <a href="https://gohugo.io/templates/lists/#order-conte
 </code></pre></div>
         <nav class="nextprev">
 
-<p>
-    Next: 
-    <br>
+<p class="next">
     <a href="https://vendelin.org/geeky/hugo/layout-customize-hugo/">
-         Customize Web Page Layout: Hugo Content Types
+         Customize Web Page Layout: Hugo Content Types &rarr;
     </a>
 </p>
 
 
-<p>
-    Previous: 
-    <br>
+<p class="prev">
     <a href="https://vendelin.org/geeky/hugo/images-multilingual-pages-hugo/">
-         Including Images in Multilingual Pages with Hugo
+         &larr; Including Images in Multilingual Pages
     </a>
 </p>
 
@@ -149,17 +147,17 @@ window.addEventListener('load', function(event){
 </script>
 
 
-            </main>
-        </div>
+                </main>
+            </div>
         <div id="gdpr" style="display: none">
-            <div class="cookie-consent">
-            <p>
-                We use third-party cookies for analytics and comments. Disabling cookies disables comments.
-            </p>
-            <a id="reject" href="#">Reject</a>
-            <a id="accept" href="#">Accept</a>
+    <div class="cookie-consent">
+        <p>
+            We use third-party cookies for analytics and comments. Disabling cookies disables comments.
+        </p>
+        <a id="reject" href="#">Reject</a>
+        <a id="accept" href="#">Accept</a>
+    </div>
+</div>
 
-        </div>
-        </div>
     </body>
 </html>

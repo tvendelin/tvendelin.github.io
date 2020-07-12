@@ -1,17 +1,20 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>
+                <title>
             Customizing Configuration for Multilingual Hugo-Managed Site
         </title>
-        <meta name="description" content="Optimizing configuration of a Hugo managed website project">
+        <meta name="description" content="Structured configuration, setting languages, archetype adjustments, optimizing tab-completion.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="utf-8">
         <link rel="stylesheet" href="/css/perldoc.css">
         <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/gdpr.css">
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162948019-2"></script>
         <script data-ad-client="ca-pub-3806180398510128" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <script async src="/js/hamburger.js"></script>
+        <script async src="/js/gdpr.js"></script>
+
     </head>
     <body>
         <nav class="top">
@@ -21,12 +24,12 @@
             </a>
         </nav>
         <div id="mobile-menu"></div>
-        <div class="page">
-            <nav class="breadcrumbs">
-                <a href="https://vendelin.org/">Home</a><span>:</span><a href="https://vendelin.org/geeky/">Geeky Stuff</a><span>:</span><a href="https://vendelin.org/geeky/hugo/">Hugo Cookbook for a Multilingual Site</a>
-            </nav>
-            <main class="container">
-            <nav class="menu" id="ndrop">
+            <div class="page">
+                <nav class="breadcrumbs">
+                    <a href="https://vendelin.org/">Home</a><span>:</span><a href="https://vendelin.org/geeky/">Geeky Stuff</a><span>:</span><a href="https://vendelin.org/geeky/hugo/">Hugo Cookbook for a Multilingual Site</a>
+                </nav>
+                <main class="container">
+                <nav class="menu" id="ndrop">
     
     <h2>Sections:</h2>
     
@@ -40,10 +43,9 @@
 </nav>
 
 
-            
+                
     <article class="main-single">
         
-
         <h1 id="custom-multilingual-configuration-for-hugo-managed-site">Custom Multilingual Configuration for Hugo Managed Site</h1>
 <p>A multilingual site managed with Hugo static generator requires a couple of extra steps. I essence,
 you just need to tell Hugo which languages are you going to use, and how these languages are called
@@ -117,20 +119,16 @@ language section from <code>config/_default/config.yaml</code>.</p>
 </code></pre></div>
         <nav class="nextprev">
 
-<p>
-    Next: 
-    <br>
+<p class="next">
     <a href="https://vendelin.org/geeky/hugo/creating-a-theme-for-hugo/">
-         Hugo Theme Tutorial
+         Create a Theme &rarr;
     </a>
 </p>
 
 
-<p>
-    Previous: 
-    <br>
+<p class="prev">
     <a href="https://vendelin.org/geeky/hugo/scaffoldings/">
-         Scaffolding of a Hugo website
+         &larr; Scaffolding of a Hugo website
     </a>
 </p>
 
@@ -173,17 +171,17 @@ window.addEventListener('load', function(event){
 </script>
 
 
-            </main>
-        </div>
+                </main>
+            </div>
         <div id="gdpr" style="display: none">
-            <div class="cookie-consent">
-            <p>
-                We use third-party cookies for analytics and comments. Disabling cookies disables comments.
-            </p>
-            <a id="reject" href="#">Reject</a>
-            <a id="accept" href="#">Accept</a>
+    <div class="cookie-consent">
+        <p>
+            We use third-party cookies for analytics and comments. Disabling cookies disables comments.
+        </p>
+        <a id="reject" href="#">Reject</a>
+        <a id="accept" href="#">Accept</a>
+    </div>
+</div>
 
-        </div>
-        </div>
     </body>
 </html>

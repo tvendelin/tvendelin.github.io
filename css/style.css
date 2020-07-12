@@ -8,7 +8,7 @@
 
 body{
     margin: 0;
-    font-family: "Open Sans", sans-serif;
+    font-family: Open Sans, sans-serif;
     font-size: 1rem;
     text-rendering: optimizeLegibility;
 }
@@ -17,56 +17,11 @@ div.page {
     margin: 1rem;
 }
 
-#gdpr {
-    color: white;
-    background-color: #333;
-    z-index: 20;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
+a { color: black; }
+a:visited { color: #666; }
+a:hover { color: #a00; }
 
-#gdpr a {
-    display: inline-block;
-    color: white;
-    text-decoration: none;
-    border-radius: 0.5rem;
-    padding: 0.3rem 1rem;
-    width: min-content;
-}
-
-.cookie-consent {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 2rem;
-    margin: 0.5rem 2rem;
-}
-
-.cookie-consent > p {
-    grid-column: 1/3;
-    grid-row: 1;
-    max-width: max-content;
-    line-height: 1.5;
-    margin-bottom: 1rem;
-}
-
-#reject {
-    grid-column: 1;
-    grid-row: 2;
-    justify-self: center;
-    background-color: #666;
-    color: #ccc;
-}
-
-#accept {
-    grid-column: 2;
-    grid-row: 2;
-    justify-self: center;
-    background-color: #090;
-}
-
-h1, h2, h3, h4, h5, h6
-{
+h1, h2, h3, h4, h5, h6 {
     font-family: Open Sans Condensed, sans-serif;
     color: #444;
 }
@@ -101,7 +56,7 @@ p+h3 {
 }
 
 p, li {
-    font-family: Noto Serif;
+    font-family: Noto Serif, serif;
     font-size: 1rem;
     line-height: 1.8;
     max-width: 72ch;
@@ -116,7 +71,7 @@ ol {
 }
 
 /* code */
-div.highlight {
+div.highlight, pre {
     background-color: #eeeedd;
     margin: 1.3rem 0;
     padding: 1.3rem;
@@ -124,6 +79,14 @@ div.highlight {
     overflow-x: auto;
 }
 
+div.highlight pre {
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    overflow-x: unset;
+    width: 100%;
+    min-width: max-content;
+}
 
 code {
     font-family: "Source Code Pro", monospace;
@@ -164,6 +127,7 @@ blockquote  del {
     color: red;
 }
 
+/* this is used to highlight corrections, hence bold and green */
 blockquote strong {
     font-weight: bold;
     color: #0a0;
@@ -190,18 +154,24 @@ article {
 }
 
 figcaption, figcaption > p {
-   font-size: 1rem;
-   font-style: italic;
+    font-size: 0.9rem;
+    padding-left: 0.5rem;
 }
 
 img {
     max-width: 100%;
 }
 
+/* next and previous page in section */
 .nextprev a {
     font-size: 1rem;
     line-height: 200%;
     font-style:italic;
+}
+
+.nextprev p {
+    font-size: 0.9rem;
+    text-align: right;
 }
 
 nav.nextprev {
@@ -213,6 +183,27 @@ nav.nextprev {
     padding-left: 0;
     margin-top: 2rem;
     list-style:none;
+}
+
+.taxonomy li {
+    font-family: Open Sans, sans-serif;
+    font-size: 0.8rem;
+}
+
+.taxonomy a {
+    font-family: Open Sans Condensed, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.taxonomy a:hover {
+    text-decoration: underline;
+}
+
+.taxonomy p {
+    padding-left: 2rem;
+    font-size: 0.9rem;
 }
 
 /* Front page only */
@@ -273,6 +264,7 @@ a:hover.teaser {
 }
 
 .menu-section {
+    font-family: Open Sans, serif;
 }
 
 /* navigation #003366 */
@@ -428,7 +420,7 @@ nav.dropdown{
 }
 
 /* Minor featured articles grid column */
-.subfeatured {
+.featured-minor {
     grid-column: 1;
     grid-row: 3;
 }
@@ -438,6 +430,19 @@ nav.dropdown{
     display: none;
     grid-column: 1;
     grid-row: 1;
+}
+
+/* tables */
+table {
+    width: max-content;
+    margin: 0.7rem 0;
+    padding: 0.5rem 0;
+    background-color: #eee;
+}
+
+th, td {
+    text-align: left;
+    padding: 0.2rem 2rem;
 }
 
 @media screen and (min-width: 850px) {
@@ -487,7 +492,7 @@ nav.dropdown{
     }
 
     /* Minor featured articles grid column */
-    .subfeatured {
+    .featured-minor {
         grid-column: 12/17;
         grid-row: 1;
     }
@@ -531,31 +536,4 @@ nav.dropdown{
     .box-shadow-menu {
         display: none;
     }
-
-    .cookie-consent {
-        display: grid;
-        grid-template-columns: auto min-content min-content;
-        column-gap: 2rem;
-        margin: 0.5rem 2rem;
-    }
-
-    .cookie-consent > p {
-        grid-column: 1;
-        max-width: max-content;
-        margin: 0;
-    }
-
-    #reject {
-        grid-column: 2;
-        grid-row: 1;
-        background-color: #666;
-        color: #ccc;
-    }
-
-    #accept {
-        grid-column: 3;
-        grid-row: 1;
-        background-color: #090;
-    }
-
 }
