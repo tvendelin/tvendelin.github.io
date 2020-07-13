@@ -145,12 +145,18 @@ blockquote h2 {
     margin: 1rem 0 0.5rem 0;
 }
 
-figure.main {
-    margin-bottom: 3rem;
-}
-
 article {
     width: 100%;
+}
+
+.author {
+    font-family: Noto Serif, serif;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+figure.main {
+    margin-bottom: 3rem;
 }
 
 figcaption, figcaption > p {
@@ -192,7 +198,7 @@ nav.nextprev {
 
 .taxonomy a {
     font-family: Open Sans Condensed, sans-serif;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 700;
     text-decoration: none;
 }
@@ -485,6 +491,9 @@ th, td {
         padding-left: revert;
     }
 
+    .taxonomy a {
+        font-size: 1.5rem;
+    }
     /* Top featured articles grid column */
     .featured {
         grid-column: 3/12;
