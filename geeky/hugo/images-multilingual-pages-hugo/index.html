@@ -19,7 +19,7 @@
 <meta itemprop="description" content="Images and multilingual image captions: minimum of editing, maximum reliability">
 <meta itemprop="datePublished" content="2020-05-31T19:15:26&#43;02:00" />
 <meta itemprop="dateModified" content="2020-05-31T19:15:26&#43;02:00" />
-<meta itemprop="wordCount" content="958">
+<meta itemprop="wordCount" content="984">
 <meta itemprop="image" content="https://vendelin.org/img/vendelin_org.png"/>
 
 
@@ -112,7 +112,7 @@ image in an article with four language versions. And changing it back ten minute
 change your mind. Four languages = four edits! And watch out for image-caption mismatches – this can
 lead to hilarious (or embarrassing) situations.</p>
 <p>Ideally, I&rsquo;d prefer to have&hellip; Let&rsquo;s call it a &lsquo;composite page resource&rsquo;.</p>
-<h2 id="a-composite-page-resource-or-symlinks-to-the-rescue">A Composite Page Resource, or Symlinks to the Rescue</h2>
+<h2 id="a-composite-page-resource">A Composite Page Resource</h2>
 <p>The idea is to create a unit containing an image and associated texts translations, and then include
 such unit(s) as a resource into a page bundle with minimal effort as a whole. This is more or less
 the way you switch the Hugo theme for your project by changing a single configuration parameter.</p>
@@ -125,25 +125,29 @@ itself and the captions in all necessary languages:</p>
     ├── caption.md
     └── caption.ru.md
 </code></pre></div><p>Tantan is a Moroccan town, often considered &lsquo;the gateway&rsquo; to West Sahara, just if you are curious.</p>
-<p>Now, in our page bundle directory, let&rsquo;s create a symlink:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">cd &lt;PATH TO PAGE BUNDLE&gt;/
-ln -s &lt;RELATIVE PATH TO PROJECT ROOT&gt;/images/tantan main-image
+<p><del>Now, in our page bundle directory, let&rsquo;s create a symlink:</del></p>
+<p>Now, recursively copy the &lsquo;composite bundle&rsquo; you want to include in a page into the page bundle
+directory:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">cp -R &lt;RELATIVE PATH TO PROJECT ROOT&gt;/images/tantan &lt;PATH TO PAGE BUNDLE&gt;/main-image
 </code></pre></div><p>Let&rsquo;s create an image markup hook (empty lines are for better legibility and can be removed, of
 course):</p>
 <div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">{{- $link := .Destination -}}
 {{- $alt := .Text -}}
 {{- $cap := .Title -}}
 
-{{- if (and (not (strings.HasPrefix .Destination &#34;/&#34;)) (not (path.Ext .Destination))) -}} 
+{{- if and (not (path.Ext .Destination)) -}} 
 {{- $link = (.Page.Resources.GetMatch (print .Destination &#34;/*.jpg&#34;)).Permalink -}}
 {{- if not $cap -}}
-{{- $cap = chomp (.Page.Resources.GetMatch (print .Destination &#34;/caption.*&#34;)).Plain -}}
+{{- with .Page.Resources.GetMatch (print .Destination &#34;/caption.*&#34;) -}}
+{{- $cap = chomp .Plain -}}
 {{- end -}}
+{{- end -}}
+
 {{- if not $alt }}{{ $alt = $cap }}{{ end }}
 {{- end -}}
 
 {{- with $link -}}
-<span class="p">&lt;</span><span class="nt">figure</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;main&#34;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">figure</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;{{ . }}&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;{{ $alt }}&#34;</span><span class="p">&gt;</span>
     {{- with $cap -}}
     <span class="p">&lt;</span><span class="nt">figcaption</span><span class="p">&gt;</span>
@@ -152,17 +156,19 @@ course):</p>
     {{- end -}}
 <span class="p">&lt;/</span><span class="nt">figure</span><span class="p">&gt;</span>
 {{- end -}}
-</code></pre></div><p>If the image URL either begins with <code>/</code> or has &lsquo;extension&rsquo;, that would mean we render everything as
+</code></pre></div><p>If the image URL has &lsquo;extension&rsquo;, that would mean we render everything as
 we did in the previous section. Otherwise, we consider it should be
-a symlink to a composite resource with an image and its captions.</p>
+a directory with an image and its captions.</p>
 <p>Finally, let&rsquo;s refer to our image from the content file:</p>
 <div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">![](main-img)
 </code></pre></div><p>We can also override the captions in the Markdown if need be:</p>
 <div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">![<span class="nt">overriding alt text</span>](<span class="na">main-img &#34;overriding title&#34;</span>)
 </code></pre></div><p>The captions are now unambiguously related to the image. Best of all, if we want to use a different
-image, all we need is to change a single symlink. This also guards us against the embarrassments of using
+image, all we need is to replace one subdirectory with another. This also guards us against the embarrassments of using
 a wrong caption. On the other hand, for simpler cases – like including screenshots in a tutorial –
 the Markdown syntax can be used as usual.</p>
+<h3 id="symlinks-to-rescue">Symlinks to Rescue?</h3>
+<p>I thought initially it would be an elegant solution, but I have just discovered it doesn&rsquo;t always work.</p>
 <h2 id="first-image-comes-free">First Image Comes Free</h2>
 <p>Of all images used in an article, there is probably one, that you would like to put on the top of
 the content, use when you feature the article on the front page, etc. A theme-setting thing. We can
