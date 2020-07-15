@@ -61,6 +61,7 @@ p, li {
     font-size: 1rem;
     line-height: 1.8;
     max-width: 72ch;
+    overflow-x: auto;
 }
 
 p+p, li+li {
