@@ -24,6 +24,7 @@ a:hover { color: #a00; }
 h1, h2, h3, h4, h5, h6 {
     font-family: Open Sans Condensed, sans-serif;
     color: #444;
+    margin: 0;
 }
 
 h1{
@@ -156,7 +157,7 @@ article {
 }
 
 figure.main {
-    margin-bottom: 3rem;
+    margin: 0 0 3rem 0;
 }
 
 figcaption, figcaption > p {
@@ -248,7 +249,7 @@ a:hover.teaser {
 }
 
 .sbox figure {
-    margin-top: 0.7rem;
+    margin: 0.7rem 0 0 0;
 }
 
 .sbox h2 {
