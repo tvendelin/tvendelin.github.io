@@ -58,7 +58,7 @@
 
     .cookie-consent > p {
         grid-column: 1;
-        max-width: 100%
+        max-width: 100%;
         margin: 0;
     }
 
