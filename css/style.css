@@ -221,6 +221,8 @@ a.teaser-sec {
     font-style: italic;
     text-decoration: none;
     color: #000;
+    display: block;
+    margin: 1.5rem 0 0.7rem 0;
 }
 
 /* Link to a featured article, for entire box */
@@ -373,7 +375,7 @@ nav.dropdown{
 
 .menu h2 {
     color: #ddd;
-    margin-top: 0.5rem;
+    margin: 1rem 0 0.5rem 0;
 }
 
 .menu li {
