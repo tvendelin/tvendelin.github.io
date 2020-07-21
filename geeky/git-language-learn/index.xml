@@ -16,9 +16,9 @@
       <pubDate>Fri, 15 May 2020 16:24:41 +0200</pubDate>
       
       <guid>https://vendelin.org/geeky/git-language-learn/dialogue/</guid>
-      <description>When a Time Machine Met a Kitchen Blender&amp;hellip; &amp;lsquo;What is Git?&amp;rsquo;, Yuni asks. Yuni is an online teacher of Indonesian and an aspiring Linux user.
+      <description>&amp;lsquo;What is Git?&amp;rsquo;, Yuni asks. Yuni is an online teacher of Indonesian and an aspiring Linux user.
 &amp;lsquo;Well, it&amp;rsquo;s sort of a cross between a time machine and a kitchen blender, the one you make your smoothies with from all these exotic fruits that grow in your backyard&amp;rsquo;, Toomas responds. Toomas is a programmer and a Linux sysadmin.
-&amp;lsquo;I know my kitchen blender A to Z&amp;rsquo;, says Yuni proudly.</description>
+&amp;lsquo;I know my kitchen blender A to Z&amp;rsquo;, says Yuni proudly. &amp;lsquo;Why don&amp;rsquo;t you tell me about time machine part first?</description>
     </item>
     
     <item>
@@ -27,7 +27,7 @@
       <pubDate>Fri, 15 May 2020 16:24:41 +0200</pubDate>
       
       <guid>https://vendelin.org/geeky/git-language-learn/grammar-exercise-repository-github/</guid>
-      <description>GitHub for Foreign Language Teachers A Git / GitHub workflow for foreign language students and teachers was briefly discussed in a Skype conversation between Yuni, an online teacher of Indonesian, and Toomas, a Linux system engineer. They have agreed to go though it step by step, and so they did. Here, we are discussing things from the teacher&amp;rsquo;s perspective.
+      <description>A Git / GitHub workflow for foreign language students and teachers was briefly discussed in a Skype conversation between Yuni, an online teacher of Indonesian, and Toomas, a Linux system engineer. They have agreed to go though it step by step, and so they did. Here, we are discussing things from the teacher&amp;rsquo;s perspective.
 Grammar exercises as a Git repository published on GitHub Yuni creates a new folder on her computer, and initializes a Git repository inside it.</description>
     </item>
     
@@ -37,7 +37,7 @@ Grammar exercises as a Git repository published on GitHub Yuni creates a new fol
       <pubDate>Fri, 15 May 2020 16:24:41 +0200</pubDate>
       
       <guid>https://vendelin.org/geeky/git-language-learn/fork-and-complete-grammar-exercise-github/</guid>
-      <description>GitHub for Foreign Language Students Grammar exercises published as a Git repository on GitHub can be forked by a student and completed on GitHub directly. Yuni, an online teacher of Indonesian, has created such a repository (see the previous chapter ). It contained just a single exercise. Now, after trying things out, she creates a repository with a set of exercises:
+      <description>Grammar exercises published as a Git repository on GitHub can be forked by a student and completed on GitHub directly. Yuni, an online teacher of Indonesian, has created such a repository (see the previous chapter ). It contained just a single exercise. Now, after trying things out, she creates a repository with a set of exercises:
 https://github.com/kartikayuni/Exercise-absolute-beginner
 Maria, a Yuni&amp;rsquo;s student, got a link to that repository from her teacher, and is about to do her first homework on GitHub.</description>
     </item>

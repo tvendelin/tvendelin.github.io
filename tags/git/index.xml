@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git on vendelin.org</title>
+    <link>https://vendelin.org/tags/git/</link>
+    <description>Recent content in git on vendelin.org</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 15 May 2020 16:24:41 +0200</lastBuildDate>
+    
+	<atom:link href="https://vendelin.org/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Using Git: A Dialogue Between a Language Teacher and a Linux Sysadmin</title>
+      <link>https://vendelin.org/geeky/git-language-learn/dialogue/</link>
+      <pubDate>Fri, 15 May 2020 16:24:41 +0200</pubDate>
+      
+      <guid>https://vendelin.org/geeky/git-language-learn/dialogue/</guid>
+      <description>&amp;lsquo;What is Git?&amp;rsquo;, Yuni asks. Yuni is an online teacher of Indonesian and an aspiring Linux user.
+&amp;lsquo;Well, it&amp;rsquo;s sort of a cross between a time machine and a kitchen blender, the one you make your smoothies with from all these exotic fruits that grow in your backyard&amp;rsquo;, Toomas responds. Toomas is a programmer and a Linux sysadmin.
+&amp;lsquo;I know my kitchen blender A to Z&amp;rsquo;, says Yuni proudly. &amp;lsquo;Why don&amp;rsquo;t you tell me about time machine part first?</description>
+    </item>
+    
+  </channel>
+</rss>

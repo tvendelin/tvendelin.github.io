@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Authors on vendelin.org</title>
+    <link>https://vendelin.org/authors/</link>
+    <description>Recent content in Authors on vendelin.org</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 15 Jul 2020 09:30:28 +0200</lastBuildDate>
+    
+	<atom:link href="https://vendelin.org/authors/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Toomas Vendelin</title>
+      <link>https://vendelin.org/authors/tvendelin/</link>
+      <pubDate>Mon, 20 Jul 2020 06:32:37 +0200</pubDate>
+      
+      <guid>https://vendelin.org/authors/tvendelin/</guid>
+      <description>I’m a Linux system engineer and a certified Java developer in one package. I play chess when bored with everything else.</description>
+    </item>
+    
+  </channel>
+</rss>
