@@ -313,19 +313,30 @@ a.logo {
 }
 
 .breadcrumbs {
-    font-size: 0.9rem;
     margin-top: 1rem;
     text-decoration: none;
+}
+
+.breadcrumbs ol {
+    padding-left: 0;
+    list-style:none;
+}
+
+.breadcrumbs li {
+    font-family: Open Sans;
+    font-size: 0.9rem;
+    display: inline;
+    margin: 0;
+}
+
+.breadcrumbs span.col {
+    margin-left: 0.2rem;
+    margin-right: 0.3rem;
 }
 
 .breadcrumbs a {
     /* text-decoration: none; */
     color: #999;
-}
-
-.breadcrumbs span{
-    margin-left: 0.2rem;
-    margin-right: 0.9rem;
 }
 
 /* tabs with page resources */
