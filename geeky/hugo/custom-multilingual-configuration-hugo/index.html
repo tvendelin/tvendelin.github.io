@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" prefix="og: http://ogp.me/ns#">
+<html lang="en" prefix="og: http://ogp.me/ns#" itemscope itemtype="http://schema.org/WebPage">
     <head>
                 <title>
             Customizing Configuration for Multilingual Hugo-Managed Site
@@ -17,15 +17,21 @@
 
 
 
+
+
+
+
+
+
+
 <meta name="twitter:card" content="summary">
 <meta property="og:type" content="article">
 
 <meta itemprop="name" property="og:title" content="Customizing Configuration for Multilingual Hugo-Managed Site">
-<meta itemprop="description" property="og:description" content="Structured configuration, setting languages, archetype adjustments, optimizing tab-completion.">
-<meta itemprop="image" property="og:image" content="https://vendelin.org/img/vendelin_org.png">
-<meta itemprop="datePublished" content="2020-05-09T07:34:50+02:00">
-<meta itemprop="dateModified" content="2020-07-21T07:36:24+02:00">
-<meta itemprop="wordCount" content="551">
+<meta id="meta-descr" itemprop="description" property="og:description" content="Structured configuration, setting languages, archetype adjustments, optimizing tab-completion.">
+<meta itemprop="image" property="og:image" content="">
+<meta id="meta-published" itemprop="datePublished" content="2020-05-09T07:34:50+02:00">
+<meta id="meta-modified" itemprop="dateModified" content="2020-07-21T07:36:24+02:00">
 
 <meta property="og:url" content="https://vendelin.org/geeky/hugo/custom-multilingual-configuration-hugo/">
 <meta property="og:locale" content="en">
@@ -46,6 +52,7 @@
         <div class="page">
             <nav class="breadcrumbs">
 <ol itemprop="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+<meta itemprop="name" content="Breadcrumbs">
 <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
     <a itemprop="item" href="https://vendelin.org/">
         <meta itemprop="position" content="1">
@@ -62,8 +69,9 @@
 </nav>
             <main class="container"><div class="grid-left"><nav class="menu" id="authors">
 
-<a href="https://vendelin.org/authors/tvendelin/" itemprop="url" id="author-url-tvendelin" itemscope itemtype="http://schema.org/URL">
-    <div class="author" itemprop="author" id="author-tvendelin" itemref="author-url-tvendelin" itemscope itemtype="http://schema.org/Person">
+<a href="https://vendelin.org/authors/tvendelin/">
+    <div class="author" itemprop="author" id="author-tvendelin" itemscope itemtype="http://schema.org/Person">
+        <link href="https://vendelin.org/authors/tvendelin/" rel="author">
     
     <figure>
         <img src="https://vendelin.org/img/tvendelin.jpg" alt="" itemprop="image">
@@ -90,10 +98,8 @@
 
 
 
-<article class="main-single"  itemscope itemtype="http://schema.org/Article" itemref="author-tvendelin">
+<article class="main-single"  itemscope itemtype="http://schema.org/Article" itemref="meta-descr meta-published meta-modified author-tvendelin">
     <meta itemprop="mainEntityOfPage" content="https://vendelin.org/geeky/hugo/custom-multilingual-configuration-hugo/">
-    <meta itemprop="datePublished" content="2020-05-09T07:34:50+02:00">
-    <meta itemprop="dateModified" content="2020-07-21T07:36:24+02:00">
         <h1 itemprop="headline">Customizing Configuration for Multilingual Hugo-Managed Site</h1>
         
         <p>A multilingual site managed with Hugo static generator requires a couple of extra steps. I essence,

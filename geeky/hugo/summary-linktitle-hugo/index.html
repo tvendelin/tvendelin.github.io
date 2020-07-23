@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" prefix="og: http://ogp.me/ns#">
+<html lang="en" prefix="og: http://ogp.me/ns#" itemscope itemtype="http://schema.org/WebPage">
     <head>
                 <title>
             Featured Content, Page Summary, Link Texts with Hugo
@@ -17,15 +17,21 @@
 
 
 
+
+
+
+
+
+
+
 <meta name="twitter:card" content="summary">
 <meta property="og:type" content="article">
 
 <meta itemprop="name" property="og:title" content="Featured Content, Page Summary, Link Texts with Hugo">
-<meta itemprop="description" property="og:description" content="Promoting articles on the front page and customizing links">
-<meta itemprop="image" property="og:image" content="https://vendelin.org/img/vendelin_org.png">
-<meta itemprop="datePublished" content="2020-06-22T19:23:27+02:00">
-<meta itemprop="dateModified" content="2020-07-21T07:36:24+02:00">
-<meta itemprop="wordCount" content="418">
+<meta id="meta-descr" itemprop="description" property="og:description" content="Promoting articles on the front page and customizing links">
+<meta itemprop="image" property="og:image" content="">
+<meta id="meta-published" itemprop="datePublished" content="2020-06-22T19:23:27+02:00">
+<meta id="meta-modified" itemprop="dateModified" content="2020-07-21T07:36:24+02:00">
 
 <meta property="og:url" content="https://vendelin.org/geeky/hugo/summary-linktitle-hugo/">
 <meta property="og:locale" content="en">
@@ -46,6 +52,7 @@
         <div class="page">
             <nav class="breadcrumbs">
 <ol itemprop="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+<meta itemprop="name" content="Breadcrumbs">
 <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
     <a itemprop="item" href="https://vendelin.org/">
         <meta itemprop="position" content="1">
@@ -62,8 +69,9 @@
 </nav>
             <main class="container"><div class="grid-left"><nav class="menu" id="authors">
 
-<a href="https://vendelin.org/authors/tvendelin/" itemprop="url" id="author-url-tvendelin" itemscope itemtype="http://schema.org/URL">
-    <div class="author" itemprop="author" id="author-tvendelin" itemref="author-url-tvendelin" itemscope itemtype="http://schema.org/Person">
+<a href="https://vendelin.org/authors/tvendelin/">
+    <div class="author" itemprop="author" id="author-tvendelin" itemscope itemtype="http://schema.org/Person">
+        <link href="https://vendelin.org/authors/tvendelin/" rel="author">
     
     <figure>
         <img src="https://vendelin.org/img/tvendelin.jpg" alt="" itemprop="image">
@@ -90,10 +98,8 @@
 
 
 
-<article class="main-single"  itemscope itemtype="http://schema.org/Article" itemref="author-tvendelin">
+<article class="main-single"  itemscope itemtype="http://schema.org/Article" itemref="meta-descr meta-published meta-modified author-tvendelin">
     <meta itemprop="mainEntityOfPage" content="https://vendelin.org/geeky/hugo/summary-linktitle-hugo/">
-    <meta itemprop="datePublished" content="2020-06-22T19:23:27+02:00">
-    <meta itemprop="dateModified" content="2020-07-21T07:36:24+02:00">
         <h1 itemprop="headline">Featured Content, Page Summary, Link Texts with Hugo</h1>
         
         <p>Promoting certain articles on the front page of your Hugo managed site will be the next step after

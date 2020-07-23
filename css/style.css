@@ -187,6 +187,34 @@ article {
     border-radius: 35%;
 }
 
+/* author's term page */
+.author-intro {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    column-gap: 6%;
+    margin-bottom: 3rem;
+}
+
+.author-intro h1 {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.author-intro figure {
+    grid-column: 2;
+    grid-row: 1;
+    padding-right: 2rem;
+}
+
+.author-intro .bio {
+    grid-column: 1/3;
+    grid-row: 2;
+}
+
+.author-intro .bio p {
+    font-size: 0.9rem;
+}
+
 figure.main {
     margin: 0 0 3rem 0;
 }
@@ -580,4 +608,35 @@ th, td {
     .box-shadow-menu {
         display: none;
     }
+
+    /* authors term page */
+    .author-intro {
+        display: grid;
+        grid-template-columns: 2fr 5fr;
+        column-gap: 4%;
+        margin-bottom: 3rem;
+        background-color: #eee;
+        padding: 1rem 3rem 3rem 1rem;
+    }
+
+    .author-intro h1 {
+        grid-column: 1/3;
+        grid-row: 1;
+    }
+
+    .author-intro figure {
+        grid-column: 1;
+        grid-row: 2;
+        padding-left: 2rem;
+    }
+
+    .author-intro .bio {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .author-intro .bio p {
+        font-size: 0.9rem;
+    }
+
 }

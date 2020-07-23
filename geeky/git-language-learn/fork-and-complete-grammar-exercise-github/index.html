@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" prefix="og: http://ogp.me/ns#">
+<html lang="en" prefix="og: http://ogp.me/ns#" itemscope itemtype="http://schema.org/WebPage">
     <head>
                 <title>
             GitHub for Foreign Language Students
@@ -17,15 +17,21 @@
 
 
 
+
+
+
+
+
+
+
 <meta name="twitter:card" content="summary">
 <meta property="og:type" content="article">
 
 <meta itemprop="name" property="og:title" content="GitHub for Foreign Language Students">
-<meta itemprop="description" property="og:description" content="Git/GitHub based workflow for grammar exercises from a foreign language student&#39;s perspective">
-<meta itemprop="image" property="og:image" content="https://vendelin.org/img/vendelin_org.png">
-<meta itemprop="datePublished" content="2020-05-15T16:24:41+02:00">
-<meta itemprop="dateModified" content="2020-07-21T07:36:24+02:00">
-<meta itemprop="wordCount" content="807">
+<meta id="meta-descr" itemprop="description" property="og:description" content="Git/GitHub based workflow for grammar exercises from a foreign language student&#39;s perspective">
+<meta itemprop="image" property="og:image" content="">
+<meta id="meta-published" itemprop="datePublished" content="2020-05-15T16:24:41+02:00">
+<meta id="meta-modified" itemprop="dateModified" content="2020-07-21T07:36:24+02:00">
 
 <meta property="og:url" content="https://vendelin.org/geeky/git-language-learn/fork-and-complete-grammar-exercise-github/">
 <meta property="og:locale" content="en">
@@ -46,6 +52,7 @@
         <div class="page">
             <nav class="breadcrumbs">
 <ol itemprop="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+<meta itemprop="name" content="Breadcrumbs">
 <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
     <a itemprop="item" href="https://vendelin.org/">
         <meta itemprop="position" content="1">
@@ -62,8 +69,9 @@
 </nav>
             <main class="container"><div class="grid-left"><nav class="menu" id="authors">
 
-<a href="https://vendelin.org/authors/tvendelin/" itemprop="url" id="author-url-tvendelin" itemscope itemtype="http://schema.org/URL">
-    <div class="author" itemprop="author" id="author-tvendelin" itemref="author-url-tvendelin" itemscope itemtype="http://schema.org/Person">
+<a href="https://vendelin.org/authors/tvendelin/">
+    <div class="author" itemprop="author" id="author-tvendelin" itemscope itemtype="http://schema.org/Person">
+        <link href="https://vendelin.org/authors/tvendelin/" rel="author">
     
     <figure>
         <img src="https://vendelin.org/img/tvendelin.jpg" alt="" itemprop="image">
@@ -90,10 +98,8 @@
 
 
 
-<article class="main-single"  itemscope itemtype="http://schema.org/Article" itemref="author-tvendelin">
+<article class="main-single"  itemscope itemtype="http://schema.org/Article" itemref="meta-descr meta-published meta-modified author-tvendelin">
     <meta itemprop="mainEntityOfPage" content="https://vendelin.org/geeky/git-language-learn/fork-and-complete-grammar-exercise-github/">
-    <meta itemprop="datePublished" content="2020-05-15T16:24:41+02:00">
-    <meta itemprop="dateModified" content="2020-07-21T07:36:24+02:00">
         <h1 itemprop="headline">GitHub for Foreign Language Students</h1>
         
         <p>Grammar exercises published as a Git repository on GitHub can be forked by a student and completed
@@ -110,7 +116,8 @@ first homework on GitHub.</p>
 This is done with a click on the &lsquo;Fork&rsquo; button in the top-right corner of the Yuni&rsquo;s repository
 page.</p>
 <p><figure class="" id="c343775cee0aa3a1a20f51d7139f3b1a" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-    <meta itemprop="url" content="/img/fork.png"><img src="/img/fork.png" alt="fork"></figure></p>
+    <link itemprop="url" href="/img/fork.png" rel="preload" as="image"> 
+    <img itemprop="image" src="/img/fork.png" alt="fork"></figure></p>
 <p>Now Maria has her copy (or <em>fork</em>, in geeky speak) of Yuni&rsquo;s repository, which she is free to
 modify. In fact her homework <em>is</em> to modify a file with her first exercise: she has to insert
 missing words in a text.</p>
@@ -119,12 +126,14 @@ GitHub. This doesn&rsquo;t differ much from just editing text in a web form, exc
 the changes, Maria is asked to add a <em>commit message</em> – a sentence describing the changes that were
 made.</p>
 <p><figure class="" id="1935ccfeabe1746a249a9d4012ce7882" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-    <meta itemprop="url" content="/img/commit_github.png"><img src="/img/commit_github.png" alt="Commit"></figure></p>
+    <link itemprop="url" href="/img/commit_github.png" rel="preload" as="image"> 
+    <img itemprop="image" src="/img/commit_github.png" alt="Commit"></figure></p>
 <p>So, Maria types: &lsquo;Completed exercise indonesian_pronouns.md&rsquo; and pushes the &lsquo;Commit changes&rsquo; button.</p>
 <p>Oki-doki, now it&rsquo;s time to get her exercise checked and possibly corrected. For that, Maria
 invites a <em>collaborator</em> to her repository. This collaborator is her teacher Yuni, of course.</p>
 <p><figure class="" id="9a29e5fcd816b6e2963828e612acb0d9" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-    <meta itemprop="url" content="/img/invite_collaborator.png"><img src="/img/invite_collaborator.png" alt="Invite collaborator"></figure></p>
+    <link itemprop="url" href="/img/invite_collaborator.png" rel="preload" as="image"> 
+    <img itemprop="image" src="/img/invite_collaborator.png" alt="Invite collaborator"></figure></p>
 <p>To invite Yuni as a collaborator, Maria clicks the &lsquo;Settings&rsquo; button for her repository, then clicks
 &lsquo;Manage Access&rsquo;, then &lsquo;Invite collaborator&rsquo; and adds Yuni&rsquo;s user name on GitHub. Once she submits
 the form, Yuni will receive her invitation message. Once Yuni accepts the invitation, she will be
@@ -134,17 +143,20 @@ able to change files and perform commits in Maria&rsquo;s repository.</p>
 repository made by Yuni. Maria goes to her repository page on GitHub, and clicks the button saying
 &lsquo;4 commits&rsquo; (the actual number may be different):</p>
 <p><figure class="" id="d6d521e7c7ccd5787e041aaba14610d6" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-    <meta itemprop="url" content="/img/4commits.png"><img src="/img/4commits.png" alt="Commits"></figure></p>
+    <link itemprop="url" href="/img/4commits.png" rel="preload" as="image"> 
+    <img itemprop="image" src="/img/4commits.png" alt="Commits"></figure></p>
 <p>This displays the history of all <em>commits</em> made to the files in this repository. She clicks the last
 one, &lsquo;Corrected exercise indonesian_pronouns.md&rsquo;. This displays the detailed commit message with
 Yuni&rsquo;s explanations, and also shows the differences between Maria&rsquo;s original version, and the
 corrected one – a <em>diff</em>, in geeky speak.</p>
 <p><figure class="" id="cfc801f996a533d38b7fef1b7a78829b" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-    <meta itemprop="url" content="/img/diff_github.png"><img src="/img/diff_github.png" alt="GitHub diff, line by line"></figure></p>
+    <link itemprop="url" href="/img/diff_github.png" rel="preload" as="image"> 
+    <img itemprop="image" src="/img/diff_github.png" alt="GitHub diff, line by line"></figure></p>
 <p>The line-by-line diff doesn&rsquo;t look appetizing for Maria&rsquo;s taste, so she clicks a page-like icon with
 a hint &lsquo;Display the rich diff&rsquo; (circled in the screenshot above). Much better!</p>
 <p><figure class="" id="54ca83710a520c8abcc7119df6462628" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-    <meta itemprop="url" content="/img/word_diff_github.png"><img src="/img/word_diff_github.png" alt="GitHub diff, word by word"></figure></p>
+    <link itemprop="url" href="/img/word_diff_github.png" rel="preload" as="image"> 
+    <img itemprop="image" src="/img/word_diff_github.png" alt="GitHub diff, word by word"></figure></p>
 <p>The errors are now highlighted word-by-word, and it looks pretty much like in an office text-editing
 program. The difference is that Maria is not locked into any particular file format (proprietary or
 not). Her exercise versions are still just plain texts, meaning it is quite easy to manipulate them.
@@ -166,7 +178,8 @@ review the corrections using word-by word diff.</p>
 <h3 id="the-very-short-version-for-mac-and-linux-users">The (very) short version for Mac and Linux Users</h3>
 <p>On GitHub repository page, click &lsquo;Clone or Download&rsquo; button, and copy the URL:</p>
 <p><figure class="" id="bcbb82880303a01dc65a7fcebeeaf51d" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-    <meta itemprop="url" content="/img/clone_url.png"><img src="/img/clone_url.png" alt="Clone from GitHub"></figure></p>
+    <link itemprop="url" href="/img/clone_url.png" rel="preload" as="image"> 
+    <img itemprop="image" src="/img/clone_url.png" alt="Clone from GitHub"></figure></p>
 <p>In your terminal emulator,</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"># Clone the repository to your computer
 git clone &lt;REPOSITORY URL&gt; my_exercises
