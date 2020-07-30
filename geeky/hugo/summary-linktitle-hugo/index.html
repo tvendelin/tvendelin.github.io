@@ -11,6 +11,8 @@
         <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/gdpr.css">
         <script async src="/js/hamburger.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&family=Open+Sans:wght@300;400;600;700&family=Source+Code+Pro:wght@400;500;700&display=swap" rel="stylesheet"> 
+
         <script async src="/js/gdpr.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-162948019-2"></script>
         <meta property="og:type" content="article">
 
@@ -90,20 +92,30 @@
 
 
 
+
+
+
+
+
+
+
 <article class="main-single"  itemscope itemtype="http://schema.org/Article" itemref="meta-descr meta-published meta-modified meta-in-lang author-tvendelin">
     <meta itemprop="mainEntityOfPage" content="https://vendelin.org/geeky/hugo/summary-linktitle-hugo/">
         <h1 itemprop="headline">Featured Content, Page Summary, Link Texts with Hugo</h1>
         
+        
+
+
         <p>Promoting certain articles on the front page of your Hugo managed site will be the next step after
 creating some content. You will need a summary for each such page, and a text that will appear in
 links – a <em>link title</em>.</p>
-<h2 id="page-title-and-link-title">Page Title and Link Title</h2>
+<h2 id="page-title-and-link-title"><a class="h-link" href="#page-title-and-link-title">Page Title and Link Title</a></h2>
 <p>Yes, a page can have more than one title. There are <code>linkTitle</code> and <code>title</code> front matter parameters,
 and there are corresponding <code>{{.LinkTitle}}</code> and <code>{{.Title}}</code> template variables. Always define
 a <code>title</code> in the front matter, and always use <code>{{.LinkTitle}}</code> in templates for the link text. If
 <code>linkTitle</code> is not defined, <code>{{.LinkTitle}}</code> will fall back to the value of <code>title</code>. <code>{{.Title }}</code> template variable should be used for HTML <code>&lt;title&gt;</code> tag only.</p>
 <p>This way, you can have different link text and HTML <code>&lt;title&gt;</code> for a page, if need be.</p>
-<h2 id="summary-or-summaries">Summary (or Summaries)</h2>
+<h2 id="summary-or-summaries"><a class="h-link" href="#summary-or-summaries">Summary (or Summaries)</a></h2>
 <p>Typically, you need a summary of an article – to feature it on your front page.
 Using page bundles allows for a flexible solution. Decide, what
 you would call the summary files in your project (<code>summary.md</code> sounds particularly creative), fetch
@@ -117,7 +129,7 @@ it as you would fetch any other page resource, and include its content where nee
 <p><a href="https://gohugo.io/content-management/summaries/" target="_blank" rel="noopener">Hugo docs on summaries</a>
  suggests a few other
 approaches, but I like mine better.</p>
-<h2 id="selecting-what-to-feature">Selecting What to Feature</h2>
+<h2 id="selecting-what-to-feature"><a class="h-link" href="#selecting-what-to-feature">Selecting What to Feature</a></h2>
 <p>You need a way to select a few articles for the front page. I find using tags and weights the
 simplest solution.</p>
 <p>By default, Hugo creates two <a href="https://gohugo.io/content-management/taxonomies/" target="_blank" rel="noopener">taxonomies</a>

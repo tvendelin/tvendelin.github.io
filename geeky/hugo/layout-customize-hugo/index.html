@@ -11,6 +11,8 @@
         <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/gdpr.css">
         <script async src="/js/hamburger.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&family=Open+Sans:wght@300;400;600;700&family=Source+Code+Pro:wght@400;500;700&display=swap" rel="stylesheet"> 
+
         <script async src="/js/gdpr.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-162948019-2"></script>
         <meta property="og:type" content="article">
 
@@ -90,16 +92,26 @@
 
 
 
+
+
+
+
+
+
+
 <article class="main-single"  itemscope itemtype="http://schema.org/Article" itemref="meta-descr meta-published meta-modified meta-in-lang author-tvendelin">
     <meta itemprop="mainEntityOfPage" content="https://vendelin.org/geeky/hugo/layout-customize-hugo/">
         <h1 itemprop="headline">Customize Web Page Layout: Hugo Content Types</h1>
         
+        
+
+
         <p>Style consistency is important, and one of the benefits of generating pages with Hugo (as opposed to
 editing HTML code for each page directly) is a very little amount of HTML code to handle.  So far,
 all the HTML we used were just four (!) template files plus a partial for the breadcrumbs and an
 image markdown hook. However, some types of content inevitably won&rsquo;t fit the Procrustean bed of a
 simplistic theme.</p>
-<h2 id="example-problems">Example Problems</h2>
+<h2 id="example-problems"><a class="h-link" href="#example-problems">Example Problems</a></h2>
 <p>Let&rsquo;s assume you will blog about programming, cooking and traveling – pretty usual
 blogging topics. Now, you want each of your travel page to start with a theme-setting photo, and at
 the bottom there should be included a map of the area you are writing about. Your cooking articles
@@ -108,7 +120,7 @@ dish you are writing about. It might make sense to include the list of ingredien
 page resource.</p>
 <p>You can chop your content in a manner of the legendary Procrustes, but
 some may argue you should instead customize the bed, that is, your templates.</p>
-<h2 id="hugo-content-types">Hugo Content Types</h2>
+<h2 id="hugo-content-types"><a class="h-link" href="#hugo-content-types">Hugo Content Types</a></h2>
 <p>Each page in Hugo has a <em>content type</em>. By default, it is the name of the top-most section the page
 belongs to. However, this can be overridden with the built-in <code>type:</code> front matter parameter.</p>
 <p>Both the theme and the project directories contain a <code>layouts</code> sub-directory. These are the places

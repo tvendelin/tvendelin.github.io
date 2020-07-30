@@ -11,6 +11,8 @@
         <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/gdpr.css">
         <script async src="/js/hamburger.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&family=Open+Sans:wght@300;400;600;700&family=Source+Code+Pro:wght@400;500;700&display=swap" rel="stylesheet"> 
+
         <script async src="/js/gdpr.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-162948019-2"></script>
         <meta property="og:type" content="article">
 
@@ -90,13 +92,23 @@
 
 
 
+
+
+
+
+
+
+
 <article class="main-single"  itemscope itemtype="http://schema.org/Article" itemref="meta-descr meta-published meta-modified meta-in-lang author-tvendelin">
     <meta itemprop="mainEntityOfPage" content="https://vendelin.org/geeky/hugo/create-multilingual-content-hugo/">
         <h1 itemprop="headline">Multilingual Content With Hugo</h1>
         
+        
+
+
         <p>Handling Multilingual Content is where Hugo really shines. However, since internationalization (i18n
 for short) is a pretty complex task, let&rsquo;s throw together a brief list of</p>
-<h2 id="requirements">Requirements</h2>
+<h2 id="requirements"><a class="h-link" href="#requirements">Requirements</a></h2>
 <ul>
 <li>The content translations should be added in an orderly manner.</li>
 <li>The content translations should be directly linkable to each other.</li>
@@ -109,7 +121,7 @@ of the same page, this should be configured in one rather than five places.</li>
 captions in five languages), such dependencies must be bundled with the resource (captions with
 the photo in this example), rather than with the main page of the bundle.</li>
 </ul>
-<h2 id="adding-a-translation-of-a-content-unit">Adding a Translation of a Content Unit</h2>
+<h2 id="adding-a-translation-of-a-content-unit"><a class="h-link" href="#adding-a-translation-of-a-content-unit">Adding a Translation of a Content Unit</a></h2>
 <p>This is the simplest part. Since <a href="https://vendelin.org/geeky/hugo/custom-multilingual-configuration-hugo/#create-a-very-basic-multilingual-configuration">we have configured two languages to be used at our site</a>
 , we can add the Russian translation of &lsquo;The Walrus and the Carpenter&rsquo; now by creating a new
 content file (notice <code>ru</code> in the file name):</p>
@@ -137,7 +149,7 @@ Russian translation of the immortal rhyme.</p>
 <p>Notice the custom <code>slug</code> parameter, that allows
 to make each translation&rsquo;s URL language-specific, even in a different alphabet. This should
 be helpful for search engine optimization of your site.</p>
-<h2 id="linking-the-translations">Linking the Translations</h2>
+<h2 id="linking-the-translations"><a class="h-link" href="#linking-the-translations">Linking the Translations</a></h2>
 <p>How many a time did you click on a &lsquo;language&rsquo; link, hoping to get the translation of the page, only
 to end up on the website&rsquo;s front page instead? With Hugo, this kind of hiccups can be eliminated
 once and for all.</p>
@@ -192,7 +204,7 @@ A letter from his wife.
 <p>That was simple enough, as our template didn&rsquo;t contain any language-specific text strings. But what
 if we wanted to display some text next to our translation links, like saying &ldquo;Other languages:&rdquo; in
 English and &ldquo;Другие языки:&rdquo; in Russian?</p>
-<h2 id="translating-strings-in-templates">Translating Strings in Templates</h2>
+<h2 id="translating-strings-in-templates"><a class="h-link" href="#translating-strings-in-templates">Translating Strings in Templates</a></h2>
 <p>Create an <code>i18n</code> directory in the root of your project:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">mkdir i18n
 </code></pre></div><p>In this directory, let&rsquo;s create YAML files with translations, <code>i18n/en.yaml</code> and
@@ -228,7 +240,7 @@ translation. Just refer to page variables as you would from a template.</p>
 <p>This brings us to a daunting task of handling plurals. Adding &rsquo;s&rsquo; at the end of an English noun
 doesn&rsquo;t always work (think of <em>mouse – mice</em> or <em>goose – geese</em>), but if you thought it&rsquo;s the worst
 of your problems, let&rsquo;s have some</p>
-<h2 id="fun-with-russian-plurals">Fun With Russian Plurals</h2>
+<h2 id="fun-with-russian-plurals"><a class="h-link" href="#fun-with-russian-plurals">Fun With Russian Plurals</a></h2>
 <p>While <em>goose – geese</em> is an exception in English, in Russian having a singular and up to three plural forms
 for a noun is normal. Some nouns have <em>only</em> singular form, while others exist <em>only</em> in
 plural. This makes Russian probably the most tricky use case for handling plurals, and thus a perfect
@@ -317,7 +329,7 @@ plurals in action:</p>
 </code></pre>
 <p>Notice that <code>zero</code> variant is not supported, and so there is no way to say neither &lsquo;no
 ship&rsquo; nor &lsquo;no ships&rsquo;, neither in English nor in Russian.</p>
-<h2 id="markdown-files-as-page-bundle-resources">Markdown Files as Page Bundle Resources</h2>
+<h2 id="markdown-files-as-page-bundle-resources"><a class="h-link" href="#markdown-files-as-page-bundle-resources">Markdown Files as Page Bundle Resources</a></h2>
 <p>Should you include Markdown files as page resources, Hugo will look for a Markdown file for a
 particular language, and will not fall back to the default language version, if such file is
 missing. This is sane and useful feature, but sometimes you might want to include some

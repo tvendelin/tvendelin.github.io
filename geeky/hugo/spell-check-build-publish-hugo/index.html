@@ -11,6 +11,8 @@
         <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/gdpr.css">
         <script async src="/js/hamburger.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&family=Open+Sans:wght@300;400;600;700&family=Source+Code+Pro:wght@400;500;700&display=swap" rel="stylesheet"> 
+
         <script async src="/js/gdpr.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-162948019-2"></script>
         <meta property="og:type" content="article">
 
@@ -90,17 +92,27 @@
 
 
 
+
+
+
+
+
+
+
 <article class="main-single"  itemscope itemtype="http://schema.org/Article" itemref="meta-descr meta-published meta-modified meta-in-lang author-tvendelin">
     <meta itemprop="mainEntityOfPage" content="https://vendelin.org/geeky/hugo/spell-check-build-publish-hugo/">
         <h1 itemprop="headline">Spell Check, Build Your Site with Hugo, Publish to GitHub</h1>
         
+        
+
+
         <p>So, you are happy with the preview provided by the local Hugo server, and you want to publish your
 site. Make sure <code>git status</code> doesn&rsquo;t show anything uncommitted changes (you <em>do</em> keep versions of your project
 under control, don&rsquo;t you?). Then, manually or with some shell magic, change the <code>draft</code> front matter
 parameter to <code>false</code> for the pages you plan to publish. Restart your Hugo server <em>without</em> the <code>-D</code>
 option and check that nothing is missing. <code>git diff</code> should also be quite handy, especially after
 scripted mass-changes. If everything looks good, commit again and proceed to</p>
-<h2 id="spell-checking-_en-masse_">Spell Checking <em>en Masse</em></h2>
+<h2 id="spell-checking-_en-masse_"><a class="h-link" href="#spell-checking-_en-masse_">Spell Checking <em>en Masse</em></a></h2>
 <p>Your editor certainly has a spell-checker, and I&rsquo;m sure you use it diligently, but checking before
 publishing is still a sane idea, since we, humans tend to forget and overlook things. This time, we want to
 spell-check everything we are about to publish <em>en masse</em>, and make sure it&rsquo;s <em>everything</em>:</p>
@@ -112,12 +124,12 @@ processing (<code>xargs -o</code>), one at a time (<code>-n1</code>). The GNU gr
 the default on Linux distros, but Mac users might want to install it from MacPorts, or drop the <code>-P</code>
 option.</p>
 <p>Commit when done.</p>
-<h2 id="build-your-site-with-a-four-letter-word">Build Your Site with a Four-Letter Word</h2>
+<h2 id="build-your-site-with-a-four-letter-word"><a class="h-link" href="#build-your-site-with-a-four-letter-word">Build Your Site with a Four-Letter Word</a></h2>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo
 </code></pre></div><p>That&rsquo;s it. Your site is generated in <code>public</code> directory of your project by default. Make sure you
 put it into <code>.gitignore</code> of your project, or, better still, configure it to be outside your project
 tree altogether with <code>publishDir: &lt;PATH&gt;</code> in your main configuration file.</p>
-<h2 id="host-your-site-on-github">Host Your Site on GitHub</h2>
+<h2 id="host-your-site-on-github"><a class="h-link" href="#host-your-site-on-github">Host Your Site on GitHub</a></h2>
 <p>There are plenty of other hosting options, but this one combines zero budget with full control over
 your code. The drawback is that you won&rsquo;t have an access to HTTP headers (at least as of this
 writing), and so caching for all content will be set rigidly to 10 minutes.</p>

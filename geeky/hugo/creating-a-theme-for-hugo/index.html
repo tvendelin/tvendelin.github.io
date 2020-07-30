@@ -11,6 +11,8 @@
         <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/gdpr.css">
         <script async src="/js/hamburger.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&family=Open+Sans:wght@300;400;600;700&family=Source+Code+Pro:wght@400;500;700&display=swap" rel="stylesheet"> 
+
         <script async src="/js/gdpr.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-162948019-2"></script>
         <meta property="og:type" content="article">
 
@@ -90,10 +92,20 @@
 
 
 
+
+
+
+
+
+
+
 <article class="main-single"  itemscope itemtype="http://schema.org/Article" itemref="meta-descr meta-published meta-modified meta-in-lang author-tvendelin">
     <meta itemprop="mainEntityOfPage" content="https://vendelin.org/geeky/hugo/creating-a-theme-for-hugo/">
         <h1 itemprop="headline">Hugo Theme Tutorial – Very Brief</h1>
         
+        
+
+
         <p>A &lsquo;theme&rsquo; in Hugo is a collection of HTML templates, stylesheets and other components that define what your
 site looks like, and are <em>completely independent of your site content</em>. That is, the very same theme
 can be used in many different websites. In software lingo this is known as the &lsquo;separation of
@@ -148,7 +160,7 @@ of our main project, but <code>content/</code> directory is understandably missi
 </code></pre></div><p>The crucially important HTML template files are those under  <code>_default</code> sub-folder and <code>index.html</code>.
 To generate your site with Hugo, these should be sensibly configured. It doesn&rsquo;t happen by default
 (all of them except <code>baseof.html</code> are just empty). So, let&rsquo;s get this done.</p>
-<h2 id="the-mother-of-all-templates-baseofhtml">The mother of all templates: <code>baseof.html</code></h2>
+<h2 id="the-mother-of-all-templates-baseofhtml"><a class="h-link" href="#the-mother-of-all-templates-baseofhtml">The mother of all templates: <code>baseof.html</code></a></h2>
 <p>Open the <code>themes/comic/layouts/_default/baseof.html</code> file and replace its contents with the
 following:</p>
 <div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
@@ -174,7 +186,7 @@ be rendered using this template by default.  The code in double curly braces wil
 the parts of the actual content. <code>{{.Title}}</code> will become the title of an actual page. The <code>{{block &quot;main&quot; .}}...{{end}}</code> part will include template code from a different template file, depending on
 the type of the page – more on that in a moment. We shall discuss <code>{{.Language.Lang}}</code> and
 <code>{{.Description}}</code> later, although you likely understand already what they do.</p>
-<h2 id="defining-the-singularity-singlehtml">Defining the singularity: <code>single.html</code></h2>
+<h2 id="defining-the-singularity-singlehtml"><a class="h-link" href="#defining-the-singularity-singlehtml">Defining the singularity: <code>single.html</code></a></h2>
 <p>The <code>single.html</code> file defines how a page with a single unit of content (an article, a cooking
 recipe, etc.) is generated. Open the <code>themes/comic/layouts/_default/single.html</code> and put the
 following text into it:</p>
@@ -192,7 +204,7 @@ Hugo will look into the <code>single.html</code> file, look up a block named &ld
 into <code>baseof.html</code>.</p>
 <p>To make it easier to understand which templates are used for what purpose, an explanatory text is
 added at the bottom. Remove it later on.</p>
-<h2 id="showing-whats-in-the-store-listhtml">Showing what&rsquo;s in the store: <code>list.html</code></h2>
+<h2 id="showing-whats-in-the-store-listhtml"><a class="h-link" href="#showing-whats-in-the-store-listhtml">Showing what&rsquo;s in the store: <code>list.html</code></a></h2>
 <p>Your site should be able to list its content for the users, not just displaying it, and provide
 navigation.  For displaying multiple units of content – for instance, to list the links to all the
 articles in a section – a separate template is used: <code>list.html</code>. Open
@@ -221,7 +233,7 @@ with a single page, the result is nested into <code>baseof.html</code>.</p>
 etc.). The <code>{{.Content}}</code> variable at the top of the block displays such content.</p>
 <p>Notice that it doesn&rsquo;t matter, <em>what</em> exactly is being listed: it can be &lsquo;single&rsquo; pages, or
 sub-sections, sub-categories, sub-anything.</p>
-<h2 id="the-entry-point-indexhtml">The entry point: <code>index.html</code></h2>
+<h2 id="the-entry-point-indexhtml"><a class="h-link" href="#the-entry-point-indexhtml">The entry point: <code>index.html</code></a></h2>
 <p>That&rsquo;s the starting point of your website, and thus a separate template. Open
 <code>themes/comic/layouts/index.html</code> (empty by default) and put this into it:</p>
 <div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">{{define &#34;main&#34;}}
@@ -242,7 +254,7 @@ sub-sections, sub-categories, sub-anything.</p>
 over a global variable, <code>.Site.Sections</code>, containing the top sections of your site. Needless to say,
 it is a rather unassuming front page for a website, and should be re-designed later. For now,
 though, we just need to get things working.</p>
-<h2 id="link-your-new-theme-in-configuration">Link your new theme in configuration</h2>
+<h2 id="link-your-new-theme-in-configuration"><a class="h-link" href="#link-your-new-theme-in-configuration">Link your new theme in configuration</a></h2>
 <p>Open <code>config/_default/config.yaml</code> and tell Hugo you are going to use your new theme:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">baseURL: &#34;http://example.com/&#34;
 title: &#34;Multilingua&#34;
@@ -252,11 +264,11 @@ theme: &#34;comic&#34;
 , you will see a page saying
 &lsquo;Page generated with index.html&rsquo; (reload may be required). Once you create some content, the page
 will display more than this debugging message, of course.</p>
-<h2 id="done-with-basics">Done with Basics</h2>
+<h2 id="done-with-basics"><a class="h-link" href="#done-with-basics">Done with Basics</a></h2>
 <p>The very basic Hugo theme is now ready: your pages will be displayed.</p>
 <p>Should Hugo generate usable templates immediately when a new theme skeleton is created, this
 article to this point would become obsolete.</p>
-<h2 id="partial-templates-or-just-partials">Partial Templates, or Just Partials</h2>
+<h2 id="partial-templates-or-just-partials"><a class="h-link" href="#partial-templates-or-just-partials">Partial Templates, or Just Partials</a></h2>
 <p>Partials allow you to define chunks of HTML code and include it, conditionally or unconditionally,
 into other templates. A typical candidate for a partial is a code fragment that includes a lot of
 template code and a relatively small amount of HTML.</p>
@@ -300,7 +312,7 @@ available there.</p>
         <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</code></pre></div><h2 id="static-assets">Static Assets</h2>
+</code></pre></div><h2 id="static-assets"><a class="h-link" href="#static-assets">Static Assets</a></h2>
 <p>Finally, the static files live under <code>static</code> directory in your theme. You probably want to add some
 basic CSS right away, just enough to prevent your eyes from bleeding while prototyping your site.
 For instance, you may save this unassuming grid-based stylesheet under <code>static/css/main.css</code> in your
@@ -354,14 +366,14 @@ theme:</p>
 <span class="p">.</span><span class="nc">translations</span> <span class="nt">a</span> <span class="p">{</span>
     <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div><h2 id="should-i-use-a-third-party-theme-or-build-my-own">Should I Use a Third-Party Theme, or Build My Own?</h2>
+</code></pre></div><h2 id="should-i-use-a-third-party-theme-or-build-my-own"><a class="h-link" href="#should-i-use-a-third-party-theme-or-build-my-own">Should I Use a Third-Party Theme, or Build My Own?</a></h2>
 <p>If you are just starting out with Hugo, make your own – I&rsquo;ve just shown you how to do it in about 15
 minutes. Get things working first, learn how they work, and then give it a thought again.</p>
 <p>Adding a complex third-party theme to the equation right in the beginning will introduce too many
 moving parts.</p>
 <p>Apart from the above, just consider which path will get you to the goal quicker, and be realistic
 about it.</p>
-<h2 id="the-further-steps">The Further Steps</h2>
+<h2 id="the-further-steps"><a class="h-link" href="#the-further-steps">The Further Steps</a></h2>
 <p>At this point it would make sense to deal with the content and the structure of your website. Once
 you&rsquo;ve got a clear idea about that, you should probably re-design your from page template to put
 your best foot forward, style your website properly, maybe add

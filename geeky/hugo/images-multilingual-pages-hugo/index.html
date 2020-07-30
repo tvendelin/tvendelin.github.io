@@ -11,6 +11,8 @@
         <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/gdpr.css">
         <script async src="/js/hamburger.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&family=Open+Sans:wght@300;400;600;700&family=Source+Code+Pro:wght@400;500;700&display=swap" rel="stylesheet"> 
+
         <script async src="/js/gdpr.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-162948019-2"></script>
         <meta property="og:type" content="article">
 
@@ -90,10 +92,20 @@
 
 
 
+
+
+
+
+
+
+
 <article class="main-single"  itemscope itemtype="http://schema.org/Article" itemref="meta-descr meta-published meta-modified meta-in-lang author-tvendelin">
     <meta itemprop="mainEntityOfPage" content="https://vendelin.org/geeky/hugo/images-multilingual-pages-hugo/">
         <h1 itemprop="headline">Including Images in Multilingual Pages with Hugo</h1>
         
+        
+
+
         <p>Including images in multilingual context is a tricky business. The problem is, an image is a piece of
 content in its own right, with its own attributes, most important being the caption, which for N
 languages translates into N captions. In a typical editorial workflow, photos and articles come from
@@ -104,7 +116,7 @@ image might be used by more than one article. So, the number of places to edit t
 about a single image can grow quite quickly.</p>
 <p>Of course, if you run your site single-handed, and all images are made by you, the problem is not
 that sharp. So, let&rsquo;s start with</p>
-<h2 id="a-simple-approach">A Simple Approach</h2>
+<h2 id="a-simple-approach"><a class="h-link" href="#a-simple-approach">A Simple Approach</a></h2>
 <p>Markdown allows for the following:</p>
 <div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">![<span class="nt">&#34;alt attribute&#34;</span>](<span class="na">/img/IMAG0024.jpg &#34;title attribute&#34;</span>)
 </code></pre></div><p>This translates into</p>
@@ -135,7 +147,7 @@ image in an article with four language versions. And changing it back ten minute
 change your mind. Four languages = four edits! And watch out for image-caption mismatches – this can
 lead to hilarious (or embarrassing) situations.</p>
 <p>Ideally, I&rsquo;d prefer to have&hellip; Let&rsquo;s call it a &lsquo;composite page resource&rsquo;.</p>
-<h2 id="a-composite-page-resource">A Composite Page Resource</h2>
+<h2 id="a-composite-page-resource"><a class="h-link" href="#a-composite-page-resource">A Composite Page Resource</a></h2>
 <p>The idea is to create a unit containing an image and associated texts translations, and then include
 such unit(s) as a resource into a page bundle with minimal effort as a whole. This is more or less
 the way you switch the Hugo theme for your project by changing a single configuration parameter.</p>
@@ -190,9 +202,9 @@ a directory with an image and its captions.</p>
 image, all we need is to replace one subdirectory with another. This also guards us against the embarrassments of using
 a wrong caption. On the other hand, for simpler cases – like including screenshots in a tutorial –
 the Markdown syntax can be used as usual.</p>
-<h3 id="symlinks-to-rescue">Symlinks to Rescue?</h3>
+<h3 id="symlinks-to-rescue"><a class="h-link" href="#symlinks-to-rescue">Symlinks to Rescue?</a></h3>
 <p>I thought initially it would be an elegant solution, but I have just discovered it doesn&rsquo;t always work.</p>
-<h2 id="first-image-comes-free">First Image Comes Free</h2>
+<h2 id="first-image-comes-free"><a class="h-link" href="#first-image-comes-free">First Image Comes Free</a></h2>
 <p>Of all images used in an article, there is probably one, that you would like to put on the top of
 the content, use when you feature the article on the front page, etc. A theme-setting thing. We can
 simplify our lives one step further, if we agree on a &lsquo;magic&rsquo; name for such composite resource, and

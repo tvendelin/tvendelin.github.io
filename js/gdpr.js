@@ -3,7 +3,9 @@ function closeGdprBanner() {
 }
 
 function showGdprBanner() {
-    document.getElementById('gdpr').style.display = 'block'
+    var banner = document.getElementById('gdpr')
+    banner.style.display = 'block'
+    banner.style.position = 'fixed'
 }
 
 function gdprOK(){

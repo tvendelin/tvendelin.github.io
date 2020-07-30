@@ -11,6 +11,8 @@
         <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/gdpr.css">
         <script async src="/js/hamburger.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&family=Open+Sans:wght@300;400;600;700&family=Source+Code+Pro:wght@400;500;700&display=swap" rel="stylesheet"> 
+
         <script async src="/js/gdpr.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-162948019-2"></script>
         <meta property="og:type" content="article">
 
@@ -90,10 +92,20 @@
 
 
 
+
+
+
+
+
+
+
 <article class="main-single"  itemscope itemtype="http://schema.org/Article" itemref="meta-descr meta-published meta-modified meta-in-lang author-tvendelin">
     <meta itemprop="mainEntityOfPage" content="https://vendelin.org/geeky/hugo/adding-content-hugo/">
         <h1 itemprop="headline">Create Your First Page With Hugo</h1>
         
+        
+
+
         <p>We are finally ready to start adding content to our Hugo managed website. In your terminal, run:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo new poetry/lewis-carroll/the-walrus-and-the-carpenter/index.md
 </code></pre></div><p>Hugo will create the following directory structure under <code>kontent</code>:</p>
@@ -126,7 +138,7 @@ And this was odd, because it was
 The middle of the night.  
 </code></pre></div><p>The content, that is, the text below the front matter section, is written using the Markdown format,
 so we&rsquo;ve got two formats in one file, but that&rsquo;s fine.</p>
-<h2 id="say-hello-to-markdown">Say Hello to Markdown</h2>
+<h2 id="say-hello-to-markdown"><a class="h-link" href="#say-hello-to-markdown">Say Hello to Markdown</a></h2>
 <p>Markdown is a incredibly simple format for those who need to write texts consisting primarily of
 headers, paragraphs, lists, links, and code fragments.  It is also quite readable in its source
 form. In the example above, <code>#</code> denotes the biggest header, the paragraphs are separated with an
@@ -137,7 +149,7 @@ your templates.</p>
 <a href="https://guides.github.com/features/mastering-markdown/" target="_blank" rel="noopener">Mastering Markdown</a>
  at GitHub. It is claimed to be a
 three-minute read.</p>
-<h2 id="paving-the-path-to-your-fist-hugo-page">Paving the Path to Your Fist Hugo Page</h2>
+<h2 id="paving-the-path-to-your-fist-hugo-page"><a class="h-link" href="#paving-the-path-to-your-fist-hugo-page">Paving the Path to Your Fist Hugo Page</a></h2>
 <p>If you take a look at <a href="http://localhost:1313" target="_blank" rel="noopener">http://localhost:1313</a>
  now, you will see a link leading to &lsquo;Poetries&rsquo;. Wait
 a tick&hellip; Wasn&rsquo;t that &lsquo;poetry&rsquo;? I call it a &lsquo;creative default&rsquo;.  We
@@ -171,7 +183,7 @@ description: TBD
  link. It should be the single link on the page. You might want to
 restart the server, should it not be the case.</p>
 <p>Now you should be able to navigate all the way to the page with the poem normally.</p>
-<h2 id="a-brief-look-at-our-website-structure-so-far">A Brief Look at our Website Structure so far</h2>
+<h2 id="a-brief-look-at-our-website-structure-so-far"><a class="h-link" href="#a-brief-look-at-our-website-structure-so-far">A Brief Look at our Website Structure so far</a></h2>
 <p>There are several ways to provide structure (and navigation) for your Hugo-generated website. The
 simplest is by the means of <em>sections</em>. Sections are just mapped to the directory structure under
 the content directory of your project (<code>kontent</code> in our case). Each section has its own section
@@ -181,7 +193,7 @@ page, either implicitly (as with our &lsquo;Poetries&rsquo; case earlier), or ex
 subsection straight away.</p>
 <p>If, however, you will create an <code>index.md</code> file instead (without prepending underscore), the
 directory will become something else: a <em>page bundle</em>.</p>
-<h2 id="page-bundles-in-a-hugo-project">Page Bundles in a Hugo Project</h2>
+<h2 id="page-bundles-in-a-hugo-project"><a class="h-link" href="#page-bundles-in-a-hugo-project">Page Bundles in a Hugo Project</a></h2>
 <p>Although it is possible to create a page by just creating a markdown file with an arbitrary name
 that ends with <code>.md</code>, more often than not a web page doesn&rsquo;t stand alone, but rather has other
 <em>resources</em> linked to it: images, video, etc. Page bundles cater for that. They also are very

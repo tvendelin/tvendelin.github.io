@@ -11,6 +11,8 @@
         <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/gdpr.css">
         <script async src="/js/hamburger.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&family=Open+Sans:wght@300;400;600;700&family=Source+Code+Pro:wght@400;500;700&display=swap" rel="stylesheet"> 
+
         <script async src="/js/gdpr.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-162948019-2"></script>
         <meta property="og:type" content="article">
 
@@ -90,24 +92,34 @@
 
 
 
+
+
+
+
+
+
+
 <article class="main-single"  itemscope itemtype="http://schema.org/Article" itemref="meta-descr meta-published meta-modified meta-in-lang author-tvendelin">
     <meta itemprop="mainEntityOfPage" content="https://vendelin.org/geeky/hugo/custom-multilingual-configuration-hugo/">
         <h1 itemprop="headline">Customizing Configuration for Multilingual Hugo-Managed Site</h1>
         
+        
+
+
         <p>A multilingual site managed with Hugo static generator requires a couple of extra steps. I essence,
 you just need to tell Hugo which languages are you going to use, and how these languages are called
 in these languages (<em>Eesti keel</em> for Estonian, <em>Bahasa Indonesia</em> for Indonesian, etc.).
 The rest is really optional.</p>
 <p>Before we begin, though, I&rsquo;d like to suggest a few</p>
-<h2 id="configuration-adjustments">Configuration Adjustments</h2>
-<h3 id="i-choose-yaml-and-config-directory">I Choose YAML and config Directory</h3>
+<h2 id="configuration-adjustments"><a class="h-link" href="#configuration-adjustments">Configuration Adjustments</a></h2>
+<h3 id="i-choose-yaml-and-config-directory"><a class="h-link" href="#i-choose-yaml-and-config-directory">I Choose YAML and config Directory</a></h3>
 <p>Your project configuration sits by default in <code>config.toml</code> file in the project root directory. This
 isn&rsquo;t the only choice, though. Instead of a single file you can create a <code>config</code> sub-directory, and
 split your configuration into several files under it, if your configuration will start getting bushy.</p>
 <p>Neither is your file format choice limited to TOML. The
 alternatives are YAML and JSON. I prefer YAML for its uniformity (and maybe out of habit), so I
 shall be using it throughout this tutorial.</p>
-<h3 id="adjust-the-default-archetype">Adjust the Default Archetype</h3>
+<h3 id="adjust-the-default-archetype"><a class="h-link" href="#adjust-the-default-archetype">Adjust the Default Archetype</a></h3>
 <p>An <em>archetype</em> is a boilerplate code for your content files. By default, there is one created
 automatically for you, and it is located under <code>archetypes/default.md</code>. It includes a few parameters
 to for each article you are going to create: title (to become HTML <code>&lt;title&gt;</code> of a generated page),
@@ -120,14 +132,14 @@ be exposed in search engine results, add <code>description: TBD</code> parameter
 </span><span class="w"></span><span class="k">description</span><span class="p">:</span><span class="w"> </span>TBD<span class="w">
 </span><span class="w"></span>---<span class="w">
 </span></code></pre></div><p>&hellip; where &lsquo;TBD&rsquo; is just a placeholder.</p>
-<h3 id="i-call-it-kontent">I Call It &lsquo;kontent&rsquo;</h3>
+<h3 id="i-call-it-kontent"><a class="h-link" href="#i-call-it-kontent">I Call It &lsquo;kontent&rsquo;</a></h3>
 <p>There are two important directories in the root of your project, <code>config</code> and <code>content</code>, that
 compete with each other in terms of <code>&lt;TAB&gt;</code> completion when you work from a terminal. It would be
 rather practical to rename <code>content</code> directory into <code>kontent</code>. Now you will need to type <code>k&lt;TAB&gt;</code>
 instead of <code>cont&lt;TAB&gt;</code>, and <code>c&lt;TAB&gt;</code> instead of <code>conf&lt;TAB&gt;</code>). So,</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">mv content kontent
 </code></pre></div><p>You will need to reflect this move in your project configuration, speaking of which&hellip;</p>
-<h2 id="create-a-very-basic-multilingual-configuration">Create a very basic multilingual configuration</h2>
+<h2 id="create-a-very-basic-multilingual-configuration"><a class="h-link" href="#create-a-very-basic-multilingual-configuration">Create a very basic multilingual configuration</a></h2>
 <p>From your project root, create a sub-directory for default configuration:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">mkdir -p config/_default
 </code></pre></div><p>With your favourite editor, create a file <code>config/_default/config.yaml</code> with the following content:</p>
@@ -146,7 +158,7 @@ parameter is what you want to append to every page title of your site.  The <cod
 tells Hugo that your site will be in two languages, English and Russian, and that when available
 languages are listed, English comes before Russian - this is dictated by <code>weight</code> parameter. The
 lower the weight, the higher the priority.</p>
-<h2 id="language-configuration-in-a-separate-file">Language configuration in a separate file.</h2>
+<h2 id="language-configuration-in-a-separate-file"><a class="h-link" href="#language-configuration-in-a-separate-file">Language configuration in a separate file.</a></h2>
 <p>To keep things tidy, you may choose to move the <code>languages</code> section into separate file. I recommend
 that you do, as it may grow substantially. In this case, create a file
 <code>config/_default/languages.yaml</code>:</p>
@@ -160,7 +172,7 @@ ru:
 </code></pre></div><p>Notice, that <code>languages</code> key from the all-in-one config file has become the filename and it will be
 an error to include it into <code>config/_default/languages.yaml</code>. Also, don&rsquo;t forget to remove the
 language section from <code>config/_default/config.yaml</code>.</p>
-<h2 id="remove-the-generated-configuration-file">Remove the generated configuration file</h2>
+<h2 id="remove-the-generated-configuration-file"><a class="h-link" href="#remove-the-generated-configuration-file">Remove the generated configuration file</a></h2>
 <p>&hellip; or it will take priority over the configuration you&rsquo;ve just created.</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">rm config.toml
 </code></pre></div>

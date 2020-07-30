@@ -11,6 +11,8 @@
         <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/gdpr.css">
         <script async src="/js/hamburger.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&family=Open+Sans:wght@300;400;600;700&family=Source+Code+Pro:wght@400;500;700&display=swap" rel="stylesheet"> 
+
         <script async src="/js/gdpr.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-162948019-2"></script>
         <meta property="og:type" content="article">
 
@@ -90,15 +92,25 @@
 
 
 
+
+
+
+
+
+
+
 <article class="main-single"  itemscope itemtype="http://schema.org/Article" itemref="meta-descr meta-published meta-modified meta-in-lang author-tvendelin">
     <meta itemprop="mainEntityOfPage" content="https://vendelin.org/geeky/hugo/cross-reference-external-links-hugo/">
         <h1 itemprop="headline">Internal and External Links with Hugo</h1>
         
+        
+
+
         <p>The Markdown syntax for creating a link is straightforward, but you likely need to make sure that you
 are not creating any dead links at least internally to your site. You might also want to customize
 how different links behave. For instance, you may want the external links to open in a new tab, so
 that you site visitor stays at your site.</p>
-<h2 id="internal-links">Internal Links</h2>
+<h2 id="internal-links"><a class="h-link" href="#internal-links">Internal Links</a></h2>
 <p>Referencing pages of the same site is done with two <em>shortcodes</em>, <code>ref</code> and <code>relref</code>. A shortcode is
 a variable that is mapped to a template, but is meant to be used within a Markdown file.
 You can refer to the full path of a page (that is, relative to your domain) like this:</p>
@@ -112,7 +124,7 @@ display an error, no matter which page you are at.</p>
 <p>Read the <a href="https://gohugo.io/content-management/cross-references/" target="_blank" rel="noopener">official documentation</a>
  for more
 details.</p>
-<h2 id="customizing-link-behavior">Customizing Link Behavior</h2>
+<h2 id="customizing-link-behavior"><a class="h-link" href="#customizing-link-behavior">Customizing Link Behavior</a></h2>
 <p>The Markdown syntax for creating a link is this:</p>
 <div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">[<span class="nt">Link text</span>](<span class="na">URL &#34;Link title&#34;</span>)
 </code></pre></div><p>&hellip; which translates into this HTML:</p>
