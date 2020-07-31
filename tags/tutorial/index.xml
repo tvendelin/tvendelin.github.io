@@ -1,26 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tutorial on vendelin.org</title>
+    <title>tutorial on vendelin.org</title>
     <link>https://vendelin.org/tags/tutorial/</link>
-    <description>Recent content in Tutorial on vendelin.org</description>
+    <description>Recent content in tutorial on vendelin.org</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 04 Jul 2020 09:11:43 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 17 May 2020 17:52:49 +0200</lastBuildDate>
     
 	<atom:link href="https://vendelin.org/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Install Hugo</title>
-      <link>https://vendelin.org/geeky/hugo/install-hugo/</link>
-      <pubDate>Thu, 23 Apr 2020 18:38:11 +0200</pubDate>
-      
-      <guid>https://vendelin.org/geeky/hugo/install-hugo/</guid>
-      <description>Hugo comes in a single binary file. Download the archive from releases page to your ~/Downloads directory. The version and checksums in the examples will likely be different, of course.
-Calculate the checksum:
-openssl sha256 -hex -r ~/Downloads/hugo_0.69.2_macOS-64bit.tar.gz f58e9312ee292c082c5833a128e751c1d07c5fb0da1b7584c09131f18e2ccf52 */Users/you/Downloads/hugo_0.69.2_macOS-64bit.tar.gz Verify that the checksum matches the one listed in hugo_0.69.2_checksums.txt file, that can be found on the same releases page. Extract the archive you&amp;rsquo;ve just verified:
-tar zxvf ~/Downloads/hugo_0.69.2_macOS-64bit.tar.gz Copy the hugo executable to a directory in your $PATH.</description>
-    </item>
     
     <item>
       <title>Hugo Cookbook for a Multilingual Site</title>
@@ -29,106 +17,6 @@ tar zxvf ~/Downloads/hugo_0.69.2_macOS-64bit.tar.gz Copy the hugo executable to 
       
       <guid>https://vendelin.org/geeky/hugo/</guid>
       <description>Hugo is a tool for building a multilingual static site. Combined with hosting on GitHub, your site will run on zero-budget, and without the hurdles of maintaining any web- or database servers. You will also enjoy the full control over your code. Style consistency is easily manageable across hundreds of pages with only four HTML templates minimally required.</description>
-    </item>
-    
-    <item>
-      <title>Scaffolding of a Hugo website</title>
-      <link>https://vendelin.org/geeky/hugo/scaffoldings/</link>
-      <pubDate>Mon, 04 May 2020 20:29:38 +0200</pubDate>
-      
-      <guid>https://vendelin.org/geeky/hugo/scaffoldings/</guid>
-      <description>Choose a name for your project. It&amp;rsquo;s just a name of a directory and has no other significance. I have chosen &amp;lsquo;multilingua&amp;rsquo; for a name.
-In your terminal emulator, run
-hugo new site multilingua This will create multilingua directory and produce the output:
-Congratulations! Your new Hugo site is created in /Users/tom/learn/hugo/multilingua. Just a few more steps and you&amp;#39;re ready to go: 1. Download a theme into the same-named folder. Choose a theme from https://themes.</description>
-    </item>
-    
-    <item>
-      <title>Customizing Configuration for Multilingual Hugo-Managed Site</title>
-      <link>https://vendelin.org/geeky/hugo/custom-multilingual-configuration-hugo/</link>
-      <pubDate>Sat, 09 May 2020 07:34:50 +0200</pubDate>
-      
-      <guid>https://vendelin.org/geeky/hugo/custom-multilingual-configuration-hugo/</guid>
-      <description>A multilingual site managed with Hugo static generator requires a couple of extra steps. I essence, you just need to tell Hugo which languages are you going to use, and how these languages are called in these languages (Eesti keel for Estonian, Bahasa Indonesia for Indonesian, etc.). The rest is really optional.
-Before we begin, though, I&amp;rsquo;d like to suggest a few
-Configuration Adjustments I Choose YAML and config Directory Your project configuration sits by default in config.</description>
-    </item>
-    
-    <item>
-      <title>Hugo Theme Tutorial – Very Brief</title>
-      <link>https://vendelin.org/geeky/hugo/creating-a-theme-for-hugo/</link>
-      <pubDate>Tue, 05 May 2020 18:11:11 +0200</pubDate>
-      
-      <guid>https://vendelin.org/geeky/hugo/creating-a-theme-for-hugo/</guid>
-      <description>A &amp;lsquo;theme&amp;rsquo; in Hugo is a collection of HTML templates, stylesheets and other components that define what your site looks like, and are completely independent of your site content. That is, the very same theme can be used in many different websites. In software lingo this is known as the &amp;lsquo;separation of concerns&amp;rsquo; principle, which reminds of an old Swedish joke claiming that policemen always patrol in pairs because one can read and another can write.</description>
-    </item>
-    
-    <item>
-      <title>Create Your First Page With Hugo</title>
-      <link>https://vendelin.org/geeky/hugo/adding-content-hugo/</link>
-      <pubDate>Sat, 09 May 2020 15:20:12 +0200</pubDate>
-      
-      <guid>https://vendelin.org/geeky/hugo/adding-content-hugo/</guid>
-      <description>We are finally ready to start adding content to our Hugo managed website. In your terminal, run:
-hugo new poetry/lewis-carroll/the-walrus-and-the-carpenter/index.md Hugo will create the following directory structure under kontent:
-kontent/ └── poetry └── lewis-carroll └── the-walrus-and-the-carpenter └── index.md Next, let&amp;rsquo;s open the kontent/poetry/lewis-carroll/the-walrus-and-the-carpenter/index.md. The section between the triple dashes is called &amp;lsquo;front matter&amp;rsquo; on planet Hugo. On my planet we might have called it &amp;lsquo;metadata&amp;rsquo; or &amp;lsquo;page parameters&amp;rsquo;. Whatever it&amp;rsquo;s called, it contains variables specific to your page in YAML format.</description>
-    </item>
-    
-    <item>
-      <title>Multilingual Content With Hugo</title>
-      <link>https://vendelin.org/geeky/hugo/create-multilingual-content-hugo/</link>
-      <pubDate>Sat, 09 May 2020 15:20:12 +0200</pubDate>
-      
-      <guid>https://vendelin.org/geeky/hugo/create-multilingual-content-hugo/</guid>
-      <description>Handling Multilingual Content is where Hugo really shines. However, since internationalization (i18n for short) is a pretty complex task, let&amp;rsquo;s throw together a brief list of
-Requirements  The content translations should be added in an orderly manner. The content translations should be directly linkable to each other. Templates should not contain any hard-coded language-specific text. Instead, translations for such text should be defined separately and loaded according to the language of the content.</description>
-    </item>
-    
-    <item>
-      <title>Including Images in Multilingual Pages with Hugo</title>
-      <link>https://vendelin.org/geeky/hugo/images-multilingual-pages-hugo/</link>
-      <pubDate>Sun, 31 May 2020 19:15:26 +0200</pubDate>
-      
-      <guid>https://vendelin.org/geeky/hugo/images-multilingual-pages-hugo/</guid>
-      <description>Including images in multilingual context is a tricky business. The problem is, an image is a piece of content in its own right, with its own attributes, most important being the caption, which for N languages translates into N captions. In a typical editorial workflow, photos and articles come from two different types of sources (photographers and writers, respectively), and it is a photographer, who writes the captions – in one language at least.</description>
-    </item>
-    
-    <item>
-      <title>Featured Content, Page Summary, Link Texts with Hugo</title>
-      <link>https://vendelin.org/geeky/hugo/summary-linktitle-hugo/</link>
-      <pubDate>Mon, 22 Jun 2020 19:23:27 +0200</pubDate>
-      
-      <guid>https://vendelin.org/geeky/hugo/summary-linktitle-hugo/</guid>
-      <description>Promoting certain articles on the front page of your Hugo managed site will be the next step after creating some content. You will need a summary for each such page, and a text that will appear in links – a link title.
-Page Title and Link Title Yes, a page can have more than one title. There are linkTitle and title front matter parameters, and there are corresponding {{.LinkTitle}} and {{.</description>
-    </item>
-    
-    <item>
-      <title>Customize Web Page Layout: Hugo Content Types</title>
-      <link>https://vendelin.org/geeky/hugo/layout-customize-hugo/</link>
-      <pubDate>Thu, 02 Jul 2020 07:36:06 +0200</pubDate>
-      
-      <guid>https://vendelin.org/geeky/hugo/layout-customize-hugo/</guid>
-      <description>Style consistency is important, and one of the benefits of generating pages with Hugo (as opposed to editing HTML code for each page directly) is a very little amount of HTML code to handle. So far, all the HTML we used were just four (!) template files plus a partial for the breadcrumbs and an image markdown hook. However, some types of content inevitably won&amp;rsquo;t fit the Procrustean bed of a simplistic theme.</description>
-    </item>
-    
-    <item>
-      <title>Internal and External Links with Hugo</title>
-      <link>https://vendelin.org/geeky/hugo/cross-reference-external-links-hugo/</link>
-      <pubDate>Sat, 04 Jul 2020 09:11:43 +0200</pubDate>
-      
-      <guid>https://vendelin.org/geeky/hugo/cross-reference-external-links-hugo/</guid>
-      <description>The Markdown syntax for creating a link is straightforward, but you likely need to make sure that you are not creating any dead links at least internally to your site. You might also want to customize how different links behave. For instance, you may want the external links to open in a new tab, so that you site visitor stays at your site.
-Internal Links Referencing pages of the same site is done with two shortcodes, ref and relref.</description>
-    </item>
-    
-    <item>
-      <title>Spell Check, Build Your Site with Hugo, Publish to GitHub</title>
-      <link>https://vendelin.org/geeky/hugo/spell-check-build-publish-hugo/</link>
-      <pubDate>Fri, 03 Jul 2020 12:56:05 +0200</pubDate>
-      
-      <guid>https://vendelin.org/geeky/hugo/spell-check-build-publish-hugo/</guid>
-      <description>So, you are happy with the preview provided by the local Hugo server, and you want to publish your site. Make sure git status doesn&amp;rsquo;t show anything uncommitted changes (you do keep versions of your project under control, don&amp;rsquo;t you?). Then, manually or with some shell magic, change the draft front matter parameter to false for the pages you plan to publish. Restart your Hugo server without the -D option and check that nothing is missing.</description>
     </item>
     
   </channel>
