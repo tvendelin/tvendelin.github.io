@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en" prefix="og: http://ogp.me/ns#" itemscope itemtype="http://schema.org/WebPage">
+    <head>
+        <meta name="description" content="Markdown basic syntax by example: header, paragraph, list, link, image, table.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/customized.css">
+        <script async src="/js/hamburger.js"></script>
+                <title>
+            Markdown by Example
+        </title>
+        <link rel="stylesheet" href="/css/perldoc.css">
+        <link rel="stylesheet" href="/css/gdpr.css">
+        <script async src="/js/gdpr.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-162948019-2"></script>
+        <meta property="og:type" content="article">
+
+<meta itemprop="name" property="og:title" content="Markdown by Example">
+<meta id="meta-descr" itemprop="description" property="og:description" content="Markdown basic syntax by example: header, paragraph, list, link, image, table.">
+<meta id="meta-published" itemprop="datePublished" content="2020-08-07T09:02:22+02:00">
+<meta id="meta-modified" itemprop="dateModified" content="2020-08-08T11:59:24+02:00">
+<meta id="meta-in-lang" itemprop="inLanguage" content="en">
+
+<meta property="og:url" content="https://vendelin.org/geeky/errorist/markdown-tutorial/">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="vendelin.org">
+<meta property="og:image:alt" content="">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta itemprop="image" property="og:image" content="https://vendelin.org/img/vendelin_org.png"><link rel="canonical" href="https://vendelin.org/geeky/errorist/markdown-tutorial/">
+
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&family=Open+Sans:wght@300;400;600;700&family=Source+Code+Pro:wght@400;500;700&display=swap" rel="stylesheet"> 
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#990000">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="theme-color" content="#ffffff">
+
+    </head>
+    <body itemscope itemtype="http://schema.org/WebPage">
+        <nav class="top">
+            <a href="javascript:void(0);" class="box-shadow-menu" onclick="menuDrop()" title="Menu"></a>
+            <a href="https://vendelin.org" class="logo">
+                vendelin.org 
+            </a>
+        </nav>
+        <div id="mobile-menu"></div>
+        <div class="page">
+            <nav class="breadcrumbs">
+<ol itemprop="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+<meta itemprop="name" content="Breadcrumbs">
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="https://vendelin.org/">
+        <meta itemprop="position" content="1">
+        <span itemprop="name" class="micro">Home</span></a><span class="col">:</span></li>
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="https://vendelin.org/geeky/">
+        <meta itemprop="position" content="2">
+        <span itemprop="name" class="micro">Geeky Stuff</span></a><span class="col">:</span></li>
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="https://vendelin.org/geeky/errorist/">
+        <meta itemprop="position" content="3">
+        <span itemprop="name" class="micro">Errorist – Manage Multilingual Website Content Efficiently</span></a></li>
+</ol>
+</nav>
+            <div class="container"><div class="grid-left"><nav class="menu" id="ndrop" itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <meta itemprop="name" content="Main Navigation Menu">
+        <div class="section">Sections:</div>
+
+        <ul class="link-list"><li><a itemprop="url"  href="https://vendelin.org/geeky/">Geeky Stuff</a></li>
+        <li><a itemprop="url"  href="https://vendelin.org/travel/">Travel Accounts</a></li>
+        <li><a itemprop="url" href="https://vendelin.org/about/">About</a></li></ul>
+        <div class="section">Look by</div>
+
+        <ul class="link-list"><li><a itemprop="url" href="/authors">Authors</a></li><li><a itemprop="url" href="/tags">Tags</a></li></ul>
+
+    </nav>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<main class="main-single">
+    <article itemscope itemtype="http://schema.org/Article" itemref="meta-descr meta-published meta-modified meta-in-lang">
+        <meta itemprop="mainEntityOfPage" content="https://vendelin.org/geeky/errorist/markdown-tutorial/">
+            <h1 itemprop="headline">Markdown by Example</h1>
+            
+            
+
+
+            <p>The example below shows how content of your pages should be written to have headers, paragraphs,
+etc. If you scroll down you will see what the resulting web page will look like.</p>
+<div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">Whatever you publish with Hugo and Errorist – the articles, blog posts, etc. –
+are written using a plain text editor. The special parts of you texts –
+headings, lists, links, images, blockquotes – are marked up with a simple
+notation called Markdown. For example, once I put an empty line after this text,
+it will be interpreted as the end of paragraph.
+
+Notice you can read everything almost as easily as on a webpage that is created
+based on your Markdown writings. To mark a text as a header, prepend it with a
+pound and a space:
+
+<span class="gh"># The Main Header (H1 in HTML)
+</span><span class="gh"></span>
+To create up to five levels of subheaders you just need to add more pound signs.
+This is the next level of a subheader:
+
+<span class="gu">## Two Pound Signs Make a Second-Level Header
+</span><span class="gu"></span>
+To add <span class="ge">_emphasis_</span> to some part of a text, put it between underscores, and to
+make it <span class="gs">**bold**</span>, put it between two asterisks on each side.
+
+To block-quote some text, like your grammar exercise, prepend each paragraph
+with <span class="sb">`&gt;`</span> sign:
+
+&gt;When illustrating grammar concepts, you might want to highlight some <span class="gd">~~common
+</span><span class="gd">misspellings~~</span>, and the <span class="gs">**correct spelling**</span> as well. You can put the misspelled
+text between two tilde characters on both sides, and it will appear red and
+crossed out.  Marking text as <span class="gs">**bold**</span> within a blockquote will make it green,
+bold and italic. The latter is just styling in Errorist.
+
+&gt;To continue a blockquote over a paragraph boundary, use the <span class="sb">`&gt;`</span> sign at the
+beginning of the next paragraph.
+
+[<span class="nt">This is a link to Google</span>](<span class="na">http://google.com</span>).
+
+![<span class="nt">mysterious person</span>](<span class="na">https://gravatar.com/avatar?d=mp&amp;s=200 &#34;Adding an image is
+</span><span class="na">also simple&#34;</span>)
+
+Here is an ordered list of Errorist priorities:
+<span class="k">1.</span> Easy and robust multilingual content management.
+<span class="k">1.</span> Minimum code in Markdown files.
+<span class="k">1.</span> Minimalist design
+
+Unordered list of formats used in a page:
+<span class="k">-</span> Markdown
+<span class="k">-</span> YAML
+
+Even tables are doable:
+
+|City       |   Population|
+|:----------|------------:|
+|Tokyo      |9 273 000 000|
+|Montabaur  |       12 486|
+
+Colon on the left means the column is aligned left, colon on the right aligns
+the column right. Delimiters (`|`) do not need to align, but you can align them
+for better readability.
+
+This is not a complete list of what can be done with Markup, but it is enough to
+get started.
+</code></pre></div><p>Whatever you publish with Hugo and Errorist – the articles, blog posts, etc. – are written using a
+plain text editor. The special parts of you texts – headings, lists, links, images, block quotes –
+are marked up with a simple notation called Markdown. For example, once I put an empty line after
+this text, it will be interpreted as the end of paragraph.</p>
+<p>Notice you can read everything almost as easily as on a web page that is created based on your
+Markdown writings. To mark a text as a header, prepend it with a pound and a space:</p>
+<h1 id="the-main-header-h1-in-html"><a class="h-link" href="#the-main-header-h1-in-html">The Main Header (H1 in HTML)</a></h1>
+<p>To create up to five levels of subheads you just need to add more pound signs. This is the next
+level of a subhead:</p>
+<h2 id="two-pound-signs-make-a-second-level-header"><a class="h-link" href="#two-pound-signs-make-a-second-level-header">Two Pound Signs Make a Second-Level Header</a></h2>
+<p>To add <em>emphasis</em> to some part of a text, put it between underscores, and to make it <strong>bold</strong>, put
+it between two asterisks on each side.</p>
+<p>To block-quote some text, like your grammar exercise, prepend each paragraph with <code>&gt;</code> sign:</p>
+<blockquote>
+<p>When illustrating grammar concepts, you might want to highlight some <del>common misspellings</del>,
+and the <strong>correct spelling</strong> as well. You can put the misspelled text between two tilde characters
+on both sides, and it will appear red and crossed out. Marking text as <strong>bold</strong> within a block quote
+will make it green, bold and italic. The latter is just styling in Errorist.</p>
+</blockquote>
+<blockquote>
+<p>To continue a block quote over a paragraph boundary, use the <code>&gt;</code> sign at the
+beginning of the next paragraph.</p>
+</blockquote>
+<p><a href="http://google.com" target="_blank" rel="noopener">This is a link to Google</a>
+.</p>
+<p>
+<figure class="prominent " id="5f7d824cf284ddb5202e12177af81074" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+    <link itemprop="url" href="https://gravatar.com/avatar?d=mp&amp;s=200" rel="preload" as="image"> 
+    <img itemprop="image" src="https://gravatar.com/avatar?d=mp&amp;s=200" alt="mysterious person" onclick="expandPic(event, 'expanded')"><figcaption>Adding an image is also simple 
+    </figcaption></figure></p>
+<p>Here is an ordered list of Errorist priorities:</p>
+<ol>
+<li>Easy and robust multilingual content management.</li>
+<li>Minimum code in Markdown files.</li>
+<li>Minimalist design</li>
+</ol>
+<p>Unordered list of formats used in a page:</p>
+<ul>
+<li>Markdown</li>
+<li>YAML</li>
+</ul>
+<p>Even tables are doable:</p>
+<table>
+<thead>
+<tr>
+<th align="left">City</th>
+<th align="right">Population</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Tokyo</td>
+<td align="right">9 273 000 000</td>
+</tr>
+<tr>
+<td align="left">Montabaur</td>
+<td align="right">12 486</td>
+</tr>
+</tbody>
+</table>
+<p>Colon on the left means the column is aligned left, colon on the right
+aligns the column right. Delimiters (<code>|</code>) do not need to align, but you can align them for better
+readability.</p>
+<p>This is not a complete list of what can be done with Markup, but it is enough to get started.</p>
+
+            <nav class="nextprev">
+
+<p class="next">
+    <a href="https://vendelin.org/geeky/errorist/yaml-tutorial/">
+         YAML – the Very Basics &rarr;
+    </a>
+</p>
+
+
+<p class="prev">
+    <a href="https://vendelin.org/geeky/errorist/readme/">
+         &larr; README
+    </a>
+</p>
+
+</nav>
+<div id="disqus_thread"></div>
+    </article>
+</main><script>
+function disqus() {
+
+    var disqus_config = function () {
+        this.page.url = "https://vendelin.org/geeky/errorist/markdown-tutorial/";  
+        this.page.identifier = "1563b785d856b66a4175c26666c9a7a7";   
+    };
+    (function() {  
+        var d = document, s = d.createElement('script');
+
+        s.src = 'https://vendelin-org.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+
+}
+
+window.addEventListener('load', function(event){
+    var decn = cookieDecision();
+
+    if(decn) {
+        const accept = decn.split('=')[1];
+        if( accept == 1 ){
+            disqus();
+        }
+    }
+
+    document.getElementById('accept').addEventListener('click', function (){
+        disqus();
+    });
+});
+</script></div><div class="made-by">
+    <p>
+        Built with <a href="https://vendelin.org/geeky/errorist">Errorist</a> theme for <a href="https://gohugo.io">Hugo</a> site generator.
+    </p>
+</div>
+</div><div id="gdpr" style="display: none">
+    <div class="cookie-consent">
+        <p>
+            We use third-party cookies for analytics and comments. Disabling cookies disables comments.
+        </p>
+        <a id="reject" href="#">Reject</a>
+        <a id="accept" href="#">Accept</a>
+    </div>
+</div>
+<figure id="expanded" onclick="restorePic(event)">
+    <img id="big-pic">
+</figure>
+</body>
+</html>

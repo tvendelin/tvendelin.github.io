@@ -27,7 +27,8 @@
 <meta property="og:image:alt" content="">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta itemprop="image" property="og:image" content="https://vendelin.org/img/vendelin_org.png">
+<meta itemprop="image" property="og:image" content="https://vendelin.org/img/vendelin_org.png"><link rel="canonical" href="https://vendelin.org/geeky/git-language-learn/fork-and-complete-grammar-exercise-github/">
+
         <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&family=Open+Sans:wght@300;400;600;700&family=Source+Code+Pro:wght@400;500;700&display=swap" rel="stylesheet"> 
 
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -65,7 +66,7 @@
         <span itemprop="name" class="micro">Git for foreign language students and teachers</span></a></li>
 </ol>
 </nav>
-            <main class="container"><div class="grid-left"><nav class="menu" id="authors">
+            <div class="container"><div class="grid-left"><nav class="menu" id="authors">
 
 <a href="https://vendelin.org/authors/tvendelin/">
     <div class="author" itemprop="author" id="author-tvendelin" itemscope itemtype="http://schema.org/Person">
@@ -112,14 +113,18 @@
 
 
 
-<article class="main-single"  itemscope itemtype="http://schema.org/Article" itemref="meta-descr meta-published meta-modified meta-in-lang author-tvendelin">
-    <meta itemprop="mainEntityOfPage" content="https://vendelin.org/geeky/git-language-learn/fork-and-complete-grammar-exercise-github/">
-        <h1 itemprop="headline">GitHub for Foreign Language Students</h1>
-        
-        
 
 
-        <p>Grammar exercises published as a Git repository on GitHub can be forked by a student and completed
+
+<main class="main-single">
+    <article itemscope itemtype="http://schema.org/Article" itemref="meta-descr meta-published meta-modified meta-in-lang author-tvendelin">
+        <meta itemprop="mainEntityOfPage" content="https://vendelin.org/geeky/git-language-learn/fork-and-complete-grammar-exercise-github/">
+            <h1 itemprop="headline">GitHub for Foreign Language Students</h1>
+            
+            
+
+
+            <p>Grammar exercises published as a Git repository on GitHub can be forked by a student and completed
 on GitHub directly. Yuni, an online teacher of Indonesian, has created such a repository (see the
 <a href="https://vendelin.org/geeky/git-language-learn/grammar-exercise-repository-github/">previous chapter</a>
 ). It contained just a single
@@ -132,9 +137,9 @@ first homework on GitHub.</p>
 , and forks the repository with exercises.
 This is done with a click on the &lsquo;Fork&rsquo; button in the top-right corner of the Yuni&rsquo;s repository
 page.</p>
-<p><figure class="" id="c343775cee0aa3a1a20f51d7139f3b1a" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+<p><figure class="prominent " id="c343775cee0aa3a1a20f51d7139f3b1a" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
     <link itemprop="url" href="/img/fork.png" rel="preload" as="image"> 
-    <img itemprop="image" src="/img/fork.png" alt="fork"></figure></p>
+    <img itemprop="image" src="/img/fork.png" alt="fork" onclick="expandPic(event, 'expanded')"></figure></p>
 <p>Now Maria has her copy (or <em>fork</em>, in geeky speak) of Yuni&rsquo;s repository, which she is free to
 modify. In fact her homework <em>is</em> to modify a file with her first exercise: she has to insert
 missing words in a text.</p>
@@ -142,15 +147,15 @@ missing words in a text.</p>
 GitHub. This doesn&rsquo;t differ much from just editing text in a web form, except that once she saves
 the changes, Maria is asked to add a <em>commit message</em> – a sentence describing the changes that were
 made.</p>
-<p><figure class="" id="1935ccfeabe1746a249a9d4012ce7882" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+<p><figure class="prominent " id="1935ccfeabe1746a249a9d4012ce7882" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
     <link itemprop="url" href="/img/commit_github.png" rel="preload" as="image"> 
-    <img itemprop="image" src="/img/commit_github.png" alt="Commit"></figure></p>
+    <img itemprop="image" src="/img/commit_github.png" alt="Commit" onclick="expandPic(event, 'expanded')"></figure></p>
 <p>So, Maria types: &lsquo;Completed exercise indonesian_pronouns.md&rsquo; and pushes the &lsquo;Commit changes&rsquo; button.</p>
 <p>Oki-doki, now it&rsquo;s time to get her exercise checked and possibly corrected. For that, Maria
 invites a <em>collaborator</em> to her repository. This collaborator is her teacher Yuni, of course.</p>
-<p><figure class="" id="9a29e5fcd816b6e2963828e612acb0d9" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+<p><figure class="prominent " id="9a29e5fcd816b6e2963828e612acb0d9" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
     <link itemprop="url" href="/img/invite_collaborator.png" rel="preload" as="image"> 
-    <img itemprop="image" src="/img/invite_collaborator.png" alt="Invite collaborator"></figure></p>
+    <img itemprop="image" src="/img/invite_collaborator.png" alt="Invite collaborator" onclick="expandPic(event, 'expanded')"></figure></p>
 <p>To invite Yuni as a collaborator, Maria clicks the &lsquo;Settings&rsquo; button for her repository, then clicks
 &lsquo;Manage Access&rsquo;, then &lsquo;Invite collaborator&rsquo; and adds Yuni&rsquo;s user name on GitHub. Once she submits
 the form, Yuni will receive her invitation message. Once Yuni accepts the invitation, she will be
@@ -159,21 +164,21 @@ able to change files and perform commits in Maria&rsquo;s repository.</p>
 <p>After a while, Maria receives an automated e-mail from GitHub telling there&rsquo;s a new commit in her
 repository made by Yuni. Maria goes to her repository page on GitHub, and clicks the button saying
 &lsquo;4 commits&rsquo; (the actual number may be different):</p>
-<p><figure class="" id="d6d521e7c7ccd5787e041aaba14610d6" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+<p><figure class="prominent " id="d6d521e7c7ccd5787e041aaba14610d6" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
     <link itemprop="url" href="/img/4commits.png" rel="preload" as="image"> 
-    <img itemprop="image" src="/img/4commits.png" alt="Commits"></figure></p>
+    <img itemprop="image" src="/img/4commits.png" alt="Commits" onclick="expandPic(event, 'expanded')"></figure></p>
 <p>This displays the history of all <em>commits</em> made to the files in this repository. She clicks the last
 one, &lsquo;Corrected exercise indonesian_pronouns.md&rsquo;. This displays the detailed commit message with
 Yuni&rsquo;s explanations, and also shows the differences between Maria&rsquo;s original version, and the
 corrected one – a <em>diff</em>, in geeky speak.</p>
-<p><figure class="" id="cfc801f996a533d38b7fef1b7a78829b" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+<p><figure class="prominent " id="cfc801f996a533d38b7fef1b7a78829b" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
     <link itemprop="url" href="/img/diff_github.png" rel="preload" as="image"> 
-    <img itemprop="image" src="/img/diff_github.png" alt="GitHub diff, line by line"></figure></p>
+    <img itemprop="image" src="/img/diff_github.png" alt="GitHub diff, line by line" onclick="expandPic(event, 'expanded')"></figure></p>
 <p>The line-by-line diff doesn&rsquo;t look appetizing for Maria&rsquo;s taste, so she clicks a page-like icon with
 a hint &lsquo;Display the rich diff&rsquo; (circled in the screenshot above). Much better!</p>
-<p><figure class="" id="54ca83710a520c8abcc7119df6462628" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+<p><figure class="prominent " id="54ca83710a520c8abcc7119df6462628" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
     <link itemprop="url" href="/img/word_diff_github.png" rel="preload" as="image"> 
-    <img itemprop="image" src="/img/word_diff_github.png" alt="GitHub diff, word by word"></figure></p>
+    <img itemprop="image" src="/img/word_diff_github.png" alt="GitHub diff, word by word" onclick="expandPic(event, 'expanded')"></figure></p>
 <p>The errors are now highlighted word-by-word, and it looks pretty much like in an office text-editing
 program. The difference is that Maria is not locked into any particular file format (proprietary or
 not). Her exercise versions are still just plain texts, meaning it is quite easy to manipulate them.
@@ -194,9 +199,9 @@ review the corrections using word-by word diff.</p>
 <p>These steps are done from command line and require some familiarity with Git.</p>
 <h3 id="the-very-short-version-for-mac-and-linux-users"><a class="h-link" href="#the-very-short-version-for-mac-and-linux-users">The (very) short version for Mac and Linux Users</a></h3>
 <p>On GitHub repository page, click &lsquo;Clone or Download&rsquo; button, and copy the URL:</p>
-<p><figure class="" id="bcbb82880303a01dc65a7fcebeeaf51d" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+<p><figure class="prominent " id="bcbb82880303a01dc65a7fcebeeaf51d" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
     <link itemprop="url" href="/img/clone_url.png" rel="preload" as="image"> 
-    <img itemprop="image" src="/img/clone_url.png" alt="Clone from GitHub"></figure></p>
+    <img itemprop="image" src="/img/clone_url.png" alt="Clone from GitHub" onclick="expandPic(event, 'expanded')"></figure></p>
 <p>In your terminal emulator,</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"># Clone the repository to your computer
 git clone &lt;REPOSITORY URL&gt; my_exercises
@@ -229,7 +234,7 @@ starting point is a book by Scott Chacon and Ben Straub <a href="https://git-scm
 .
 It is available online free of charge in quite a few languages.</p>
 
-        <nav class="nextprev">
+            <nav class="nextprev">
 
 
 <p class="prev">
@@ -240,7 +245,8 @@ It is available online free of charge in quite a few languages.</p>
 
 </nav>
 <div id="disqus_thread"></div>
-    </article><script>
+    </article>
+</main><script>
 function disqus() {
 
     var disqus_config = function () {
@@ -272,8 +278,12 @@ window.addEventListener('load', function(event){
         disqus();
     });
 });
-</script></main>
-        </div><div id="gdpr" style="display: none">
+</script></div><div class="made-by">
+    <p>
+        Built with <a href="https://vendelin.org/geeky/errorist">Errorist</a> theme for <a href="https://gohugo.io">Hugo</a> site generator.
+    </p>
+</div>
+</div><div id="gdpr" style="display: none">
     <div class="cookie-consent">
         <p>
             We use third-party cookies for analytics and comments. Disabling cookies disables comments.
@@ -282,5 +292,8 @@ window.addEventListener('load', function(event){
         <a id="accept" href="#">Accept</a>
     </div>
 </div>
+<figure id="expanded" onclick="restorePic(event)">
+    <img id="big-pic">
+</figure>
 </body>
 </html>

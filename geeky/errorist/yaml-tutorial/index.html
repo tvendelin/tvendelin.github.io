@@ -1,34 +1,33 @@
 <!doctype html>
 <html lang="en" prefix="og: http://ogp.me/ns#" itemscope itemtype="http://schema.org/WebPage">
     <head>
-        <meta name="description" content="Different type of content may require a different page design. Hugo Content Types provide for that.">
+        <meta name="description" content="A very brief introduction to YAML">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="utf-8">
         <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/customized.css">
         <script async src="/js/hamburger.js"></script>
                 <title>
-            Customize Web Page Layout: Hugo Content Types
+            YAML – the Very Basics
         </title>
         <link rel="stylesheet" href="/css/perldoc.css">
         <link rel="stylesheet" href="/css/gdpr.css">
         <script async src="/js/gdpr.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-162948019-2"></script>
         <meta property="og:type" content="article">
 
-<meta itemprop="name" property="og:title" content="Customize Web Page Layout: Hugo Content Types">
-<meta id="meta-descr" itemprop="description" property="og:description" content="Different type of content may require a different page design. Hugo Content Types provide for that.">
-<meta id="meta-published" itemprop="datePublished" content="2020-07-02T07:36:06+02:00">
-<meta id="meta-modified" itemprop="dateModified" content="2020-07-21T07:36:24+02:00">
+<meta itemprop="name" property="og:title" content="YAML – the Very Basics">
+<meta id="meta-descr" itemprop="description" property="og:description" content="A very brief introduction to YAML">
+<meta id="meta-published" itemprop="datePublished" content="2020-08-04T14:51:02+02:00">
+<meta id="meta-modified" itemprop="dateModified" content="2020-08-08T11:03:47+02:00">
 <meta id="meta-in-lang" itemprop="inLanguage" content="en">
 
-<meta property="og:url" content="https://vendelin.org/geeky/hugo/layout-customize-hugo/">
+<meta property="og:url" content="https://vendelin.org/geeky/errorist/yaml-tutorial/">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="vendelin.org">
 <meta property="og:image:alt" content="">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta itemprop="image" property="og:image" content="https://vendelin.org/img/vendelin_org.png">
-<meta id="meta-keywords" itemprop="keywords" content="Hugo"><link rel="canonical" href="https://vendelin.org/geeky/hugo/layout-customize-hugo/">
+<meta itemprop="image" property="og:image" content="https://vendelin.org/img/vendelin_org.png"><link rel="canonical" href="https://vendelin.org/geeky/errorist/yaml-tutorial/">
 
         <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&family=Open+Sans:wght@300;400;600;700&family=Source+Code+Pro:wght@400;500;700&display=swap" rel="stylesheet"> 
 
@@ -62,24 +61,12 @@
         <meta itemprop="position" content="2">
         <span itemprop="name" class="micro">Geeky Stuff</span></a><span class="col">:</span></li>
 <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-    <a itemprop="item" href="https://vendelin.org/geeky/hugo/">
+    <a itemprop="item" href="https://vendelin.org/geeky/errorist/">
         <meta itemprop="position" content="3">
-        <span itemprop="name" class="micro">Hugo Cookbook for a Multilingual Site</span></a></li>
+        <span itemprop="name" class="micro">Errorist – Manage Multilingual Website Content Efficiently</span></a></li>
 </ol>
 </nav>
-            <div class="container"><div class="grid-left"><nav class="menu" id="authors">
-
-<a href="https://vendelin.org/authors/tvendelin/">
-    <div class="author" itemprop="author" id="author-tvendelin" itemscope itemtype="http://schema.org/Person">
-        <link href="https://vendelin.org/authors/tvendelin/" rel="author">
-    
-    <figure>
-        <img src="https://vendelin.org/img/tvendelin.jpg" alt="" itemprop="image">
-    </figure><div class="name" itemprop="name">
-        Toomas Vendelin
-    </div>
-</div>
-</a></nav><nav class="menu" id="ndrop" itemscope itemtype="http://schema.org/SiteNavigationElement">
+            <div class="container"><div class="grid-left"><nav class="menu" id="ndrop" itemscope itemtype="http://schema.org/SiteNavigationElement">
         <meta itemprop="name" content="Main Navigation Menu">
         <div class="section">Sections:</div>
 
@@ -118,52 +105,59 @@
 
 
 <main class="main-single">
-    <article itemscope itemtype="http://schema.org/Article" itemref="meta-descr meta-published meta-modified meta-in-lang author-tvendelin">
-        <meta itemprop="mainEntityOfPage" content="https://vendelin.org/geeky/hugo/layout-customize-hugo/">
-            <h1 itemprop="headline">Customize Web Page Layout: Hugo Content Types</h1>
+    <article itemscope itemtype="http://schema.org/Article" itemref="meta-descr meta-published meta-modified meta-in-lang">
+        <meta itemprop="mainEntityOfPage" content="https://vendelin.org/geeky/errorist/yaml-tutorial/">
+            <h1 itemprop="headline">YAML – the Very Basics</h1>
             
             
 
 
-            <p>Style consistency is important, and one of the benefits of generating pages with Hugo (as opposed to
-editing HTML code for each page directly) is a very little amount of HTML code to handle.  So far,
-all the HTML we used were just four (!) template files plus a partial for the breadcrumbs and an
-image markdown hook. However, some types of content inevitably won&rsquo;t fit the Procrustean bed of a
-simplistic theme.</p>
-<h2 id="example-problems"><a class="h-link" href="#example-problems">Example Problems</a></h2>
-<p>Let&rsquo;s assume you will blog about programming, cooking and traveling – pretty usual
-blogging topics. Now, you want each of your travel page to start with a theme-setting photo, and at
-the bottom there should be included a map of the area you are writing about. Your cooking articles
-should include a YouTube video and appropriately formatted list of ingredients, and a photo of the
-dish you are writing about. It might make sense to include the list of ingredients as a separate
-page resource.</p>
-<p>You can chop your content in a manner of the legendary Procrustes, but
-some may argue you should instead customize the bed, that is, your templates.</p>
-<h2 id="hugo-content-types"><a class="h-link" href="#hugo-content-types">Hugo Content Types</a></h2>
-<p>Each page in Hugo has a <em>content type</em>. By default, it is the name of the top-most section the page
-belongs to. However, this can be overridden with the built-in <code>type:</code> front matter parameter.</p>
-<p>Both the theme and the project directories contain a <code>layouts</code> sub-directory. These are the places
-where you define your custom templates. Just create a directory <code>layouts/&lt;TYPE&gt;</code>, and create any of
-<code>baseof.html</code>, <code>single.html</code> or <code>list.html</code> – whichever you need to customize. And you can even
-create the <a href="https://gohugo.io/getting-started/configuration-markup#markdown-render-hooks" target="_blank" rel="noopener">markdown
-hooks</a>
- for images,
-links and headings.</p>
-<p>Read up on <a href="https://gohugo.io/templates/lookup-order" target="_blank" rel="noopener">Hugo template lookup order</a>
-</p>
+            <p>This is grossly simplified introduction to <a href="https://yaml.org/spec/1.2/spec.html#id2759963" target="_blank" rel="noopener">YAML</a>
+.
+The complete official documentation is <a href="https://yaml.org/spec/1.2/spec.html#id2759963" target="_blank" rel="noopener">available here</a>
+.
+However, you will only need a small subset of it to configure your Hugo project and the &lsquo;front matter&rsquo; of
+your Markdown files. This little tutorial provides a starting point.</p>
+<p>YAML is a format for representing data structure in a human-readable way.
+YAML&rsquo;s block collections use indentation for scope and begin each entry on its own line.
+Block sequences indicate each entry with a dash and space ('- &lsquo;). Mappings
+use a colon and space (': &lsquo;) to mark each key: value pair. Comments begin with <code>#</code>.</p>
+<p>Here is an excerpt from <code>config/_default/config.yaml</code> with simple scalar-to-scalar mapping. The
+quotes are optional, the space after the colon is not: <code>title:&quot;My site&quot;</code> would result in an error.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">baseURL: &#34;https://example.org&#34;
+title: &#34;My site&#34;
+theme: &#34;errorist&#34;
+</code></pre></div><p>You can nest one mapping into another:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">highlight:
+    codeFences: true
+    noClasses: false
+
+</code></pre></div><p>Here, the key <code>highlight</code> holds two mappings as its value. Indentation is important. If you remove
+it, this would become three same-level mappings, <code>highlight</code> holding now an empty value. This is
+probable the most common source of misconfigurations and associated confusion.</p>
+<p>Finally, you can map a sequence of scalars:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">tags:
+- git
+- hugo
+- seo
+</code></pre></div><p>Here, the <code>tag</code> key holds a sequence of scalars (<code>git</code>, <code>hugo</code>, <code>seo</code>). Mind the space after dash:
+<code>-git</code> would be an error.</p>
+<p>A dash counts for indentation. From <a href="http://www.yaml.org/spec/1.2/spec.html#id2799784" target="_blank" rel="noopener">YAML specs</a>
+:</p>
+<blockquote>
+<p>Since people perceive the “-” indicator as indentation, nested block sequences may be indented by
+one less space.</p>
+</blockquote>
+<p>This is enough, I believe, to get most of the tasks done as far as a your website project is
+concerned. Should that not be the case, read the <a href="https://yaml.org/spec/1.2/spec.html" target="_blank" rel="noopener">YAML docs</a>
+.</p>
 
             <nav class="nextprev">
 
-<p class="next">
-    <a href="https://vendelin.org/geeky/hugo/cross-reference-external-links-hugo/">
-         Internal and External Links &rarr;
-    </a>
-</p>
-
 
 <p class="prev">
-    <a href="https://vendelin.org/geeky/hugo/summary-linktitle-hugo/">
-         &larr; Featured Content, Page Summary, Link Texts
+    <a href="https://vendelin.org/geeky/errorist/markdown-tutorial/">
+         &larr; Markdown by Example
     </a>
 </p>
 
@@ -174,8 +168,8 @@ links and headings.</p>
 function disqus() {
 
     var disqus_config = function () {
-        this.page.url = "https://vendelin.org/geeky/hugo/layout-customize-hugo/";  
-        this.page.identifier = "2c9e6d355ed29d8dfc1769f7be09f889";   
+        this.page.url = "https://vendelin.org/geeky/errorist/yaml-tutorial/";  
+        this.page.identifier = "3e4b32af2ee0efc5de0dc6c2e485e5de";   
     };
     (function() {  
         var d = document, s = d.createElement('script');

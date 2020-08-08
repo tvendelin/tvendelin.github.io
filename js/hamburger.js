@@ -40,3 +40,15 @@ function switchTab(ev, target, tabclass){
     ev.currentTarget.className += ACTIVE
 }
 
+function restorePic(ev) {
+    ev.currentTarget.style.display = 'none'
+}
+
+function expandPic(ev, target) {
+    var trigger = ev.currentTarget
+    var te = document.getElementById(target)
+    te.style.display = 'block'
+    var bigPic = te.getElementsByTagName('img')[0]
+    bigPic.setAttribute('src', trigger.getAttribute('src'))
+
+}

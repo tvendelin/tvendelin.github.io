@@ -28,6 +28,8 @@
 
 <meta name="twitter:card" content="summary_large_image">
 <meta itemprop="image" property="og:image" content="https://vendelin.org/img/vendelin_org.png">
+<meta id="meta-keywords" itemprop="keywords" content="Hugo"><link rel="canonical" href="https://vendelin.org/geeky/hugo/custom-multilingual-configuration-hugo/">
+
         <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&family=Open+Sans:wght@300;400;600;700&family=Source+Code+Pro:wght@400;500;700&display=swap" rel="stylesheet"> 
 
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -65,7 +67,7 @@
         <span itemprop="name" class="micro">Hugo Cookbook for a Multilingual Site</span></a></li>
 </ol>
 </nav>
-            <main class="container"><div class="grid-left"><nav class="menu" id="authors">
+            <div class="container"><div class="grid-left"><nav class="menu" id="authors">
 
 <a href="https://vendelin.org/authors/tvendelin/">
     <div class="author" itemprop="author" id="author-tvendelin" itemscope itemtype="http://schema.org/Person">
@@ -112,14 +114,18 @@
 
 
 
-<article class="main-single"  itemscope itemtype="http://schema.org/Article" itemref="meta-descr meta-published meta-modified meta-in-lang author-tvendelin">
-    <meta itemprop="mainEntityOfPage" content="https://vendelin.org/geeky/hugo/custom-multilingual-configuration-hugo/">
-        <h1 itemprop="headline">Customizing Configuration for Multilingual Hugo-Managed Site</h1>
-        
-        
 
 
-        <p>A multilingual site managed with Hugo static generator requires a couple of extra steps. I essence,
+
+<main class="main-single">
+    <article itemscope itemtype="http://schema.org/Article" itemref="meta-descr meta-published meta-modified meta-in-lang author-tvendelin">
+        <meta itemprop="mainEntityOfPage" content="https://vendelin.org/geeky/hugo/custom-multilingual-configuration-hugo/">
+            <h1 itemprop="headline">Customizing Configuration for Multilingual Hugo-Managed Site</h1>
+            
+            
+
+
+            <p>A multilingual site managed with Hugo static generator requires a couple of extra steps. I essence,
 you just need to tell Hugo which languages are you going to use, and how these languages are called
 in these languages (<em>Eesti keel</em> for Estonian, <em>Bahasa Indonesia</em> for Indonesian, etc.).
 The rest is really optional.</p>
@@ -189,7 +195,7 @@ language section from <code>config/_default/config.yaml</code>.</p>
 <p>&hellip; or it will take priority over the configuration you&rsquo;ve just created.</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">rm config.toml
 </code></pre></div>
-        <nav class="nextprev">
+            <nav class="nextprev">
 
 <p class="next">
     <a href="https://vendelin.org/geeky/hugo/creating-a-theme-for-hugo/">
@@ -206,7 +212,8 @@ language section from <code>config/_default/config.yaml</code>.</p>
 
 </nav>
 <div id="disqus_thread"></div>
-    </article><script>
+    </article>
+</main><script>
 function disqus() {
 
     var disqus_config = function () {
@@ -238,8 +245,12 @@ window.addEventListener('load', function(event){
         disqus();
     });
 });
-</script></main>
-        </div><div id="gdpr" style="display: none">
+</script></div><div class="made-by">
+    <p>
+        Built with <a href="https://vendelin.org/geeky/errorist">Errorist</a> theme for <a href="https://gohugo.io">Hugo</a> site generator.
+    </p>
+</div>
+</div><div id="gdpr" style="display: none">
     <div class="cookie-consent">
         <p>
             We use third-party cookies for analytics and comments. Disabling cookies disables comments.
@@ -248,5 +259,8 @@ window.addEventListener('load', function(event){
         <a id="accept" href="#">Accept</a>
     </div>
 </div>
+<figure id="expanded" onclick="restorePic(event)">
+    <img id="big-pic">
+</figure>
 </body>
 </html>

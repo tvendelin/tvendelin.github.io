@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="en" prefix="og: http://ogp.me/ns#" itemscope itemtype="http://schema.org/WebPage">
+    <head>
+        <meta name="description" content="Documentation for Errorist multilingual website theme for Hugo managed project.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/customized.css">
+        <script async src="/js/hamburger.js"></script>
+                <title>
+            README | Errorist Website Theme for Hugo
+        </title>
+        <link rel="stylesheet" href="/css/perldoc.css">
+        <link rel="stylesheet" href="/css/gdpr.css">
+        <script async src="/js/gdpr.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-162948019-2"></script>
+        <meta property="og:type" content="article">
+
+<meta itemprop="name" property="og:title" content="README | Errorist Website Theme for Hugo">
+<meta id="meta-descr" itemprop="description" property="og:description" content="Documentation for Errorist multilingual website theme for Hugo managed project.">
+<meta id="meta-published" itemprop="datePublished" content="2020-07-16T20:19:42+02:00">
+<meta id="meta-modified" itemprop="dateModified" content="2020-08-08T20:06:31+02:00">
+<meta id="meta-in-lang" itemprop="inLanguage" content="en">
+
+<meta property="og:url" content="https://vendelin.org/geeky/errorist/readme/">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="vendelin.org">
+<meta property="og:image:alt" content="">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta itemprop="image" property="og:image" content="https://vendelin.org/img/vendelin_org.png"><link rel="canonical" href="https://vendelin.org/geeky/errorist/readme/">
+
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&family=Open+Sans:wght@300;400;600;700&family=Source+Code+Pro:wght@400;500;700&display=swap" rel="stylesheet"> 
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#990000">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="theme-color" content="#ffffff">
+
+    </head>
+    <body itemscope itemtype="http://schema.org/WebPage">
+        <nav class="top">
+            <a href="javascript:void(0);" class="box-shadow-menu" onclick="menuDrop()" title="Menu"></a>
+            <a href="https://vendelin.org" class="logo">
+                vendelin.org 
+            </a>
+        </nav>
+        <div id="mobile-menu"></div>
+        <div class="page">
+            <nav class="breadcrumbs">
+<ol itemprop="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+<meta itemprop="name" content="Breadcrumbs">
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="https://vendelin.org/">
+        <meta itemprop="position" content="1">
+        <span itemprop="name" class="micro">Home</span></a><span class="col">:</span></li>
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="https://vendelin.org/geeky/">
+        <meta itemprop="position" content="2">
+        <span itemprop="name" class="micro">Geeky Stuff</span></a><span class="col">:</span></li>
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="https://vendelin.org/geeky/errorist/">
+        <meta itemprop="position" content="3">
+        <span itemprop="name" class="micro">Errorist – Manage Multilingual Website Content Efficiently</span></a></li>
+</ol>
+</nav>
+            <div class="container"><div class="grid-left"><nav class="menu" id="ndrop" itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <meta itemprop="name" content="Main Navigation Menu">
+        <div class="section">Sections:</div>
+
+        <ul class="link-list"><li><a itemprop="url"  href="https://vendelin.org/geeky/">Geeky Stuff</a></li>
+        <li><a itemprop="url"  href="https://vendelin.org/travel/">Travel Accounts</a></li>
+        <li><a itemprop="url" href="https://vendelin.org/about/">About</a></li></ul>
+        <div class="section">Look by</div>
+
+        <ul class="link-list"><li><a itemprop="url" href="/authors">Authors</a></li><li><a itemprop="url" href="/tags">Tags</a></li></ul>
+
+    </nav>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<main class="main-single">
+    <article itemscope itemtype="http://schema.org/Article" itemref="meta-descr meta-published meta-modified meta-in-lang">
+        <meta itemprop="mainEntityOfPage" content="https://vendelin.org/geeky/errorist/readme/">
+            <h1 itemprop="headline">README | Errorist Website Theme for Hugo</h1>
+            
+            
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#install">Install</a></li>
+    <li><a href="#quick-setup-for-the-impatient">Quick Setup for the Impatient</a>
+      <ul>
+        <li><a href="#clean-up-tutorials-and-examples">Clean up Tutorials and Examples</a></li>
+      </ul>
+    </li>
+    <li><a href="#adding-text-content">Adding Text Content</a></li>
+    <li><a href="#image-management-with-image-bundles">Image Management with Image Bundles</a>
+      <ul>
+        <li><a href="#image-bundle-directory">Image Bundle Directory</a></li>
+      </ul>
+    </li>
+    <li><a href="#including-images-in-pages">Including Images in Pages</a>
+      <ul>
+        <li><a href="#image-representative-of-page">Image Representative of Page</a></li>
+        <li><a href="#images-in-page-content">Images in Page Content</a></li>
+        <li><a href="#the-default-site-image-for-social-networks">The Default Site Image for Social Networks</a></li>
+      </ul>
+    </li>
+    <li><a href="#shortcodes-for-clickable-tabs">Shortcodes for Clickable Tabs</a>
+      <ul>
+        <li><a href="#tabs_bq"><code>tabs_bq</code></a></li>
+        <li><a href="#tabs"><code>tabs</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#featuring-content-on-the-front-page">Featuring Content on the Front Page</a></li>
+    <li><a href="#archetypes">Archetypes</a>
+      <ul>
+        <li><a href="#page-bundle">Page Bundle</a></li>
+        <li><a href="#image-bundle">Image Bundle</a></li>
+        <li><a href="#language-learning-page-bundle">Language Learning Page Bundle</a></li>
+      </ul>
+    </li>
+    <li><a href="#multilingual-configuration">Multilingual Configuration</a>
+      <ul>
+        <li><a href="#languages-that-your-site-supports">Languages that Your Site Supports</a></li>
+        <li><a href="#add-or-remove-the-localizations-translations">Add or Remove the Localizations (Translations)</a></li>
+        <li><a href="#adjust-archetypes-to-language-configuration">Adjust Archetypes to Language Configuration</a></li>
+      </ul>
+    </li>
+    <li><a href="#managing-authors">Managing Author(s)</a>
+      <ul>
+        <li><a href="#add-data-entries-for-the-authors">Add Data Entries for the Authors</a></li>
+        <li><a href="#create-authors-pages-in-all-supported-languages">Create Authors&rsquo; Pages in All Supported Languages</a></li>
+        <li><a href="#content-listing-in-the-authors-page">Content Listing in the Author&rsquo;s Page</a></li>
+      </ul>
+    </li>
+    <li><a href="#overriding-the-defaults">Overriding the Defaults</a>
+      <ul>
+        <li><a href="#dummy-partials-to-override">Dummy Partials to Override</a></li>
+        <li><a href="#customizing-the-appearance">Customizing the Appearance</a></li>
+        <li><a href="#choosing-the-layout">Choosing the Layout</a></li>
+      </ul>
+    </li>
+    <li><a href="#metadata-and-microdata">Metadata and Microdata</a>
+      <ul>
+        <li><a href="#canonical-meta-tag">Canonical Meta Tag</a></li>
+      </ul>
+    </li>
+    <li><a href="#reporting-bugs-requesting-features-pull-requests-and-other-communication">Reporting Bugs, Requesting Features, Pull Requests and Other Communication</a></li>
+  </ul>
+</nav>
+
+
+
+            <h2 id="install"><a class="h-link" href="#install">Install</a></h2>
+<p>Recursively clone the bootstrapping project:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">git clone --recurse-submodules git@github.com:tvendelin/errorist-bootstrap.git
+</code></pre></div><p>This pulls the Errorist theme as a git submodule and provides you with a skeleton
+project that needs only a few things to configure. Change into project directory and start the Hugo
+server:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">cd errorist-bootstrap
+hugo server -D
+</code></pre></div><p>Open <code>http://localhost:1313</code> in your browser. You should see a welcome message, and a link to the
+manuals. You will also notice that two languages – English and Russian – are already
+pre-configured. This is done for the sake of a contrasting multilingual example, just to show you the ropes.
+Languages can be easily added or removed.</p>
+<p>Alternatively, you can clone Errorist into <code>themes</code> folder of your existing project. In this case
+you will need to merge configuration from <code>themes/errorist/exampleSite</code> into your existing project.</p>
+<p>In addition to this README file, Errorist home page has a soft step-by-step tutorial as well as
+quick introduction to YAML and Markdown. These are also included in the bootstrapping project.</p>
+<h2 id="quick-setup-for-the-impatient"><a class="h-link" href="#quick-setup-for-the-impatient">Quick Setup for the Impatient</a></h2>
+<ul>
+<li>
+<p>Open <code>data/authors.yaml</code>, read the comments, and configure one or more authors by example. It&rsquo;s
+YAML format, so keep an eye on indentation.</p>
+</li>
+<li>
+<p>Open <code>config/_default/languages.yaml</code>, read the comments, and configure to your needs.</p>
+</li>
+<li>
+<p>If you&rsquo;ve added new languages, you will also need to add translation files, one per new language.
+Create <code>i18n</code> directory in your project root, copy the English translations file from
+<code>themes/errorist/i18n/en.yaml</code> to <code>i18n</code> directory you&rsquo;ve just created, and use it as a
+template. That is, change the English translations to whatever you need. The name of this new file
+must be <code>&lt;LANG&gt;.yaml</code>, <code>&lt;LANG&gt;</code> being the two-character language code from the previous step.</p>
+</li>
+<li>
+<p>If there were changes in supported languages, you will need to add/remove <code>index*.md</code> files
+in the archetypes accordingly. That is, for each <code>index.md</code> file under <code>archetypes</code> directory in your project, you
+will need an <code>index.&lt;LANG&gt;.md</code> file for each language you support. To remove these files for Russian
+(if you are not going to use Russian), run</p>
+</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">find archetypes -name &#39;index.ru.md&#39; -exec rm &#39;{}&#39; \;
+</code></pre></div><ul>
+<li>If there were changes in supported languages, you will need to add/remove <code>kontent/images/_index*.md</code> files
+accordingly. By default the only language-specific part is the file name itself, so mere copying
+will do.</li>
+</ul>
+<p>The content directory is preconfigured as <code>kontent</code>. This will save you quite a few keystrokes with
+tab-completion on command line (<code>k&lt;TAB&gt;</code> for <code>kontent</code> and <code>c&lt;TAB&gt;</code> for <code>config</code>). If you prefer the
+default <code>content</code>, edit <code>config/_default/config.yaml</code> accordingly.</p>
+<h3 id="clean-up-tutorials-and-examples"><a class="h-link" href="#clean-up-tutorials-and-examples">Clean up Tutorials and Examples</a></h3>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"># Re-create kontent/_index.md
+rm kontent/_index.md
+hugo new _index.md
+
+# Remove test image bundle
+rm -r kontent/images/plain-blue
+
+# Remove the manual
+rm -r kontent/manual
+
+# Remove the Git remote (and maybe add yours later)
+git remote remove origin
+</code></pre></div><p>You are ready to create content and publish your website.</p>
+<p>Before you do, though, have a brief look at how text content and images are handled by Errorist (the
+next two sections).  Errorist will, of course, work with any other setup as far as the core functionality
+of Hugo is concerned, but it will also be limited to just that.</p>
+<h2 id="adding-text-content"><a class="h-link" href="#adding-text-content">Adding Text Content</a></h2>
+<p>Errorist&rsquo;s key features rely on a particular page bundle structure. Here&rsquo;s an example with some
+bells and whistles:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">kontent/test/lesson-learned
+├── homework
+│   ├── 10_task.txt
+│   ├── 20_mysolution.txt
+│   ├── 30_solution.txt
+│   └── 40_diff.txt
+├── index.md
+├── index.ru.md
+├── main-img
+├── summary.md
+└── summary.ru.md
+</code></pre></div><p>The English  and Russian pages are in <code>index*</code> files – as in any Hugo page bundle.</p>
+<p>The four <code>.txt</code> files under the <code>homework</code> sub-directory hold content for a block of
+clickable tabs, identified by the directory name (<code>homework</code>). Such tab can be included in a page using
+a shortcode <code>{{&lt;tabs_bq &quot;homework&quot;&gt;}}</code>. Should files contain any Markdown, it will be rendered.
+For language-sensitive tabs, <code>*.md</code> files should be used instead. See the <a href="#shortcodes-for-clickable-tabs">Shortcodes</a>
+ section for details.</p>
+<p>The <code>summary.*md</code> files, when present, override the built-in <code>.Summary</code> page variable. This gives
+you the freedom to write your summaries any way you want. Note that a good summary isn&rsquo;t necessarily a
+continuous fragment of a page.</p>
+<p>The file <code>main-img</code> (the name is significant) contains a reference to a page bundle with the main
+image for the page with captions in all supported languages and the authors&rsquo; IDs. Switching the main
+image for a multilingual page is thus a matter of editing a single line in a
+single file.</p>
+<p>All of the above offloads quite a lot of noise from your Markdown and makes your content better
+manageable.</p>
+<p>As already mentioned, Errorist will work with other supported content setups as far as the basic
+functionality provided by Hugo is concerned.</p>
+<h2 id="image-management-with-image-bundles"><a class="h-link" href="#image-management-with-image-bundles">Image Management with Image Bundles</a></h2>
+<p>An <em>image bundle</em> (a term specific to Errorist) is, in effect, a page bundle, stored under a
+particular content section, <code>kontent/images</code> by default. Its purpose, however, is turned inside out:
+the <em>single</em> image file it includes is the main thing here. The index.*md files contain associated
+texts for each supported language:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">kontent/images/myimage
+├── anyname.jpg
+├── index.de.md
+├── index.md
+└── index.ru.md
+</code></pre></div><p>The name of the image file isn&rsquo;t significant as long as Hugo recognizes its type as &lsquo;image&rsquo;. An
+image bundle is identified by its directory name, <code>myimage</code> in our example.</p>
+<p>The only front matter parameter specific to image bundle is <code>alt</code>, which holds the same-named
+attribute for the <code>&lt;img&gt;</code> HTML tag. The caption for the image is the <code>.Content</code> of an <code>index.*md</code>
+file for the current <code>.Language</code>. The <code>alt</code> value would fall back to <code>.Content</code> if omitted:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">---
+alt: alt text for the image goes here
+authors:
+- tatkins
+---
+Image caption goes here
+</code></pre></div><p>An archetype for creating an image bundle is provided. You should adjust it according to the
+languages used in your website (<a href="#adjust-archetypes-to-language-configuration">more on this later</a>
+). To add an image bundle, run</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo new images/myimage -k img
+</code></pre></div><p>and copy an image that you have in mind into just created image bundle directory
+(<code>kontent/images/myimage/</code>).</p>
+<p>From now on, the image can be included into one or more pages by reference to its image bundle. All
+the attributes will follow it like ducklings follow their mother-duck, guarding you against the
+embarrassments of mismatching image/caption/author.</p>
+<h3 id="image-bundle-directory"><a class="h-link" href="#image-bundle-directory">Image Bundle Directory</a></h3>
+<p>The directory holding image bundles (<code>kontent/images</code> by default) is defined by <code>.Site.Params.image_bundle_dir</code>
+configuration parameter (see <code>config/_default/params.yaml</code>). It must be relative to <code>kontent</code>, and its
+name should not begin with underscore, if you host your site on GitHub. By default, it is neither
+rendered nor listed when the site is built, which is handled by <code>kontent/images/_index.*md</code> files&rsquo;
+front matter:</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml">---<span class="w">
+</span><span class="w"></span><span class="k">draft</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="w"></span><span class="k">cascade</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="k">_build</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="k">list</span><span class="p">:</span><span class="w"> </span>never<span class="w">
+</span><span class="w">        </span><span class="k">render</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="w"></span>---<span class="w">
+</span></code></pre></div><p>If this is the desired behavior, add a <code>_index.*md</code> file like the one above for each language that
+you add.  If you want the captioned images to be displayed as content in their own right – for
+example, listing them on author&rsquo;s page – remove cascading build configuration and create a normal
+<code>_index.md</code> file instead.</p>
+<p>Nothing prevents you, of course, from copying loose images into <code>static</code> directory or a page
+bundle directory. The usual Markdown syntax will work.</p>
+<h2 id="including-images-in-pages"><a class="h-link" href="#including-images-in-pages">Including Images in Pages</a></h2>
+<h3 id="image-representative-of-page"><a class="h-link" href="#image-representative-of-page">Image Representative of Page</a></h3>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">echo &#39;myimage&#39; &gt;&gt; kontent/section/pageBundle/main-img
+</code></pre></div><p>This will make the image under <code>kontent/images/myimage</code> the &lsquo;main&rsquo; image for the page, and mark it
+as &lsquo;representative of page&rsquo; in terms of meta- and microdata. For instance, it will be the image
+people see when you share the page on a social network.</p>
+<h3 id="images-in-page-content"><a class="h-link" href="#images-in-page-content">Images in Page Content</a></h3>
+<p>Use the standard Markdown syntax of <code>![alt](src &quot;caption&quot;)</code>. If <code>src</code> does not contain a dot, an
+image bundle would be looked up. Markdown texts override caption and <code>alt</code> from image bundle:</p>
+<ul>
+<li>
+<p><code>![](myimage)</code> without &lsquo;extension&rsquo;, the image bundle will be looked up with its caption and <code>alt</code>
+text.</p>
+</li>
+<li>
+<p><code>![custom alt](myimage &quot;caption&quot;)</code> same as above, but with caption and <code>alt</code> text overridden from
+Markdown.</p>
+</li>
+<li>
+<p><code>![custom alt](/img/simple.jpg &quot;caption&quot;)</code> with &lsquo;extension&rsquo;, the image will be looked up as
+<code>static/img/simple.jpg</code></p>
+</li>
+<li>
+<p><code>![custom alt](simple.jpg &quot;caption&quot;)</code>  the image will be looked up relative to the page bundle.</p>
+</li>
+<li>
+<p><code>![alt](http://example.com/external.png &quot;caption&quot;)</code> an external image will be displayed.</p>
+</li>
+</ul>
+<p>If for whatever reason your page includes <em>only</em> images referenced from the page content (i.e.,
+there is no <code>main-img</code> file in the page bundle), you can indicate which image is the &lsquo;main&rsquo; one in
+terms of meta- and microdata by including <code>image: </code> parameter in the front matter. The same rules
+for image lookup apply.</p>
+<h3 id="the-default-site-image-for-social-networks"><a class="h-link" href="#the-default-site-image-for-social-networks">The Default Site Image for Social Networks</a></h3>
+<p>This is the first element in <code>images:</code> list in <code>config/_default/params.yaml</code></p>
+<h2 id="shortcodes-for-clickable-tabs"><a class="h-link" href="#shortcodes-for-clickable-tabs">Shortcodes for Clickable Tabs</a></h2>
+<h3 id="tabs_bq"><a class="h-link" href="#tabs_bq"><code>tabs_bq</code></a></h3>
+<p>Usage:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">{{&lt;tabs_bq &#34;homework&#34; &#34;txt&#34; &gt;}}
+</code></pre></div><p>Creates a block of clickable tabs from contents of <code>*.txt</code> files found in <code>homework</code> directory
+within a page bundle:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">homework
+├── 10_task.txt
+├── 20_mysolution.txt
+├── 30_solution.txt
+└── 40_diff.txt
+</code></pre></div><p>The tabs will be listed alphabetically, the first tab always being active when
+the page loads. The tab files can be prepended with digits and an optional underscore to define the
+ordering. This prefix as well as <code>.txt</code> suffix will be stripped when determining the tab&rsquo;s
+identifier, so <code>10_task.txt</code> will be identified as <code>task</code>. The localized tab name will be looked up
+in a <code>i18n/*.yaml</code> localization files. If not found, the tab name will default to its identifier.</p>
+<p>The Markup in the contents of tab files, if any, will be interpreted. This allows to include the
+same tab content into each page translation without making duplicates for each site language, while
+still being able to use Markdown.  The contents of a tab will be placed within a pair of HTML
+<code>&lt;blockquote&gt;</code> tags, and special styling will be applied to <code>&lt;del&gt;</code> and <code>&lt;strong&gt;</code> HTML tags to
+highlight corrections.</p>
+<p>The practical use of it is including grammar exercises in a foreign language. Having tab contents in
+separate file makes piping from an external program (like git, wdiff, etc.) quite
+convenient.</p>
+<p>For language-sensitive content, use &ldquo;md&rdquo; as the second argument. The default is &ldquo;txt&rdquo;, so it can be
+omitted.</p>
+<h3 id="tabs"><a class="h-link" href="#tabs"><code>tabs</code></a></h3>
+<p>Usage:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">{{&lt;tabs &#34;homework&#34; &#34;txt&#34; &gt;}}
+</code></pre></div><p>Same as <code>tabs_bq</code> (see above), but tabs will be wrapped in <code>&lt;div&gt;</code> tags, and the appearance of
+<code>&lt;del&gt;</code> and <code>&lt;strong&gt;</code> HTML tags will be the default one.</p>
+<h2 id="featuring-content-on-the-front-page"><a class="h-link" href="#featuring-content-on-the-front-page">Featuring Content on the Front Page</a></h2>
+<p>To expose an article in the center column of the front page, add this to the front matter of the page:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">exposures:
+- major
+</code></pre></div><p>To expose it in the right column instead:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">exposures:
+- minor
+</code></pre></div><p>The order will be determined by the usual Hugo rules. <code>exposures</code> is a Hugo taxonomy, so
+taxonomy-specific <code>weight</code> can be used when needed.</p>
+<h2 id="archetypes"><a class="h-link" href="#archetypes">Archetypes</a></h2>
+<p>An archetype is like &lsquo;cookie cutter&rsquo; for certain <em>kind</em> (a Hugo term) of content. They can be found
+under <code>archetypes</code> directory in the theme root and also in the root of bootstrapping project, if you are using it.
+They should likely be customized depending on languages that your site supports (see the <a href="#adjust-archetypes-to-language-configuration">Adjust
+Archetypes to Language Configuration</a>
+
+section for that part).</p>
+<h3 id="page-bundle"><a class="h-link" href="#page-bundle">Page Bundle</a></h3>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo new -k page blog/mypost
+</code></pre></div><p>creates a page bundle <code>kontent/blog/mypost</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">kontent/blog/mypost
+├── index.md
+└── index.ru.md
+</code></pre></div><h3 id="image-bundle"><a class="h-link" href="#image-bundle">Image Bundle</a></h3>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo new -k img images/mypicture
+</code></pre></div><p>creates an image bundle similar to page, but with different front matter parameters. You will need
+to add an image file to it, of course.</p>
+<h3 id="language-learning-page-bundle"><a class="h-link" href="#language-learning-page-bundle">Language Learning Page Bundle</a></h3>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo new -k langblog learning-indonesian/pronouns
+</code></pre></div><p>creates a specialized page bundle for a language-learning blog:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">kontent/learning-indonesian/pronouns
+├── homework
+│   ├── 10_task.txt
+│   ├── 20_mysolution.txt
+│   ├── 30_solution.txt
+│   └── 40_diff.txt
+├── index.md
+└── index.ru.md
+</code></pre></div><p>This will additionally create a skeleton for clickable tabs representing various stages of solving a
+grammar exercise. If you manage your homework using Git/GitHub, you can pipe the different commits
+into respective files, and a <code>wdiff</code> between your solution and the correct one. And then tell the
+world about your accomplishment in all the languages you already speak!</p>
+<h2 id="multilingual-configuration"><a class="h-link" href="#multilingual-configuration">Multilingual Configuration</a></h2>
+<h3 id="languages-that-your-site-supports"><a class="h-link" href="#languages-that-your-site-supports">Languages that Your Site Supports</a></h3>
+<p>Edit the <code>config/_default/languages.yaml</code> file. The example configuration includes two languages,
+English and Russian, already pre-configured (add or delete as necessary):</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="k">en</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="k">languageName</span><span class="p">:</span><span class="w"> </span>English<span class="w">
+</span><span class="w">    </span><span class="k">weight</span><span class="p">:</span><span class="w"> </span><span class="m">10</span><span class="w">
+</span><span class="w">    </span><span class="k">locale</span><span class="p">:</span><span class="w"> </span>en_US<span class="w">
+</span><span class="w"></span><span class="k">ru</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="k">languageName</span><span class="p">:</span><span class="w"> </span>Русский<span class="w">
+</span><span class="w">    </span><span class="k">weight</span><span class="p">:</span><span class="w"> </span><span class="m">20</span><span class="w">
+</span><span class="w">    </span><span class="k">locale</span><span class="p">:</span><span class="w"> </span>ru_RU<span class="w">
+</span></code></pre></div><p>The keys (<code>en</code>, <code>ru</code> in the example) should be ISO-639 language codes, as these will be used in metadata.</p>
+<ul>
+<li>
+<p><code>languageName:</code> the name of a language in that language (see example for Russian)</p>
+</li>
+<li>
+<p><code>weight:</code> a integer used for ordering languages in a list.
+Lower weight = higher position. Use gapped numbering for easier inserts
+(i.e. 10, 20, 30, &hellip; as opposed to 1, 2, 3, &hellip;).</p>
+</li>
+<li>
+<p><code>locale:</code> a combination of ISO-639 language code and ISO-3166 country code
+joined with underscore. Currently used only in <code>og:locale</code> meta tag.</p>
+</li>
+</ul>
+<h3 id="add-or-remove-the-localizations-translations"><a class="h-link" href="#add-or-remove-the-localizations-translations">Add or Remove the Localizations (Translations)</a></h3>
+<p>The translations can be found under <code>i18n</code> directory in the theme root:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">themes/errorist/i18n/
+├── en.yaml
+└── ru.yaml
+</code></pre></div><p>The file names correspond to the YAML keys in <code>config/_default/languages.yaml</code> file.
+To add string translations for another language you are going to use, create an <code>i18n</code> directory
+under your project root, and create additional translations files for the missing languages there
+(not in the theme!), naming
+the files accordingly. So, if you happen to add Estonian, you should create <code>i18n/ee.yaml</code> in your
+project.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">cp themes/errorist/i18n/en.yaml i18n/ee.yaml
+# edit i18n/ee.yaml
+</code></pre></div><p>If you are going to add localized strings in your project (author names, clickable tabs, etc.), you
+will need to create translation files even for the languages supported by the theme. The
+translations in the theme and in your project will be merged, and your translation will win, should
+there be any conflict.</p>
+<h3 id="adjust-archetypes-to-language-configuration"><a class="h-link" href="#adjust-archetypes-to-language-configuration">Adjust Archetypes to Language Configuration</a></h3>
+<p>This is the structure of <code>archetypes</code> directory:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">archetypes/
+├── default.md
+├── img
+│   ├── index.md
+│   └── index.ru.md
+├── langblog
+│   ├── homework
+│   │   ├── 10_task.txt
+│   │   ├── 20_mysolution.txt
+│   │   ├── 30_solution.txt
+│   │   └── 40_diff.txt
+│   ├── index.md
+│   └── index.ru.md
+└── page
+    ├── index.md
+    └── index.ru.md
+</code></pre></div><p>For each additional language your website uses, you will need an <code>index.&lt;LANG&gt;.md</code> file, where
+<code>&lt;LANG&gt;</code> is the language key from <code>config/_default/languages.yaml</code> file. Since the supplied
+<code>index.md</code> files are language-independent, you just need to copy them, adjusting the file name.</p>
+<p>Finally, if you are not going to use Russian, you should remove the corresponding files from
+archetypes:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">find archetypes -name &#39;index.ru.md&#39; -exec rm &#39;{}&#39; \;
+</code></pre></div><h2 id="managing-authors"><a class="h-link" href="#managing-authors">Managing Author(s)</a></h2>
+<p>Authors are referred to from the front matter as a list of their IDs (there could be multiple
+authors):</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="k">authors</span><span class="p">:</span><span class="w">
+</span><span class="w"></span>- tatkins<span class="w">
+</span><span class="w"></span>- mmustermann<span class="w">
+</span></code></pre></div><p>Before referring to authors, you&rsquo;ll have to configure them.
+If an author with a particular ID doesn&rsquo;t exist, an exception will be thrown.</p>
+<h3 id="add-data-entries-for-the-authors"><a class="h-link" href="#add-data-entries-for-the-authors">Add Data Entries for the Authors</a></h3>
+<p>Open <code>data/authors.yaml</code> in a text editor and add the author(s). The example file can be copied from
+<code>themes/errorist/exampleSite/data/authors.yaml</code>. If you are using the bootstrapping project, it&rsquo;s
+already there.</p>
+<p>The top-level key is a unique identifier for an author in ASCII alphanumeric characters
+starting with a letter. All keys below are, strictly speaking, optional. Omitting them, however,
+won&rsquo;t make your site look prettier.</p>
+<ul>
+<li>
+<p><code>name:</code> key should contain a fall-back name which will be displayed
+should there be no author&rsquo;s page (<code>kontent/authors/&lt;ID&gt;/index.md</code>) for a particular <code>.Language</code>,
+or should the <code>.Title</code> of such page be not defined.</p>
+</li>
+<li>
+<p><code>image:</code> can be either local (the path should be relative to <code>&lt;PROJECT DIR&gt;/static</code>)
+or an URL, as in example below</p>
+</li>
+<li>
+<p><code>homepage:</code> is the primary external URL of an author</p>
+</li>
+<li>
+<p><code>social:</code> is a list of objects holding external URLs related to an author,
+typically social network profiles. The <code>name:</code> will be translated or displayed as-is
+depending on whether translation is provided under i18n directory.</p>
+</li>
+</ul>
+<p>Below are a few examples using &lsquo;default persons&rsquo; from various cultures:</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="k">authors</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="k">tatkins</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Tommy Atkins&#39;</span><span class="w">
+</span><span class="w">  </span><span class="k">mmustermann</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Max Mustermann&#39;</span><span class="w">
+</span><span class="w">    </span><span class="k">image</span><span class="p">:</span><span class="w"> </span>/img/mmustermann.jpg<span class="w">
+</span><span class="w">    </span><span class="k">homepage</span><span class="p">:</span><span class="w"> </span>http<span class="p">:</span>//example.com/dipl-ingeneur-informatiker/mmustermann<span class="w">
+</span><span class="w">    </span><span class="k">social</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span>LinkedIn<span class="w">
+</span><span class="w">      </span><span class="k">url</span><span class="p">:</span><span class="w"> </span>http<span class="p">:</span>//linkedin.com/mmustermann<span class="w">
+</span><span class="w">    </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span>Xing<span class="w">
+</span><span class="w">      </span><span class="k">url</span><span class="p">:</span><span class="w"> </span>http<span class="p">:</span>//xing.com/mmustermann<span class="w">
+</span><span class="w">  </span><span class="k">vpupkin</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Vasya Pupkin&#39;</span><span class="w">
+</span><span class="w">    </span><span class="k">image</span><span class="p">:</span><span class="w"> </span>https<span class="p">:</span>//gravatar.com/avatar<span class="p">?</span>d=mp<span class="cp">&amp;s=200</span><span class="w">
+</span><span class="w">    </span><span class="k">homepage</span><span class="p">:</span><span class="w"> </span>http<span class="p">:</span>//example.com/vpupkin<span class="w">
+</span><span class="w">  </span><span class="k">anonymous</span><span class="p">:</span><span class="w">
+</span></code></pre></div><h3 id="create-authors-pages-in-all-supported-languages"><a class="h-link" href="#create-authors-pages-in-all-supported-languages">Create Authors&rsquo; Pages in All Supported Languages</a></h3>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo new -k page authors/&lt;ID&gt;
+</code></pre></div><h3 id="content-listing-in-the-authors-page"><a class="h-link" href="#content-listing-in-the-authors-page">Content Listing in the Author&rsquo;s Page</a></h3>
+<p>If a page is written by the same author as the parent page, it will be skipped.  That is, if some of
+your authors (or you) will write a multi-part article or a book that will occupy an entire
+(sub)section, only the top page of it will be listed.</p>
+<p>Similarly, it won&rsquo;t make a lot of sense specifying the same author(s) in the front matter of each
+single chapter. Instead, you would rather put this in the front matter of the <code>_index.md</code> of the
+said opus:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">cascade:
+    authors:
+    - mmustermann
+</code></pre></div><h2 id="overriding-the-defaults"><a class="h-link" href="#overriding-the-defaults">Overriding the Defaults</a></h2>
+<p>Do not make changes to the Errorist theme directly, because these will likely mess up the upgrading
+process. Instead, override them using respective directories in your project.</p>
+<h3 id="dummy-partials-to-override"><a class="h-link" href="#dummy-partials-to-override">Dummy Partials to Override</a></h3>
+<p>These sit under <code>themes/errorist/layouts/partials</code> directory. If you have forked the bootstrapping
+project as recommended, these files are already included in <code>layouts/partials</code>. Otherwise, you will
+need to copy or create them yourself.</p>
+<ul>
+<li><code>disqus.html</code> if you plan to include Disqus comments. Just copy the code you&rsquo;ve got from them, and
+the comments will be enabled on each page rendered with <code>single.html</code>.</li>
+<li><code>favicons.html</code> to include all HTML related to your site&rsquo;s <a href="https://en.wikipedia.org/wiki/Favicon" target="_blank" rel="noopener">favicon
+images</a>
+. To get both the images, and the HTML to
+include them you may choose to use a free online service, like
+<a href="https://realfavicongenerator.net" target="_blank" rel="noopener">https://realfavicongenerator.net</a>
+.</li>
+<li><code>gdpr.html</code> for the user consent widget which lets the user to accept cookies, agree to being
+tracked and what not. I&rsquo;m not strong in international privacy legalese, so I&rsquo;m not including such
+code on purpose.</li>
+<li><code>head.html</code>  to customize the <code>&lt;title&gt;</code> of your pages and for anything else you might need to
+include between the <code>&lt;head&gt;</code> tags.</li>
+</ul>
+<h3 id="customizing-the-appearance"><a class="h-link" href="#customizing-the-appearance">Customizing the Appearance</a></h3>
+<p>Copy <code>themes/errorist/static/css/customized.css</code> to <code>static/css/customized.css</code> in your project and
+edit it. This will allow you to change the color of the stripe in the top of the page, the color of
+your site name, and whether you&rsquo;d like to display it in uppercase.</p>
+<p>You can also change how images in articles behave on mouse-over, hinting the user they can be
+expanded.</p>
+<h3 id="choosing-the-layout"><a class="h-link" href="#choosing-the-layout">Choosing the Layout</a></h3>
+<p>You can change the layout of the pages rendered with <code>list.html</code> template by assigning a custom type
+in <code>_index.*md</code> file in the section root. The types supported are:</p>
+<ul>
+<li><code>list-compact</code> a more compact list, as the name suggests, still including <code>.Description</code> for the
+pages listed.</li>
+<li><code>list-titles-only</code> same as above, but only titles are shown. This is the default for tags.</li>
+</ul>
+<p>The plan is to include alternative layouts for the site <code>index.html</code> pages.</p>
+<h2 id="metadata-and-microdata"><a class="h-link" href="#metadata-and-microdata">Metadata and Microdata</a></h2>
+<p>Currently, only <code>BreadCrumbs</code> and <code>Article</code> with its derivatives (<code>BlogPosting</code>, <code>NewsArticle</code>, etc.)
+are supported. The type of the main content can be set in front matter with <code>schema:</code> parameter, the
+default being <code>Article</code>.</p>
+<h3 id="canonical-meta-tag"><a class="h-link" href="#canonical-meta-tag">Canonical Meta Tag</a></h3>
+<p>By default it is set to the <code>.Permalink</code> of the page itself. Should it be something different, set
+<code>canonical</code> parameter in the front matter.</p>
+<h2 id="reporting-bugs-requesting-features-pull-requests-and-other-communication"><a class="h-link" href="#reporting-bugs-requesting-features-pull-requests-and-other-communication">Reporting Bugs, Requesting Features, Pull Requests and Other Communication</a></h2>
+<p>Please use GitHub repository issues for that. I might occasionally respond to posts at Hugo support
+forum, but I can easily overlook your posts as well. Please keep in mind that I&rsquo;m running this
+project in my free time.</p>
+
+            <nav class="nextprev">
+
+<p class="next">
+    <a href="https://vendelin.org/geeky/errorist/markdown-tutorial/">
+         Markdown by Example &rarr;
+    </a>
+</p>
+
+
+<p class="prev">
+    <a href="https://vendelin.org/geeky/errorist/add-kontent/">
+         &larr; Creating Content with Errorist
+    </a>
+</p>
+
+</nav>
+<div id="disqus_thread"></div>
+    </article>
+</main><script>
+function disqus() {
+
+    var disqus_config = function () {
+        this.page.url = "https://vendelin.org/geeky/errorist/readme/";  
+        this.page.identifier = "27da7c38c438dede79c19fa6a96a25f0";   
+    };
+    (function() {  
+        var d = document, s = d.createElement('script');
+
+        s.src = 'https://vendelin-org.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+
+}
+
+window.addEventListener('load', function(event){
+    var decn = cookieDecision();
+
+    if(decn) {
+        const accept = decn.split('=')[1];
+        if( accept == 1 ){
+            disqus();
+        }
+    }
+
+    document.getElementById('accept').addEventListener('click', function (){
+        disqus();
+    });
+});
+</script></div><div class="made-by">
+    <p>
+        Built with <a href="https://vendelin.org/geeky/errorist">Errorist</a> theme for <a href="https://gohugo.io">Hugo</a> site generator.
+    </p>
+</div>
+</div><div id="gdpr" style="display: none">
+    <div class="cookie-consent">
+        <p>
+            We use third-party cookies for analytics and comments. Disabling cookies disables comments.
+        </p>
+        <a id="reject" href="#">Reject</a>
+        <a id="accept" href="#">Accept</a>
+    </div>
+</div>
+<figure id="expanded" onclick="restorePic(event)">
+    <img id="big-pic">
+</figure>
+</body>
+</html>

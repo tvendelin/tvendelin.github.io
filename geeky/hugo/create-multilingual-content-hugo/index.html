@@ -28,6 +28,8 @@
 
 <meta name="twitter:card" content="summary_large_image">
 <meta itemprop="image" property="og:image" content="https://vendelin.org/img/vendelin_org.png">
+<meta id="meta-keywords" itemprop="keywords" content="Hugo"><link rel="canonical" href="https://vendelin.org/geeky/hugo/create-multilingual-content-hugo/">
+
         <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&family=Open+Sans:wght@300;400;600;700&family=Source+Code+Pro:wght@400;500;700&display=swap" rel="stylesheet"> 
 
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -65,7 +67,7 @@
         <span itemprop="name" class="micro">Hugo Cookbook for a Multilingual Site</span></a></li>
 </ol>
 </nav>
-            <main class="container"><div class="grid-left"><nav class="menu" id="authors">
+            <div class="container"><div class="grid-left"><nav class="menu" id="authors">
 
 <a href="https://vendelin.org/authors/tvendelin/">
     <div class="author" itemprop="author" id="author-tvendelin" itemscope itemtype="http://schema.org/Person">
@@ -112,14 +114,18 @@
 
 
 
-<article class="main-single"  itemscope itemtype="http://schema.org/Article" itemref="meta-descr meta-published meta-modified meta-in-lang author-tvendelin">
-    <meta itemprop="mainEntityOfPage" content="https://vendelin.org/geeky/hugo/create-multilingual-content-hugo/">
-        <h1 itemprop="headline">Multilingual Content With Hugo</h1>
-        
-        
 
 
-        <p>Handling Multilingual Content is where Hugo really shines. However, since internationalization (i18n
+
+<main class="main-single">
+    <article itemscope itemtype="http://schema.org/Article" itemref="meta-descr meta-published meta-modified meta-in-lang author-tvendelin">
+        <meta itemprop="mainEntityOfPage" content="https://vendelin.org/geeky/hugo/create-multilingual-content-hugo/">
+            <h1 itemprop="headline">Multilingual Content With Hugo</h1>
+            
+            
+
+
+            <p>Handling Multilingual Content is where Hugo really shines. However, since internationalization (i18n
 for short) is a pretty complex task, let&rsquo;s throw together a brief list of</p>
 <h2 id="requirements"><a class="h-link" href="#requirements">Requirements</a></h2>
 <ul>
@@ -351,7 +357,7 @@ reasonable enough – and in the template pipe it through <code>markdownify</cod
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">{{.Content | markdownify}}
 </code></pre></div><p>This way, you can both have a cake, and eat it, too!</p>
 
-        <nav class="nextprev">
+            <nav class="nextprev">
 
 <p class="next">
     <a href="https://vendelin.org/geeky/hugo/images-multilingual-pages-hugo/">
@@ -368,7 +374,8 @@ reasonable enough – and in the template pipe it through <code>markdownify</cod
 
 </nav>
 <div id="disqus_thread"></div>
-    </article><script>
+    </article>
+</main><script>
 function disqus() {
 
     var disqus_config = function () {
@@ -400,8 +407,12 @@ window.addEventListener('load', function(event){
         disqus();
     });
 });
-</script></main>
-        </div><div id="gdpr" style="display: none">
+</script></div><div class="made-by">
+    <p>
+        Built with <a href="https://vendelin.org/geeky/errorist">Errorist</a> theme for <a href="https://gohugo.io">Hugo</a> site generator.
+    </p>
+</div>
+</div><div id="gdpr" style="display: none">
     <div class="cookie-consent">
         <p>
             We use third-party cookies for analytics and comments. Disabling cookies disables comments.
@@ -410,5 +421,8 @@ window.addEventListener('load', function(event){
         <a id="accept" href="#">Accept</a>
     </div>
 </div>
+<figure id="expanded" onclick="restorePic(event)">
+    <img id="big-pic">
+</figure>
 </body>
 </html>

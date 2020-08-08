@@ -29,7 +29,8 @@
 <meta name="twitter:card" content="summary_large_image">
 
 <meta itemprop="image" property="og:image" content="https://vendelin.org/images/tantan/IMAG0024.jpg">
-<meta itemprop="primaryImageOfPage" itemref="61cfe249288ef6eef5f821a9850ab6f6">
+<meta itemprop="primaryImageOfPage" itemref="61cfe249288ef6eef5f821a9850ab6f6"><link rel="canonical" href="https://vendelin.org/about/">
+
         <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&family=Open+Sans:wght@300;400;600;700&family=Source+Code+Pro:wght@400;500;700&display=swap" rel="stylesheet"> 
 
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -59,7 +60,7 @@
         <span itemprop="name" class="micro">Home</span></a></li>
 </ol>
 </nav>
-            <main class="container"><div class="grid-left"><nav class="menu" id="ndrop" itemscope itemtype="http://schema.org/SiteNavigationElement">
+            <div class="container"><div class="grid-left"><nav class="menu" id="ndrop" itemscope itemtype="http://schema.org/SiteNavigationElement">
         <meta itemprop="name" content="Main Navigation Menu">
         <div class="section">Sections:</div>
 
@@ -91,17 +92,21 @@
 
 
 
-<article class="main-single"  itemscope itemtype="http://schema.org/Article" itemref="meta-descr meta-published meta-modified meta-in-lang 61cfe249288ef6eef5f821a9850ab6f6">
-    <meta itemprop="mainEntityOfPage" content="https://vendelin.org/about/">
-        <h1 itemprop="headline">About</h1>
-        <figure class="main" id="61cfe249288ef6eef5f821a9850ab6f6" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+
+
+
+<main class="main-single">
+    <article itemscope itemtype="http://schema.org/Article" itemref="meta-descr meta-published meta-modified meta-in-lang 61cfe249288ef6eef5f821a9850ab6f6">
+        <meta itemprop="mainEntityOfPage" content="https://vendelin.org/about/">
+            <h1 itemprop="headline">About</h1>
+            <figure class="prominent main" id="61cfe249288ef6eef5f821a9850ab6f6" itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
     <link itemprop="url" href="https://vendelin.org/images/tantan/IMAG0024.jpg" rel="preload" as="image"> 
-    <img itemprop="image" src="https://vendelin.org/images/tantan/IMAG0024.jpg" alt="In West Sahara, somewhere South of Tan-Tan."><figcaption>In West Sahara, somewhere South of Tan-Tan. / Toomas Vendelin
+    <img itemprop="image" src="https://vendelin.org/images/tantan/IMAG0024.jpg" alt="In West Sahara, somewhere South of Tan-Tan." onclick="expandPic(event, 'expanded')"><figcaption>In West Sahara, somewhere South of Tan-Tan. / Toomas Vendelin
     </figcaption></figure>
-        
+            
 
 
-        <p>The official public brain-dump of Toomas Vendelin would be the most accurate description.</p>
+            <p>The official public brain-dump of Toomas Vendelin would be the most accurate description.</p>
 <p>This is a personal website, that is, it is an unsystematic collection of texts and pictures that
 someone else might find useful and/or entertaining. It is not a blog, as I&rsquo;m not logging anything in
 explicitly chronological order.</p>
@@ -142,12 +147,13 @@ with IT professionals.</p>
 <a href="https://www.couchsurfing.com/people/toomas" target="_blank" rel="noopener">Couchsurfing</a>
 </p>
 
-        <nav class="nextprev">
+            <nav class="nextprev">
 
 
 </nav>
 <div id="disqus_thread"></div>
-    </article><script>
+    </article>
+</main><script>
 function disqus() {
 
     var disqus_config = function () {
@@ -179,8 +185,12 @@ window.addEventListener('load', function(event){
         disqus();
     });
 });
-</script></main>
-        </div><div id="gdpr" style="display: none">
+</script></div><div class="made-by">
+    <p>
+        Built with <a href="https://vendelin.org/geeky/errorist">Errorist</a> theme for <a href="https://gohugo.io">Hugo</a> site generator.
+    </p>
+</div>
+</div><div id="gdpr" style="display: none">
     <div class="cookie-consent">
         <p>
             We use third-party cookies for analytics and comments. Disabling cookies disables comments.
@@ -189,5 +199,8 @@ window.addEventListener('load', function(event){
         <a id="accept" href="#">Accept</a>
     </div>
 </div>
+<figure id="expanded" onclick="restorePic(event)">
+    <img id="big-pic">
+</figure>
 </body>
 </html>

@@ -28,6 +28,8 @@
 
 <meta name="twitter:card" content="summary_large_image">
 <meta itemprop="image" property="og:image" content="https://vendelin.org/img/vendelin_org.png">
+<meta id="meta-keywords" itemprop="keywords" content="Hugo"><link rel="canonical" href="https://vendelin.org/geeky/hugo/install-hugo/">
+
         <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&family=Open+Sans:wght@300;400;600;700&family=Source+Code+Pro:wght@400;500;700&display=swap" rel="stylesheet"> 
 
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -65,7 +67,7 @@
         <span itemprop="name" class="micro">Hugo Cookbook for a Multilingual Site</span></a></li>
 </ol>
 </nav>
-            <main class="container"><div class="grid-left"><nav class="menu" id="authors">
+            <div class="container"><div class="grid-left"><nav class="menu" id="authors">
 
 <a href="https://vendelin.org/authors/tvendelin/">
     <div class="author" itemprop="author" id="author-tvendelin" itemscope itemtype="http://schema.org/Person">
@@ -112,14 +114,18 @@
 
 
 
-<article class="main-single"  itemscope itemtype="http://schema.org/Article" itemref="meta-descr meta-published meta-modified meta-in-lang author-tvendelin">
-    <meta itemprop="mainEntityOfPage" content="https://vendelin.org/geeky/hugo/install-hugo/">
-        <h1 itemprop="headline">Install Hugo</h1>
-        
-        
 
 
-        <p>Hugo comes in a single binary file. Download the archive from  <a href="https://github.com/gohugoio/hugo/releases" target="_blank" rel="noopener">releases
+
+<main class="main-single">
+    <article itemscope itemtype="http://schema.org/Article" itemref="meta-descr meta-published meta-modified meta-in-lang author-tvendelin">
+        <meta itemprop="mainEntityOfPage" content="https://vendelin.org/geeky/hugo/install-hugo/">
+            <h1 itemprop="headline">Install Hugo</h1>
+            
+            
+
+
+            <p>Hugo comes in a single binary file. Download the archive from  <a href="https://github.com/gohugoio/hugo/releases" target="_blank" rel="noopener">releases
 page</a>
  to your <code>~/Downloads</code> directory.  The version and
 checksums in the examples will likely be different, of course.</p>
@@ -143,7 +149,7 @@ built with love by spf13 and friends in Go.
 
 ... snip ...
 </code></pre></div>
-        <nav class="nextprev">
+            <nav class="nextprev">
 
 <p class="next">
     <a href="https://vendelin.org/geeky/hugo/scaffoldings/">
@@ -160,7 +166,8 @@ built with love by spf13 and friends in Go.
 
 </nav>
 <div id="disqus_thread"></div>
-    </article><script>
+    </article>
+</main><script>
 function disqus() {
 
     var disqus_config = function () {
@@ -192,8 +199,12 @@ window.addEventListener('load', function(event){
         disqus();
     });
 });
-</script></main>
-        </div><div id="gdpr" style="display: none">
+</script></div><div class="made-by">
+    <p>
+        Built with <a href="https://vendelin.org/geeky/errorist">Errorist</a> theme for <a href="https://gohugo.io">Hugo</a> site generator.
+    </p>
+</div>
+</div><div id="gdpr" style="display: none">
     <div class="cookie-consent">
         <p>
             We use third-party cookies for analytics and comments. Disabling cookies disables comments.
@@ -202,5 +213,8 @@ window.addEventListener('load', function(event){
         <a id="accept" href="#">Accept</a>
     </div>
 </div>
+<figure id="expanded" onclick="restorePic(event)">
+    <img id="big-pic">
+</figure>
 </body>
 </html>
