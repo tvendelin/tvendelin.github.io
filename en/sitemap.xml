@@ -13,11 +13,6 @@
   </url>
   
   <url>
-    <loc>https://vendelin.org/geeky/git-language-learn/</loc>
-    <lastmod>2020-07-18T13:56:20+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://vendelin.org/geeky/</loc>
     <lastmod>2020-07-18T13:56:20+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -31,11 +26,6 @@
   <url>
     <loc>https://vendelin.org/geeky/errorist/short/</loc>
     <lastmod>2020-08-09T08:35:06+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vendelin.org/geeky/hugo/</loc>
-    <lastmod>2020-07-31T16:01:39+02:00</lastmod>
   </url>
   
   <url>
@@ -115,6 +105,16 @@
   </url>
   
   <url>
+    <loc>https://vendelin.org/travel/indonesia/</loc>
+    <lastmod>2020-08-16T11:58:55+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vendelin.org/travel/indonesia/north-maluku/</loc>
+    <lastmod>2020-08-16T11:58:55+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://vendelin.org/geeky/errorist/</loc>
     <lastmod>2020-08-08T20:06:31+02:00</lastmod>
   </url>
@@ -131,7 +131,7 @@
   
   <url>
     <loc>https://vendelin.org/tags/hugo/</loc>
-    <lastmod>2020-08-09T08:35:06+02:00</lastmod>
+    <lastmod>2020-08-16T11:58:55+02:00</lastmod>
   </url>
   
   <url>
@@ -141,7 +141,7 @@
   
   <url>
     <loc>https://vendelin.org/tags/</loc>
-    <lastmod>2020-08-09T08:35:06+02:00</lastmod>
+    <lastmod>2020-08-16T11:58:55+02:00</lastmod>
   </url>
   
   <url>
@@ -156,17 +156,32 @@
   
   <url>
     <loc>https://vendelin.org/exposures/</loc>
-    <lastmod>2020-07-31T16:01:39+02:00</lastmod>
+    <lastmod>2020-08-16T11:58:55+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://vendelin.org/exposures/major/</loc>
-    <lastmod>2020-07-31T16:01:39+02:00</lastmod>
+    <lastmod>2020-08-16T11:58:55+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vendelin.org/travel/indonesia/north-maluku/togutil/</loc>
+    <lastmod>2020-08-16T11:58:55+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vendelin.org/geeky/git-language-learn/</loc>
+    <lastmod>2020-08-16T11:58:55+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vendelin.org/geeky/hugo/</loc>
+    <lastmod>2020-08-16T11:58:55+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://vendelin.org/tags/tutorial/</loc>
-    <lastmod>2020-07-31T16:01:39+02:00</lastmod>
+    <lastmod>2020-08-16T11:58:55+02:00</lastmod>
   </url>
   
   <url>
