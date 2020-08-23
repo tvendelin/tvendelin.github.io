@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogging tips for foreign language students on vendelin.org</title>
+    <link>https://vendelin.org/geeky/blog-learning-foreign-language/</link>
+    <description>Recent content in Blogging tips for foreign language students on vendelin.org</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 15 May 2020 16:24:41 +0200</lastBuildDate>
+    
+	<atom:link href="https://vendelin.org/geeky/blog-learning-foreign-language/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Do you brag about learning a foreign language? Blog about it instead!</title>
+      <link>https://vendelin.org/geeky/blog-learning-foreign-language/overview/</link>
+      <pubDate>Fri, 15 May 2020 16:24:41 +0200</pubDate>
+      
+      <guid>https://vendelin.org/geeky/blog-learning-foreign-language/overview/</guid>
+      <description>So, do you brag about learning a foreign language? Let&amp;rsquo;s admit: most of us do, in one form or another. Don&amp;rsquo;t you update your social media profiles, your CV, or suddenly greet a colleague in a coffee kitchen in his native tongue, which you incidently happen to learn? Learning a foreign language requires an effort. Diminished capability to express yourself can also be frustrating at times. And so we seek additional motivation and approval from people around us, and so we brag, in one form or another.</description>
+    </item>
+    
+    <item>
+      <title>Set Up Hugo with Errorist Theme</title>
+      <link>https://vendelin.org/geeky/blog-learning-foreign-language/hugo-errorist/</link>
+      <pubDate>Fri, 24 Jul 2020 06:48:06 +0200</pubDate>
+      
+      <guid>https://vendelin.org/geeky/blog-learning-foreign-language/hugo-errorist/</guid>
+      <description>windows mac linux   Windows 10 Enable Windows Subsystem Linux (WSL) as described on this Microsoft page . Hugo itself will run on Windows natively, but wdiff won&amp;rsquo;t.
+Launch Microsoft Store, search for &amp;lsquo;Ubuntu&amp;rsquo;, and install the latest LTS version (LTS stands for &amp;lsquo;Long term support&amp;rsquo;). As of this writing, this should be Ubuntu 20.04 LTS. Any general-use Linux distribution would do, but I&amp;rsquo;ve picked Ubuntu because for new users it would be easier to find support online.</description>
+    </item>
+    
+    <item>
+      <title>Indonesian Pronouns, or Who Exactly Do You Mean by &#39;Us&#39;?</title>
+      <link>https://vendelin.org/geeky/blog-learning-foreign-language/indonesian-pronouns/</link>
+      <pubDate>Sat, 23 May 2020 19:44:00 +0200</pubDate>
+      
+      <guid>https://vendelin.org/geeky/blog-learning-foreign-language/indonesian-pronouns/</guid>
+      <description>There are two pronouns for the first person plural: kita (inclusive), and kami (exclusive). Tina isn&amp;rsquo;t going to Jakarta with Peter and Dita (Tina is not included = use kami), neither is she returning with them (Tina is not included = use kami). But, once Peter and Dita are back, they go all together to a restaurant. In this case, Tina is included, so use kita.
+task my solution solution corrections   Fill the gaps with appropriate pronouns in the following dialogue.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://vendelin.org/geeky/blog-learning-foreign-language/summary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vendelin.org/geeky/blog-learning-foreign-language/summary/</guid>
+      <description>Let&amp;rsquo;s confess: most of us do.</description>
+    </item>
+    
+  </channel>
+</rss>

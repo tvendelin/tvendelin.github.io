@@ -13,6 +13,16 @@
   </url>
   
   <url>
+    <loc>https://vendelin.org/geeky/blog-learning-foreign-language/</loc>
+    <lastmod>2020-07-18T13:56:20+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vendelin.org/geeky/blog-learning-foreign-language/overview/</loc>
+    <lastmod>2020-08-22T10:30:51+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://vendelin.org/geeky/</loc>
     <lastmod>2020-07-18T13:56:20+02:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -26,6 +36,11 @@
   <url>
     <loc>https://vendelin.org/geeky/errorist/short/</loc>
     <lastmod>2020-08-09T08:35:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vendelin.org/geeky/blog-learning-foreign-language/hugo-errorist/</loc>
+    <lastmod>2020-08-22T10:30:51+02:00</lastmod>
   </url>
   
   <url>
@@ -105,6 +120,51 @@
   </url>
   
   <url>
+    <loc>https://vendelin.org/exposures/</loc>
+    <lastmod>2020-08-22T10:30:51+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vendelin.org/tags/ijen/</loc>
+    <lastmod>2020-08-22T10:30:51+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vendelin.org/travel/indonesia/java/ijen-volcano/</loc>
+    <lastmod>2020-08-22T10:30:51+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vendelin.org/tags/indonesia/</loc>
+    <lastmod>2020-08-22T10:30:51+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vendelin.org/tags/java/</loc>
+    <lastmod>2020-08-22T10:30:51+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vendelin.org/exposures/minor/</loc>
+    <lastmod>2020-08-22T10:30:51+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vendelin.org/tags/</loc>
+    <lastmod>2020-08-22T10:30:51+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vendelin.org/tags/travel/</loc>
+    <lastmod>2020-08-22T10:30:51+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vendelin.org/tags/volcano/</loc>
+    <lastmod>2020-08-22T10:30:51+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://vendelin.org/travel/indonesia/</loc>
     <lastmod>2020-08-16T11:58:55+02:00</lastmod>
   </url>
@@ -115,8 +175,38 @@
   </url>
   
   <url>
+    <loc>https://vendelin.org/tags/blogging/</loc>
+    <lastmod>2020-08-09T08:35:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vendelin.org/tags/errorist/</loc>
+    <lastmod>2020-08-22T10:30:51+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vendelin.org/tags/hugo/</loc>
+    <lastmod>2020-08-16T11:58:55+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://vendelin.org/geeky/errorist/</loc>
     <lastmod>2020-08-08T20:06:31+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vendelin.org/tags/git/</loc>
+    <lastmod>2020-08-22T10:30:51+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vendelin.org/tags/github/</loc>
+    <lastmod>2020-08-22T10:30:51+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vendelin.org/tags/wdiff/</loc>
+    <lastmod>2020-08-22T10:30:51+02:00</lastmod>
   </url>
   
   <url>
@@ -130,18 +220,8 @@
   </url>
   
   <url>
-    <loc>https://vendelin.org/tags/hugo/</loc>
-    <lastmod>2020-08-16T11:58:55+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://vendelin.org/geeky/hugo/cross-reference-external-links-hugo/</loc>
     <lastmod>2020-07-21T07:36:24+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://vendelin.org/tags/</loc>
-    <lastmod>2020-08-16T11:58:55+02:00</lastmod>
   </url>
   
   <url>
@@ -155,18 +235,33 @@
   </url>
   
   <url>
-    <loc>https://vendelin.org/exposures/</loc>
-    <lastmod>2020-08-16T11:58:55+02:00</lastmod>
+    <loc>https://vendelin.org/tags/halmahera/</loc>
+    <lastmod>2020-08-22T10:30:51+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://vendelin.org/exposures/major/</loc>
-    <lastmod>2020-08-16T11:58:55+02:00</lastmod>
+    <lastmod>2020-08-22T10:30:51+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vendelin.org/tags/north-maluku/</loc>
+    <lastmod>2020-08-22T10:30:51+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://vendelin.org/travel/indonesia/north-maluku/togutil/</loc>
-    <lastmod>2020-08-16T11:58:55+02:00</lastmod>
+    <lastmod>2020-08-22T10:30:51+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vendelin.org/tags/togutil/</loc>
+    <lastmod>2020-08-22T10:30:51+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vendelin.org/geeky/blog-learning-foreign-language/indonesian-pronouns/</loc>
+    <lastmod>2020-05-23T19:44:00+02:00</lastmod>
   </url>
   
   <url>
@@ -185,8 +280,8 @@
   </url>
   
   <url>
-    <loc>https://vendelin.org/tags/git/</loc>
-    <lastmod>2020-07-21T07:36:24+02:00</lastmod>
+    <loc>https://vendelin.org/tags/language-learning/</loc>
+    <lastmod>2020-08-22T10:30:51+02:00</lastmod>
   </url>
   
   <url>
@@ -201,18 +296,13 @@
   </url>
   
   <url>
-    <loc>https://vendelin.org/exposures/minor/</loc>
-    <lastmod>2020-07-21T07:36:24+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://vendelin.org/tags/motorcycling/</loc>
     <lastmod>2020-07-21T07:36:24+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vendelin.org/tags/travel/</loc>
-    <lastmod>2020-07-21T07:36:24+02:00</lastmod>
+    <loc>https://vendelin.org/geeky/blog-learning-foreign-language/summary/</loc>
+    <lastmod>2020-05-17T21:13:23+02:00</lastmod>
   </url>
   
 </urlset>

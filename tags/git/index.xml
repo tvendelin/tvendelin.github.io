@@ -5,7 +5,7 @@
     <link>https://vendelin.org/tags/git/</link>
     <description>Recent content in git on vendelin.org</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 15 May 2020 16:24:41 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 24 Jul 2020 06:48:06 +0200</lastBuildDate>
     
 	<atom:link href="https://vendelin.org/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
@@ -19,6 +19,25 @@
       <description>&amp;lsquo;What is Git?&amp;rsquo;, Yuni asks. Yuni is an online teacher of Indonesian and an aspiring Linux user.
 &amp;lsquo;Well, it&amp;rsquo;s sort of a cross between a time machine and a kitchen blender, the one you make your smoothies with from all these exotic fruits that grow in your backyard&amp;rsquo;, Toomas responds. Toomas is a programmer and a Linux sysadmin.
 &amp;lsquo;I know my kitchen blender A to Z&amp;rsquo;, says Yuni proudly. &amp;lsquo;Why don&amp;rsquo;t you tell me about time machine part first?</description>
+    </item>
+    
+    <item>
+      <title>Do you brag about learning a foreign language? Blog about it instead!</title>
+      <link>https://vendelin.org/geeky/blog-learning-foreign-language/overview/</link>
+      <pubDate>Fri, 15 May 2020 16:24:41 +0200</pubDate>
+      
+      <guid>https://vendelin.org/geeky/blog-learning-foreign-language/overview/</guid>
+      <description>So, do you brag about learning a foreign language? Let&amp;rsquo;s admit: most of us do, in one form or another. Don&amp;rsquo;t you update your social media profiles, your CV, or suddenly greet a colleague in a coffee kitchen in his native tongue, which you incidently happen to learn? Learning a foreign language requires an effort. Diminished capability to express yourself can also be frustrating at times. And so we seek additional motivation and approval from people around us, and so we brag, in one form or another.</description>
+    </item>
+    
+    <item>
+      <title>Set Up Hugo with Errorist Theme</title>
+      <link>https://vendelin.org/geeky/blog-learning-foreign-language/hugo-errorist/</link>
+      <pubDate>Fri, 24 Jul 2020 06:48:06 +0200</pubDate>
+      
+      <guid>https://vendelin.org/geeky/blog-learning-foreign-language/hugo-errorist/</guid>
+      <description>windows mac linux   Windows 10 Enable Windows Subsystem Linux (WSL) as described on this Microsoft page . Hugo itself will run on Windows natively, but wdiff won&amp;rsquo;t.
+Launch Microsoft Store, search for &amp;lsquo;Ubuntu&amp;rsquo;, and install the latest LTS version (LTS stands for &amp;lsquo;Long term support&amp;rsquo;). As of this writing, this should be Ubuntu 20.04 LTS. Any general-use Linux distribution would do, but I&amp;rsquo;ve picked Ubuntu because for new users it would be easier to find support online.</description>
     </item>
     
   </channel>

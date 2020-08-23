@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>blogging on vendelin.org</title>
+    <link>https://vendelin.org/tags/blogging/</link>
+    <description>Recent content in blogging on vendelin.org</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 07 Aug 2020 09:02:22 +0200</lastBuildDate>
+    
+	<atom:link href="https://vendelin.org/tags/blogging/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Install Errorist – the Short Story</title>
+      <link>https://vendelin.org/geeky/errorist/short/</link>
+      <pubDate>Sun, 02 Aug 2020 20:36:26 +0200</pubDate>
+      
+      <guid>https://vendelin.org/geeky/errorist/short/</guid>
+      <description>Install Hugo static site generator first.
+Recursively clone the bootstrapping project:
+git clone --recurse-submodules git@github.com:tvendelin/errorist-bootstrap.git This pulls the Errorist theme as a git submodule and provides you with a skeleton project that needs only a few things to configure. Change into project directory and start the Hugo server:
+cd errorist-bootstrap hugo server -D Open http://localhost:1313 in your browser. You should see a welcome message, and a link to the manuals. You will also notice that two languages – English and Russian – are already pre-configured.</description>
+    </item>
+    
+    <item>
+      <title>Creating Content with Errorist</title>
+      <link>https://vendelin.org/geeky/errorist/add-kontent/</link>
+      <pubDate>Mon, 27 Jul 2020 17:15:38 +0200</pubDate>
+      
+      <guid>https://vendelin.org/geeky/errorist/add-kontent/</guid>
+      <description>This page will walk you through the steps necessary to add content to your website.
+Though not a requirement, using tree command-line utility would be handy, if you get lost in directory structure. To install it, use the default package manager on Linux or MacPorts on Mac. tree shows the entire file hierarchy under specified directory – see the examples throughout this tutorial.
+Create a Section and Your First Page Hugo server is probably already running in your terminal.</description>
+    </item>
+    
+    <item>
+      <title>README | Errorist Website Theme for Hugo</title>
+      <link>https://vendelin.org/geeky/errorist/readme/</link>
+      <pubDate>Thu, 16 Jul 2020 20:19:42 +0200</pubDate>
+      
+      <guid>https://vendelin.org/geeky/errorist/readme/</guid>
+      <description>Install Recursively clone the bootstrapping project:
+git clone --recurse-submodules git@github.com:tvendelin/errorist-bootstrap.git This pulls the Errorist theme as a git submodule and provides you with a skeleton project that needs only a few things to configure. Change into project directory and start the Hugo server:
+cd errorist-bootstrap hugo server -D Open http://localhost:1313 in your browser. You should see a welcome message, and a link to the manuals. You will also notice that two languages – English and Russian – are already pre-configured.</description>
+    </item>
+    
+    <item>
+      <title>Markdown by Example</title>
+      <link>https://vendelin.org/geeky/errorist/markdown-tutorial/</link>
+      <pubDate>Fri, 07 Aug 2020 09:02:22 +0200</pubDate>
+      
+      <guid>https://vendelin.org/geeky/errorist/markdown-tutorial/</guid>
+      <description>The example below shows how content of your pages should be written to have headers, paragraphs, etc. If you scroll down you will see what the resulting web page will look like.
+Whatever you publish with Hugo and Errorist – the articles, blog posts, etc. – are written using a plain text editor. The special parts of you texts – headings, lists, links, images, blockquotes – are marked up with a simple notation called Markdown.</description>
+    </item>
+    
+    <item>
+      <title>YAML – the Very Basics</title>
+      <link>https://vendelin.org/geeky/errorist/yaml-tutorial/</link>
+      <pubDate>Tue, 04 Aug 2020 14:51:02 +0200</pubDate>
+      
+      <guid>https://vendelin.org/geeky/errorist/yaml-tutorial/</guid>
+      <description>This is grossly simplified introduction to YAML . The complete official documentation is available here . However, you will only need a small subset of it to configure your Hugo project and the &amp;lsquo;front matter&amp;rsquo; of your Markdown files. This little tutorial provides a starting point.
+YAML is a format for representing data structure in a human-readable way. YAML&amp;rsquo;s block collections use indentation for scope and begin each entry on its own line.</description>
+    </item>
+    
+    <item>
+      <title>Errorist – Manage Multilingual Website Content Efficiently</title>
+      <link>https://vendelin.org/geeky/errorist/</link>
+      <pubDate>Tue, 28 Jul 2020 14:45:14 +0200</pubDate>
+      
+      <guid>https://vendelin.org/geeky/errorist/</guid>
+      <description>Errorist is a website theme designed originally with foreign language students in mind. Specifically, to support a workflow where students manage their grammar exercises under Git and GitHub, and post their exercises in a blog, highlighting the errors they made – hence the name.
+That being said, you can build a &amp;lsquo;normal&amp;rsquo; multilingual, multi-authored responsive website with Errorist. For that part, you will enjoy efficient and robust content management in multiple languages with minimal editing efforts.</description>
+    </item>
+    
+  </channel>
+</rss>

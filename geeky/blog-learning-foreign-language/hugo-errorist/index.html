@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en" prefix="og: http://ogp.me/ns#" itemscope itemtype="http://schema.org/WebPage">
+    <head>
+        <meta name="description" content="Blogging about learning a foreign language - quick setup for Hugo and Errorist">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/customized.css">
+        <script async src="/js/hamburger.js"></script>
+                <title>
+            Set Up Hugo with Errorist Theme
+        </title>
+        <link rel="stylesheet" href="/css/perldoc.css">
+        <link rel="stylesheet" href="/css/gdpr.css">
+        <script async src="/js/gdpr.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-162948019-2"></script>
+        <meta property="og:type" content="article">
+
+<meta itemprop="name" property="og:title" content="Set Up Hugo with Errorist Theme">
+<meta id="meta-descr" itemprop="description" property="og:description" content="Blogging about learning a foreign language - quick setup for Hugo and Errorist">
+<meta id="meta-published" itemprop="datePublished" content="2020-07-24T06:48:06+02:00">
+<meta id="meta-modified" itemprop="dateModified" content="2020-08-22T10:30:51+02:00">
+<meta id="meta-in-lang" itemprop="inLanguage" content="en">
+
+<meta property="og:url" content="https://vendelin.org/geeky/blog-learning-foreign-language/hugo-errorist/">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="vendelin.org">
+<meta property="og:image:alt" content="">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta itemprop="image" property="og:image" content="https://vendelin.org/img/vendelin_org.png">
+<meta id="meta-keywords" itemprop="keywords" content="git, wdiff, GitHub, Errorist"><link rel="canonical" href="https://vendelin.org/geeky/blog-learning-foreign-language/hugo-errorist/">
+
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&family=Open+Sans:wght@300;400;600;700&family=Source+Code+Pro:wght@400;500;700&display=swap" rel="stylesheet"> 
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#990000">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="theme-color" content="#ffffff">
+
+    </head>
+    <body itemscope itemtype="http://schema.org/WebPage">
+        <nav class="top">
+            <a href="javascript:void(0);" class="box-shadow-menu" onclick="menuDrop()" title="Menu"></a>
+            <a href="https://vendelin.org" class="logo">
+                vendelin.org 
+            </a>
+        </nav>
+        <div id="mobile-menu"></div>
+        <div class="page">
+            <nav class="breadcrumbs">
+<ol itemprop="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+<meta itemprop="name" content="Breadcrumbs">
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="https://vendelin.org/">
+        <meta itemprop="position" content="1">
+        <span itemprop="name" class="micro">Home</span></a><span class="col">:</span></li>
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="https://vendelin.org/geeky/">
+        <meta itemprop="position" content="2">
+        <span itemprop="name" class="micro">Geeky Stuff</span></a><span class="col">:</span></li>
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a itemprop="item" href="https://vendelin.org/geeky/blog-learning-foreign-language/">
+        <meta itemprop="position" content="3">
+        <span itemprop="name" class="micro">Blogging tips for foreign language students</span></a></li>
+</ol>
+</nav>
+            <div class="container"><div class="grid-left"><nav class="menu" id="authors">
+
+<a href="https://vendelin.org/authors/tvendelin/">
+    <div class="author" itemprop="author" id="author-tvendelin" itemscope itemtype="http://schema.org/Person">
+        <link href="https://vendelin.org/authors/tvendelin/" rel="author">
+    
+    <figure>
+        <img src="https://vendelin.org/img/tvendelin.jpg" alt="" itemprop="image">
+    </figure><div class="name" itemprop="name">
+        Toomas Vendelin
+    </div>
+</div>
+</a></nav><nav class="menu" id="ndrop" itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <meta itemprop="name" content="Main Navigation Menu">
+        <div class="section">Sections:</div>
+
+        <ul class="link-list"><li><a itemprop="url"  href="https://vendelin.org/geeky/">Geeky Stuff</a></li>
+        <li><a itemprop="url"  href="https://vendelin.org/travel/">Travel Accounts</a></li>
+        <li><a itemprop="url" href="https://vendelin.org/about/">About</a></li></ul>
+        <div class="section">Look by</div>
+
+        <ul class="link-list"><li><a itemprop="url" href="/authors">Authors</a></li><li><a itemprop="url" href="/tags">Tags</a></li></ul>
+
+    </nav>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<main class="main-single">
+    <article itemscope itemtype="http://schema.org/Article" itemref="meta-descr meta-published meta-modified meta-in-lang author-tvendelin">
+        <meta itemprop="mainEntityOfPage" content="https://vendelin.org/geeky/blog-learning-foreign-language/hugo-errorist/">
+            <h1 itemprop="headline">Set Up Hugo with Errorist Theme</h1>
+            
+            
+
+
+            <div class="tab-block">
+    <div class="tabs-container">
+        <div class="tabs"><button class="tab install active" onClick="switchTab(event, 'install-10windows.md', 'install')">
+                windows
+            </button><button class="tab install" onClick="switchTab(event, 'install-20mac.md', 'install')">
+                mac
+            </button><button class="tab install" onClick="switchTab(event, 'install-30linux.md', 'install')">
+                linux
+            </button></div>
+    </div>
+    
+    <div class="tabcontent install" id="install-10windows.md" style="display: block">
+        <h2 id="windows-10"><a class="h-link" href="#windows-10">Windows 10</a></h2>
+<p>Enable Windows Subsystem Linux (WSL) as described on this
+<a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10" target="_blank" rel="noopener">Microsoft page</a>
+. Hugo itself will run
+on Windows natively, but <code>wdiff</code> won&rsquo;t.</p>
+<p>Launch Microsoft Store, search for &lsquo;Ubuntu&rsquo;, and install the latest LTS version (LTS stands for
+&lsquo;Long term support&rsquo;). As of this writing, this should be Ubuntu 20.04 LTS. Any general-use Linux
+distribution would do, but I&rsquo;ve picked Ubuntu because for new users it would be easier to find
+support online.</p>
+<p>Start Ubuntu as you would start any Windows app. A terminal window will appear, and you will be
+asked to submit a new username, and then a password for that user. Some information about your
+installation will be displayed, and then you will be presented with a command-line prompt. This is
+where you type a command, and run it by hitting Enter key.</p>
+<h3 id="upgrade-ubuntu-and-install-utilities"><a class="h-link" href="#upgrade-ubuntu-and-install-utilities">Upgrade Ubuntu and Install Utilities</a></h3>
+<p>Run the following commands one by one. To paste the text, right-click anywhere in the
+Ubuntu terminal. Run the commands below (it will take some time, and produce a lot of output):</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo apt-get update
+sudo apt-get upgrade -y
+sudo apt-get install wdiff tree -y
+</code></pre></div><h3 id="install-hugo"><a class="h-link" href="#install-hugo">Install Hugo</a></h3>
+<p>Visit <a href="https://github.com/gohugoio/hugo/releases" target="_blank" rel="noopener">Hugo release page</a>
+, and find a file named similar
+to <code>hugo_extended_0.74.3_Linux-64bit.tar.gz</code>. The version will likely be different, the important part is
+<code>Linux-64bit.tar.gz</code> at the end. Since Hugo is just a single binary executable, it doesn&rsquo;t make any
+sense to fiddle with Linux packages. Copy the link by right-clicking it in browser, and run</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">wget https://github.com/gohugoio/hugo/releases/download/v0.74.3/hugo_extended_0.74.3_Linux-64bit.tar.gz
+</code></pre></div><p>Unpack Hugo, and copy it to <code>/usr/local/bin</code> so you can easily execute it:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">tar -zxf hugo_0.74.3_Linux-64bit.tar.gz 
+sudo cp hugo /usr/local/bin/
+</code></pre></div><p>Finally, verify your installation:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo version
+</code></pre></div><p>This should display the version information, as you&rsquo;ve probably guessed.</p>
+<p>I suspect you would prefer to edit your files using Windows graphical interface you are accustomed
+to. For that, you&rsquo;ll need to change into your Windows home folder. Your Windows <code>C:</code> drive will be
+accessible under <code>/mnt/c</code>, so to navigate to your Windows home, run</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">cd /mnt/c/Users/&lt;YOUR WINDOWS USER NAME&gt;
+</code></pre></div><p>To get back to your Linux home, type <code>cd ~</code>.</p>
+<p>The remaining steps are identical to other operating systems.</p>
+
+    </div>
+    
+    <div class="tabcontent install" id="install-20mac.md" style="display: none">
+        <h2 id="mac"><a class="h-link" href="#mac">Mac</a></h2>
+<p>Visit <a href="https://github.com/gohugoio/hugo/releases" target="_blank" rel="noopener">Hugo release page</a>
+, and download a file named
+similar to <code>hugo_extended_0.74.3_Linux-64bit.tar.gz</code> (the version will likely be different). Unpack
+it, copy the binary file <code>hugo</code> to <code>/usr/local/bin</code>, and verify the it works.  Assuming you have
+downloaded the archive to <code>Downloads</code> directory, you should run from the Terminal app (Applications &gt; Utilities):</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo cp ~/Downloads/hugo_extended_0.74.3_macOS-64bit/hugo /usr/local/bin/
+hugo version
+</code></pre></div><p>This should display the version information, as you&rsquo;ve probably guessed.</p>
+<h3 id="install--verify-utilities"><a class="h-link" href="#install--verify-utilities">Install / Verify Utilities</a></h3>
+<p>You will need <code>git</code>, <code>wdiff</code>, and (optionally, but highly recommended) <code>tree</code>. Git is probably
+installed already. Verify by running</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">git --version
+</code></pre></div><p>As for <code>wdiff</code> and <code>tree</code>, you will probaly need to install them with
+<a href="https://www.macports.org/" target="_blank" rel="noopener">MacPorts</a>
+. For installing MacPorts software itself, visit their website for
+instructions. Once you&rsquo;ve got MacPorts on your Mac, run</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo port install wdiff tree
+</code></pre></div><p>MacPorts is not the only option, just my personal preference. An alternative would be
+<a href="https://brew.sh/" target="_blank" rel="noopener">HomeBrew</a>
+, but I leave for you to explore.</p>
+<p>At this point, you&rsquo;ve got all the tools to get started.</p>
+
+    </div>
+    
+    <div class="tabcontent install" id="install-30linux.md" style="display: none">
+        <h2 id="linux"><a class="h-link" href="#linux">Linux</a></h2>
+<p>I&rsquo;m using Ubuntu as an example. For other distros, just do the same using your default package manager.</p>
+<h3 id="upgrade-your-os-and-install-utilities"><a class="h-link" href="#upgrade-your-os-and-install-utilities">Upgrade Your OS and Install Utilities</a></h3>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo apt-get update
+sudo apt-get upgrade -y
+sudo apt-get install git wdiff tree -y
+</code></pre></div><h3 id="install-hugo"><a class="h-link" href="#install-hugo">Install Hugo</a></h3>
+<p>Visit <a href="https://github.com/gohugoio/hugo/releases" target="_blank" rel="noopener">Hugo release page</a>
+, and find a file named similar
+to <code>hugo_extended_0.74.3_Linux-64bit.tar.gz</code>. The version will likely be different, the important part is
+<code>Linux-64bit.tar.gz</code> at the end.</p>
+<p>As a professional Linux sysadmin, I&rsquo;m supposed to insist on installing from a package, but since
+Hugo is just a single binary executable, you can just copy it to <code>/usr/local/bin</code> and enjoy the
+latest version.</p>
+<p>So, copy the link by right-clicking it in browser, and run</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">wget https://github.com/gohugoio/hugo/releases/download/v0.74.3/hugo_extended_0.74.3_Linux-64bit.tar.gz
+tar -zxf hugo_0.74.3_Linux-64bit.tar.gz 
+sudo cp hugo /usr/local/bin/
+</code></pre></div><p>Finally, verify your installation:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo version
+</code></pre></div><p>This should display the version information, as you&rsquo;ve probably guessed.</p>
+
+    </div>
+    
+</div>
+
+
+
+<h2 id="setup-errorist"><a class="h-link" href="#setup-errorist">Setup Errorist</a></h2>
+<p>Clone the bootstrapping project from GitHub, change into the project directory, and start Hugo
+server:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">git clone --recurse-submodules git@github.com:tvendelin/errorist-bootstrap.git
+cd errorist-bootstrap
+hugo server -D
+</code></pre></div><p>In your browser, open <code>http://localhost:1313</code>. Welcome to your new website!
+It contains the manual (and the instructions to remove it).
+The <a href="https://vendelin.org/geeky/errorist/">Errorist Manual</a>
+ is also available on this site.
+But for now, let&rsquo;s briefly discuss language learning combined with blogging.</p>
+<p>Leave the Hugo server running and open another terminal window or tab. Go to your project directory.
+Create a new section at your website and your first blog post in one command:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo new -k page blog/test-post
+</code></pre></div><p>The new section <code>blog</code> and the new <em>page bundle</em> are located under <code>kontent</code> directory. It is called
+<em>page bundle</em> rather than just page, because it is a directory that includes a few files. The main
+file in a bundle is <code>kontent/blog/test-post/index.md</code>, so let&rsquo;s add some content there:</p>
+<div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">---
+title: &#34;Getting my Feet Wet with Errorist&#34;
+date: 2020-08-05T11:28:38+02:00
+description: My test post description
+draft: false
+---
+
+The articles, blog posts, etc. are written using a plain text editor. The special parts of you texts
+– headings, lists, links, images, blockquotes – are marked up with a simple notation called
+Markdown. For example, once I put an empty line after this text, it will be interpreted as a new
+paragraph.
+
+Notice you can read everything almost as easily as on a webpage that is created based on your
+Markdown writings. Marking a text as a header or a subheader is quite easy:
+
+<span class="gh"># One Pound Sign Makes the Biggest Header (H1 in HTML)
+</span><span class="gh"></span>
+To create up to five levels of subheaders you just need to add more pound signs. This is the next
+level of a subheader:
+
+<span class="gu">## Two Pound Signs Make a Second-Level Subheader
+</span><span class="gu"></span>
+To add <span class="ge">_emphasis_</span> to some part of a text, put it between underscores, and to make it <span class="gs">**bold**</span>, put
+it between two asterisks on each side.
+
+To block-quote some text, like your grammar exercise, prepend each paragraph with <span class="sb">`&gt;`</span> sign:
+
+&gt;When illustrating some grammar concepts, you might want to highlight some <span class="gd">~~common misspellings~~</span>,
+and the <span class="gs">**correct spelling**</span> as well. You can put the misspelled text between two tilde characters
+on both sides, and it will appear red and crossed out. Marking text as <span class="gs">**bold**</span> within a blockquote
+will make it green, bold and italic. The latter is just styling in Errorist.
+<span class="k">&gt;
+</span><span class="k"></span><span class="ge">&gt;To continue a blockquote over a paragraph boundary, use the `&gt;` sign on the blank line and the
+</span><span class="ge"></span>&gt;beginning of the next paragraph.
+
+To add a link, write [<span class="nt">Link to Google</span>](<span class="na">http://google.com</span>).
+</code></pre></div><p>This is how you will be writing your blog posts.
+The top part (between triple dashes) holds some parameters of your page and is called <em>front matter</em>.
+The text of the page itself is the rest of it.</p>
+<p>Save the file, and look at <code>http://localhost:1313</code> page again. You will notice the &lsquo;Blogs&rsquo; section
+link on the left, and in a few clicks you will reach the page you&rsquo;ve just created. Now compare the
+web page to the text that you have copied and pasted from this one, and you will easily see how one
+maps to another. Simple, right?</p>
+<h2 id="exercise-as-a-block-of-clickable-tabs"><a class="h-link" href="#exercise-as-a-block-of-clickable-tabs">Exercise as a Block of Clickable Tabs</a></h2>
+<p>Under a page bundle, create a directory with four files in it. For the directory, any name will do,
+but files need specific names:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">mkdir kontent/blog/test-post/homework
+touch kontent/blog/test-post/homework/{10task,20mysolution,30solution,40diff}.txt
+</code></pre></div><p>If you now run <code>tree kontent/blog/</code>, you will see that your blog post now has a structure similar to
+this (depending on which site languages you&rsquo;ve configured):</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">kontent/blog/
+└── test-post
+    ├── homework
+    │   ├── 10task.txt
+    │   ├── 20mysolution.txt
+    │   ├── 30solution.txt
+    │   └── 40diff.txt
+    ├── index.md
+    └── index.ru.md
+</code></pre></div><p>To add an exercise to your blog article, edit the files under <code>homework</code>
+directory (which are now empty). The file names are self-explanatory. As a reminder, surround the
+text you want to cross out with <code>~~</code>, and the correction with <code>**</code>. Then, add the following
+<em>shortcode</em> somewhere in your page (at the bottom, for instance):</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">{{&lt; tabs_bq &#34;homework&#34; &gt;}}
+</code></pre></div><p>Once you are done, it should look like <a href="https://vendelin.org/geeky/blog-learning-foreign-language/indonesian-pronouns/">this example page.</a>
+</p>
+<h2 id="the-next-steps-and-further-reading"><a class="h-link" href="#the-next-steps-and-further-reading">The Next Steps and Further Reading</a></h2>
+<p>The next step would be scratching your head a bit in order do decide how do you prefer to organize
+the content at your website. Once you are done, create an account at <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+,
+create a repository <code>&lt;YOUR USERNAME&gt;.github.io</code>, enable GitHub pages in settings, build your site,
+commit and push it to GitHub. For details, refer to <a href="https://vendelin.org/geeky/errorist/add-kontent/">Errorist documentation</a>
+</p>
+<p>To learn more about Git, read <a href="https://git-scm.com/book/en/v2" target="_blank" rel="noopener">Pro Git</a>
+ online book.</p>
+<p>Also read the <a href="https://gohugo.io/documentation/" target="_blank" rel="noopener">Hugo documentation</a>
+ though it might be a tough read
+for a beginner.</p>
+<p>At this point I wish you best of luck. Report success in the comment below.</p>
+
+            <nav class="nextprev">
+<p class="next">
+    <a href="https://vendelin.org/geeky/blog-learning-foreign-language/indonesian-pronouns/">
+         Example: Indonesian Pronouns, or Who Exactly Do You Mean by &#39;Us&#39;? &rarr;
+    </a>
+</p>
+<p class="prev">
+    <a href="https://vendelin.org/geeky/blog-learning-foreign-language/overview/">
+         &larr; Do you brag about learning a foreign language? Blog about it instead!
+    </a>
+</p>
+</nav>
+<div id="disqus_thread"></div>
+    </article>
+</main><script>
+function disqus() {
+
+    var disqus_config = function () {
+        this.page.url = "https://vendelin.org/geeky/blog-learning-foreign-language/hugo-errorist/";  
+        this.page.identifier = "04d63b585c58399ac896e1fff6025b0c";   
+    };
+    (function() {  
+        var d = document, s = d.createElement('script');
+
+        s.src = 'https://vendelin-org.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+
+}
+
+window.addEventListener('load', function(event){
+    var decn = cookieDecision();
+
+    if(decn) {
+        const accept = decn.split('=')[1];
+        if( accept == 1 ){
+            disqus();
+        }
+    }
+
+    document.getElementById('accept').addEventListener('click', function (){
+        disqus();
+    });
+});
+</script></div><div class="made-by">
+    <p>
+        Built with <a href="https://vendelin.org/geeky/errorist">Errorist</a> theme for <a href="https://gohugo.io">Hugo</a> site generator.
+    </p>
+</div>
+</div><div id="gdpr" style="display: none">
+    <div class="cookie-consent">
+        <p>
+            We use third-party cookies for analytics and comments. Disabling cookies disables comments.
+        </p>
+        <a id="reject" href="#">Reject</a>
+        <a id="accept" href="#">Accept</a>
+    </div>
+</div>
+<figure id="expanded" onclick="restorePic(event)">
+    <img id="big-pic">
+</figure>
+</body>
+</html>

@@ -32,6 +32,24 @@ Hugo allows you to separate writing content (you travel stories, cooking recipes
     </item>
     
     <item>
+      <title>Blogging tips for foreign language students</title>
+      <link>https://vendelin.org/geeky/blog-learning-foreign-language/</link>
+      <pubDate>Fri, 15 May 2020 16:24:41 +0200</pubDate>
+      
+      <guid>https://vendelin.org/geeky/blog-learning-foreign-language/</guid>
+      <description>Do you brag about learning a foreign language? Blog about it instead! Open-source tools, zero budget, no imposed advertisement. The outcome: better organized learning records, plus a few useful skills acquired.</description>
+    </item>
+    
+    <item>
+      <title>Do you brag about learning a foreign language? Blog about it instead!</title>
+      <link>https://vendelin.org/geeky/blog-learning-foreign-language/overview/</link>
+      <pubDate>Fri, 15 May 2020 16:24:41 +0200</pubDate>
+      
+      <guid>https://vendelin.org/geeky/blog-learning-foreign-language/overview/</guid>
+      <description>So, do you brag about learning a foreign language? Let&amp;rsquo;s admit: most of us do, in one form or another. Don&amp;rsquo;t you update your social media profiles, your CV, or suddenly greet a colleague in a coffee kitchen in his native tongue, which you incidently happen to learn? Learning a foreign language requires an effort. Diminished capability to express yourself can also be frustrating at times. And so we seek additional motivation and approval from people around us, and so we brag, in one form or another.</description>
+    </item>
+    
+    <item>
       <title>Install Hugo</title>
       <link>https://vendelin.org/geeky/hugo/install-hugo/</link>
       <pubDate>Thu, 23 Apr 2020 18:38:11 +0200</pubDate>
@@ -41,6 +59,16 @@ Hugo allows you to separate writing content (you travel stories, cooking recipes
 Calculate the checksum:
 openssl sha256 -hex -r ~/Downloads/hugo_0.69.2_macOS-64bit.tar.gz f58e9312ee292c082c5833a128e751c1d07c5fb0da1b7584c09131f18e2ccf52 */Users/you/Downloads/hugo_0.69.2_macOS-64bit.tar.gz Verify that the checksum matches the one listed in hugo_0.69.2_checksums.txt file, that can be found on the same releases page. Extract the archive you&amp;rsquo;ve just verified:
 tar zxvf ~/Downloads/hugo_0.69.2_macOS-64bit.tar.gz Copy the hugo executable to a directory in your $PATH.</description>
+    </item>
+    
+    <item>
+      <title>Set Up Hugo with Errorist Theme</title>
+      <link>https://vendelin.org/geeky/blog-learning-foreign-language/hugo-errorist/</link>
+      <pubDate>Fri, 24 Jul 2020 06:48:06 +0200</pubDate>
+      
+      <guid>https://vendelin.org/geeky/blog-learning-foreign-language/hugo-errorist/</guid>
+      <description>windows mac linux   Windows 10 Enable Windows Subsystem Linux (WSL) as described on this Microsoft page . Hugo itself will run on Windows natively, but wdiff won&amp;rsquo;t.
+Launch Microsoft Store, search for &amp;lsquo;Ubuntu&amp;rsquo;, and install the latest LTS version (LTS stands for &amp;lsquo;Long term support&amp;rsquo;). As of this writing, this should be Ubuntu 20.04 LTS. Any general-use Linux distribution would do, but I&amp;rsquo;ve picked Ubuntu because for new users it would be easier to find support online.</description>
     </item>
     
     <item>
@@ -146,6 +174,15 @@ Page Title and Link Title Yes, a page can have more than one title. There are li
     </item>
     
     <item>
+      <title>Ijen volcano: smoke on the water</title>
+      <link></link>
+      <pubDate>Fri, 21 Aug 2020 19:18:30 +0200</pubDate>
+      
+      <guid></guid>
+      <description>Smoke on the water: the crater lake of Ijen volcano in East Java, Indonesia. Gas sulphur, when getting air and moisture, oxidizes and then becomes a cloud of sulphur acid. The crater lake is highly acidic.</description>
+    </item>
+    
+    <item>
       <title>Internal and External Links with Hugo</title>
       <link>https://vendelin.org/geeky/hugo/cross-reference-external-links-hugo/</link>
       <pubDate>Sat, 04 Jul 2020 09:11:43 +0200</pubDate>
@@ -171,6 +208,16 @@ Internal Links Referencing pages of the same site is done with two shortcodes, r
       
       <guid>https://vendelin.org/travel/indonesia/north-maluku/togutil/</guid>
       <description>The Togutil people live in Central and North-Eastern Halmahera Island, the largest in North Maluku, Indonesia. They still move around in jungle barefoot hunting wild boars, caring little about the &amp;lsquo;civilized&amp;rsquo; world around them. Some still wear just a loincloth, although T-shirts and other blessings of industrial production are becoming common. The Togutil live a semi-nomadic life: they have their small settlements, typically in a well-chosen place by a river, but if you decide to pay a surprise visit, be aware there could be nobody home for weeks in a row.</description>
+    </item>
+    
+    <item>
+      <title>Indonesian Pronouns, or Who Exactly Do You Mean by &#39;Us&#39;?</title>
+      <link>https://vendelin.org/geeky/blog-learning-foreign-language/indonesian-pronouns/</link>
+      <pubDate>Sat, 23 May 2020 19:44:00 +0200</pubDate>
+      
+      <guid>https://vendelin.org/geeky/blog-learning-foreign-language/indonesian-pronouns/</guid>
+      <description>There are two pronouns for the first person plural: kita (inclusive), and kami (exclusive). Tina isn&amp;rsquo;t going to Jakarta with Peter and Dita (Tina is not included = use kami), neither is she returning with them (Tina is not included = use kami). But, once Peter and Dita are back, they go all together to a restaurant. In this case, Tina is included, so use kita.
+task my solution solution corrections   Fill the gaps with appropriate pronouns in the following dialogue.</description>
     </item>
     
     <item>
@@ -201,6 +248,15 @@ Git has got a reputation of being a tool only a computer geek can understand and
       <description>Most reckless deeds start with a deceptively innocent plan.
 Evan McGregor thought of going for a motorcycle ride in Spain, and ended up in Eastern Siberia and then North America, the long way round. I thought of going for a motorcycle ride in Spain, and ended up in Dakar, and then Mbur in Senegal.
 I moved to Karlsruhe in 2012 by invitation to work for 1&amp;amp;1 Internet AG. Once I&amp;rsquo;ve adopted to the new center of my personal universe, I&amp;rsquo;ve started to look at my new travel options.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://vendelin.org/geeky/blog-learning-foreign-language/summary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://vendelin.org/geeky/blog-learning-foreign-language/summary/</guid>
+      <description>Let&amp;rsquo;s confess: most of us do.</description>
     </item>
     
     <item>

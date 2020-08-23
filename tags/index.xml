@@ -5,17 +5,134 @@
     <link>https://vendelin.org/tags/</link>
     <description>Recent content in Tags on vendelin.org</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 04 Jul 2020 09:11:43 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 21 Aug 2020 20:10:12 +0200</lastBuildDate>
     
 	<atom:link href="https://vendelin.org/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Ijen</title>
+      <link>https://vendelin.org/tags/ijen/</link>
+      <pubDate>Fri, 21 Aug 2020 20:10:12 +0200</pubDate>
+      
+      <guid>https://vendelin.org/tags/ijen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Indonesia</title>
+      <link>https://vendelin.org/tags/indonesia/</link>
+      <pubDate>Fri, 21 Aug 2020 20:10:12 +0200</pubDate>
+      
+      <guid>https://vendelin.org/tags/indonesia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>https://vendelin.org/tags/java/</link>
+      <pubDate>Fri, 21 Aug 2020 20:10:12 +0200</pubDate>
+      
+      <guid>https://vendelin.org/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>travel</title>
+      <link>https://vendelin.org/tags/travel/</link>
+      <pubDate>Fri, 21 Aug 2020 20:10:12 +0200</pubDate>
+      
+      <guid>https://vendelin.org/tags/travel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>volcano</title>
+      <link>https://vendelin.org/tags/volcano/</link>
+      <pubDate>Fri, 21 Aug 2020 20:10:12 +0200</pubDate>
+      
+      <guid>https://vendelin.org/tags/volcano/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>blogging</title>
+      <link>https://vendelin.org/tags/blogging/</link>
+      <pubDate>Fri, 07 Aug 2020 09:02:22 +0200</pubDate>
+      
+      <guid>https://vendelin.org/tags/blogging/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Errorist</title>
+      <link>https://vendelin.org/tags/errorist/</link>
+      <pubDate>Fri, 07 Aug 2020 09:02:22 +0200</pubDate>
+      
+      <guid>https://vendelin.org/tags/errorist/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Hugo</title>
       <link>https://vendelin.org/tags/hugo/</link>
-      <pubDate>Sat, 04 Jul 2020 09:11:43 +0200</pubDate>
+      <pubDate>Fri, 07 Aug 2020 09:02:22 +0200</pubDate>
       
       <guid>https://vendelin.org/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://vendelin.org/tags/git/</link>
+      <pubDate>Fri, 24 Jul 2020 06:48:06 +0200</pubDate>
+      
+      <guid>https://vendelin.org/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GitHub</title>
+      <link>https://vendelin.org/tags/github/</link>
+      <pubDate>Fri, 24 Jul 2020 06:48:06 +0200</pubDate>
+      
+      <guid>https://vendelin.org/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wdiff</title>
+      <link>https://vendelin.org/tags/wdiff/</link>
+      <pubDate>Fri, 24 Jul 2020 06:48:06 +0200</pubDate>
+      
+      <guid>https://vendelin.org/tags/wdiff/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Halmahera</title>
+      <link>https://vendelin.org/tags/halmahera/</link>
+      <pubDate>Fri, 05 Jun 2020 17:17:55 +0200</pubDate>
+      
+      <guid>https://vendelin.org/tags/halmahera/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>North Maluku</title>
+      <link>https://vendelin.org/tags/north-maluku/</link>
+      <pubDate>Fri, 05 Jun 2020 17:17:55 +0200</pubDate>
+      
+      <guid>https://vendelin.org/tags/north-maluku/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>togutil</title>
+      <link>https://vendelin.org/tags/togutil/</link>
+      <pubDate>Fri, 05 Jun 2020 17:17:55 +0200</pubDate>
+      
+      <guid>https://vendelin.org/tags/togutil/</guid>
       <description></description>
     </item>
     
@@ -29,11 +146,11 @@
     </item>
     
     <item>
-      <title>git</title>
-      <link>https://vendelin.org/tags/git/</link>
+      <title>language learning</title>
+      <link>https://vendelin.org/tags/language-learning/</link>
       <pubDate>Fri, 15 May 2020 16:24:41 +0200</pubDate>
       
-      <guid>https://vendelin.org/tags/git/</guid>
+      <guid>https://vendelin.org/tags/language-learning/</guid>
       <description></description>
     </item>
     
@@ -43,15 +160,6 @@
       <pubDate>Sat, 25 Apr 2020 08:04:27 +0200</pubDate>
       
       <guid>https://vendelin.org/tags/motorcycling/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>travel</title>
-      <link>https://vendelin.org/tags/travel/</link>
-      <pubDate>Sat, 25 Apr 2020 08:04:27 +0200</pubDate>
-      
-      <guid>https://vendelin.org/tags/travel/</guid>
       <description></description>
     </item>
     

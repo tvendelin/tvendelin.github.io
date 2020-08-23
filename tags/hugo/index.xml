@@ -5,7 +5,7 @@
     <link>https://vendelin.org/tags/hugo/</link>
     <description>Recent content in Hugo on vendelin.org</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 04 Jul 2020 09:11:43 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 07 Aug 2020 09:02:22 +0200</lastBuildDate>
     
 	<atom:link href="https://vendelin.org/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
@@ -33,6 +33,18 @@ tar zxvf ~/Downloads/hugo_0.69.2_macOS-64bit.tar.gz Copy the hugo executable to 
     </item>
     
     <item>
+      <title>Install Errorist – the Short Story</title>
+      <link>https://vendelin.org/geeky/errorist/short/</link>
+      <pubDate>Sun, 02 Aug 2020 20:36:26 +0200</pubDate>
+      
+      <guid>https://vendelin.org/geeky/errorist/short/</guid>
+      <description>Install Hugo static site generator first.
+Recursively clone the bootstrapping project:
+git clone --recurse-submodules git@github.com:tvendelin/errorist-bootstrap.git This pulls the Errorist theme as a git submodule and provides you with a skeleton project that needs only a few things to configure. Change into project directory and start the Hugo server:
+cd errorist-bootstrap hugo server -D Open http://localhost:1313 in your browser. You should see a welcome message, and a link to the manuals. You will also notice that two languages – English and Russian – are already pre-configured.</description>
+    </item>
+    
+    <item>
       <title>Scaffolding of a Hugo website</title>
       <link>https://vendelin.org/geeky/hugo/scaffoldings/</link>
       <pubDate>Mon, 04 May 2020 20:29:38 +0200</pubDate>
@@ -42,6 +54,17 @@ tar zxvf ~/Downloads/hugo_0.69.2_macOS-64bit.tar.gz Copy the hugo executable to 
 In your terminal emulator, run
 hugo new site multilingua This will create multilingua directory and produce the output:
 Congratulations! Your new Hugo site is created in /Users/tom/learn/hugo/multilingua. Just a few more steps and you&amp;#39;re ready to go: 1. Download a theme into the same-named folder. Choose a theme from https://themes.</description>
+    </item>
+    
+    <item>
+      <title>Creating Content with Errorist</title>
+      <link>https://vendelin.org/geeky/errorist/add-kontent/</link>
+      <pubDate>Mon, 27 Jul 2020 17:15:38 +0200</pubDate>
+      
+      <guid>https://vendelin.org/geeky/errorist/add-kontent/</guid>
+      <description>This page will walk you through the steps necessary to add content to your website.
+Though not a requirement, using tree command-line utility would be handy, if you get lost in directory structure. To install it, use the default package manager on Linux or MacPorts on Mac. tree shows the entire file hierarchy under specified directory – see the examples throughout this tutorial.
+Create a Section and Your First Page Hugo server is probably already running in your terminal.</description>
     </item>
     
     <item>
@@ -56,12 +79,33 @@ Configuration Adjustments I Choose YAML and config Directory Your project config
     </item>
     
     <item>
+      <title>README | Errorist Website Theme for Hugo</title>
+      <link>https://vendelin.org/geeky/errorist/readme/</link>
+      <pubDate>Thu, 16 Jul 2020 20:19:42 +0200</pubDate>
+      
+      <guid>https://vendelin.org/geeky/errorist/readme/</guid>
+      <description>Install Recursively clone the bootstrapping project:
+git clone --recurse-submodules git@github.com:tvendelin/errorist-bootstrap.git This pulls the Errorist theme as a git submodule and provides you with a skeleton project that needs only a few things to configure. Change into project directory and start the Hugo server:
+cd errorist-bootstrap hugo server -D Open http://localhost:1313 in your browser. You should see a welcome message, and a link to the manuals. You will also notice that two languages – English and Russian – are already pre-configured.</description>
+    </item>
+    
+    <item>
       <title>Hugo Theme Tutorial – Very Brief</title>
       <link>https://vendelin.org/geeky/hugo/creating-a-theme-for-hugo/</link>
       <pubDate>Tue, 05 May 2020 18:11:11 +0200</pubDate>
       
       <guid>https://vendelin.org/geeky/hugo/creating-a-theme-for-hugo/</guid>
       <description>A &amp;lsquo;theme&amp;rsquo; in Hugo is a collection of HTML templates, stylesheets and other components that define what your site looks like, and are completely independent of your site content. That is, the very same theme can be used in many different websites. In software lingo this is known as the &amp;lsquo;separation of concerns&amp;rsquo; principle, which reminds of an old Swedish joke claiming that policemen always patrol in pairs because one can read and another can write.</description>
+    </item>
+    
+    <item>
+      <title>Markdown by Example</title>
+      <link>https://vendelin.org/geeky/errorist/markdown-tutorial/</link>
+      <pubDate>Fri, 07 Aug 2020 09:02:22 +0200</pubDate>
+      
+      <guid>https://vendelin.org/geeky/errorist/markdown-tutorial/</guid>
+      <description>The example below shows how content of your pages should be written to have headers, paragraphs, etc. If you scroll down you will see what the resulting web page will look like.
+Whatever you publish with Hugo and Errorist – the articles, blog posts, etc. – are written using a plain text editor. The special parts of you texts – headings, lists, links, images, blockquotes – are marked up with a simple notation called Markdown.</description>
     </item>
     
     <item>
@@ -83,6 +127,16 @@ kontent/ └── poetry └── lewis-carroll └── the-walrus-and-the-c
       <guid>https://vendelin.org/geeky/hugo/create-multilingual-content-hugo/</guid>
       <description>Handling Multilingual Content is where Hugo really shines. However, since internationalization (i18n for short) is a pretty complex task, let&amp;rsquo;s throw together a brief list of
 Requirements  The content translations should be added in an orderly manner. The content translations should be directly linkable to each other. Templates should not contain any hard-coded language-specific text. Instead, translations for such text should be defined separately and loaded according to the language of the content.</description>
+    </item>
+    
+    <item>
+      <title>YAML – the Very Basics</title>
+      <link>https://vendelin.org/geeky/errorist/yaml-tutorial/</link>
+      <pubDate>Tue, 04 Aug 2020 14:51:02 +0200</pubDate>
+      
+      <guid>https://vendelin.org/geeky/errorist/yaml-tutorial/</guid>
+      <description>This is grossly simplified introduction to YAML . The complete official documentation is available here . However, you will only need a small subset of it to configure your Hugo project and the &amp;lsquo;front matter&amp;rsquo; of your Markdown files. This little tutorial provides a starting point.
+YAML is a format for representing data structure in a human-readable way. YAML&amp;rsquo;s block collections use indentation for scope and begin each entry on its own line.</description>
     </item>
     
     <item>
@@ -111,6 +165,16 @@ Page Title and Link Title Yes, a page can have more than one title. There are li
       
       <guid>https://vendelin.org/geeky/hugo/layout-customize-hugo/</guid>
       <description>Style consistency is important, and one of the benefits of generating pages with Hugo (as opposed to editing HTML code for each page directly) is a very little amount of HTML code to handle. So far, all the HTML we used were just four (!) template files plus a partial for the breadcrumbs and an image markdown hook. However, some types of content inevitably won&amp;rsquo;t fit the Procrustean bed of a simplistic theme.</description>
+    </item>
+    
+    <item>
+      <title>Errorist – Manage Multilingual Website Content Efficiently</title>
+      <link>https://vendelin.org/geeky/errorist/</link>
+      <pubDate>Tue, 28 Jul 2020 14:45:14 +0200</pubDate>
+      
+      <guid>https://vendelin.org/geeky/errorist/</guid>
+      <description>Errorist is a website theme designed originally with foreign language students in mind. Specifically, to support a workflow where students manage their grammar exercises under Git and GitHub, and post their exercises in a blog, highlighting the errors they made – hence the name.
+That being said, you can build a &amp;lsquo;normal&amp;rsquo; multilingual, multi-authored responsive website with Errorist. For that part, you will enjoy efficient and robust content management in multiple languages with minimal editing efforts.</description>
     </item>
     
     <item>

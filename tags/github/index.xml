@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GitHub on vendelin.org</title>
+    <link>https://vendelin.org/tags/github/</link>
+    <description>Recent content in GitHub on vendelin.org</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 24 Jul 2020 06:48:06 +0200</lastBuildDate>
+    
+	<atom:link href="https://vendelin.org/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Do you brag about learning a foreign language? Blog about it instead!</title>
+      <link>https://vendelin.org/geeky/blog-learning-foreign-language/overview/</link>
+      <pubDate>Fri, 15 May 2020 16:24:41 +0200</pubDate>
+      
+      <guid>https://vendelin.org/geeky/blog-learning-foreign-language/overview/</guid>
+      <description>So, do you brag about learning a foreign language? Let&amp;rsquo;s admit: most of us do, in one form or another. Don&amp;rsquo;t you update your social media profiles, your CV, or suddenly greet a colleague in a coffee kitchen in his native tongue, which you incidently happen to learn? Learning a foreign language requires an effort. Diminished capability to express yourself can also be frustrating at times. And so we seek additional motivation and approval from people around us, and so we brag, in one form or another.</description>
+    </item>
+    
+    <item>
+      <title>Set Up Hugo with Errorist Theme</title>
+      <link>https://vendelin.org/geeky/blog-learning-foreign-language/hugo-errorist/</link>
+      <pubDate>Fri, 24 Jul 2020 06:48:06 +0200</pubDate>
+      
+      <guid>https://vendelin.org/geeky/blog-learning-foreign-language/hugo-errorist/</guid>
+      <description>windows mac linux   Windows 10 Enable Windows Subsystem Linux (WSL) as described on this Microsoft page . Hugo itself will run on Windows natively, but wdiff won&amp;rsquo;t.
+Launch Microsoft Store, search for &amp;lsquo;Ubuntu&amp;rsquo;, and install the latest LTS version (LTS stands for &amp;lsquo;Long term support&amp;rsquo;). As of this writing, this should be Ubuntu 20.04 LTS. Any general-use Linux distribution would do, but I&amp;rsquo;ve picked Ubuntu because for new users it would be easier to find support online.</description>
+    </item>
+    
+  </channel>
+</rss>

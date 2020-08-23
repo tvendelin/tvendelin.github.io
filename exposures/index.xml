@@ -5,10 +5,19 @@
     <link>https://vendelin.org/exposures/</link>
     <description>Recent content in Exposures on vendelin.org</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 05 Jun 2020 17:17:55 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 21 Aug 2020 20:10:12 +0200</lastBuildDate>
     
 	<atom:link href="https://vendelin.org/exposures/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>minor</title>
+      <link>https://vendelin.org/exposures/minor/</link>
+      <pubDate>Fri, 21 Aug 2020 20:10:12 +0200</pubDate>
+      
+      <guid>https://vendelin.org/exposures/minor/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>major</title>
@@ -16,15 +25,6 @@
       <pubDate>Fri, 05 Jun 2020 17:17:55 +0200</pubDate>
       
       <guid>https://vendelin.org/exposures/major/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>minor</title>
-      <link>https://vendelin.org/exposures/minor/</link>
-      <pubDate>Sat, 25 Apr 2020 08:04:27 +0200</pubDate>
-      
-      <guid>https://vendelin.org/exposures/minor/</guid>
       <description></description>
     </item>
     
