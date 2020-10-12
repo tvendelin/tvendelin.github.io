@@ -18,7 +18,7 @@
 <meta itemprop="name" property="og:title" content="Set Up Hugo with Errorist Theme">
 <meta id="meta-descr" itemprop="description" property="og:description" content="Blogging about learning a foreign language - quick setup for Hugo and Errorist">
 <meta id="meta-published" itemprop="datePublished" content="2020-07-24T06:48:06+02:00">
-<meta id="meta-modified" itemprop="dateModified" content="2020-08-22T10:30:51+02:00">
+<meta id="meta-modified" itemprop="dateModified" content="2020-10-12T12:20:24+02:00">
 <meta id="meta-in-lang" itemprop="inLanguage" content="en">
 
 <meta property="og:url" content="https://vendelin.org/geeky/blog-learning-foreign-language/hugo-errorist/">
@@ -182,7 +182,7 @@ accessible under <code>/mnt/c</code>, so to navigate to your Windows home, run</
         <h2 id="mac"><a class="h-link" href="#mac">Mac</a></h2>
 <p>Visit <a href="https://github.com/gohugoio/hugo/releases" target="_blank" rel="noopener">Hugo release page</a>
 , and download a file named
-similar to <code>hugo_extended_0.74.3_Linux-64bit.tar.gz</code> (the version will likely be different). Unpack
+similar to <code>hugo_extended_0.74.3_macOS-64bit.tar.gz</code> (the version will likely be different). Unpack
 it, copy the binary file <code>hugo</code> to <code>/usr/local/bin</code>, and verify the it works.  Assuming you have
 downloaded the archive to <code>Downloads</code> directory, you should run from the Terminal app (Applications &gt; Utilities):</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo cp ~/Downloads/hugo_extended_0.74.3_macOS-64bit/hugo /usr/local/bin/
@@ -254,38 +254,48 @@ file in a bundle is <code>kontent/blog/test-post/index.md</code>, so let&rsquo;s
 title: &#34;Getting my Feet Wet with Errorist&#34;
 date: 2020-08-05T11:28:38+02:00
 description: My test post description
-draft: false
+draft: true
 ---
 
-The articles, blog posts, etc. are written using a plain text editor. The special parts of you texts
-– headings, lists, links, images, blockquotes – are marked up with a simple notation called
-Markdown. For example, once I put an empty line after this text, it will be interpreted as a new
-paragraph.
+The articles, blog posts, etc. are written using a plain text editor. The
+special parts of you texts – headings, lists, links, images, blockquotes – are
+marked up with a simple notation called Markdown. For example, once I put an
+empty line after this text, it will be interpreted as a new paragraph.
 
-Notice you can read everything almost as easily as on a webpage that is created based on your
-Markdown writings. Marking a text as a header or a subheader is quite easy:
+Notice you can read everything almost as easily as on a webpage that is created
+based on your Markdown writings. Marking a text as a header or a subheader is
+quite easy:
 
 <span class="gh"># One Pound Sign Makes the Biggest Header (H1 in HTML)
 </span><span class="gh"></span>
-To create up to five levels of subheaders you just need to add more pound signs. This is the next
-level of a subheader:
+To create up to five levels of subheaders you just need to add more pound signs.
+This is the next level of a subheader:
 
 <span class="gu">## Two Pound Signs Make a Second-Level Subheader
 </span><span class="gu"></span>
-To add <span class="ge">_emphasis_</span> to some part of a text, put it between underscores, and to make it <span class="gs">**bold**</span>, put
-it between two asterisks on each side.
+To add <span class="ge">_emphasis_</span> to some part of a text, put it between underscores, and to
+make it <span class="gs">**bold**</span>, put it between two asterisks on each side.
 
-To block-quote some text, like your grammar exercise, prepend each paragraph with <span class="sb">`&gt;`</span> sign:
+To block-quote some text, like your grammar exercise, prepend each paragraph
+with <span class="sb">`&gt;`</span> sign:
 
-&gt;When illustrating some grammar concepts, you might want to highlight some <span class="gd">~~common misspellings~~</span>,
-and the <span class="gs">**correct spelling**</span> as well. You can put the misspelled text between two tilde characters
-on both sides, and it will appear red and crossed out. Marking text as <span class="gs">**bold**</span> within a blockquote
-will make it green, bold and italic. The latter is just styling in Errorist.
+&gt;When illustrating some grammar concepts, you might want to highlight some
+&gt;~~common misspellings~~,
+and the <span class="gs">**correct spelling**</span> as well. You can put the misspelled text between
+two tilde characters on both sides, and it will appear red and crossed out.
+Marking text as <span class="gs">**bold**</span> within a blockquote will make it green, bold and
+italic. The latter is just styling specific to Errorist.
 <span class="k">&gt;
-</span><span class="k"></span><span class="ge">&gt;To continue a blockquote over a paragraph boundary, use the `&gt;` sign on the blank line and the
-</span><span class="ge"></span>&gt;beginning of the next paragraph.
+</span><span class="k"></span><span class="ge">&gt;To continue a blockquote over a paragraph boundary, use the `&gt;` sign on the
+</span><span class="ge"></span>&gt;blank line and the beginning of the next paragraph.
 
-To add a link, write [<span class="nt">Link to Google</span>](<span class="na">http://google.com</span>).
+To add an external link, write [<span class="nt">Link to Google</span>](<span class="na">http://google.com</span>).
+
+To add a link to a page in your website (`/manual/short` in our example), write
+[<span class="nt">Link text</span>](<span class="na">{{&lt; ref &#34;/manual/short&#34; &gt;}}</span>)
+
+When using this form, the link will be checked for existence by <span class="sb">`hugo`</span>, so your
+site is guaranteed to have no dead internal links.
 </code></pre></div><p>This is how you will be writing your blog posts.
 The top part (between triple dashes) holds some parameters of your page and is called <em>front matter</em>.
 The text of the page itself is the rest of it.</p>
@@ -294,41 +304,178 @@ link on the left, and in a few clicks you will reach the page you&rsquo;ve just 
 web page to the text that you have copied and pasted from this one, and you will easily see how one
 maps to another. Simple, right?</p>
 <h2 id="exercise-as-a-block-of-clickable-tabs"><a class="h-link" href="#exercise-as-a-block-of-clickable-tabs">Exercise as a Block of Clickable Tabs</a></h2>
-<p>Under a page bundle, create a directory with four files in it. For the directory, any name will do,
-but files need specific names:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">mkdir kontent/blog/test-post/homework
-touch kontent/blog/test-post/homework/{10task,20mysolution,30solution,40diff}.txt
-</code></pre></div><p>If you now run <code>tree kontent/blog/</code>, you will see that your blog post now has a structure similar to
-this (depending on which site languages you&rsquo;ve configured):</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">kontent/blog/
-└── test-post
-    ├── homework
-    │   ├── 10task.txt
-    │   ├── 20mysolution.txt
-    │   ├── 30solution.txt
-    │   └── 40diff.txt
-    ├── index.md
-    └── index.ru.md
-</code></pre></div><p>To add an exercise to your blog article, edit the files under <code>homework</code>
-directory (which are now empty). The file names are self-explanatory. As a reminder, surround the
-text you want to cross out with <code>~~</code>, and the correction with <code>**</code>. Then, add the following
-<em>shortcode</em> somewhere in your page (at the bottom, for instance):</p>
+<p>Clickable tabs allow you to include your grammar exercises,
+showing either the original task or your solution, or the correct solution, or the solution with
+corrections, but one at a time. This is useful should you wish to revisit a particular topic in the
+future.</p>
+<div class="tab-block">
+    <div class="tabs-container">
+        <div class="tabs"><button class="tab homework active" onClick="switchTab(event, 'homework-10_task.txt', 'homework')">
+                task
+            </button><button class="tab homework" onClick="switchTab(event, 'homework-20_mysolution.txt', 'homework')">
+                my solution
+            </button><button class="tab homework" onClick="switchTab(event, 'homework-30_solution.txt', 'homework')">
+                solution
+            </button><button class="tab homework" onClick="switchTab(event, 'homework-40_diff.txt', 'homework')">
+                corrections
+            </button></div>
+    </div>
+    
+    <blockquote class="tabcontent homework" id="homework-10_task.txt" style="display: block">
+        Señor Rodriguez &hellip; católico, pero &hellip; muerto.
+Señor Díaz &hellip; vivo, pero hoy no &hellip; católico.
+    </blockquote>
+    
+    <blockquote class="tabcontent homework" id="homework-20_mysolution.txt" style="display: none">
+        Señor Rodriguez es católico, pero es muerto.
+Señor Díaz está vivo, pero hoy no es católico.
+    </blockquote>
+    
+    <blockquote class="tabcontent homework" id="homework-30_solution.txt" style="display: none">
+        Señor Rodriguez era católico, pero está muerto.
+Señor Díaz está vivo, pero hoy no está católico.
+    </blockquote>
+    
+    <blockquote class="tabcontent homework" id="homework-40_diff.txt" style="display: none">
+        Señor Rodriguez <del>es</del> <strong>era</strong> católico, pero <del>es</del> <strong>está</strong> muerto.
+Señor Díaz está vivo, pero hoy no <del>es</del> <strong>está</strong> católico.
+    </blockquote>
+    
+</div>
+
+
+
+<p>So let&rsquo;s create one. In a page bundle, create a directory <code>myhomework</code> (the name is arbitrary):</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">mkdir kontent/blog/test-page/homework
+</code></pre></div><p>In this directory create four files as shown in the following code snippets. Here, the names
+<em>are</em> important. If you are experiencing the &lsquo;writer&rsquo;s block&rsquo;, here&rsquo;s example contents for the said
+files:</p>
+<p><code>kontent/blog/test-page/homework/10_task.txt</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">Señor Rodriguez ... católico, pero ... muerto. 
+Señor Díaz ... vivo, pero hoy no ... católico.
+</code></pre></div><p><code>kontent/blog/test-page/homework/20_mysolution.txt</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">Señor Rodriguez es católico, pero es muerto. 
+Señor Díaz está vivo, pero hoy no es católico.
+</code></pre></div><p><code>kontent/blog/test-page/homework/30_solution.txt</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">Señor Rodriguez era católico, pero está muerto. 
+Señor Díaz está vivo, pero hoy no está católico.
+</code></pre></div><p><code>kontent/blog/test-page/homework/40_corrections.txt</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">Señor Rodriguez <span class="gd">~~es~~</span> <span class="gs">**era**</span> católico, pero <span class="gd">~~es~~</span> <span class="gs">**está**</span> muerto. 
+Señor Díaz está vivo, pero hoy no <span class="gd">~~es~~</span> <span class="gs">**está**</span> católico.
+</code></pre></div><p>The <code>~~</code> is markdown that will be converted into <code>&lt;del&gt;</code> HTML tag, and <code>**</code> will become the <code>&lt;strong&gt;</code> tag.</p>
+<p>Back to our tabs. Your page bundle structure will now look like this:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">kontent/blog/test-page
+├── homework
+│   ├── 10_task.txt
+│   ├── 20_mysolution.txt
+│   ├── 30_solution.txt
+│   └── 40_corrections.txt
+├── index.md
+├── index.ru.md
+└── main-img
+</code></pre></div><p>Add the following at the bottom of <code>kontent/blog/test-page/index.md</code>
+and <code>kontent/blog/test-page/index.ru.md</code> files:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">{{&lt; tabs_bq &#34;homework&#34; &gt;}}
-</code></pre></div><p>Once you are done, it should look like <a href="https://vendelin.org/geeky/blog-learning-foreign-language/indonesian-pronouns/">this example page.</a>
-</p>
+</code></pre></div><p>If you look at your test page now, you will see the clickable tabs at the bottom, showing our
+fictional homework exercise.</p>
+<p>Here&rsquo;s a brief explanation how it works.</p>
+<p>The <code>*.txt</code> files in the <code>homework</code> directory are read in alphabetical order, and each becomes a tab.
+The number at the beginning of a tab file name is for sorting, so that <code>10_task.txt</code> appears before
+<code>40_corrections.txt</code>. To change the order, change the numbers.</p>
+<p>The name of a tab is the file name stripped of its <code>number_</code> prefix and <code>.txt</code> suffix, so
+<code>10_task.txt</code> becomes <code>task</code>. The names of the tabs will be translated into languages your site
+supports, if there are respective entries in localization file (see the documentation for details),
+or will be displayed &lsquo;as is&rsquo;, should that not be the case.  The entries for &lsquo;task&rsquo;, &lsquo;mysolution&rsquo;,
+&lsquo;solution&rsquo; and &lsquo;diff&rsquo; are already included.</p>
+<p>Finally, you are not required to provide <em>all</em> of the aforementioned files, if you don&rsquo;t want to.</p>
+<h3 id="using-an-archetype"><a class="h-link" href="#using-an-archetype">Using an Archetype</a></h3>
+<p>A skeleton for a blog article with a grammar exercise can be created using what&rsquo;s called an
+<em>archetype</em>, a kind of blueprint for a new page:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo new -k langblog blog/señores-vivos-y-muertos
+</code></pre></div><p>The archetype name in the example above is <code>langblog</code>. The command creates a page stub for each
+supported language, a <code>homework</code> directory, and four empty files in it. This is handy, since now you
+just need to used tab-completion instead of remembering the names of the files. If you wish to
+include more than one tab block with exercises, just change into page bundle directory and copy the
+<code>homework</code> directory recursively:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">cp -R homework another_homework_task
+</code></pre></div><p>Explore the <code>archetypes</code> directory in your project and read the documentation for details.</p>
+<h3 id="wdiff"><a class="h-link" href="#wdiff">wdiff</a></h3>
+<p>The exercise in our example is very short for the sake of explanation, so adding some Markdown
+symbols to highlight the corrections didn&rsquo;t seem to be a particularly gruelling task. In reality, however, the texts of the exercises
+will be much longer, of course. Notice that the corrections can be determined based on the other two
+files: the one with your solution (potentially containing errors), and <em>the</em> solution. There must be
+a way to calculate the difference, right?</p>
+<p>This can be done with a program called <code>wdiff</code>. Not as famous as its cousin, <code>diff</code>, it does exactly
+what we want - calculating word-by-word difference between two text files:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">wdiff -w &#39;~~&#39; -x &#39;~~&#39; -y &#39;**&#39; -z &#39;**&#39; 20_mysolution.txt 30_solution.txt
+</code></pre></div><p>renders</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">Señor Rodriguez ~~es~~ **era** católico, pero ~~es~~ **está** muerto.
+Señor Díaz está vivo, pero hoy no ~~es~~ **está** católico.
+</code></pre></div><p>which is identical to the contents of <code>40_diff.txt</code>. The options <code>-w</code>, <code>-x</code>, <code>-y</code>, <code>-z</code> denote the
+start of the deletion, the end of the deletion, the start of the insertion and the end of the
+insertion, respectively. Since the command is quite a mouthful, and is likely to be used very
+repetitively, it makes sense to create an alias in <code>.bashrc</code> (Linux) or <code>.bash_profile</code> (Mac OS X)
+by adding the following at the bottom:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">alias mddiff=&#34;wdiff -w &#39;~~&#39; -x &#39;~~&#39; -y &#39;**&#39; -z &#39;**&#39;&#34;
+</code></pre></div><p>Close and re-open the terminal program for changes to take effect. From now on, to produce the
+file with corrections, use the alias and redirect the output:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">mddiff 20_mysolution.txt 30_solution.txt &gt; 40_diff.txt
+</code></pre></div><h2 id="cooperating-with-your-teacher"><a class="h-link" href="#cooperating-with-your-teacher">Cooperating with Your Teacher</a></h2>
+<p>So far we have been considering your (the student&rsquo;s) benefits, but there are some for your teacher as well.</p>
+<p>What happens when you send your homework to your teacher? She goes through your texts, manually
+highlighting your errors, corrects them, and probably highlights the corrections. But wait, we&rsquo;ve
+just discussed a better way to do it! So, all your teacher needs to do now, is to send you just <em>the
+solution</em> and, perhaps, some comments on your errors (but in a separate file or the e-mail body).
+You can then calculate the difference, and redirect it into your blog - that&rsquo;s it!</p>
+<p>And how do you think that exercise has been created in the first place? It would be a safe bet to
+assume, that your teacher wrote a normal text first (essentially, the solution to the exercise), and
+only then punched the holes in it, making it a grammar exercise. So, no extra effort is required for
+creating &lsquo;the solution&rsquo; – just ask your teacher to create the exercises as plain text files,
+separating paragraphs with empty lines, and to keep the text without the gaps in a separate file.</p>
+<p>If your teacher has got other blogging students, the time savings on checking the students&rsquo; homework
+might become quite considerable. This can be further optimized, though, by</p>
+<h2 id="using-git-and-github-for-homework-management"><a class="h-link" href="#using-git-and-github-for-homework-management">Using Git and GitHub for Homework Management</a></h2>
+<p>I&rsquo;ve wrote a series of articles on that, so this is just to give you a taste of it.</p>
+<p>I&rsquo;ve created a demo repository with just a single exercise. Clone it and change into the directory
+created:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">git clone https://github.com/tvendelin/language-exercise-example
+cd language-exercise-example
+</code></pre></div><p>The directory contains a single exercise file, <code>indonesian_pronouns.md</code> (the <code>README.md</code> just
+describes the repository itself). However, there is another dimension to that. Running</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">git log --pretty=reference -- indonesian_pronouns.md
+</code></pre></div><p>will reveal the following:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">2198844 (Corrected exercise indonesian_pronouns.md, 2020-05-16)
+3f43247 (Completed exercise indonesian_pronouns.md, 2020-05-16)
+802e45b (Created an exercise on personal pronouns., 2020-05-16)
+</code></pre></div><p>Git (if you&rsquo;ve never met before) is a <em>version control system</em>. That is, it is used to create and
+keep the snapshots of text files at certain points in time. These are called <em>commits</em>, and the
+command we&rsquo;ve just run displays the <em>commit history</em> for a particular file,
+<code>indonesian_pronouns.md</code>. Each commit is identified by a checksum (left) and is supposed to have a
+meaningful <em>commit message</em> (on the right, in brackets). At any time <code>git</code> can display the contents
+of a file at the time of a particular commit. This, for example</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">git show 802e45b:./indonesian_pronouns.md
+</code></pre></div><p>will output the oldest commit with the task. Notice that you need to provide the path, so it&rsquo;s <code>./indonesian_pronouns.md</code>
+rather than just <code>indonesian_pronouns.md</code>. To populate the tab files now, you will need to run <code>git show</code> on each commit in turn, and redirect the output to the respective files.</p>
+<p>This may seem to be a tad more complicated than our previous scenario with <code>wdiff</code>, but it will help
+you and your teacher to keep things organized much better. This is where GitHub – a free online
+service hosting <code>git</code> repositories – comes in. <a href="https://vendelin.org/geeky/git-language-learn/">The details are covered here</a>
+, so I won&rsquo;t be repeating myself.</p>
 <h2 id="the-next-steps-and-further-reading"><a class="h-link" href="#the-next-steps-and-further-reading">The Next Steps and Further Reading</a></h2>
 <p>The next step would be scratching your head a bit in order do decide how do you prefer to organize
-the content at your website. Once you are done, create an account at <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+the content at your website, as it likely won&rsquo;t be limited to blogging about learning a particular
+language. This article covers only language-learning aspects of it, but there are a few more things
+to do. For that, refer to the <a href="https://vendelin.org/geeky/errorist/add-kontent/">Errorist documentation.</a>
+</p>
+<p>Once you are done, create an account at <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
 ,
 create a repository <code>&lt;YOUR USERNAME&gt;.github.io</code>, enable GitHub pages in settings, build your site,
-commit and push it to GitHub. For details, refer to <a href="https://vendelin.org/geeky/errorist/add-kontent/">Errorist documentation</a>
-</p>
+commit and push it to GitHub.</p>
 <p>To learn more about Git, read <a href="https://git-scm.com/book/en/v2" target="_blank" rel="noopener">Pro Git</a>
  online book.</p>
 <p>Also read the <a href="https://gohugo.io/documentation/" target="_blank" rel="noopener">Hugo documentation</a>
  though it might be a tough read
 for a beginner.</p>
-<p>At this point I wish you best of luck. Report success in the comment below.</p>
+<p>At this point I wish you best of luck. Report success in the comments below.</p>
 
             <nav class="nextprev">
 <p class="next">
