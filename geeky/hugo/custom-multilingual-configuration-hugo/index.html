@@ -7,12 +7,21 @@
         <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/customized.css">
         <script async src="/js/hamburger.js"></script>
-                <title>
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZE53M84CZV"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-ZE53M84CZV');
+        </script><title>
             Customizing Configuration for Multilingual Hugo-Managed Site
         </title>
         <link rel="stylesheet" href="/css/perldoc.css">
         <link rel="stylesheet" href="/css/gdpr.css">
-        <script async src="/js/gdpr.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-162948019-2"></script>
+        <script async src="/js/gdpr.js"></script>
+
         <meta property="og:type" content="article">
 
 <meta itemprop="name" property="og:title" content="Customizing Configuration for Multilingual Hugo-Managed Site">
@@ -144,12 +153,12 @@ automatically for you, and it is located under <code>archetypes/default.md</code
 to for each article you are going to create: title (to become HTML <code>&lt;title&gt;</code> of a generated page),
 date, and draft. Since in all likelihood you would like your pages to have a proper description to
 be exposed in search engine results, add <code>description: TBD</code> parameter as shown here:</p>
-<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml">---<span class="w">
-</span><span class="w"></span><span class="k">title</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;{{ replace .Name &#34;</span>-<span class="s2">&#34; &#34;</span><span class="w"> </span><span class="s2">&#34; | title }}&#34;</span><span class="w">
-</span><span class="w"></span><span class="k">date</span><span class="p">:</span><span class="w"> </span>{{<span class="w"> </span>.Date<span class="w"> </span>}}<span class="w">
-</span><span class="w"></span><span class="k">draft</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span><span class="w"></span><span class="k">description</span><span class="p">:</span><span class="w"> </span>TBD<span class="w">
-</span><span class="w"></span>---<span class="w">
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">---</span><span class="w">
+</span><span class="w"></span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;{{ replace .Name &#34;</span>-<span class="s2">&#34; &#34;</span><span class="w"> </span><span class="s2">&#34; | title }}&#34;</span><span class="w">
+</span><span class="w"></span><span class="nt">date</span><span class="p">:</span><span class="w"> </span>{{<span class="w"> </span><span class="l">.Date }}</span><span class="w">
+</span><span class="w"></span><span class="nt">draft</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w"></span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l">TBD</span><span class="w">
+</span><span class="w"></span><span class="nn">---</span><span class="w">
 </span></code></pre></div><p>&hellip; where &lsquo;TBD&rsquo; is just a placeholder.</p>
 <h3 id="i-call-it-kontent"><a class="h-link" href="#i-call-it-kontent">I Call It &lsquo;kontent&rsquo;</a></h3>
 <p>There are two important directories in the root of your project, <code>config</code> and <code>content</code>, that

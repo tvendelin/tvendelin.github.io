@@ -7,12 +7,21 @@
         <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/customized.css">
         <script async src="/js/hamburger.js"></script>
-                <title>
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZE53M84CZV"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-ZE53M84CZV');
+        </script><title>
             Multilingual Content With Hugo
         </title>
         <link rel="stylesheet" href="/css/perldoc.css">
         <link rel="stylesheet" href="/css/gdpr.css">
-        <script async src="/js/gdpr.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-162948019-2"></script>
+        <script async src="/js/gdpr.js"></script>
+
         <meta property="og:type" content="article">
 
 <meta itemprop="name" property="og:title" content="Multilingual Content With Hugo">
@@ -229,11 +238,11 @@ English and &ldquo;Другие языки:&rdquo; in Russian?</p>
 </code></pre></div><p>In this directory, let&rsquo;s create YAML files with translations, <code>i18n/en.yaml</code> and
 <code>i18n/ru.yaml</code>.</p>
 <p><code>i18n/en.yaml</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml">- <span class="k">id</span><span class="p">:</span><span class="w"> </span>other_lang<span class="w">
-</span><span class="w">  </span><span class="k">translation</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Other languages:&#34;</span><span class="w">
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml">- <span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l">other_lang</span><span class="w">
+</span><span class="w">  </span><span class="nt">translation</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Other languages:&#34;</span><span class="w">
 </span></code></pre></div><p><code>i18n/ru.yaml</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml">- <span class="k">id</span><span class="p">:</span><span class="w"> </span>other_lang<span class="w">
-</span><span class="w">  </span><span class="k">translation</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Другие языки:&#34;</span><span class="w">
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml">- <span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l">other_lang</span><span class="w">
+</span><span class="w">  </span><span class="nt">translation</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Другие языки:&#34;</span><span class="w">
 </span></code></pre></div><p>Let&rsquo;s improve our <code>translations.html</code> partial by adding an HTML header with <code>{{i18n &quot;other_lang&quot;}}</code> as its text:</p>
 <div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">{{if .IsTranslated}}
 <span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;translations&#34;</span><span class="p">&gt;</span>
@@ -256,7 +265,7 @@ restart it.</p>
 are 7 pages in this category&rsquo;.  Adding the magic dot after the string
 identifier <code>{{i18n &quot;ship_count&quot; .}}</code> makes the entire page context available in the string
 translation. Just refer to page variables as you would from a template.</p>
-<p>This brings us to a daunting task of handling plurals. Adding &rsquo;s&rsquo; at the end of an English noun
+<p>This brings us to a daunting task of handling plurals. Adding &rsquo;s' at the end of an English noun
 doesn&rsquo;t always work (think of <em>mouse – mice</em> or <em>goose – geese</em>), but if you thought it&rsquo;s the worst
 of your problems, let&rsquo;s have some</p>
 <h2 id="fun-with-russian-plurals"><a class="h-link" href="#fun-with-russian-plurals">Fun With Russian Plurals</a></h2>
@@ -265,19 +274,19 @@ for a noun is normal. Some nouns have <em>only</em> singular form, while others 
 plural. This makes Russian probably the most tricky use case for handling plurals, and thus a perfect
 example for a tutorial. In this example, we shall be counting ships.</p>
 <p>Let&rsquo;s update our i18n file for Russian:</p>
-<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml">- <span class="k">id</span><span class="p">:</span><span class="w"> </span>other_lang<span class="w">
-</span><span class="w">  </span><span class="k">translation</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Другие языки:&#34;</span><span class="w">
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml">- <span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l">other_lang</span><span class="w">
+</span><span class="w">  </span><span class="nt">translation</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Другие языки:&#34;</span><span class="w">
 </span><span class="w">
-</span><span class="w"></span>- <span class="k">id</span><span class="p">:</span><span class="w"> </span>ship<span class="w">
-</span><span class="w">  </span><span class="k">translation</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="k">zero</span><span class="p">:</span><span class="w"> </span>ни<span class="w"> </span>одного<span class="w"> </span>корабля<span class="w">
-</span><span class="w">    </span><span class="k">one</span><span class="p">:</span><span class="w"> </span>корабль<span class="w">
-</span><span class="w">    </span><span class="k">few</span><span class="p">:</span><span class="w"> </span>корабля<span class="w">
-</span><span class="w">    </span><span class="k">many</span><span class="p">:</span><span class="w"> </span>кораблей<span class="w">
-</span><span class="w">    </span><span class="k">other</span><span class="p">:</span><span class="w"> </span>корабли<span class="w">
+</span><span class="w"></span>- <span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l">ship</span><span class="w">
+</span><span class="w">  </span><span class="nt">translation</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">zero</span><span class="p">:</span><span class="w"> </span><span class="l">ни одного корабля</span><span class="w">
+</span><span class="w">    </span><span class="nt">one</span><span class="p">:</span><span class="w"> </span><span class="l">корабль</span><span class="w">
+</span><span class="w">    </span><span class="nt">few</span><span class="p">:</span><span class="w"> </span><span class="l">корабля</span><span class="w">
+</span><span class="w">    </span><span class="nt">many</span><span class="p">:</span><span class="w"> </span><span class="l">кораблей</span><span class="w">
+</span><span class="w">    </span><span class="nt">other</span><span class="p">:</span><span class="w"> </span><span class="l">корабли</span><span class="w">
 </span><span class="w">
-</span><span class="w"></span>- <span class="k">id</span><span class="p">:</span><span class="w"> </span>from_page_context<span class="w">
-</span><span class="w">  </span><span class="k">translation</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Количество: {{.Params.count}}&#34;</span><span class="w">
+</span><span class="w"></span>- <span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l">from_page_context</span><span class="w">
+</span><span class="w">  </span><span class="nt">translation</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Количество: {{.Params.count}}&#34;</span><span class="w">
 </span></code></pre></div><p>Our <code>translation</code> for <code>ship</code> has got quite bushy now, as we have added all plural forms that
 <a href="https://github.com/nicksnyder/go-i18n" target="_blank" rel="noopener">go-i18n</a>
  library supports as of this writing. Hugo will pick

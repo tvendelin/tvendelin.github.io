@@ -7,12 +7,21 @@
         <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/customized.css">
         <script async src="/js/hamburger.js"></script>
-                <title>
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZE53M84CZV"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-ZE53M84CZV');
+        </script><title>
             Featured Content, Page Summary, Link Texts with Hugo
         </title>
         <link rel="stylesheet" href="/css/perldoc.css">
         <link rel="stylesheet" href="/css/gdpr.css">
-        <script async src="/js/gdpr.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-162948019-2"></script>
+        <script async src="/js/gdpr.js"></script>
+
         <meta property="og:type" content="article">
 
 <meta itemprop="name" property="og:title" content="Featured Content, Page Summary, Link Texts with Hugo">
@@ -157,8 +166,8 @@ categories and tags. We shall make use of tags in this example. You can create a
 for any page in the front matter. For our particular purpose, we need to agree on some special tag
 names, and then use them as filters. If we agree that <code>featured</code> means exposure as a big box on the
 front page, then in the front matter of the page include:</p>
-<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="k">tags</span><span class="p">:</span><span class="w">
-</span><span class="w"></span>- featured<span class="w">
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">tags</span><span class="p">:</span><span class="w">
+</span><span class="w"></span>- <span class="l">featured</span><span class="w">
 </span><span class="w"></span><span class="c"># ... other tags</span><span class="w">
 </span></code></pre></div><p>Since taxonomies have their own listing pages, we can get our &lsquo;featured&rsquo; articles by fetching a list
 page for the tag &lsquo;featured&rsquo;, and then iterating over the included pages, which will be first ordered by

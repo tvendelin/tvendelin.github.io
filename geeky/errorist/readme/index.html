@@ -7,12 +7,21 @@
         <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/customized.css">
         <script async src="/js/hamburger.js"></script>
-                <title>
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZE53M84CZV"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-ZE53M84CZV');
+        </script><title>
             README | Errorist Website Theme for Hugo
         </title>
         <link rel="stylesheet" href="/css/perldoc.css">
         <link rel="stylesheet" href="/css/gdpr.css">
-        <script async src="/js/gdpr.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-162948019-2"></script>
+        <script async src="/js/gdpr.js"></script>
+
         <meta property="og:type" content="article">
 
 <meta itemprop="name" property="og:title" content="README | Errorist Website Theme for Hugo">
@@ -156,7 +165,7 @@
     <li><a href="#managing-authors">Managing Author(s)</a>
       <ul>
         <li><a href="#add-data-entries-for-the-authors">Add Data Entries for the Authors</a></li>
-        <li><a href="#create-authors-pages-in-all-supported-languages">Create Authors&rsquo; Pages in All Supported Languages</a></li>
+        <li><a href="#create-authors-pages-in-all-supported-languages">Create Authors' Pages in All Supported Languages</a></li>
         <li><a href="#content-listing-in-the-authors-page">Content Listing in the Author&rsquo;s Page</a></li>
       </ul>
     </li>
@@ -267,7 +276,7 @@ For language-sensitive tabs, <code>*.md</code> files should be used instead. See
 you the freedom to write your summaries any way you want. Note that a good summary isn&rsquo;t necessarily a
 continuous fragment of a page.</p>
 <p>The file <code>main-img</code> (the name is significant) contains a reference to a page bundle with the main
-image for the page with captions in all supported languages and the authors&rsquo; IDs. Switching the main
+image for the page with captions in all supported languages and the authors' IDs. Switching the main
 image for a multilingual page is thus a matter of editing a single line in a
 single file.</p>
 <p>All of the above offloads quite a lot of noise from your Markdown and makes your content better
@@ -308,15 +317,15 @@ embarrassments of mismatching image/caption/author.</p>
 <p>The directory holding image bundles (<code>kontent/images</code> by default) is defined by <code>.Site.Params.image_bundle_dir</code>
 configuration parameter (see <code>config/_default/params.yaml</code>). It must be relative to <code>kontent</code>, and its
 name should not begin with underscore, if you host your site on GitHub. By default, it is neither
-rendered nor listed when the site is built, which is handled by <code>kontent/images/_index.*md</code> files&rsquo;
+rendered nor listed when the site is built, which is handled by <code>kontent/images/_index.*md</code> files'
 front matter:</p>
-<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml">---<span class="w">
-</span><span class="w"></span><span class="k">draft</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-</span><span class="w"></span><span class="k">cascade</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="k">_build</span><span class="p">:</span><span class="w">
-</span><span class="w">        </span><span class="k">list</span><span class="p">:</span><span class="w"> </span>never<span class="w">
-</span><span class="w">        </span><span class="k">render</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-</span><span class="w"></span>---<span class="w">
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">---</span><span class="w">
+</span><span class="w"></span><span class="nt">draft</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="w"></span><span class="nt">cascade</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">_build</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">list</span><span class="p">:</span><span class="w"> </span><span class="l">never</span><span class="w">
+</span><span class="w">        </span><span class="nt">render</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="w"></span><span class="nn">---</span><span class="w">
 </span></code></pre></div><p>If this is the desired behavior, add a <code>_index.*md</code> file like the one above for each language that
 you add.  If you want the captioned images to be displayed as content in their own right – for
 example, listing them on author&rsquo;s page – remove cascading build configuration and create a normal
@@ -434,14 +443,14 @@ world about your accomplishment in all the languages you already speak!</p>
 <h3 id="languages-that-your-site-supports"><a class="h-link" href="#languages-that-your-site-supports">Languages that Your Site Supports</a></h3>
 <p>Edit the <code>config/_default/languages.yaml</code> file. The example configuration includes two languages,
 English and Russian, already pre-configured (add or delete as necessary):</p>
-<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="k">en</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="k">languageName</span><span class="p">:</span><span class="w"> </span>English<span class="w">
-</span><span class="w">    </span><span class="k">weight</span><span class="p">:</span><span class="w"> </span><span class="m">10</span><span class="w">
-</span><span class="w">    </span><span class="k">locale</span><span class="p">:</span><span class="w"> </span>en_US<span class="w">
-</span><span class="w"></span><span class="k">ru</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="k">languageName</span><span class="p">:</span><span class="w"> </span>Русский<span class="w">
-</span><span class="w">    </span><span class="k">weight</span><span class="p">:</span><span class="w"> </span><span class="m">20</span><span class="w">
-</span><span class="w">    </span><span class="k">locale</span><span class="p">:</span><span class="w"> </span>ru_RU<span class="w">
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">en</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">languageName</span><span class="p">:</span><span class="w"> </span><span class="l">English</span><span class="w">
+</span><span class="w">    </span><span class="nt">weight</span><span class="p">:</span><span class="w"> </span><span class="m">10</span><span class="w">
+</span><span class="w">    </span><span class="nt">locale</span><span class="p">:</span><span class="w"> </span><span class="l">en_US</span><span class="w">
+</span><span class="w"></span><span class="nt">ru</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">languageName</span><span class="p">:</span><span class="w"> </span><span class="l">Русский</span><span class="w">
+</span><span class="w">    </span><span class="nt">weight</span><span class="p">:</span><span class="w"> </span><span class="m">20</span><span class="w">
+</span><span class="w">    </span><span class="nt">locale</span><span class="p">:</span><span class="w"> </span><span class="l">ru_RU</span><span class="w">
 </span></code></pre></div><p>The keys (<code>en</code>, <code>ru</code> in the example) should be ISO-639 language codes, as these will be used in metadata.</p>
 <ul>
 <li>
@@ -501,9 +510,9 @@ archetypes:</p>
 </code></pre></div><h2 id="managing-authors"><a class="h-link" href="#managing-authors">Managing Author(s)</a></h2>
 <p>Authors are referred to from the front matter as a list of their IDs (there could be multiple
 authors):</p>
-<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="k">authors</span><span class="p">:</span><span class="w">
-</span><span class="w"></span>- tatkins<span class="w">
-</span><span class="w"></span>- mmustermann<span class="w">
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">authors</span><span class="p">:</span><span class="w">
+</span><span class="w"></span>- <span class="l">tatkins</span><span class="w">
+</span><span class="w"></span>- <span class="l">mmustermann</span><span class="w">
 </span></code></pre></div><p>Before referring to authors, you&rsquo;ll have to configure them.
 If an author with a particular ID doesn&rsquo;t exist, an exception will be thrown.</p>
 <h3 id="add-data-entries-for-the-authors"><a class="h-link" href="#add-data-entries-for-the-authors">Add Data Entries for the Authors</a></h3>
@@ -533,24 +542,24 @@ depending on whether translation is provided under i18n directory.</p>
 </li>
 </ul>
 <p>Below are a few examples using &lsquo;default persons&rsquo; from various cultures:</p>
-<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="k">authors</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="k">tatkins</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Tommy Atkins&#39;</span><span class="w">
-</span><span class="w">  </span><span class="k">mmustermann</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Max Mustermann&#39;</span><span class="w">
-</span><span class="w">    </span><span class="k">image</span><span class="p">:</span><span class="w"> </span>/img/mmustermann.jpg<span class="w">
-</span><span class="w">    </span><span class="k">homepage</span><span class="p">:</span><span class="w"> </span>http<span class="p">:</span>//example.com/dipl-ingeneur-informatiker/mmustermann<span class="w">
-</span><span class="w">    </span><span class="k">social</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span>LinkedIn<span class="w">
-</span><span class="w">      </span><span class="k">url</span><span class="p">:</span><span class="w"> </span>http<span class="p">:</span>//linkedin.com/mmustermann<span class="w">
-</span><span class="w">    </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span>Xing<span class="w">
-</span><span class="w">      </span><span class="k">url</span><span class="p">:</span><span class="w"> </span>http<span class="p">:</span>//xing.com/mmustermann<span class="w">
-</span><span class="w">  </span><span class="k">vpupkin</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span><span class="k">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Vasya Pupkin&#39;</span><span class="w">
-</span><span class="w">    </span><span class="k">image</span><span class="p">:</span><span class="w"> </span>https<span class="p">:</span>//gravatar.com/avatar<span class="p">?</span>d=mp<span class="cp">&amp;s=200</span><span class="w">
-</span><span class="w">    </span><span class="k">homepage</span><span class="p">:</span><span class="w"> </span>http<span class="p">:</span>//example.com/vpupkin<span class="w">
-</span><span class="w">  </span><span class="k">anonymous</span><span class="p">:</span><span class="w">
-</span></code></pre></div><h3 id="create-authors-pages-in-all-supported-languages"><a class="h-link" href="#create-authors-pages-in-all-supported-languages">Create Authors&rsquo; Pages in All Supported Languages</a></h3>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">authors</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">tatkins</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Tommy Atkins&#39;</span><span class="w">
+</span><span class="w">  </span><span class="nt">mmustermann</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Max Mustermann&#39;</span><span class="w">
+</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">/img/mmustermann.jpg</span><span class="w">
+</span><span class="w">    </span><span class="nt">homepage</span><span class="p">:</span><span class="w"> </span><span class="l">http://example.com/dipl-ingeneur-informatiker/mmustermann</span><span class="w">
+</span><span class="w">    </span><span class="nt">social</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">LinkedIn</span><span class="w">
+</span><span class="w">      </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l">http://linkedin.com/mmustermann</span><span class="w">
+</span><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Xing</span><span class="w">
+</span><span class="w">      </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l">http://xing.com/mmustermann</span><span class="w">
+</span><span class="w">  </span><span class="nt">vpupkin</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Vasya Pupkin&#39;</span><span class="w">
+</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">https://gravatar.com/avatar?d=mp&amp;s=200</span><span class="w">
+</span><span class="w">    </span><span class="nt">homepage</span><span class="p">:</span><span class="w"> </span><span class="l">http://example.com/vpupkin</span><span class="w">
+</span><span class="w">  </span><span class="nt">anonymous</span><span class="p">:</span><span class="w">
+</span></code></pre></div><h3 id="create-authors-pages-in-all-supported-languages"><a class="h-link" href="#create-authors-pages-in-all-supported-languages">Create Authors' Pages in All Supported Languages</a></h3>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo new -k page authors/&lt;ID&gt;
 </code></pre></div><h3 id="content-listing-in-the-authors-page"><a class="h-link" href="#content-listing-in-the-authors-page">Content Listing in the Author&rsquo;s Page</a></h3>
 <p>If a page is written by the same author as the parent page, it will be skipped.  That is, if some of

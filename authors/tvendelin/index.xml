@@ -5,11 +5,7 @@
     <link>https://vendelin.org/authors/tvendelin/</link>
     <description>Recent content in Toomas Vendelin on vendelin.org</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 20 Jul 2020 06:32:37 +0200</lastBuildDate>
-    
-	<atom:link href="https://vendelin.org/authors/tvendelin/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 20 Jul 2020 06:32:37 +0200</lastBuildDate><atom:link href="https://vendelin.org/authors/tvendelin/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Using Git: A Dialogue Between a Language Teacher and a Linux Sysadmin</title>
       <link>https://vendelin.org/geeky/git-language-learn/dialogue/</link>
