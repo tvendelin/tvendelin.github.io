@@ -5,6 +5,7 @@
     <link>https://vendelin.org/geeky/git-language-learn/</link>
     <description>Recent content in Git for foreign language students and teachers on vendelin.org</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
     <lastBuildDate>Tue, 19 May 2020 19:54:26 +0200</lastBuildDate><atom:link href="https://vendelin.org/geeky/git-language-learn/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Using Git: A Dialogue Between a Language Teacher and a Linux Sysadmin</title>
@@ -34,8 +35,7 @@ Grammar exercises as a Git repository published on GitHub Yuni creates a new fol
       
       <guid>https://vendelin.org/geeky/git-language-learn/fork-and-complete-grammar-exercise-github/</guid>
       <description>Grammar exercises published as a Git repository on GitHub can be forked by a student and completed on GitHub directly. Yuni, an online teacher of Indonesian, has created such a repository (see the previous chapter ). It contained just a single exercise. Now, after trying things out, she creates a repository with a set of exercises:
-https://github.com/kartikayuni/Exercise-absolute-beginner
-Maria, a Yuni&amp;rsquo;s student, got a link to that repository from her teacher, and is about to do her first homework on GitHub.</description>
+https://github.com/kartikayuni/Exercise-absolute-beginner Maria, a Yuni&amp;rsquo;s student, got a link to that repository from her teacher, and is about to do her first homework on GitHub.</description>
     </item>
     
   </channel>

@@ -142,8 +142,8 @@ that you site visitor stays at your site.</p>
 <p>Referencing pages of the same site is done with two <em>shortcodes</em>, <code>ref</code> and <code>relref</code>. A shortcode is
 a variable that is mapped to a template, but is meant to be used within a Markdown file.
 You can refer to the full path of a page (that is, relative to your domain) like this:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">{{&lt; ref &#34;/PATH/TO/PAGE&#34; &gt;}}
-</code></pre></div><p>Do not use a trailing slash, it will result in an error.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">{{&lt; ref &#34;/PATH/TO/PAGE&#34; &gt;}}
+</span></span></code></pre></div><p>Do not use a trailing slash, it will result in an error.</p>
 <p>The <code>relref</code>, by contrast, uses the path relative to the current page. Place the shortcode into your
 Markdown where you would put the URL, and you are done. If the path is invalid, Hugo server will
 display an error, no matter which page you are at.</p>
@@ -154,10 +154,10 @@ display an error, no matter which page you are at.</p>
 details.</p>
 <h2 id="customizing-link-behavior"><a class="h-link" href="#customizing-link-behavior">Customizing Link Behavior</a></h2>
 <p>The Markdown syntax for creating a link is this:</p>
-<div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">[<span class="nt">Link text</span>](<span class="na">URL &#34;Link title&#34;</span>)
-</code></pre></div><p>&hellip; which translates into this HTML:</p>
-<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;URL&#34;</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;Link title&#34;</span><span class="p">&gt;</span>Link text<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-</code></pre></div><p>You might need more than that. For instance, as mentioned above, you might want
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-md" data-lang="md"><span class="line"><span class="cl">[<span class="nt">Link text</span>](<span class="na">URL &#34;Link title&#34;</span>)
+</span></span></code></pre></div><p>&hellip; which translates into this HTML:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;URL&#34;</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;Link title&#34;</span><span class="p">&gt;</span>Link text<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>You might need more than that. For instance, as mentioned above, you might want
 to add a <code>target=&quot;_blank&quot;</code> attribute to external links, so that it opens in a new tab or window, and
 your users won&rsquo;t leave your site. The internal links, on the other hand, should probably open in the
 same window.</p>
@@ -167,8 +167,8 @@ tree. This template receives the entire page context as <code>{{.Page}}</code> v
 normal templates), and a number of other variables, referring to Markup parameters. To implement the
 desired behavior, create a
 <code>themes/&lt;NAME&gt;/layouts/_default/_markup/render-link.html</code> file with the following content:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;a href=&#34;{{ .Destination }}&#34; {{ with .Title }} title=&#34;{{ . }}&#34;{{ end }} {{ if strings.HasPrefix .Destination &#34;http&#34; }} target=&#34;_blank&#34;{{ end }}&gt;{{ .Text }}&lt;/a&gt;
-</code></pre></div><p>The gory details are <a href="https://gohugo.io/getting-started/configuration-markup#markdown-render-hooks" target="_blank" rel="noopener">officially documented
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;a href=&#34;{{ .Destination }}&#34; {{ with .Title }} title=&#34;{{ . }}&#34;{{ end }} {{ if strings.HasPrefix .Destination &#34;http&#34; }} target=&#34;_blank&#34;{{ end }}&gt;{{ .Text }}&lt;/a&gt;
+</span></span></code></pre></div><p>The gory details are <a href="https://gohugo.io/getting-started/configuration-markup#markdown-render-hooks" target="_blank" rel="noopener">officially documented
 here</a>
 , but they do not
 lie exactly on the surface.</p>

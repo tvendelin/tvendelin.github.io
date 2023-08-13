@@ -153,35 +153,35 @@ automatically for you, and it is located under <code>archetypes/default.md</code
 to for each article you are going to create: title (to become HTML <code>&lt;title&gt;</code> of a generated page),
 date, and draft. Since in all likelihood you would like your pages to have a proper description to
 be exposed in search engine results, add <code>description: TBD</code> parameter as shown here:</p>
-<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">---</span><span class="w">
-</span><span class="w"></span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;{{ replace .Name &#34;</span>-<span class="s2">&#34; &#34;</span><span class="w"> </span><span class="s2">&#34; | title }}&#34;</span><span class="w">
-</span><span class="w"></span><span class="nt">date</span><span class="p">:</span><span class="w"> </span>{{<span class="w"> </span><span class="l">.Date }}</span><span class="w">
-</span><span class="w"></span><span class="nt">draft</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span><span class="w"></span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l">TBD</span><span class="w">
-</span><span class="w"></span><span class="nn">---</span><span class="w">
-</span></code></pre></div><p>&hellip; where &lsquo;TBD&rsquo; is just a placeholder.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nn">---</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;{{ replace .Name &#34;</span>-<span class="s2">&#34; &#34;</span><span class="w"> </span><span class="s2">&#34; | title }}&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">date</span><span class="p">:</span><span class="w"> </span>{{<span class="w"> </span><span class="l">.Date }}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">draft</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l">TBD</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nn">---</span><span class="w">
+</span></span></span></code></pre></div><p>&hellip; where &lsquo;TBD&rsquo; is just a placeholder.</p>
 <h3 id="i-call-it-kontent"><a class="h-link" href="#i-call-it-kontent">I Call It &lsquo;kontent&rsquo;</a></h3>
 <p>There are two important directories in the root of your project, <code>config</code> and <code>content</code>, that
 compete with each other in terms of <code>&lt;TAB&gt;</code> completion when you work from a terminal. It would be
 rather practical to rename <code>content</code> directory into <code>kontent</code>. Now you will need to type <code>k&lt;TAB&gt;</code>
 instead of <code>cont&lt;TAB&gt;</code>, and <code>c&lt;TAB&gt;</code> instead of <code>conf&lt;TAB&gt;</code>). So,</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">mv content kontent
-</code></pre></div><p>You will need to reflect this move in your project configuration, speaking of which&hellip;</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mv content kontent
+</span></span></code></pre></div><p>You will need to reflect this move in your project configuration, speaking of which&hellip;</p>
 <h2 id="create-a-very-basic-multilingual-configuration"><a class="h-link" href="#create-a-very-basic-multilingual-configuration">Create a very basic multilingual configuration</a></h2>
 <p>From your project root, create a sub-directory for default configuration:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">mkdir -p config/_default
-</code></pre></div><p>With your favourite editor, create a file <code>config/_default/config.yaml</code> with the following content:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">baseURL: &#34;http://example.com/&#34;
-title: &#34;Multilingua&#34;
-contentDir: &#34;kontent&#34;
-languages:
-    en:
-        languageName: English
-        weight: 10
-    ru:
-        languageName: Русский
-        weight: 20
-</code></pre></div><p>For the time being, <code>baseURL</code> can be whatever you like, if you didn&rsquo;t buy a domain yet. The <code>title</code>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mkdir -p config/_default
+</span></span></code></pre></div><p>With your favourite editor, create a file <code>config/_default/config.yaml</code> with the following content:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">baseURL: &#34;http://example.com/&#34;
+</span></span><span class="line"><span class="cl">title: &#34;Multilingua&#34;
+</span></span><span class="line"><span class="cl">contentDir: &#34;kontent&#34;
+</span></span><span class="line"><span class="cl">languages:
+</span></span><span class="line"><span class="cl">    en:
+</span></span><span class="line"><span class="cl">        languageName: English
+</span></span><span class="line"><span class="cl">        weight: 10
+</span></span><span class="line"><span class="cl">    ru:
+</span></span><span class="line"><span class="cl">        languageName: Русский
+</span></span><span class="line"><span class="cl">        weight: 20
+</span></span></code></pre></div><p>For the time being, <code>baseURL</code> can be whatever you like, if you didn&rsquo;t buy a domain yet. The <code>title</code>
 parameter is what you want to append to every page title of your site.  The <code>languages</code> section
 tells Hugo that your site will be in two languages, English and Russian, and that when available
 languages are listed, English comes before Russian - this is dictated by <code>weight</code> parameter. The
@@ -190,20 +190,19 @@ lower the weight, the higher the priority.</p>
 <p>To keep things tidy, you may choose to move the <code>languages</code> section into separate file. I recommend
 that you do, as it may grow substantially. In this case, create a file
 <code>config/_default/languages.yaml</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">en:
-    languageName: English
-    weight: 10
-ru:
-    languageName: Русский
-    weight: 20
-
-</code></pre></div><p>Notice, that <code>languages</code> key from the all-in-one config file has become the filename and it will be
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">en:
+</span></span><span class="line"><span class="cl">    languageName: English
+</span></span><span class="line"><span class="cl">    weight: 10
+</span></span><span class="line"><span class="cl">ru:
+</span></span><span class="line"><span class="cl">    languageName: Русский
+</span></span><span class="line"><span class="cl">    weight: 20
+</span></span></code></pre></div><p>Notice, that <code>languages</code> key from the all-in-one config file has become the filename and it will be
 an error to include it into <code>config/_default/languages.yaml</code>. Also, don&rsquo;t forget to remove the
 language section from <code>config/_default/config.yaml</code>.</p>
 <h2 id="remove-the-generated-configuration-file"><a class="h-link" href="#remove-the-generated-configuration-file">Remove the generated configuration file</a></h2>
 <p>&hellip; or it will take priority over the configuration you&rsquo;ve just created.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">rm config.toml
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">rm config.toml
+</span></span></code></pre></div>
             <nav class="nextprev">
 <p class="next">
     <a href="https://vendelin.org/geeky/hugo/creating-a-theme-for-hugo/">

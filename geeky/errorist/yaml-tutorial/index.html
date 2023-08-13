@@ -130,27 +130,26 @@ However, you will only need a small subset of it to configure your Hugo project 
 your Markdown files. This little tutorial provides a starting point.</p>
 <p>YAML is a format for representing data structure in a human-readable way.
 YAML&rsquo;s block collections use indentation for scope and begin each entry on its own line.
-Block sequences indicate each entry with a dash and space ('- &lsquo;). Mappings
-use a colon and space (': &lsquo;) to mark each key: value pair. Comments begin with <code>#</code>.</p>
+Block sequences indicate each entry with a dash and space (&rsquo;- &lsquo;). Mappings
+use a colon and space (&rsquo;: &lsquo;) to mark each key: value pair. Comments begin with <code>#</code>.</p>
 <p>Here is an excerpt from <code>config/_default/config.yaml</code> with simple scalar-to-scalar mapping. The
 quotes are optional, the space after the colon is not: <code>title:&quot;My site&quot;</code> would result in an error.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">baseURL: &#34;https://example.org&#34;
-title: &#34;My site&#34;
-theme: &#34;errorist&#34;
-</code></pre></div><p>You can nest one mapping into another:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">highlight:
-    codeFences: true
-    noClasses: false
-
-</code></pre></div><p>Here, the key <code>highlight</code> holds two mappings as its value. Indentation is important. If you remove
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">baseURL: &#34;https://example.org&#34;
+</span></span><span class="line"><span class="cl">title: &#34;My site&#34;
+</span></span><span class="line"><span class="cl">theme: &#34;errorist&#34;
+</span></span></code></pre></div><p>You can nest one mapping into another:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">highlight:
+</span></span><span class="line"><span class="cl">    codeFences: true
+</span></span><span class="line"><span class="cl">    noClasses: false
+</span></span></code></pre></div><p>Here, the key <code>highlight</code> holds two mappings as its value. Indentation is important. If you remove
 it, this would become three same-level mappings, <code>highlight</code> holding now an empty value. This is
 probable the most common source of misconfigurations and associated confusion.</p>
 <p>Finally, you can map a sequence of scalars:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">tags:
-- git
-- hugo
-- seo
-</code></pre></div><p>Here, the <code>tag</code> key holds a sequence of scalars (<code>git</code>, <code>hugo</code>, <code>seo</code>). Mind the space after dash:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">tags:
+</span></span><span class="line"><span class="cl">- git
+</span></span><span class="line"><span class="cl">- hugo
+</span></span><span class="line"><span class="cl">- seo
+</span></span></code></pre></div><p>Here, the <code>tag</code> key holds a sequence of scalars (<code>git</code>, <code>hugo</code>, <code>seo</code>). Mind the space after dash:
 <code>-git</code> would be an error.</p>
 <p>A dash counts for indentation. From <a href="http://www.yaml.org/spec/1.2/spec.html#id2799784" target="_blank" rel="noopener">YAML specs</a>
 :</p>

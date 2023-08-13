@@ -138,7 +138,8 @@ on GitHub directly. Yuni, an online teacher of Indonesian, has created such a re
 <a href="https://vendelin.org/geeky/git-language-learn/grammar-exercise-repository-github/">previous chapter</a>
 ). It contained just a single
 exercise. Now, after trying things out, she creates a repository with a set of exercises:</p>
-<p><a href="https://github.com/kartikayuni/Exercise-absolute-beginner">https://github.com/kartikayuni/Exercise-absolute-beginner</a></p>
+<p><a href="https://github.com/kartikayuni/Exercise-absolute-beginner" target="_blank" rel="noopener">https://github.com/kartikayuni/Exercise-absolute-beginner</a>
+</p>
 <p>Maria, a Yuni&rsquo;s student, got a link to that repository from her teacher, and is about to do her
 first homework on GitHub.</p>
 <h2 id="forking-and-collaborating"><a class="h-link" href="#forking-and-collaborating">Forking and collaborating</a></h2>
@@ -212,32 +213,32 @@ review the corrections using word-by word diff.</p>
     <link itemprop="url" href="/img/clone_url.png" rel="preload" as="image"> 
     <img itemprop="image" src="/img/clone_url.png" alt="Clone from GitHub" onclick="expandPic(event, 'expanded')"></figure></p>
 <p>In your terminal emulator,</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"># Clone the repository to your computer
-git clone &lt;REPOSITORY URL&gt; my_exercises
-
-# Change to `my_exercises` directory
-cd my_exercises
-
-# Do your homework using a text editor for plain text files.
-
-# Stage your changes
-git add .
-
-#Commit your changes:
-git commit -m &#39;&lt;YOUR COMMIT MESSAGE HERE, MIND THE QUOTES&gt;&#39;
-
-# Push your changes to the remote repository 
-git push
-
-# Once your exercise is corrected, pull from the remote
-git pull
-
-# Review your teacher&#39;s corrections
-git diff HEAD^ --word-diff=color -- indonesian_pronouns.md
-
-# To see more context (or entire file), use -U&lt;NUMBER&gt; option
-git diff HEAD^ -U99 --word-diff=color -- indonesian_pronouns.md
-</code></pre></div><h2 id="further-reading"><a class="h-link" href="#further-reading">Further Reading</a></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="c1"># Clone the repository to your computer
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">git</span><span class="w"> </span><span class="n">clone</span><span class="w"> </span><span class="o">&lt;</span><span class="n">REPOSITORY</span><span class="w"> </span><span class="n">URL</span><span class="o">&gt;</span><span class="w"> </span><span class="n">my_exercises</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1"># Change to `my_exercises` directory
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">cd</span><span class="w"> </span><span class="n">my_exercises</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1"># Do your homework using a text editor for plain text files.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1"># Stage your changes
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">git</span><span class="w"> </span><span class="k">add</span><span class="w"> </span><span class="p">.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">#Commit your changes:
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">git</span><span class="w"> </span><span class="n">commit</span><span class="w"> </span><span class="o">-</span><span class="n">m</span><span class="w"> </span><span class="s1">&#39;&lt;YOUR COMMIT MESSAGE HERE, MIND THE QUOTES&gt;&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1"># Push your changes to the remote repository 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">git</span><span class="w"> </span><span class="n">push</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1"># Once your exercise is corrected, pull from the remote
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">git</span><span class="w"> </span><span class="n">pull</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1"># Review your teacher&#39;s corrections
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">git</span><span class="w"> </span><span class="n">diff</span><span class="w"> </span><span class="n">HEAD</span><span class="o">^</span><span class="w"> </span><span class="o">--</span><span class="n">word</span><span class="o">-</span><span class="n">diff</span><span class="o">=</span><span class="n">color</span><span class="w"> </span><span class="c1">-- indonesian_pronouns.md
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1"># To see more context (or entire file), use -U&lt;NUMBER&gt; option
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">git</span><span class="w"> </span><span class="n">diff</span><span class="w"> </span><span class="n">HEAD</span><span class="o">^</span><span class="w"> </span><span class="o">-</span><span class="n">U99</span><span class="w"> </span><span class="o">--</span><span class="n">word</span><span class="o">-</span><span class="n">diff</span><span class="o">=</span><span class="n">color</span><span class="w"> </span><span class="c1">-- indonesian_pronouns.md
+</span></span></span></code></pre></div><h2 id="further-reading"><a class="h-link" href="#further-reading">Further Reading</a></h2>
 <p>I strongly recommend to read up about Git instead of just blindly copying the commands. An excellent
 starting point is a book by Scott Chacon and Ben Straub <a href="https://git-scm.com/book/en/v2" target="_blank" rel="noopener">Pro Git</a>
 .

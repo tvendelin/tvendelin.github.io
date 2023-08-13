@@ -160,26 +160,26 @@ tutorial.</p>
 <h2 id="create-a-section-and-your-first-page"><a class="h-link" href="#create-a-section-and-your-first-page">Create a Section and Your First Page</a></h2>
 <p>Hugo server is probably already running in your terminal. Open another terminal tab or window and
 run:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo new -k page blog/test-page
-</code></pre></div><p>This creates a &lsquo;Blogs&rsquo; section (it should now appear in the top-left corner), and a &lsquo;page bundle&rsquo;, a directory
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">hugo new -k page blog/test-page
+</span></span></code></pre></div><p>This creates a &lsquo;Blogs&rsquo; section (it should now appear in the top-left corner), and a &lsquo;page bundle&rsquo;, a directory
 where your page lives. If you run <code>tree kontent/blog/test-page/</code>, it will show</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">kontent/blog/test-page/
-├── index.md
-└── index.ru.md
-</code></pre></div><p>Two <code>index.*</code> files have been created, one for the default language (currently English) and Russian.
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">kontent/blog/test-page/
+</span></span><span class="line"><span class="cl">├── index.md
+</span></span><span class="line"><span class="cl">└── index.ru.md
+</span></span></code></pre></div><p>Two <code>index.*</code> files have been created, one for the default language (currently English) and Russian.
 In subsequent sections we shall see how to customize this step.</p>
 <p>Open <code>kontent/blog/test-page/index.md</code> in your editor. You will see some parameters between dashed
 lines that describe your page. Together they are called &lsquo;front matter&rsquo;. Let&rsquo;s set some of them, and
 also add some content. The result should look like this:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">---
-title: Starting Out with Errorist
-date: 2020-07-27T17:23:59+02:00
-description: &#39;My first test page description&#39;
-draft: false
----
-
-Once I save this file, my first page is created!
-</code></pre></div><p>If you now click the &lsquo;Blogs&rsquo; link (perhaps opening it in a new browser tab), you will get to the &lsquo;Blogs&rsquo; section
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">title: Starting Out with Errorist
+</span></span><span class="line"><span class="cl">date: 2020-07-27T17:23:59+02:00
+</span></span><span class="line"><span class="cl">description: &#39;My first test page description&#39;
+</span></span><span class="line"><span class="cl">draft: false
+</span></span><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Once I save this file, my first page is created!
+</span></span></code></pre></div><p>If you now click the &lsquo;Blogs&rsquo; link (perhaps opening it in a new browser tab), you will get to the &lsquo;Blogs&rsquo; section
 front page, where your test page is listed with its <code>title</code> and <code>description</code> (you&rsquo;ve set these in
 the front matter). One more click, and you will see your page.</p>
 <h3 id="markdown-and-yaml"><a class="h-link" href="#markdown-and-yaml">Markdown and YAML</a></h3>
@@ -198,86 +198,86 @@ are looking at right now.</p>
 <h3 id="set-the-section-name-and-description"><a class="h-link" href="#set-the-section-name-and-description">Set the Section Name and Description</a></h3>
 <p>We probably want our section name to be &lsquo;Blog&rsquo;, not &lsquo;Blogs&rsquo;, so let&rsquo;s sort that out. Create a
 listing page for the section by running this command (mind the underscore):</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo new blog/_index.md
-</code></pre></div><p>Edit <code>kontent/blog/_index.md</code> to look like this:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">---
-title: &#34;Blog&#34;
-date: 2020-07-27T17:49:45+02:00
-description: My Personal blog with Errorist
-draft: false
----
-A few words as to what my blog is about.
-</code></pre></div><p>Once you save the file, &lsquo;Blogs&rsquo; will become &lsquo;Blog&rsquo;, and the section page will now display an
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">hugo new blog/_index.md
+</span></span></code></pre></div><p>Edit <code>kontent/blog/_index.md</code> to look like this:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">title: &#34;Blog&#34;
+</span></span><span class="line"><span class="cl">date: 2020-07-27T17:49:45+02:00
+</span></span><span class="line"><span class="cl">description: My Personal blog with Errorist
+</span></span><span class="line"><span class="cl">draft: false
+</span></span><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">A few words as to what my blog is about.
+</span></span></code></pre></div><p>Once you save the file, &lsquo;Blogs&rsquo; will become &lsquo;Blog&rsquo;, and the section page will now display an
 introduction text. This step should be repeated for each language used in your website, inserting
 the language code as an additional file name suffix, so for Russian it would be <code>_index.ru.md</code>.</p>
 <h2 id="add-the-main-image-to-a-page"><a class="h-link" href="#add-the-main-image-to-a-page">Add the Main Image to a Page</a></h2>
 <p>Create a file <code>kontent/blog/test-page/main-img</code> and add a single line to it: <code>plain-blue</code>, either
 using an editor or from command line:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">echo &#39;plain-blue&#39; &gt;&gt; kontent/blog/test-page/main-img
-</code></pre></div><p>If you now open <a href="http://localhost:1313/blog/test-page/" target="_blank" rel="noopener">http://localhost:1313/blog/test-page</a>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">echo &#39;plain-blue&#39; &gt;&gt; kontent/blog/test-page/main-img
+</span></span></code></pre></div><p>If you now open <a href="http://localhost:1313/blog/test-page/" target="_blank" rel="noopener">http://localhost:1313/blog/test-page</a>
 , you
 will see that an image <code>plain-blue</code> has been added to the page. Notice, it&rsquo;s got a caption already,
 too. Where did it come from? Have a look into <code>kontent/images</code> directory:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">kontent/images/
-├── _index.md
-└── plain-blue
-    ├── example.png
-    ├── index.md
-    └── index.ru.md
-</code></pre></div><p>This is where our sample image lives together with its captions and other metadata. The captions in
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">kontent/images/
+</span></span><span class="line"><span class="cl">├── _index.md
+</span></span><span class="line"><span class="cl">└── plain-blue
+</span></span><span class="line"><span class="cl">    ├── example.png
+</span></span><span class="line"><span class="cl">    ├── index.md
+</span></span><span class="line"><span class="cl">    └── index.ru.md
+</span></span></code></pre></div><p>This is where our sample image lives together with its captions and other metadata. The captions in
 English and Russian are stored as content in <code>index.md</code> and <code>index.ru.md</code> files, respectively.
 Here&rsquo;s the English one:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">---
-title: &#34;Plain Blue&#34;
-date: 2020-07-27T18:37:21+02:00
-draft: false
-authors:
-alt: alt tag of an example image
----
-This is a caption for an example image
-</code></pre></div><p>Essentially, we are looking at another page bundle, that just isn&rsquo;t rendered nor listed anywhere –
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">title: &#34;Plain Blue&#34;
+</span></span><span class="line"><span class="cl">date: 2020-07-27T18:37:21+02:00
+</span></span><span class="line"><span class="cl">draft: false
+</span></span><span class="line"><span class="cl">authors:
+</span></span><span class="line"><span class="cl">alt: alt tag of an example image
+</span></span><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">This is a caption for an example image
+</span></span></code></pre></div><p>Essentially, we are looking at another page bundle, that just isn&rsquo;t rendered nor listed anywhere –
 only included into another page.</p>
 <h2 id="adding-content-in-another-language"><a class="h-link" href="#adding-content-in-another-language">Adding Content in Another Language</a></h2>
 <p>For that, let&rsquo;s edit <code>kontent/blog/test-page/index.ru.md</code> file in your page bundle.
 If you haven&rsquo;t got a Cyrillic keyboard, as the case might be, here&rsquo;s a sample content you can
 copy-and-paste:</p>
-<div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">---
-title: &#34;Welcome to Errorist&#34;
-date: 2020-07-27T17:15:38+02:00
-description: 
-draft: false
-toc: true
----
-Царь Никита жил когда-то  
-Праздно, весело, богато,  
-Не творил добра, ни зла,  
-И земля его цвела.  
-Царь трудился понемногу,  
-Кушал, пил, молился богу  
-И от разных матерей  
-Прижил сорок дочерей ...  
-</code></pre></div><p>Your test page has got a &lsquo;Languages&rsquo; navigation section and a link pointing to the Russian
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-md" data-lang="md"><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">title: &#34;Welcome to Errorist&#34;
+</span></span><span class="line"><span class="cl">date: 2020-07-27T17:15:38+02:00
+</span></span><span class="line"><span class="cl">description: 
+</span></span><span class="line"><span class="cl">draft: false
+</span></span><span class="line"><span class="cl">toc: true
+</span></span><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">Царь Никита жил когда-то  
+</span></span><span class="line"><span class="cl">Праздно, весело, богато,  
+</span></span><span class="line"><span class="cl">Не творил добра, ни зла,  
+</span></span><span class="line"><span class="cl">И земля его цвела.  
+</span></span><span class="line"><span class="cl">Царь трудился понемногу,  
+</span></span><span class="line"><span class="cl">Кушал, пил, молился богу  
+</span></span><span class="line"><span class="cl">И от разных матерей  
+</span></span><span class="line"><span class="cl">Прижил сорок дочерей ...  
+</span></span></code></pre></div><p>Your test page has got a &lsquo;Languages&rsquo; navigation section and a link pointing to the Russian
 version of your page. Not surprisingly, once you click it, you will see the Russian page you&rsquo;ve just
 created. The main image is already there, and notice – it has a Russian caption, too.</p>
 <p>That&rsquo;s the benefit of using image bundles: image captions follow the image itself like ducklings
 follow their mother-duck, so there never be a mismatch between an image and its caption.</p>
 <h2 id="creating-an-image-bundle"><a class="h-link" href="#creating-an-image-bundle">Creating an Image Bundle</a></h2>
 <p>Choose an image and some descriptive name for it. I shall use <code>myimage</code> in this example. Run</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo new -k img images/myimage
-</code></pre></div><p>This creates another directory under <code>kontent/images</code> which now looks like this:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">kontent/images/
-├── _index.md
-├── myimage
-│   ├── index.md
-│   └── index.ru.md
-└── plain-blue
-    ├── example.png
-    ├── index.md
-    └── index.ru.md
-</code></pre></div><p>Copy an image file into <code>kontent/images/myimage/</code> (the name of the file doesn&rsquo;t matter). Assuming
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">hugo new -k img images/myimage
+</span></span></code></pre></div><p>This creates another directory under <code>kontent/images</code> which now looks like this:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">kontent/images/
+</span></span><span class="line"><span class="cl">├── _index.md
+</span></span><span class="line"><span class="cl">├── myimage
+</span></span><span class="line"><span class="cl">│   ├── index.md
+</span></span><span class="line"><span class="cl">│   └── index.ru.md
+</span></span><span class="line"><span class="cl">└── plain-blue
+</span></span><span class="line"><span class="cl">    ├── example.png
+</span></span><span class="line"><span class="cl">    ├── index.md
+</span></span><span class="line"><span class="cl">    └── index.ru.md
+</span></span></code></pre></div><p>Copy an image file into <code>kontent/images/myimage/</code> (the name of the file doesn&rsquo;t matter). Assuming
 your image is <code>~/MyImages/random.jpg</code>,</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">cp ~/MyImages/random.jpg kontent/images/myimage/
-</code></pre></div><p>Edit <code>kontent/images/myimage/index*.md</code> files to add captions, and our image bundle is ready.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cp ~/MyImages/random.jpg kontent/images/myimage/
+</span></span></code></pre></div><p>Edit <code>kontent/images/myimage/index*.md</code> files to add captions, and our image bundle is ready.</p>
 <p>Let&rsquo;s link it to our test page now.</p>
 <p>In the <code>kontent/blog/test-page/main-img</code> file, change <code>plain-blue</code> to <code>myimage</code>, and check the page
 again: <a href="http://localhost:1313/blog/test-page/" target="_blank" rel="noopener">http://localhost:1313/blog/test-page</a>
@@ -285,16 +285,16 @@ again: <a href="http://localhost:1313/blog/test-page/" target="_blank" rel="noop
 supplied with the theme should now change to yours.</p>
 <h2 id="including-images-in-the-content-of-a-page"><a class="h-link" href="#including-images-in-the-content-of-a-page">Including Images in the Content of a Page</a></h2>
 <p>The general Markdown syntax is</p>
-<div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">![<span class="nt">alt text</span>](<span class="na">src &#34;title text&#34;</span>)
-</code></pre></div><p>where <code>src</code> is the URL of the image, relative or absolute. With Errorist, if <code>src</code> does not contain
-a dot (has no &lsquo;extension&rsquo;), the image bundle under <code>kontent/images</code> directory will be looked up
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-md" data-lang="md"><span class="line"><span class="cl">![<span class="nt">alt text</span>](<span class="na">src &#34;title text&#34;</span>)
+</span></span></code></pre></div><p>where <code>src</code> is the URL of the image, relative or absolute. With Errorist, if <code>src</code> does not contain
+a dot (has no &rsquo;extension&rsquo;), the image bundle under <code>kontent/images</code> directory will be looked up
 instead. The <code>&quot;title text&quot;</code> will override the one in the image bundle, and <code>alt text</code> will override
 the <code>alt</code> value. While this might be occasionally useful, most of the time you&rsquo;d use the texts from
 the image bundle, and so reduce it to just</p>
-<div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">![](src)
-</code></pre></div><p>Create a couple of image bundles and try to experiment with them. What happens if you
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-md" data-lang="md"><span class="line"><span class="cl">![](src)
+</span></span></code></pre></div><p>Create a couple of image bundles and try to experiment with them. What happens if you
 refer to nonexistent image bundle? What if image bundle exists, but hasn&rsquo;t got any image?</p>
-<p>If you still prefer to use &lsquo;loose&rsquo; images, an absolute path like <code>/file.jpg</code> as <code>src</code> value would
+<p>If you still prefer to use &rsquo;loose&rsquo; images, an absolute path like <code>/file.jpg</code> as <code>src</code> value would
 point to <code>static/file.jpg</code>, while relative path <code>file.jpg</code> would point to a file in the page bundle
 directory. You will still need to write the captions, so you&rsquo;ll hardly manage to cut any corners
 here.</p>
@@ -343,61 +343,61 @@ Señor Díaz está vivo, pero hoy no <del>es</del> <strong>está</strong> catól
 
 
 <p>So let&rsquo;s create one. In a page bundle, create a directory <code>myhomework</code> (the name is arbitrary):</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">mkdir kontent/blog/test-page/homework
-</code></pre></div><p>In this directory create four files as shown in the following code snippets. Here, the names
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mkdir kontent/blog/test-page/homework
+</span></span></code></pre></div><p>In this directory create four files as shown in the following code snippets. Here, the names
 <em>are</em> important. If you are experiencing the &lsquo;writer&rsquo;s block&rsquo;, here&rsquo;s example contents for the said
 files:</p>
 <p><code>kontent/blog/test-page/homework/10_task.txt</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">Señor Rodriguez ... católico, pero ... muerto. 
-Señor Díaz ... vivo, pero hoy no ... católico.
-</code></pre></div><p><code>kontent/blog/test-page/homework/20_mysolution.txt</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">Señor Rodriguez es católico, pero es muerto. 
-Señor Díaz está vivo, pero hoy no es católico.
-</code></pre></div><p><code>kontent/blog/test-page/homework/30_solution.txt</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">Señor Rodriguez era católico, pero está muerto. 
-Señor Díaz está vivo, pero hoy no está católico.
-</code></pre></div><p><code>kontent/blog/test-page/homework/40_corrections.txt</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">Señor Rodriguez <span class="gd">~~es~~</span> <span class="gs">**era**</span> católico, pero <span class="gd">~~es~~</span> <span class="gs">**está**</span> muerto. 
-Señor Díaz está vivo, pero hoy no <span class="gd">~~es~~</span> <span class="gs">**está**</span> católico.
-</code></pre></div><p>The <code>~~</code> is markdown that will be converted into <code>&lt;del&gt;</code> HTML tag, and <code>**</code> will become the <code>&lt;strong&gt;</code> tag.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-md" data-lang="md"><span class="line"><span class="cl">Señor Rodriguez ... católico, pero ... muerto. 
+</span></span><span class="line"><span class="cl">Señor Díaz ... vivo, pero hoy no ... católico.
+</span></span></code></pre></div><p><code>kontent/blog/test-page/homework/20_mysolution.txt</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-md" data-lang="md"><span class="line"><span class="cl">Señor Rodriguez es católico, pero es muerto. 
+</span></span><span class="line"><span class="cl">Señor Díaz está vivo, pero hoy no es católico.
+</span></span></code></pre></div><p><code>kontent/blog/test-page/homework/30_solution.txt</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-md" data-lang="md"><span class="line"><span class="cl">Señor Rodriguez era católico, pero está muerto. 
+</span></span><span class="line"><span class="cl">Señor Díaz está vivo, pero hoy no está católico.
+</span></span></code></pre></div><p><code>kontent/blog/test-page/homework/40_corrections.txt</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-md" data-lang="md"><span class="line"><span class="cl">Señor Rodriguez <span class="gd">~~es~~</span> <span class="gs">**era**</span> católico, pero <span class="gd">~~es~~</span> <span class="gs">**está**</span> muerto. 
+</span></span><span class="line"><span class="cl">Señor Díaz está vivo, pero hoy no <span class="gd">~~es~~</span> <span class="gs">**está**</span> católico.
+</span></span></code></pre></div><p>The <code>~~</code> is markdown that will be converted into <code>&lt;del&gt;</code> HTML tag, and <code>**</code> will become the <code>&lt;strong&gt;</code> tag.</p>
 <p>Back to our tabs. Your page bundle structure will now look like this:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">kontent/blog/test-page
-├── homework
-│   ├── 10_task.txt
-│   ├── 20_mysolution.txt
-│   ├── 30_solution.txt
-│   └── 40_corrections.txt
-├── index.md
-├── index.ru.md
-└── main-img
-</code></pre></div><p>Add the following at the bottom of <code>kontent/blog/test-page/index.md</code>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">kontent/blog/test-page
+</span></span><span class="line"><span class="cl">├── homework
+</span></span><span class="line"><span class="cl">│   ├── 10_task.txt
+</span></span><span class="line"><span class="cl">│   ├── 20_mysolution.txt
+</span></span><span class="line"><span class="cl">│   ├── 30_solution.txt
+</span></span><span class="line"><span class="cl">│   └── 40_corrections.txt
+</span></span><span class="line"><span class="cl">├── index.md
+</span></span><span class="line"><span class="cl">├── index.ru.md
+</span></span><span class="line"><span class="cl">└── main-img
+</span></span></code></pre></div><p>Add the following at the bottom of <code>kontent/blog/test-page/index.md</code>
 <code>kontent/blog/test-page/index.ru.md</code> files:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">{{&lt; tabs_bq &#34;homework&#34; &gt;}}
-</code></pre></div><p>If you look at your test page now, you will see the clickable tabs at the bottom, showing our
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">{{&lt; tabs_bq &#34;homework&#34; &gt;}}
+</span></span></code></pre></div><p>If you look at your test page now, you will see the clickable tabs at the bottom, showing our
 fictional homework exercise.</p>
 <p>The number at the beginning of a tab file name is for sorting, so that <code>10_task.txt</code> appears before
 <code>40_corrections.txt</code>. The name of a tab is the file name stripped of its <code>number_</code> prefix and <code>.txt</code>
 suffix, so <code>10_task.txt</code> becomes <code>task</code>. Then, if your localization file (more on that in a moment) contains the tab name as a
-key, the translation for that key will be displayed. The entries for &lsquo;task&rsquo;, &lsquo;mysolution&rsquo;,
+key, the translation for that key will be displayed. The entries for &rsquo;task&rsquo;, &lsquo;mysolution&rsquo;,
 &lsquo;solution&rsquo; and &lsquo;corrections&rsquo; are already included.</p>
 <p>If you were creating a new language-learning blog post from scratch, you could create a page bundle
 of this particular kind like this:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo new -k langblog blog/señores-vivos-y-muertos
-</code></pre></div><p>If editing tab files by hand feels a grueling task, you are not alone. Consider managing your homework
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">hugo new -k langblog blog/señores-vivos-y-muertos
+</span></span></code></pre></div><p>If editing tab files by hand feels a grueling task, you are not alone. Consider managing your homework
 using Git and GitHub. If you do, you can just pipe different commits and <code>wdiffs</code> of your exercises
 into tabs files.</p>
 <h2 id="featuring-an-article-on-the-front-page"><a class="h-link" href="#featuring-an-article-on-the-front-page">Featuring an Article on the Front Page</a></h2>
 <p>It&rsquo;s time to put your best foot forward. In a page bundle directory, edit the
 <code>kontent/blog/test-page/index.md</code> file, adding <code>exposures</code> parameter to the front matter:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">---
-title: Starting Out with Errorist
-date: 2020-07-27T17:23:59+02:00
-description: &#39;My first test page description&#39;
-draft: false
-exposures:
-- major
----
-</code></pre></div><p>If you check the front page of your site at <a href="http://localhost:1313" target="_blank" rel="noopener">http://localhost:1313</a>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">title: Starting Out with Errorist
+</span></span><span class="line"><span class="cl">date: 2020-07-27T17:23:59+02:00
+</span></span><span class="line"><span class="cl">description: &#39;My first test page description&#39;
+</span></span><span class="line"><span class="cl">draft: false
+</span></span><span class="line"><span class="cl">exposures:
+</span></span><span class="line"><span class="cl">- major
+</span></span><span class="line"><span class="cl">---
+</span></span></code></pre></div><p>If you check the front page of your site at <a href="http://localhost:1313" target="_blank" rel="noopener">http://localhost:1313</a>
 , you
 will notice that the main image for your test page now appears at the top together with what is
 supposed to be a summary, but is in fact just 70 characters of the page squashed without any respect
@@ -408,64 +408,64 @@ important), and write the summary for your page into it. Looks better, doesn&rsq
 the front page.</p>
 <h2 id="adding-links"><a class="h-link" href="#adding-links">Adding Links</a></h2>
 <p>The Markdown syntax for links is</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">[Visible Text](http://example.com &#34;title&#34;)
-</code></pre></div><p>where &lsquo;Visible Text&rsquo; is the text displayed on the page, and the optional &lsquo;title&rsquo; is
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[Visible Text](http://example.com &#34;title&#34;)
+</span></span></code></pre></div><p>where &lsquo;Visible Text&rsquo; is the text displayed on the page, and the optional &rsquo;title&rsquo; is
 the text that appears when you hover mouse cursor over it, but do not click yet.</p>
 <p>To refer to the page of your website, you should use a <em>shortcode</em> in place of URL:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">[Visible Text]({{&lt; ref &#34;/page#anchor&#34; &gt;}} &#34;title&#34;)
-</code></pre></div><p>The path is relative to the domain, so if your site is <code>http://example.com</code>, the above code will be
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[Visible Text]({{&lt; ref &#34;/page#anchor&#34; &gt;}} &#34;title&#34;)
+</span></span></code></pre></div><p>The path is relative to the domain, so if your site is <code>http://example.com</code>, the above code will be
 rendered as <code>http://example.com/page#anchor</code>. The shortcode will throw exception, if this page
 doesn&rsquo;t exist – so you are guaranteed against dead links at your own site at least.</p>
 <p>Do not use trailing <code>/</code> when using the shortcode – it will result in an error.</p>
 <h2 id="configure-your-project"><a class="h-link" href="#configure-your-project">Configure Your Project</a></h2>
 <p>Now that you know how things work, remove whatever you&rsquo;ve created while going through the tutorial.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">git clean -f *
-</code></pre></div><h3 id="configure-the-authors"><a class="h-link" href="#configure-the-authors">Configure the Authors</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git clean -f *
+</span></span></code></pre></div><h3 id="configure-the-authors"><a class="h-link" href="#configure-the-authors">Configure the Authors</a></h3>
 <p>Open <code>data/authors.yaml</code>, read the comments, and configure one or more authors by example. It&rsquo;s
 YAML format, so keep an eye on indentation.</p>
 <p>Once configured, the authors can be referred to from the front matter of their articles like this:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">authors:
-- mmustermann
-- tatkins
-</code></pre></div><p>Notice, it is a list, as an article may have more authors than one.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">authors:
+</span></span><span class="line"><span class="cl">- mmustermann
+</span></span><span class="line"><span class="cl">- tatkins
+</span></span></code></pre></div><p>Notice, it is a list, as an article may have more authors than one.</p>
 <h3 id="configure-the-languages"><a class="h-link" href="#configure-the-languages">Configure the Languages</a></h3>
 <p>Open <code>config/_default/languages.yaml</code>, read the comments, and configure to your needs.</p>
 <h3 id="adjust-internationalization-i18n-for-short"><a class="h-link" href="#adjust-internationalization-i18n-for-short">Adjust Internationalization (I18N for Short)</a></h3>
 <p>If you&rsquo;ve added new languages, you will also need to add translation files, one per new language.
 Create <code>i18n</code> directory in your project root, and copy the English translations file to be used as a
 template (for German in this example):</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">mkdir i18n
-cp themes/errorist/i18n/en.yaml i18n/de.yaml
-</code></pre></div><p>Open <code>i18n/de.yaml</code> and change English translations to German.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mkdir i18n
+</span></span><span class="line"><span class="cl">cp themes/errorist/i18n/en.yaml i18n/de.yaml
+</span></span></code></pre></div><p>Open <code>i18n/de.yaml</code> and change English translations to German.</p>
 <h3 id="adjust-archetypes"><a class="h-link" href="#adjust-archetypes">Adjust Archetypes</a></h3>
 <p>If there were changes in supported languages, you will need to add/remove <code>index*.md</code> files
 accordingly. That is, for each <code>index.md</code> file under <code>archetypes</code> directory in your project, you
 will need an <code>index.&lt;LANG&gt;.md</code> file for each language you support. To remove these files for Russian
 (if you are not going to use Russian), run</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">find archetypes -name &#39;index.ru.md&#39; -exec rm &#39;{}&#39; \;
-</code></pre></div><p>Your project is now configured. Create some content you want to publish.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">find archetypes -name &#39;index.ru.md&#39; -exec rm &#39;{}&#39; \;
+</span></span></code></pre></div><p>Your project is now configured. Create some content you want to publish.</p>
 <h2 id="clean-up"><a class="h-link" href="#clean-up">Clean Up</a></h2>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"># Re-create kontent/_index.md
-rm kontent/_index.md
-hugo new _index.md
-
-# Remove test image bundle
-rm -r kontent/images/plain-blue
-
-# Remove the manual
-rm -r kontent/manual
-</code></pre></div><p>Restart Hugo server.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># Re-create kontent/_index.md
+</span></span><span class="line"><span class="cl">rm kontent/_index.md
+</span></span><span class="line"><span class="cl">hugo new _index.md
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># Remove test image bundle
+</span></span><span class="line"><span class="cl">rm -r kontent/images/plain-blue
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># Remove the manual
+</span></span><span class="line"><span class="cl">rm -r kontent/manual
+</span></span></code></pre></div><p>Restart Hugo server.</p>
 <h2 id="build-your-site"><a class="h-link" href="#build-your-site">Build Your Site</a></h2>
 <p>Once you are done creating the initial content you want to publish, you should change the front
 matter parameter <code>draft</code> to <code>false</code> on everything that you are going to publish, including the image
 bundles. To double check, run</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"># To see if you haven&#39;t forgot anything
-grep -rl &#39;draft: false&#39; kontent/*
-</code></pre></div><p>Stop Hugo server, and then start it without the <code>-D</code> option. Now you will see only pages that are
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># To see if you haven&#39;t forgot anything
+</span></span><span class="line"><span class="cl">grep -rl &#39;draft: false&#39; kontent/*
+</span></span></code></pre></div><p>Stop Hugo server, and then start it without the <code>-D</code> option. Now you will see only pages that are
 going to be published. Double-check if everything looks the way it is supposed to.</p>
 <p>If you now run</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo
-</code></pre></div><p>your site will be built in the <code>public</code> directory under your project root. This
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">hugo
+</span></span></code></pre></div><p>your site will be built in the <code>public</code> directory under your project root. This
 can be changed by setting the <code>publishDir:</code> in <code>config/_default/config.yaml</code> to something else.
 Personally, I prefer to have it <em>outside</em> the project directory, because it&rsquo;s generated content and
 shouldn&rsquo;t be included in a source repository.</p>
@@ -475,20 +475,20 @@ shouldn&rsquo;t be included in a source repository.</p>
 <p>Create a repository named <code>&lt;YOUR GITHUB USERNAME&gt;.github.io</code>.</p>
 <p>Build your site locally, and change into whatever you have configured for your <code>publishDir</code>.</p>
 <p>Initialize a git repository there, add the files, and commit:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">git init
-git add .
-git commit -m &#39;initial commit&#39;
-</code></pre></div><p>Add your GitHub repository as a remote, and push it to GitHub:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">git remote add origin &lt;YOUR GITHUB REPOSITORY URL&gt;
-git push -u origin master
-</code></pre></div><p>Your website will shortly be accessible at <code>http://&lt;YOUR GITHUB USERNAME&gt;.github.io</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git init
+</span></span><span class="line"><span class="cl">git add .
+</span></span><span class="line"><span class="cl">git commit -m &#39;initial commit&#39;
+</span></span></code></pre></div><p>Add your GitHub repository as a remote, and push it to GitHub:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git remote add origin &lt;YOUR GITHUB REPOSITORY URL&gt;
+</span></span><span class="line"><span class="cl">git push -u origin master
+</span></span></code></pre></div><p>Your website will shortly be accessible at <code>http://&lt;YOUR GITHUB USERNAME&gt;.github.io</code>.</p>
 <p>If you ego demands a domain of your own, register one and <a href="https://docs.github.com/en/github/working-with-github-pages/managing-a-custom-domain-for-your-github-pages-site" target="_blank" rel="noopener">follow the GitHub
 manual</a>
 .</p>
 <h2 id="the-source-repository"><a class="h-link" href="#the-source-repository">The Source Repository</a></h2>
 <p>Remove the original git remote (where you&rsquo;ve cloned the bootstrapping project from):</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">git remote remove origin
-</code></pre></div><p>Decide where do you want to keep the repository with source files of your project. Should that be
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git remote remove origin
+</span></span></code></pre></div><p>Decide where do you want to keep the repository with source files of your project. Should that be
 GitHub, create a repository there and add it as a remote. Unless you use a paid account, ask
 yourself, whether you want the <em>source</em> of your project, including drafts, to be publicly available.
 This is very individual, of course.</p>

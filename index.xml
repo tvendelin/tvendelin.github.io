@@ -5,6 +5,7 @@
     <link>https://vendelin.org/</link>
     <description>Recent content in Toomas Vendelin - the Official Brain Dump on vendelin.org</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
     <lastBuildDate>Sat, 25 Apr 2020 14:58:34 +0200</lastBuildDate><atom:link href="https://vendelin.org/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Using Git: A Dialogue Between a Language Teacher and a Linux Sysadmin</title>
@@ -66,7 +67,7 @@ cd errorist-bootstrap hugo server -D Open http://localhost:1313 in your browser.
       <pubDate>Fri, 24 Jul 2020 06:48:06 +0200</pubDate>
       
       <guid>https://vendelin.org/geeky/blog-learning-foreign-language/hugo-errorist/</guid>
-      <description>windows mac linux   Windows 10 Enable Windows Subsystem Linux (WSL) as described on this Microsoft page . Hugo itself will run on Windows natively, but wdiff won&amp;rsquo;t.
+      <description>windows windows mac mac linux linux Windows 10 Enable Windows Subsystem Linux (WSL) as described on this Microsoft page . Hugo itself will run on Windows natively, but wdiff won&amp;rsquo;t.
 Launch Microsoft Store, search for &amp;lsquo;Ubuntu&amp;rsquo;, and install the latest LTS version (LTS stands for &amp;lsquo;Long term support&amp;rsquo;). As of this writing, this should be Ubuntu 20.04 LTS. Any general-use Linux distribution would do, but I&amp;rsquo;ve picked Ubuntu because for new users it would be easier to find support online.</description>
     </item>
     
@@ -110,8 +111,7 @@ Create a Section and Your First Page Hugo server is probably already running in 
       
       <guid>https://vendelin.org/geeky/git-language-learn/fork-and-complete-grammar-exercise-github/</guid>
       <description>Grammar exercises published as a Git repository on GitHub can be forked by a student and completed on GitHub directly. Yuni, an online teacher of Indonesian, has created such a repository (see the previous chapter ). It contained just a single exercise. Now, after trying things out, she creates a repository with a set of exercises:
-https://github.com/kartikayuni/Exercise-absolute-beginner
-Maria, a Yuni&amp;rsquo;s student, got a link to that repository from her teacher, and is about to do her first homework on GitHub.</description>
+https://github.com/kartikayuni/Exercise-absolute-beginner Maria, a Yuni&amp;rsquo;s student, got a link to that repository from her teacher, and is about to do her first homework on GitHub.</description>
     </item>
     
     <item>
@@ -142,7 +142,7 @@ cd errorist-bootstrap hugo server -D Open http://localhost:1313 in your browser.
       <pubDate>Tue, 05 May 2020 18:11:11 +0200</pubDate>
       
       <guid>https://vendelin.org/geeky/hugo/creating-a-theme-for-hugo/</guid>
-      <description>A &amp;lsquo;theme&amp;rsquo; in Hugo is a collection of HTML templates, stylesheets and other components that define what your site looks like, and are completely independent of your site content. That is, the very same theme can be used in many different websites. In software lingo this is known as the &amp;lsquo;separation of concerns&amp;rsquo; principle, which reminds of an old Swedish joke claiming that policemen always patrol in pairs because one can read and another can write.</description>
+      <description>A &amp;rsquo;theme&amp;rsquo; in Hugo is a collection of HTML templates, stylesheets and other components that define what your site looks like, and are completely independent of your site content. That is, the very same theme can be used in many different websites. In software lingo this is known as the &amp;lsquo;separation of concerns&amp;rsquo; principle, which reminds of an old Swedish joke claiming that policemen always patrol in pairs because one can read and another can write.</description>
     </item>
     
     <item>
@@ -173,7 +173,7 @@ kontent/ └── poetry └── lewis-carroll └── the-walrus-and-the-c
       
       <guid>https://vendelin.org/geeky/hugo/create-multilingual-content-hugo/</guid>
       <description>Handling Multilingual Content is where Hugo really shines. However, since internationalization (i18n for short) is a pretty complex task, let&amp;rsquo;s throw together a brief list of
-Requirements  The content translations should be added in an orderly manner. The content translations should be directly linkable to each other. Templates should not contain any hard-coded language-specific text. Instead, translations for such text should be defined separately and loaded according to the language of the content.</description>
+Requirements The content translations should be added in an orderly manner. The content translations should be directly linkable to each other. Templates should not contain any hard-coded language-specific text. Instead, translations for such text should be defined separately and loaded according to the language of the content.</description>
     </item>
     
     <item>
@@ -271,7 +271,7 @@ I&amp;rsquo;m well versed in automating the infrastructure setups combining sysl
       
       <guid>https://vendelin.org/geeky/blog-learning-foreign-language/indonesian-pronouns/</guid>
       <description>There are two pronouns for the first person plural: kita (inclusive), and kami (exclusive). Tina isn&amp;rsquo;t going to Jakarta with Peter and Dita (Tina is not included = use kami), neither is she returning with them (Tina is not included = use kami). But, once Peter and Dita are back, they go all together to a restaurant. In this case, Tina is included, so use kita.
-task my solution solution corrections   Fill the gaps with appropriate pronouns in the following dialogue.</description>
+task my solution solution corrections Fill the gaps with appropriate pronouns in the following dialogue.</description>
     </item>
     
     <item>

@@ -5,6 +5,7 @@
     <link>https://vendelin.org/geeky/hugo/</link>
     <description>Recent content in Hugo Cookbook for a Multilingual Site on vendelin.org</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
     <lastBuildDate>Sun, 17 May 2020 17:52:49 +0200</lastBuildDate><atom:link href="https://vendelin.org/geeky/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Multilingual Blogging with Hugo - Introduction</title>
@@ -57,7 +58,7 @@ Configuration Adjustments I Choose YAML and config Directory Your project config
       <pubDate>Tue, 05 May 2020 18:11:11 +0200</pubDate>
       
       <guid>https://vendelin.org/geeky/hugo/creating-a-theme-for-hugo/</guid>
-      <description>A &amp;lsquo;theme&amp;rsquo; in Hugo is a collection of HTML templates, stylesheets and other components that define what your site looks like, and are completely independent of your site content. That is, the very same theme can be used in many different websites. In software lingo this is known as the &amp;lsquo;separation of concerns&amp;rsquo; principle, which reminds of an old Swedish joke claiming that policemen always patrol in pairs because one can read and another can write.</description>
+      <description>A &amp;rsquo;theme&amp;rsquo; in Hugo is a collection of HTML templates, stylesheets and other components that define what your site looks like, and are completely independent of your site content. That is, the very same theme can be used in many different websites. In software lingo this is known as the &amp;lsquo;separation of concerns&amp;rsquo; principle, which reminds of an old Swedish joke claiming that policemen always patrol in pairs because one can read and another can write.</description>
     </item>
     
     <item>
@@ -78,7 +79,7 @@ kontent/ └── poetry └── lewis-carroll └── the-walrus-and-the-c
       
       <guid>https://vendelin.org/geeky/hugo/create-multilingual-content-hugo/</guid>
       <description>Handling Multilingual Content is where Hugo really shines. However, since internationalization (i18n for short) is a pretty complex task, let&amp;rsquo;s throw together a brief list of
-Requirements  The content translations should be added in an orderly manner. The content translations should be directly linkable to each other. Templates should not contain any hard-coded language-specific text. Instead, translations for such text should be defined separately and loaded according to the language of the content.</description>
+Requirements The content translations should be added in an orderly manner. The content translations should be directly linkable to each other. Templates should not contain any hard-coded language-specific text. Instead, translations for such text should be defined separately and loaded according to the language of the content.</description>
     </item>
     
     <item>

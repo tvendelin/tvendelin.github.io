@@ -134,7 +134,7 @@
             
 
 
-            <p>A &lsquo;theme&rsquo; in Hugo is a collection of HTML templates, stylesheets and other components that define what your
+            <p>A &rsquo;theme&rsquo; in Hugo is a collection of HTML templates, stylesheets and other components that define what your
 site looks like, and are <em>completely independent of your site content</em>. That is, the very same theme
 can be used in many different websites. In software lingo this is known as the &lsquo;separation of
 concerns&rsquo; principle, which reminds of an old Swedish joke claiming that policemen always patrol in
@@ -144,72 +144,72 @@ by changing a single parameter in your project configuration; or, if you so choo
 the theme you&rsquo;ve created with the world. As you can imagine, there is also a lot of Hugo themes
 available already, but it is still worth to explore a bit, how a Hugo theme is organized.</p>
 <p>So, let&rsquo;s create a theme (I&rsquo;ll call it &lsquo;comic&rsquo; – it&rsquo;s just a name):</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo new theme comic
-</code></pre></div><p>Hugo will happily report:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">Creating theme at /PATH/TO/HOME/multilingua/themes/comic
-</code></pre></div><p>Running <code>tree</code> command reveals the new sub-tree under <code>themes/comic</code>. It&rsquo;s quite similar to the structure
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">hugo new theme comic
+</span></span></code></pre></div><p>Hugo will happily report:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Creating theme at /PATH/TO/HOME/multilingua/themes/comic
+</span></span></code></pre></div><p>Running <code>tree</code> command reveals the new sub-tree under <code>themes/comic</code>. It&rsquo;s quite similar to the structure
 of our main project, but <code>content/</code> directory is understandably missing:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ tree
-.
-├── archetypes
-│   └── default.md
-├── config
-│   └── _default
-│       ├── config.yaml
-│       └── languages.yaml
-├── data
-├── kontent
-├── layouts
-├── resources
-│   └── _gen
-│       ├── assets
-│       └── images
-├── static
-└── themes
-    └── comic
-        ├── LICENSE
-        ├── archetypes
-        │   └── default.md
-        ├── layouts
-        │   ├── 404.html
-        │   ├── _default
-        │   │   ├── baseof.html
-        │   │   ├── list.html
-        │   │   └── single.html
-        │   ├── index.html
-        │   └── partials
-        │       ├── footer.html
-        │       ├── head.html
-        │       └── header.html
-        ├── static
-        │   ├── css
-        │   └── js
-        └── theme.toml
-</code></pre></div><p>The crucially important HTML template files are those under  <code>_default</code> sub-folder and <code>index.html</code>.
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ tree
+</span></span><span class="line"><span class="cl">.
+</span></span><span class="line"><span class="cl">├── archetypes
+</span></span><span class="line"><span class="cl">│   └── default.md
+</span></span><span class="line"><span class="cl">├── config
+</span></span><span class="line"><span class="cl">│   └── _default
+</span></span><span class="line"><span class="cl">│       ├── config.yaml
+</span></span><span class="line"><span class="cl">│       └── languages.yaml
+</span></span><span class="line"><span class="cl">├── data
+</span></span><span class="line"><span class="cl">├── kontent
+</span></span><span class="line"><span class="cl">├── layouts
+</span></span><span class="line"><span class="cl">├── resources
+</span></span><span class="line"><span class="cl">│   └── _gen
+</span></span><span class="line"><span class="cl">│       ├── assets
+</span></span><span class="line"><span class="cl">│       └── images
+</span></span><span class="line"><span class="cl">├── static
+</span></span><span class="line"><span class="cl">└── themes
+</span></span><span class="line"><span class="cl">    └── comic
+</span></span><span class="line"><span class="cl">        ├── LICENSE
+</span></span><span class="line"><span class="cl">        ├── archetypes
+</span></span><span class="line"><span class="cl">        │   └── default.md
+</span></span><span class="line"><span class="cl">        ├── layouts
+</span></span><span class="line"><span class="cl">        │   ├── 404.html
+</span></span><span class="line"><span class="cl">        │   ├── _default
+</span></span><span class="line"><span class="cl">        │   │   ├── baseof.html
+</span></span><span class="line"><span class="cl">        │   │   ├── list.html
+</span></span><span class="line"><span class="cl">        │   │   └── single.html
+</span></span><span class="line"><span class="cl">        │   ├── index.html
+</span></span><span class="line"><span class="cl">        │   └── partials
+</span></span><span class="line"><span class="cl">        │       ├── footer.html
+</span></span><span class="line"><span class="cl">        │       ├── head.html
+</span></span><span class="line"><span class="cl">        │       └── header.html
+</span></span><span class="line"><span class="cl">        ├── static
+</span></span><span class="line"><span class="cl">        │   ├── css
+</span></span><span class="line"><span class="cl">        │   └── js
+</span></span><span class="line"><span class="cl">        └── theme.toml
+</span></span></code></pre></div><p>The crucially important HTML template files are those under  <code>_default</code> sub-folder and <code>index.html</code>.
 To generate your site with Hugo, these should be sensibly configured. It doesn&rsquo;t happen by default
 (all of them except <code>baseof.html</code> are just empty). So, let&rsquo;s get this done.</p>
 <h2 id="the-mother-of-all-templates-baseofhtml"><a class="h-link" href="#the-mother-of-all-templates-baseofhtml">The mother of all templates: <code>baseof.html</code></a></h2>
 <p>Open the <code>themes/comic/layouts/_default/baseof.html</code> file and replace its contents with the
 following:</p>
-<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;{{ .Language.Lang }}&#34;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>
-            {{.Title}}
-        <span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;description&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;{{ .Description }}&#34;</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;/css/main.css&#34;</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;viewport&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;width=device-width, initial-scale=1&#34;</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;utf-8&#34;</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">main</span><span class="p">&gt;</span>
-            {{block &#34;main&#34; .}}
-            {{end}}
-        <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</code></pre></div><p>It&rsquo;s the very top and the very bottom of any web page of your site. All pages of your website will
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;{{ .Language.Lang }}&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            {{.Title}}
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;description&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;{{ .Description }}&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;/css/main.css&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;viewport&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;width=device-width, initial-scale=1&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;utf-8&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">main</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            {{block &#34;main&#34; .}}
+</span></span><span class="line"><span class="cl">            {{end}}
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>It&rsquo;s the very top and the very bottom of any web page of your site. All pages of your website will
 be rendered using this template by default.  The code in double curly braces will be replaced with
 the parts of the actual content. <code>{{.Title}}</code> will become the title of an actual page. The <code>{{block &quot;main&quot; .}}...{{end}}</code> part will include template code from a different template file, depending on
 the type of the page – more on that in a moment. We shall discuss <code>{{.Language.Lang}}</code> and
@@ -218,15 +218,15 @@ the type of the page – more on that in a moment. We shall discuss <code>{{.Lan
 <p>The <code>single.html</code> file defines how a page with a single unit of content (an article, a cooking
 recipe, etc.) is generated. Open the <code>themes/comic/layouts/_default/single.html</code> and put the
 following text into it:</p>
-<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">{{define &#34;main&#34;}}
-<span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
-    {{.Content}}
-<span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;debug&#34;</span><span class="p">&gt;</span>
-    Page generated with <span class="p">&lt;</span><span class="nt">code</span><span class="p">&gt;</span>single.html<span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-{{end}}
-</code></pre></div><p>The code between <code>{{define &quot;main&quot;}}</code> and <code>{{end}}</code> corresponds to the code block between <code>{{block &quot;main&quot; .}}</code> and <code>{{end}}</code> in <code>baseof.html</code>. Whenever a single page has to be generated,
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">{{define &#34;main&#34;}}
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    {{.Content}}
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;debug&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    Page generated with <span class="p">&lt;</span><span class="nt">code</span><span class="p">&gt;</span>single.html<span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">{{end}}
+</span></span></code></pre></div><p>The code between <code>{{define &quot;main&quot;}}</code> and <code>{{end}}</code> corresponds to the code block between <code>{{block &quot;main&quot; .}}</code> and <code>{{end}}</code> in <code>baseof.html</code>. Whenever a single page has to be generated,
 Hugo will look into the <code>single.html</code> file, look up a block named &ldquo;main&rdquo; in our example, render it
 (that is, replace variables with actual content and other data for that particular page), and nest it
 into <code>baseof.html</code>.</p>
@@ -237,22 +237,22 @@ added at the bottom. Remove it later on.</p>
 navigation.  For displaying multiple units of content – for instance, to list the links to all the
 articles in a section – a separate template is used: <code>list.html</code>. Open
 <code>themes/comic/layouts/_default/list.html</code> and put this text into it:</p>
-<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">{{define &#34;main&#34;}}
-{{.Content}}
-<span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-{{range .Pages}}
-    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{.Permalink}}&#34;</span><span class="p">&gt;</span>
-            {{.LinkTitle}}
-        <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-{{end}}
-<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;debug&#34;</span><span class="p">&gt;</span>
-    Page generated with <span class="p">&lt;</span><span class="nt">code</span><span class="p">&gt;</span>list.html<span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-{{end}}
-</code></pre></div><p>Iterating through a list of &lsquo;child&rsquo; pages (<code>{{range .Pages}}</code> block) creates a list item for each page in turn
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">{{define &#34;main&#34;}}
+</span></span><span class="line"><span class="cl">{{.Content}}
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">{{range .Pages}}
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{.Permalink}}&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            {{.LinkTitle}}
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">{{end}}
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;debug&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    Page generated with <span class="p">&lt;</span><span class="nt">code</span><span class="p">&gt;</span>list.html<span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">{{end}}
+</span></span></code></pre></div><p>Iterating through a list of &lsquo;child&rsquo; pages (<code>{{range .Pages}}</code> block) creates a list item for each page in turn
 with a link to a child page (<code>{{.Permalink}}</code>) and the (link) title of the page as the link text.
 <a href="https://vendelin.org/geeky/hugo/summary-linktitle-hugo/">Page titles and link titles are discussed in more details here</a>
 . As
@@ -264,31 +264,31 @@ sub-sections, sub-categories, sub-anything.</p>
 <h2 id="the-entry-point-indexhtml"><a class="h-link" href="#the-entry-point-indexhtml">The entry point: <code>index.html</code></a></h2>
 <p>That&rsquo;s the starting point of your website, and thus a separate template. Open
 <code>themes/comic/layouts/index.html</code> (empty by default) and put this into it:</p>
-<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">{{define &#34;main&#34;}}
-<span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-{{range .Site.Sections}}
-    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{.Permalink}}&#34;</span><span class="p">&gt;</span>
-            {{.LinkTitle}}
-        <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-{{end}}
-<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
-    Page generated with <span class="p">&lt;</span><span class="nt">code</span><span class="p">&gt;</span>index.html<span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-{{end}}
-</code></pre></div><p>This doesn&rsquo;t differ much from <code>list.html</code> template, but for the sake of diversity, we are iterating
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">{{define &#34;main&#34;}}
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">{{range .Site.Sections}}
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{.Permalink}}&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            {{.LinkTitle}}
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">{{end}}
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    Page generated with <span class="p">&lt;</span><span class="nt">code</span><span class="p">&gt;</span>index.html<span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">{{end}}
+</span></span></code></pre></div><p>This doesn&rsquo;t differ much from <code>list.html</code> template, but for the sake of diversity, we are iterating
 over a global variable, <code>.Site.Sections</code>, containing the top sections of your site. Needless to say,
 it is a rather unassuming front page for a website, and should be re-designed later. For now,
 though, we just need to get things working.</p>
 <h2 id="link-your-new-theme-in-configuration"><a class="h-link" href="#link-your-new-theme-in-configuration">Link your new theme in configuration</a></h2>
 <p>Open <code>config/_default/config.yaml</code> and tell Hugo you are going to use your new theme:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">baseURL: &#34;http://example.com/&#34;
-title: &#34;Multilingua&#34;
-contentDir: &#34;kontent&#34;
-theme: &#34;comic&#34;
-</code></pre></div><p>If you now check the <a href="http://localhost:1313" target="_blank" rel="noopener">http://localhost:1313</a>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">baseURL: &#34;http://example.com/&#34;
+</span></span><span class="line"><span class="cl">title: &#34;Multilingua&#34;
+</span></span><span class="line"><span class="cl">contentDir: &#34;kontent&#34;
+</span></span><span class="line"><span class="cl">theme: &#34;comic&#34;
+</span></span></code></pre></div><p>If you now check the <a href="http://localhost:1313" target="_blank" rel="noopener">http://localhost:1313</a>
 , you will see a page saying
 &lsquo;Page generated with index.html&rsquo; (reload may be required). Once you create some content, the page
 will display more than this debugging message, of course.</p>
@@ -303,98 +303,98 @@ template code and a relatively small amount of HTML.</p>
 <p>A partial can be called recursively, that is, be included into <em>itself</em> – just make sure it won&rsquo;t
 recurse endlessly. This allows us to create a partial that would produce the so-called breadcrumbs
 for easier site navigation:</p>
-<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">{{- with .Parent -}}
-{{partial &#34;breadcrumbs.html&#34; . -}}
-{{- if .Parent -}}
-<span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>:<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
-{{- end -}}
-<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{.Permalink}}&#34;</span><span class="p">&gt;</span>{{.LinkTitle}}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-{{- end -}}
-</code></pre></div><p>In case you are not familiar with the jargon: breadcrumbs is a sequence of links starting (from the
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">{{- with .Parent -}}
+</span></span><span class="line"><span class="cl">{{partial &#34;breadcrumbs.html&#34; . -}}
+</span></span><span class="line"><span class="cl">{{- if .Parent -}}
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>:<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">{{- end -}}
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{.Permalink}}&#34;</span><span class="p">&gt;</span>{{.LinkTitle}}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">{{- end -}}
+</span></span></code></pre></div><p>In case you are not familiar with the jargon: breadcrumbs is a sequence of links starting (from the
 right) with the parent page, then the parent of the parent, and so on up to the home page. Dropping
 breadcrumbs to mark a path in a labyrinth is probably where the terms originates from.</p>
 <p>Save this partial under <code>layouts/partials/breadcrumbs.html</code> sub-directory of your theme.
 It can be included into another template like this:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">{{partial &#34;breadcrumbs.html&#34; .}}
-</code></pre></div><p><strong>Mind the dot!</strong> The &lsquo;dot&rsquo; passes the context to the partial. Without it, no variables will be
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">{{partial &#34;breadcrumbs.html&#34; .}}
+</span></span></code></pre></div><p><strong>Mind the dot!</strong> The &lsquo;dot&rsquo; passes the context to the partial. Without it, no variables will be
 available there.</p>
 <p>Since we want breadcrumbs on every page of our site, let&rsquo;s include it into
 <code>baseof.html</code> template:</p>
-<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>
-            {{.Title}}
-        <span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;/css/main.css&#34;</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;viewport&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;width=device-width, initial-scale=1&#34;</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;utf-8&#34;</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-        {{partial &#34;breadcrumbs.html&#34; .}}
-        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container&#34;</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">main</span><span class="p">&gt;</span>
-                {{block &#34;main&#34; .}}
-                {{end}}
-            <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</code></pre></div><h2 id="static-assets"><a class="h-link" href="#static-assets">Static Assets</a></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            {{.Title}}
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;/css/main.css&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;viewport&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;width=device-width, initial-scale=1&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;utf-8&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        {{partial &#34;breadcrumbs.html&#34; .}}
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">main</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                {{block &#34;main&#34; .}}
+</span></span><span class="line"><span class="cl">                {{end}}
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></div><h2 id="static-assets"><a class="h-link" href="#static-assets">Static Assets</a></h2>
 <p>Finally, the static files live under <code>static</code> directory in your theme. You probably want to add some
 basic CSS right away, just enough to prevent your eyes from bleeding while prototyping your site.
 For instance, you may save this unassuming grid-based stylesheet under <code>static/css/main.css</code> in your
 theme:</p>
-<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">@</span><span class="k">import</span> <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&amp;display=swap&#39;</span><span class="o">)</span><span class="p">;</span>
-
-<span class="nt">body</span> <span class="p">{</span>
-    <span class="k">font-family</span><span class="p">:</span> <span class="s2">&#34;Open Sans&#34;</span><span class="p">,</span> <span class="kc">sans-serif</span><span class="p">;</span>
-    <span class="n">text-rendering</span><span class="p">:</span> <span class="kc">optimizeLegibility</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nt">h1</span><span class="o">,</span> <span class="nt">h2</span><span class="o">,</span> <span class="nt">h3</span><span class="o">,</span> <span class="nt">h4</span><span class="o">,</span> <span class="nt">h5</span><span class="o">,</span> <span class="nt">h6</span> <span class="p">{</span>
-    <span class="k">font-family</span><span class="p">:</span> <span class="n">Open</span> <span class="n">Sans</span> <span class="n">Condensed</span><span class="p">,</span> <span class="kc">sans-serif</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nt">h1</span><span class="p">.</span><span class="nc">languages</span> <span class="p">{</span>
-    <span class="k">font-family</span><span class="p">:</span> <span class="s2">&#34;Open Sans&#34;</span><span class="p">,</span> <span class="kc">sans-serif</span><span class="p">;</span>
-    <span class="k">font-size</span><span class="p">:</span> <span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
-    <span class="k">font-weight</span><span class="p">:</span> <span class="mi">400</span><span class="p">;</span>
-    <span class="k">margin-bottom</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nt">p</span> <span class="p">{</span>
-    <span class="k">line-height</span><span class="p">:</span> <span class="mf">1.7</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nt">p</span><span class="p">.</span><span class="nc">debug</span> <span class="p">{</span>
-    <span class="k">color</span><span class="p">:</span> <span class="mh">#999</span><span class="p">;</span>
-    <span class="k">font-size</span><span class="p">:</span> <span class="mf">0.7</span><span class="kt">rem</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="p">.</span><span class="nc">container</span><span class="p">{</span>
-    <span class="k">display</span><span class="p">:</span> <span class="k">grid</span><span class="p">;</span>
-    <span class="k">grid-template-columns</span><span class="p">:</span> <span class="nf">repeat</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="n">fr</span><span class="p">);</span>
-    <span class="k">column-gap</span><span class="p">:</span> <span class="mi">2</span><span class="kt">rem</span><span class="p">;</span>
-    <span class="n">row-gap</span><span class="p">:</span> <span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nt">main</span> <span class="p">{</span>
-    <span class="k">grid-column</span><span class="p">:</span> <span class="mi">4</span><span class="o">/</span><span class="mi">10</span><span class="p">;</span>
-    <span class="k">grid-row</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="p">.</span><span class="nc">translations</span> <span class="p">{</span>
-    <span class="k">grid-column</span><span class="p">:</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">;</span>
-    <span class="k">grid-row</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="k">padding-left</span><span class="p">:</span> <span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="p">.</span><span class="nc">translations</span> <span class="nt">a</span> <span class="p">{</span>
-    <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div><h2 id="should-i-use-a-third-party-theme-or-build-my-own"><a class="h-link" href="#should-i-use-a-third-party-theme-or-build-my-own">Should I Use a Third-Party Theme, or Build My Own?</a></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">@</span><span class="k">import</span> <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&amp;family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&amp;display=swap&#39;</span><span class="o">)</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">body</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">font-family</span><span class="p">:</span> <span class="s2">&#34;Open Sans&#34;</span><span class="p">,</span> <span class="kc">sans-serif</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">text-rendering</span><span class="p">:</span> <span class="kc">optimizeLegibility</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">h1</span><span class="o">,</span> <span class="nt">h2</span><span class="o">,</span> <span class="nt">h3</span><span class="o">,</span> <span class="nt">h4</span><span class="o">,</span> <span class="nt">h5</span><span class="o">,</span> <span class="nt">h6</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">font-family</span><span class="p">:</span> <span class="n">Open</span> <span class="n">Sans</span> <span class="n">Condensed</span><span class="p">,</span> <span class="kc">sans-serif</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">h1</span><span class="p">.</span><span class="nc">languages</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">font-family</span><span class="p">:</span> <span class="s2">&#34;Open Sans&#34;</span><span class="p">,</span> <span class="kc">sans-serif</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">font-size</span><span class="p">:</span> <span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">font-weight</span><span class="p">:</span> <span class="mi">400</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">margin-bottom</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">p</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">line-height</span><span class="p">:</span> <span class="mf">1.7</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">p</span><span class="p">.</span><span class="nc">debug</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">color</span><span class="p">:</span> <span class="mh">#999</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">font-size</span><span class="p">:</span> <span class="mf">0.7</span><span class="kt">rem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">display</span><span class="p">:</span> <span class="k">grid</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">grid-template-columns</span><span class="p">:</span> <span class="nf">repeat</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="n">fr</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">column-gap</span><span class="p">:</span> <span class="mi">2</span><span class="kt">rem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">row-gap</span><span class="p">:</span> <span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">main</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">grid-column</span><span class="p">:</span> <span class="mi">4</span><span class="o">/</span><span class="mi">10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">grid-row</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">translations</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">grid-column</span><span class="p">:</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">grid-row</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">padding-left</span><span class="p">:</span> <span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">translations</span> <span class="nt">a</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="should-i-use-a-third-party-theme-or-build-my-own"><a class="h-link" href="#should-i-use-a-third-party-theme-or-build-my-own">Should I Use a Third-Party Theme, or Build My Own?</a></h2>
 <p>You probably should play around a bit with a vanilla Hugo project and your own theme to understand
 how things work. Then, you just need to decide what makes more fun for you – fiddling with CSS and
 Go templates wrapped in Hugo, or just to start blogging. I cannot resist endorsing my own theme

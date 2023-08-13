@@ -5,6 +5,7 @@
     <link>https://vendelin.org/tags/wdiff/</link>
     <description>Recent content in wdiff on vendelin.org</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
     <lastBuildDate>Fri, 24 Jul 2020 06:48:06 +0200</lastBuildDate><atom:link href="https://vendelin.org/tags/wdiff/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Set Up Hugo with Errorist Theme</title>
@@ -12,7 +13,7 @@
       <pubDate>Fri, 24 Jul 2020 06:48:06 +0200</pubDate>
       
       <guid>https://vendelin.org/geeky/blog-learning-foreign-language/hugo-errorist/</guid>
-      <description>windows mac linux   Windows 10 Enable Windows Subsystem Linux (WSL) as described on this Microsoft page . Hugo itself will run on Windows natively, but wdiff won&amp;rsquo;t.
+      <description>windows windows mac mac linux linux Windows 10 Enable Windows Subsystem Linux (WSL) as described on this Microsoft page . Hugo itself will run on Windows natively, but wdiff won&amp;rsquo;t.
 Launch Microsoft Store, search for &amp;lsquo;Ubuntu&amp;rsquo;, and install the latest LTS version (LTS stands for &amp;lsquo;Long term support&amp;rsquo;). As of this writing, this should be Ubuntu 20.04 LTS. Any general-use Linux distribution would do, but I&amp;rsquo;ve picked Ubuntu because for new users it would be easier to find support online.</description>
     </item>
     

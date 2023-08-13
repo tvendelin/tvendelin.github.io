@@ -139,31 +139,31 @@ They have agreed to go though it step by step, and so they did. Here, we are dis
 the teacher&rsquo;s perspective.</p>
 <h2 id="grammar-exercises-as-a-git-repository-published-on-github"><a class="h-link" href="#grammar-exercises-as-a-git-repository-published-on-github">Grammar exercises as a Git repository published on GitHub</a></h2>
 <p>Yuni creates a new folder on her computer, and initializes a Git repository inside it.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">mkdir sample_exercise
-cd sample_exercise
-git init
-</code></pre></div><p>In this folder, Yuni creates a sample exercise on Indonesian personal pronouns, <code>indonesian_pronouns.md</code>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mkdir sample_exercise
+</span></span><span class="line"><span class="cl">cd sample_exercise
+</span></span><span class="line"><span class="cl">git init
+</span></span></code></pre></div><p>In this folder, Yuni creates a sample exercise on Indonesian personal pronouns, <code>indonesian_pronouns.md</code>
 It is written in Markdown format:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"># Fill the gaps with appropriate pronouns in the following dialogue.
-
-## Peter dan Dita pergi ke Jakarta. Tina tinggal di Jogja.
-
-Dita: Tina, … pergi ke Jakarta. Saat ... kembali mari ... pergi ke Kesuma restoran.
-
-Tina: Andy dan Ria pergi juga?
-
-Dita: Tidak, ... harus bekerja.
-
-Tina: Dan Anto?
-
-Dita: ... bekerja juga.
-
-Tina: Berapa lama libur kalian?
-
-Dita: Empat hari.
-
-Tina: ... iri padamu.
-</code></pre></div><p>It&rsquo;s just a plain text file that can be edited with many editors (Atom, Notepad++, TextWrangler,
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># Fill the gaps with appropriate pronouns in the following dialogue.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">## Peter dan Dita pergi ke Jakarta. Tina tinggal di Jogja.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Dita: Tina, … pergi ke Jakarta. Saat ... kembali mari ... pergi ke Kesuma restoran.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Tina: Andy dan Ria pergi juga?
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Dita: Tidak, ... harus bekerja.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Tina: Dan Anto?
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Dita: ... bekerja juga.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Tina: Berapa lama libur kalian?
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Dita: Empat hari.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Tina: ... iri padamu.
+</span></span></code></pre></div><p>It&rsquo;s just a plain text file that can be edited with many editors (Atom, Notepad++, TextWrangler,
 Vim, etc.). It is quite human-readable as it is, but when viewed on GitHub, parts of the text
 between empty
 lines will become paragraphs, and lines prepended with one or more <code>#</code> symbols will become
@@ -173,15 +173,16 @@ a three-minute read at <a href="https://guides.github.com/features/mastering-mar
 <p>For now, it is just a single file for simplicity of the example, but the intention is to maintain
 sets of exercises in Git repositories.</p>
 <p>Yuni adds the newly created file to be tracked by Git:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">git add *
-</code></pre></div><p>and creates the first commit:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">git ci -m &#39;Created an exercise on personal pronouns.&#39;
-</code></pre></div><p>She then creates a repository on GitHub, where she has a free account, sets it as a remote for her
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git add *
+</span></span></code></pre></div><p>and creates the first commit:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git ci -m &#39;Created an exercise on personal pronouns.&#39;
+</span></span></code></pre></div><p>She then creates a repository on GitHub, where she has a free account, sets it as a remote for her
 local repository, and pushes her local changes to the remote:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">git remote add origin git@github.com:&lt;USER NAME&gt;/&lt;REPOSITORY NAME&gt;.git
-git push -u origin master
-</code></pre></div><p>The sample repository that we are discussing here can be viewed at
-<a href="https://github.com/tvendelin/language-exercise-example">https://github.com/tvendelin/language-exercise-example</a>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git remote add origin git@github.com:&lt;USER NAME&gt;/&lt;REPOSITORY NAME&gt;.git
+</span></span><span class="line"><span class="cl">git push -u origin master
+</span></span></code></pre></div><p>The sample repository that we are discussing here can be viewed at
+<a href="https://github.com/tvendelin/language-exercise-example" target="_blank" rel="noopener">https://github.com/tvendelin/language-exercise-example</a>
+.</p>
 <p>From now on, anyone can view the exercises Yuni has created, but only Yuni, the repository owner,
 can change them. More importantly, each of her students can <em>fork</em> this repository, that is, to
 create their own repositories with the same content, but under their own accounts.</p>
@@ -196,37 +197,37 @@ creating a copy of a Git repository on your computer, locally. The cloned reposi
 where it came from, and this is the important difference between cloning and downloading.
 The URL for cloning can be obtained
 at repository page by clicking &lsquo;Clone or download&rsquo; button. The command is:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">git clone &lt;THE URL OF REPOSITORY&gt; maria_&lt;REPOSITORY NAME&gt;
-</code></pre></div><p>This creates a folder <code>maria_&lt;REPOSITORY NAME&gt;</code> with a Git repository&rsquo;s <em>working copy</em> in it.  It is
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git clone &lt;THE URL OF REPOSITORY&gt; maria_&lt;REPOSITORY NAME&gt;
+</span></span></code></pre></div><p>This creates a folder <code>maria_&lt;REPOSITORY NAME&gt;</code> with a Git repository&rsquo;s <em>working copy</em> in it.  It is
 a good idea to use a custom destination folder (<code>maria_&lt;REPOSITORY NAME&gt;</code> in our example) to
 distinct between different students.  Yuni changes into this folder, and runs <code>git log --pretty=reference</code> to identify <em>her</em> last commit. In our example, it is <code>c9ba48c</code>.</p>
 <p>To see which files changed since her last commit (that is, changed by her student), Yuni runs</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">git diff --compact-summary c9ba48c HEAD^ 
-</code></pre></div><p>The output tells her that one file, <code>indonesian_pronouns.md</code>, has been modified:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"> indonesian_pronouns.md | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-</code></pre></div><p>Now Yuni knows which files she must check and possibly correct. With a single student and a single
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git diff --compact-summary c9ba48c HEAD^ 
+</span></span></code></pre></div><p>The output tells her that one file, <code>indonesian_pronouns.md</code>, has been modified:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"> indonesian_pronouns.md | 4 ++--
+</span></span><span class="line"><span class="cl"> 1 file changed, 2 insertions(+), 2 deletions(-)
+</span></span></code></pre></div><p>Now Yuni knows which files she must check and possibly correct. With a single student and a single
 exercise this may seem redundant, but later on with many exercises multiplied by many students
 this step will become quite handy.</p>
 <p>Yuni corrects the exercise and commits the changes.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">git commit -a
-</code></pre></div><p>This opens the default editor on Yuni&rsquo;s computer, which allows Yuni to create a detailed,
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git commit -a
+</span></span></code></pre></div><p>This opens the default editor on Yuni&rsquo;s computer, which allows Yuni to create a detailed,
 multi-lined commit message, with a brief feedback on Maria&rsquo;s mistakes:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">Corrected exercise indonesian_pronouns.md
-
-There are two pronouns for the first person plural: kita (inclusive),
-and kami (exclusive). Tina isn&#39;t going to Jakarta with Peter and Dita
-(Tina is not included = use kami), neither is she returning with them
-(Tina is not included = use kami). But, once Peter and Dita are back,
-they go all together to a restaurant. In this case, Tina is included, so
-use kita.
-</code></pre></div><p>The first line is the main commit message which is most often displayed in all kind of commit logs. The
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Corrected exercise indonesian_pronouns.md
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">There are two pronouns for the first person plural: kita (inclusive),
+</span></span><span class="line"><span class="cl">and kami (exclusive). Tina isn&#39;t going to Jakarta with Peter and Dita
+</span></span><span class="line"><span class="cl">(Tina is not included = use kami), neither is she returning with them
+</span></span><span class="line"><span class="cl">(Tina is not included = use kami). But, once Peter and Dita are back,
+</span></span><span class="line"><span class="cl">they go all together to a restaurant. In this case, Tina is included, so
+</span></span><span class="line"><span class="cl">use kita.
+</span></span></code></pre></div><p>The first line is the main commit message which is most often displayed in all kind of commit logs. The
 following lines are displayed more seldom, so in many cases (like creating a new exercise previously) a
 one-line commit message is all you need. Here, however, it&rsquo;s a good place to provide a feedback.</p>
 <p>Once the text is saved, the commit is created. Yuni then <em>pushes</em> her commit to the upstream
 remote repository on GitHub:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">git push
-</code></pre></div><p>If Maria didn&rsquo;t botch notification settings in her repository, she will shortly receive an automatic
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git push
+</span></span></code></pre></div><p>If Maria didn&rsquo;t botch notification settings in her repository, she will shortly receive an automatic
 e-mail from GitHub notifying her about a new commit by Yuni, meaning she can now view the
 corrections to her homework.</p>
 

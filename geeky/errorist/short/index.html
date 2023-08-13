@@ -125,13 +125,13 @@
             <p><a href="https://vendelin.org/geeky/hugo/install-hugo" target="_blank" rel="noopener">Install Hugo static site generator</a>
  first.</p>
 <p>Recursively clone the bootstrapping project:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">git clone --recurse-submodules git@github.com:tvendelin/errorist-bootstrap.git
-</code></pre></div><p>This pulls the Errorist theme as a git submodule and provides you with a skeleton
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git clone --recurse-submodules git@github.com:tvendelin/errorist-bootstrap.git
+</span></span></code></pre></div><p>This pulls the Errorist theme as a git submodule and provides you with a skeleton
 project that needs only a few things to configure. Change into project directory and start the Hugo
 server:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">cd errorist-bootstrap
-hugo server -D
-</code></pre></div><p>Open <code>http://localhost:1313</code> in your browser. You should see a welcome message, and a link to the
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cd errorist-bootstrap
+</span></span><span class="line"><span class="cl">hugo server -D
+</span></span></code></pre></div><p>Open <code>http://localhost:1313</code> in your browser. You should see a welcome message, and a link to the
 manuals. You will also notice that two languages – English and Russian – are already
 pre-configured. This is done for the sake of a contrasting multilingual example, just to show you the ropes.
 Languages can be easily added or removed.</p>
@@ -151,33 +151,33 @@ want to this step later, though, after you&rsquo;ve tried things out.</p>
 <p>If you&rsquo;ve added new languages, you will also need to add translation files, one per new language.
 Create <code>i18n</code> directory in your project root, and copy the English translations file to be used as a
 template (for German in this example):</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">mkdir i18n
-cp themes/errorist/i18n/en.yaml i18n/de.yaml
-</code></pre></div><p>Open <code>i18n/de.yaml</code> and change English translations to German.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mkdir i18n
+</span></span><span class="line"><span class="cl">cp themes/errorist/i18n/en.yaml i18n/de.yaml
+</span></span></code></pre></div><p>Open <code>i18n/de.yaml</code> and change English translations to German.</p>
 <h2 id="adjust-archetypes"><a class="h-link" href="#adjust-archetypes">Adjust Archetypes</a></h2>
 <p>If there were changes in supported languages, you will need to add/remove <code>index*.md</code> files
 accordingly. That is, for each <code>index.md</code> file under <code>archetypes</code> directory in your project, you
 will need an <code>index.&lt;LANG&gt;.md</code> file for each language you support. To remove these files for Russian
 (if you are not going to use Russian), run</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">find archetypes -name &#39;index.ru.md&#39; -exec rm &#39;{}&#39; \;
-</code></pre></div><h2 id="adjust-_indexmd-files-in-the-image-bundle-directory"><a class="h-link" href="#adjust-_indexmd-files-in-the-image-bundle-directory">Adjust <code>_index.*md</code> Files in the Image Bundle Directory</a></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">find archetypes -name &#39;index.ru.md&#39; -exec rm &#39;{}&#39; \;
+</span></span></code></pre></div><h2 id="adjust-_indexmd-files-in-the-image-bundle-directory"><a class="h-link" href="#adjust-_indexmd-files-in-the-image-bundle-directory">Adjust <code>_index.*md</code> Files in the Image Bundle Directory</a></h2>
 <p>If there were changes in supported languages, you will need to add/remove <code>kontent/images/_index*.md</code> files
 accordingly. By default the only language-specific part is the file name itself, so mere copying
 will do.</p>
 <h2 id="clean-up-tutorials-and-examples"><a class="h-link" href="#clean-up-tutorials-and-examples">Clean up Tutorials and Examples</a></h2>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"># Re-create kontent/_index.md
-rm kontent/_index.md
-hugo new _index.md
-
-# Remove test image bundle
-rm -r kontent/images/plain-blue
-
-# Remove the manual
-rm -r kontent/manual
-
-# Remove the Git remote (and maybe add yours later)
-git remote remove origin
-</code></pre></div><p>You are ready to create content and publish your website.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># Re-create kontent/_index.md
+</span></span><span class="line"><span class="cl">rm kontent/_index.md
+</span></span><span class="line"><span class="cl">hugo new _index.md
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># Remove test image bundle
+</span></span><span class="line"><span class="cl">rm -r kontent/images/plain-blue
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># Remove the manual
+</span></span><span class="line"><span class="cl">rm -r kontent/manual
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># Remove the Git remote (and maybe add yours later)
+</span></span><span class="line"><span class="cl">git remote remove origin
+</span></span></code></pre></div><p>You are ready to create content and publish your website.</p>
 
             <nav class="nextprev">
 <p class="next">

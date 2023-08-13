@@ -137,52 +137,51 @@
             <p>Choose a name for your project. It&rsquo;s just a name of a directory and has no other significance. I
 have chosen &lsquo;multilingua&rsquo; for a name.</p>
 <p>In your terminal emulator, run</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo new site multilingua
-</code></pre></div><p>This will create <code>multilingua</code> directory and produce the output:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">Congratulations! Your new Hugo site is created in /Users/tom/learn/hugo/multilingua.
-
-Just a few more steps and you&#39;re ready to go:
-
-1. Download a theme into the same-named folder.
-   Choose a theme from https://themes.gohugo.io/ or
-   create your own with the &#34;hugo new theme &lt;THEMENAME&gt;&#34; command.
-2. Perhaps you want to add some content. You can add single files
-   with &#34;hugo new &lt;SECTIONNAME&gt;/&lt;FILENAME&gt;.&lt;FORMAT&gt;&#34;.
-3. Start the built-in live server via &#34;hugo server&#34;.
-</code></pre></div><p>This more or less outlines our next steps. But first, lets explore. Change into
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">hugo new site multilingua
+</span></span></code></pre></div><p>This will create <code>multilingua</code> directory and produce the output:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Congratulations! Your new Hugo site is created in /Users/tom/learn/hugo/multilingua.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Just a few more steps and you&#39;re ready to go:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">1. Download a theme into the same-named folder.
+</span></span><span class="line"><span class="cl">   Choose a theme from https://themes.gohugo.io/ or
+</span></span><span class="line"><span class="cl">   create your own with the &#34;hugo new theme &lt;THEMENAME&gt;&#34; command.
+</span></span><span class="line"><span class="cl">2. Perhaps you want to add some content. You can add single files
+</span></span><span class="line"><span class="cl">   with &#34;hugo new &lt;SECTIONNAME&gt;/&lt;FILENAME&gt;.&lt;FORMAT&gt;&#34;.
+</span></span><span class="line"><span class="cl">3. Start the built-in live server via &#34;hugo server&#34;.
+</span></span></code></pre></div><p>This more or less outlines our next steps. But first, lets explore. Change into
 the project directory. If you run <code>tree</code> command, you will see:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ cd multilingua
-$ tree
-.
-├── archetypes
-│   └── default.md
-├── config.toml
-├── content
-├── data
-├── layouts
-├── resources
-│   └── _gen
-│       ├── assets
-│       └── images
-├── static
-└── themes
-
-</code></pre></div><p>We shall be primarily interested in the <code>content/</code> directory — this is where your travel stories,
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ cd multilingua
+</span></span><span class="line"><span class="cl">$ tree
+</span></span><span class="line"><span class="cl">.
+</span></span><span class="line"><span class="cl">├── archetypes
+</span></span><span class="line"><span class="cl">│   └── default.md
+</span></span><span class="line"><span class="cl">├── config.toml
+</span></span><span class="line"><span class="cl">├── content
+</span></span><span class="line"><span class="cl">├── data
+</span></span><span class="line"><span class="cl">├── layouts
+</span></span><span class="line"><span class="cl">├── resources
+</span></span><span class="line"><span class="cl">│   └── _gen
+</span></span><span class="line"><span class="cl">│       ├── assets
+</span></span><span class="line"><span class="cl">│       └── images
+</span></span><span class="line"><span class="cl">├── static
+</span></span><span class="line"><span class="cl">└── themes
+</span></span></code></pre></div><p>We shall be primarily interested in the <code>content/</code> directory — this is where your travel stories,
 cooking recipes, and other things unique to your site will be stored; <code>config.toml</code> file that holds
 the configuration of your project; and <code>themes</code> folder, where at least one &ldquo;theme&rdquo; that defines the
 appearance of your site will be stored. The rest can be safely ignored for the time being.</p>
 <h2 id="hugo-server"><a class="h-link" href="#hugo-server">Hugo server</a></h2>
 <p>Open another terminal window or tab, and run there:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo server -D
-</code></pre></div><p>You will see a few warnings, and near the bottom of the message you will see a
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">hugo server -D
+</span></span></code></pre></div><p>You will see a few warnings, and near the bottom of the message you will see a
 line saying:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
-Press Ctrl+C to stop
-</code></pre></div><p>Hugo is running now a web server on your computer. Let it run (don&rsquo;t hit Ctrl+C yet). If you point
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+</span></span><span class="line"><span class="cl">Press Ctrl+C to stop
+</span></span></code></pre></div><p>Hugo is running now a web server on your computer. Let it run (don&rsquo;t hit Ctrl+C yet). If you point
 your browser to <a href="http://localhost:1313" target="_blank" rel="noopener">http://localhost:1313</a>
 , congratulations – you will see
 exactly nothing.  This is a good sign. Notice, it&rsquo;s <em>nothing</em>, not an HTTP 404 &lsquo;Not found&rsquo; error.
-Once you create a &lsquo;theme&rsquo; and some content of your website, all the changes can be previewed
+Once you create a &rsquo;theme&rsquo; and some content of your website, all the changes can be previewed
 near-instantly.</p>
 <p>As for <code>-D</code> command-line flag, it makes the server to display both the drafts and the completed
 pages. For our purposes now that&rsquo;s exactly what we need.</p>

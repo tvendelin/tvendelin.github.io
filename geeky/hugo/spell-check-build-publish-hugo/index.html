@@ -144,14 +144,14 @@ scripted mass-changes. If everything looks good, commit again and proceed to</p>
 <p>Your editor certainly has a spell-checker, and I&rsquo;m sure you use it diligently, but checking before
 publishing is still a sane idea, since we, humans tend to forget and overlook things. This time, we want to
 spell-check everything we are about to publish <em>en masse</em>, and make sure it&rsquo;s <em>everything</em>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">grep -rlP &#39;draft:\s+false&#39; kontent/ | xargs -o -n1 aspell check --sug-mode=slow -x --mode=markdown
-</code></pre></div><p>The above works if you are using BSD version of <code>xargs</code>. For the GNU version (Linux) it looks
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">grep -rlP &#39;draft:\s+false&#39; kontent/ | xargs -o -n1 aspell check --sug-mode=slow -x --mode=markdown
+</span></span></code></pre></div><p>The above works if you are using BSD version of <code>xargs</code>. For the GNU version (Linux) it looks
 uglier, but can be factored out into a function:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">grep -rlP &#39;draft:\s+false&#39; kontent/ | xargs -o -n1 sh -c &#39;aspell check &#34;$@&#34; --sug-mode=slow -x --mode=markdown &lt; /dev/tty&#39; whatever
-</code></pre></div><p>Commit when done.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">grep -rlP &#39;draft:\s+false&#39; kontent/ | xargs -o -n1 sh -c &#39;aspell check &#34;$@&#34; --sug-mode=slow -x --mode=markdown &lt; /dev/tty&#39; whatever
+</span></span></code></pre></div><p>Commit when done.</p>
 <h2 id="build-your-site-with-a-four-letter-word"><a class="h-link" href="#build-your-site-with-a-four-letter-word">Build Your Site with a Four-Letter Word</a></h2>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo
-</code></pre></div><p>That&rsquo;s it. Your site is generated in <code>public</code> directory of your project by default. Make sure you
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">hugo
+</span></span></code></pre></div><p>That&rsquo;s it. Your site is generated in <code>public</code> directory of your project by default. Make sure you
 put it into <code>.gitignore</code> of your project, or, better still, configure it to be outside your project
 tree altogether with <code>publishDir: &lt;PATH&gt;</code> in your main configuration file.</p>
 <h2 id="host-your-site-on-github"><a class="h-link" href="#host-your-site-on-github">Host Your Site on GitHub</a></h2>

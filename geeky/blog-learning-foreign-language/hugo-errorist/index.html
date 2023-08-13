@@ -138,9 +138,15 @@
     <div class="tabs-container">
         <div class="tabs"><button class="tab install active" onClick="switchTab(event, 'install-10windows.md', 'install')">
                 windows
+            </button><button class="tab install" onClick="switchTab(event, 'install-10windows.ru.md', 'install')">
+                windows
             </button><button class="tab install" onClick="switchTab(event, 'install-20mac.md', 'install')">
                 mac
+            </button><button class="tab install" onClick="switchTab(event, 'install-20mac.ru.md', 'install')">
+                mac
             </button><button class="tab install" onClick="switchTab(event, 'install-30linux.md', 'install')">
+                linux
+            </button><button class="tab install" onClick="switchTab(event, 'install-30linux.ru.md', 'install')">
                 linux
             </button></div>
     </div>
@@ -162,27 +168,70 @@ where you type a command, and run it by hitting Enter key.</p>
 <h3 id="upgrade-ubuntu-and-install-utilities"><a class="h-link" href="#upgrade-ubuntu-and-install-utilities">Upgrade Ubuntu and Install Utilities</a></h3>
 <p>Run the following commands one by one. To paste the text, right-click anywhere in the
 Ubuntu terminal. Run the commands below (it will take some time, and produce a lot of output):</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo apt-get update
-sudo apt-get upgrade -y
-sudo apt-get install wdiff tree -y
-</code></pre></div><h3 id="install-hugo"><a class="h-link" href="#install-hugo">Install Hugo</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo apt-get update
+</span></span><span class="line"><span class="cl">sudo apt-get upgrade -y
+</span></span><span class="line"><span class="cl">sudo apt-get install wdiff tree -y
+</span></span></code></pre></div><h3 id="install-hugo"><a class="h-link" href="#install-hugo">Install Hugo</a></h3>
 <p>Visit <a href="https://github.com/gohugoio/hugo/releases" target="_blank" rel="noopener">Hugo release page</a>
 , and find a file named similar
 to <code>hugo_extended_0.74.3_Linux-64bit.tar.gz</code>. The version will likely be different, the important part is
 <code>Linux-64bit.tar.gz</code> at the end. Since Hugo is just a single binary executable, it doesn&rsquo;t make any
 sense to fiddle with Linux packages. Copy the link by right-clicking it in browser, and run</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">wget https://github.com/gohugoio/hugo/releases/download/v0.74.3/hugo_extended_0.74.3_Linux-64bit.tar.gz
-</code></pre></div><p>Unpack Hugo, and copy it to <code>/usr/local/bin</code> so you can easily execute it:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">tar -zxf hugo_0.74.3_Linux-64bit.tar.gz 
-sudo cp hugo /usr/local/bin/
-</code></pre></div><p>Finally, verify your installation:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo version
-</code></pre></div><p>This should display the version information, as you&rsquo;ve probably guessed.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">wget https://github.com/gohugoio/hugo/releases/download/v0.74.3/hugo_extended_0.74.3_Linux-64bit.tar.gz
+</span></span></code></pre></div><p>Unpack Hugo, and copy it to <code>/usr/local/bin</code> so you can easily execute it:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">tar -zxf hugo_0.74.3_Linux-64bit.tar.gz 
+</span></span><span class="line"><span class="cl">sudo cp hugo /usr/local/bin/
+</span></span></code></pre></div><p>Finally, verify your installation:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">hugo version
+</span></span></code></pre></div><p>This should display the version information, as you&rsquo;ve probably guessed.</p>
 <p>I suspect you would prefer to edit your files using Windows graphical interface you are accustomed
 to. For that, you&rsquo;ll need to change into your Windows home folder. Your Windows <code>C:</code> drive will be
 accessible under <code>/mnt/c</code>, so to navigate to your Windows home, run</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">cd /mnt/c/Users/&lt;YOUR WINDOWS USER NAME&gt;
-</code></pre></div><p>To get back to your Linux home, type <code>cd ~</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cd /mnt/c/Users/&lt;YOUR WINDOWS USER NAME&gt;
+</span></span></code></pre></div><p>To get back to your Linux home, type <code>cd ~</code>.</p>
+<p>The remaining steps are identical to other operating systems.</p>
+
+    </div>
+    
+    <div class="tabcontent install" id="install-10windows.ru.md" style="display: none">
+        <h2 id="windows-10"><a class="h-link" href="#windows-10">Windows 10</a></h2>
+<p>Включите подсистему Линукс
+Enable Windows Subsystem Linux (WSL) as described on this
+<a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10" target="_blank" rel="noopener">Microsoft page</a>
+. Hugo itself will run
+on Windows natively, but <code>wdiff</code> won&rsquo;t.</p>
+<p>Launch Microsoft Store, search for &lsquo;Ubuntu&rsquo;, and install the latest LTS version (LTS stands for
+&lsquo;Long term support&rsquo;). As of this writing, this should be Ubuntu 20.04 LTS. Any general-use Linux
+distribution would do, but I&rsquo;ve picked Ubuntu because for new users it would be easier to find
+support online.</p>
+<p>Start Ubuntu as you would start any Windows app. A terminal window will appear, and you will be
+asked to submit a new username, and then a password for that user. Some information about your
+installation will be displayed, and then you will be presented with a command-line prompt. This is
+where you type a command, and run it by hitting Enter key.</p>
+<h3 id="upgrade-ubuntu-and-install-utilities"><a class="h-link" href="#upgrade-ubuntu-and-install-utilities">Upgrade Ubuntu and Install Utilities</a></h3>
+<p>Run the following commands one by one. To paste the text, right-click anywhere in the
+Ubuntu terminal. Run the commands below (it will take some time, and produce a lot of output):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo apt-get update
+</span></span><span class="line"><span class="cl">sudo apt-get upgrade -y
+</span></span><span class="line"><span class="cl">sudo apt-get install wdiff tree -y
+</span></span></code></pre></div><h3 id="install-hugo"><a class="h-link" href="#install-hugo">Install Hugo</a></h3>
+<p>Visit <a href="https://github.com/gohugoio/hugo/releases" target="_blank" rel="noopener">Hugo release page</a>
+, and find a file named similar
+to <code>hugo_extended_0.74.3_Linux-64bit.tar.gz</code>. The version will likely be different, the important part is
+<code>Linux-64bit.tar.gz</code> at the end. Since Hugo is just a single binary executable, it doesn&rsquo;t make any
+sense to fiddle with Linux packages. Copy the link by right-clicking it in browser, and run</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">wget https://github.com/gohugoio/hugo/releases/download/v0.74.3/hugo_extended_0.74.3_Linux-64bit.tar.gz
+</span></span></code></pre></div><p>Unpack Hugo, and copy it to <code>/usr/local/bin</code> so you can easily execute it:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">tar -zxf hugo_0.74.3_Linux-64bit.tar.gz 
+</span></span><span class="line"><span class="cl">sudo cp hugo /usr/local/bin/
+</span></span></code></pre></div><p>Finally, verify your installation:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">hugo version
+</span></span></code></pre></div><p>This should display the version information, as you&rsquo;ve probably guessed.</p>
+<p>I suspect you would prefer to edit your files using Windows graphical interface you are accustomed
+to. For that, you&rsquo;ll need to change into your Windows home folder. Your Windows <code>C:</code> drive will be
+accessible under <code>/mnt/c</code>, so to navigate to your Windows home, run</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cd /mnt/c/Users/&lt;YOUR WINDOWS USER NAME&gt;
+</span></span></code></pre></div><p>To get back to your Linux home, type <code>cd ~</code>.</p>
 <p>The remaining steps are identical to other operating systems.</p>
 
     </div>
@@ -194,19 +243,45 @@ accessible under <code>/mnt/c</code>, so to navigate to your Windows home, run</
 similar to <code>hugo_extended_0.74.3_macOS-64bit.tar.gz</code> (the version will likely be different). Unpack
 it, copy the binary file <code>hugo</code> to <code>/usr/local/bin</code>, and verify the it works.  Assuming you have
 downloaded the archive to <code>Downloads</code> directory, you should run from the Terminal app (Applications &gt; Utilities):</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo cp ~/Downloads/hugo_extended_0.74.3_macOS-64bit/hugo /usr/local/bin/
-hugo version
-</code></pre></div><p>This should display the version information, as you&rsquo;ve probably guessed.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo cp ~/Downloads/hugo_extended_0.74.3_macOS-64bit/hugo /usr/local/bin/
+</span></span><span class="line"><span class="cl">hugo version
+</span></span></code></pre></div><p>This should display the version information, as you&rsquo;ve probably guessed.</p>
 <h3 id="install--verify-utilities"><a class="h-link" href="#install--verify-utilities">Install / Verify Utilities</a></h3>
 <p>You will need <code>git</code>, <code>wdiff</code>, and (optionally, but highly recommended) <code>tree</code>. Git is probably
 installed already. Verify by running</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">git --version
-</code></pre></div><p>As for <code>wdiff</code> and <code>tree</code>, you will probaly need to install them with
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git --version
+</span></span></code></pre></div><p>As for <code>wdiff</code> and <code>tree</code>, you will probaly need to install them with
 <a href="https://www.macports.org/" target="_blank" rel="noopener">MacPorts</a>
 . For installing MacPorts software itself, visit their website for
 instructions. Once you&rsquo;ve got MacPorts on your Mac, run</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo port install wdiff tree
-</code></pre></div><p>MacPorts is not the only option, just my personal preference. An alternative would be
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo port install wdiff tree
+</span></span></code></pre></div><p>MacPorts is not the only option, just my personal preference. An alternative would be
+<a href="https://brew.sh/" target="_blank" rel="noopener">HomeBrew</a>
+, but I leave for you to explore.</p>
+<p>At this point, you&rsquo;ve got all the tools to get started.</p>
+
+    </div>
+    
+    <div class="tabcontent install" id="install-20mac.ru.md" style="display: none">
+        <h2 id="mac"><a class="h-link" href="#mac">Mac</a></h2>
+<p>Visit <a href="https://github.com/gohugoio/hugo/releases" target="_blank" rel="noopener">Hugo release page</a>
+, and download a file named
+similar to <code>hugo_extended_0.74.3_Linux-64bit.tar.gz</code> (the version will likely be different). Unpack
+it, copy the binary file <code>hugo</code> to <code>/usr/local/bin</code>, and verify the it works.  Assuming you have
+downloaded the archive to <code>Downloads</code> directory, you should run from the Terminal app (Applications &gt; Utilities):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo cp ~/Downloads/hugo_extended_0.74.3_macOS-64bit/hugo /usr/local/bin/
+</span></span><span class="line"><span class="cl">hugo version
+</span></span></code></pre></div><p>This should display the version information, as you&rsquo;ve probably guessed.</p>
+<h3 id="install--verify-utilities"><a class="h-link" href="#install--verify-utilities">Install / Verify Utilities</a></h3>
+<p>You will need <code>git</code>, <code>wdiff</code>, and (optionally, but highly recommended) <code>tree</code>. Git is probably
+installed already. Verify by running</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git --version
+</span></span></code></pre></div><p>As for <code>wdiff</code> and <code>tree</code>, you will probaly need to install them with
+<a href="https://www.macports.org/" target="_blank" rel="noopener">MacPorts</a>
+. For installing MacPorts software itself, visit their website for
+instructions. Once you&rsquo;ve got MacPorts on your Mac, run</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo port install wdiff tree
+</span></span></code></pre></div><p>MacPorts is not the only option, just my personal preference. An alternative would be
 <a href="https://brew.sh/" target="_blank" rel="noopener">HomeBrew</a>
 , but I leave for you to explore.</p>
 <p>At this point, you&rsquo;ve got all the tools to get started.</p>
@@ -217,10 +292,10 @@ instructions. Once you&rsquo;ve got MacPorts on your Mac, run</p>
         <h2 id="linux"><a class="h-link" href="#linux">Linux</a></h2>
 <p>I&rsquo;m using Ubuntu as an example. For other distros, just do the same using your default package manager.</p>
 <h3 id="upgrade-your-os-and-install-utilities"><a class="h-link" href="#upgrade-your-os-and-install-utilities">Upgrade Your OS and Install Utilities</a></h3>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo apt-get update
-sudo apt-get upgrade -y
-sudo apt-get install git wdiff tree -y
-</code></pre></div><h3 id="install-hugo"><a class="h-link" href="#install-hugo">Install Hugo</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo apt-get update
+</span></span><span class="line"><span class="cl">sudo apt-get upgrade -y
+</span></span><span class="line"><span class="cl">sudo apt-get install git wdiff tree -y
+</span></span></code></pre></div><h3 id="install-hugo"><a class="h-link" href="#install-hugo">Install Hugo</a></h3>
 <p>Visit <a href="https://github.com/gohugoio/hugo/releases" target="_blank" rel="noopener">Hugo release page</a>
 , and find a file named similar
 to <code>hugo_extended_0.74.3_Linux-64bit.tar.gz</code>. The version will likely be different, the important part is
@@ -229,12 +304,37 @@ to <code>hugo_extended_0.74.3_Linux-64bit.tar.gz</code>. The version will likely
 Hugo is just a single binary executable, you can just copy it to <code>/usr/local/bin</code> and enjoy the
 latest version.</p>
 <p>So, copy the link by right-clicking it in browser, and run</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">wget https://github.com/gohugoio/hugo/releases/download/v0.74.3/hugo_extended_0.74.3_Linux-64bit.tar.gz
-tar -zxf hugo_0.74.3_Linux-64bit.tar.gz 
-sudo cp hugo /usr/local/bin/
-</code></pre></div><p>Finally, verify your installation:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo version
-</code></pre></div><p>This should display the version information, as you&rsquo;ve probably guessed.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">wget https://github.com/gohugoio/hugo/releases/download/v0.74.3/hugo_extended_0.74.3_Linux-64bit.tar.gz
+</span></span><span class="line"><span class="cl">tar -zxf hugo_0.74.3_Linux-64bit.tar.gz 
+</span></span><span class="line"><span class="cl">sudo cp hugo /usr/local/bin/
+</span></span></code></pre></div><p>Finally, verify your installation:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">hugo version
+</span></span></code></pre></div><p>This should display the version information, as you&rsquo;ve probably guessed.</p>
+
+    </div>
+    
+    <div class="tabcontent install" id="install-30linux.ru.md" style="display: none">
+        <h2 id="linux"><a class="h-link" href="#linux">Linux</a></h2>
+<p>I&rsquo;m using Ubuntu as an example. For other distros, just do the same using your default package manager.</p>
+<h3 id="upgrade-your-os-and-install-utilities"><a class="h-link" href="#upgrade-your-os-and-install-utilities">Upgrade Your OS and Install Utilities</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo apt-get update
+</span></span><span class="line"><span class="cl">sudo apt-get upgrade -y
+</span></span><span class="line"><span class="cl">sudo apt-get install git wdiff tree -y
+</span></span></code></pre></div><h3 id="install-hugo"><a class="h-link" href="#install-hugo">Install Hugo</a></h3>
+<p>Visit <a href="https://github.com/gohugoio/hugo/releases" target="_blank" rel="noopener">Hugo release page</a>
+, and find a file named similar
+to <code>hugo_extended_0.74.3_Linux-64bit.tar.gz</code>. The version will likely be different, the important part is
+<code>Linux-64bit.tar.gz</code> at the end.</p>
+<p>As a professional Linux sysadmin, I&rsquo;m supposed to insist on installing from a package, but since
+Hugo is just a single binary executable, you can just copy it to <code>/usr/local/bin</code> and enjoy the
+latest version.</p>
+<p>So, copy the link by right-clicking it in browser, and run</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">wget https://github.com/gohugoio/hugo/releases/download/v0.74.3/hugo_extended_0.74.3_Linux-64bit.tar.gz
+</span></span><span class="line"><span class="cl">tar -zxf hugo_0.74.3_Linux-64bit.tar.gz 
+</span></span><span class="line"><span class="cl">sudo cp hugo /usr/local/bin/
+</span></span></code></pre></div><p>Finally, verify your installation:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">hugo version
+</span></span></code></pre></div><p>This should display the version information, as you&rsquo;ve probably guessed.</p>
 
     </div>
     
@@ -245,67 +345,67 @@ sudo cp hugo /usr/local/bin/
 <h2 id="setup-errorist"><a class="h-link" href="#setup-errorist">Setup Errorist</a></h2>
 <p>Clone the bootstrapping project from GitHub, change into the project directory, and start Hugo
 server:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">git clone --recurse-submodules git@github.com:tvendelin/errorist-bootstrap.git
-cd errorist-bootstrap
-hugo server -D
-</code></pre></div><p>In your browser, open <code>http://localhost:1313</code>. Welcome to your new website!
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git clone --recurse-submodules git@github.com:tvendelin/errorist-bootstrap.git
+</span></span><span class="line"><span class="cl">cd errorist-bootstrap
+</span></span><span class="line"><span class="cl">hugo server -D
+</span></span></code></pre></div><p>In your browser, open <code>http://localhost:1313</code>. Welcome to your new website!
 It contains the manual (and the instructions to remove it).
 The <a href="https://vendelin.org/geeky/errorist/">Errorist Manual</a>
  is also available on this site.
 But for now, let&rsquo;s briefly discuss language learning combined with blogging.</p>
 <p>Leave the Hugo server running and open another terminal window or tab. Go to your project directory.
 Create a new section at your website and your first blog post in one command:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo new -k page blog/test-post
-</code></pre></div><p>The new section <code>blog</code> and the new <em>page bundle</em> are located under <code>kontent</code> directory. It is called
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">hugo new -k page blog/test-post
+</span></span></code></pre></div><p>The new section <code>blog</code> and the new <em>page bundle</em> are located under <code>kontent</code> directory. It is called
 <em>page bundle</em> rather than just page, because it is a directory that includes a few files. The main
 file in a bundle is <code>kontent/blog/test-post/index.md</code>, so let&rsquo;s add some content there:</p>
-<div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">---
-title: &#34;Getting my Feet Wet with Errorist&#34;
-date: 2020-08-05T11:28:38+02:00
-description: My test post description
-draft: true
----
-
-The articles, blog posts, etc. are written using a plain text editor. The
-special parts of you texts – headings, lists, links, images, blockquotes – are
-marked up with a simple notation called Markdown. For example, once I put an
-empty line after this text, it will be interpreted as a new paragraph.
-
-Notice you can read everything almost as easily as on a webpage that is created
-based on your Markdown writings. Marking a text as a header or a subheader is
-quite easy:
-
-<span class="gh"># One Pound Sign Makes the Biggest Header (H1 in HTML)
-</span><span class="gh"></span>
-To create up to five levels of subheaders you just need to add more pound signs.
-This is the next level of a subheader:
-
-<span class="gu">## Two Pound Signs Make a Second-Level Subheader
-</span><span class="gu"></span>
-To add <span class="ge">_emphasis_</span> to some part of a text, put it between underscores, and to
-make it <span class="gs">**bold**</span>, put it between two asterisks on each side.
-
-To block-quote some text, like your grammar exercise, prepend each paragraph
-with <span class="sb">`&gt;`</span> sign:
-
-&gt;When illustrating some grammar concepts, you might want to highlight some
-&gt;~~common misspellings~~,
-and the <span class="gs">**correct spelling**</span> as well. You can put the misspelled text between
-two tilde characters on both sides, and it will appear red and crossed out.
-Marking text as <span class="gs">**bold**</span> within a blockquote will make it green, bold and
-italic. The latter is just styling specific to Errorist.
-<span class="k">&gt;
-</span><span class="k"></span><span class="ge">&gt;To continue a blockquote over a paragraph boundary, use the `&gt;` sign on the
-</span><span class="ge"></span>&gt;blank line and the beginning of the next paragraph.
-
-To add an external link, write [<span class="nt">Link to Google</span>](<span class="na">http://google.com</span>).
-
-To add a link to a page in your website (`/manual/short` in our example), write
-[<span class="nt">Link text</span>](<span class="na">{{&lt; ref &#34;/manual/short&#34; &gt;}}</span>)
-
-When using this form, the link will be checked for existence by <span class="sb">`hugo`</span>, so your
-site is guaranteed to have no dead internal links.
-</code></pre></div><p>This is how you will be writing your blog posts.
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-md" data-lang="md"><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">title: &#34;Getting my Feet Wet with Errorist&#34;
+</span></span><span class="line"><span class="cl">date: 2020-08-05T11:28:38+02:00
+</span></span><span class="line"><span class="cl">description: My test post description
+</span></span><span class="line"><span class="cl">draft: true
+</span></span><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">The articles, blog posts, etc. are written using a plain text editor. The
+</span></span><span class="line"><span class="cl">special parts of you texts – headings, lists, links, images, blockquotes – are
+</span></span><span class="line"><span class="cl">marked up with a simple notation called Markdown. For example, once I put an
+</span></span><span class="line"><span class="cl">empty line after this text, it will be interpreted as a new paragraph.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Notice you can read everything almost as easily as on a webpage that is created
+</span></span><span class="line"><span class="cl">based on your Markdown writings. Marking a text as a header or a subheader is
+</span></span><span class="line"><span class="cl">quite easy:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gh"># One Pound Sign Makes the Biggest Header (H1 in HTML)
+</span></span></span><span class="line"><span class="cl"><span class="gh"></span>
+</span></span><span class="line"><span class="cl">To create up to five levels of subheaders you just need to add more pound signs.
+</span></span><span class="line"><span class="cl">This is the next level of a subheader:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gu">## Two Pound Signs Make a Second-Level Subheader
+</span></span></span><span class="line"><span class="cl"><span class="gu"></span>
+</span></span><span class="line"><span class="cl">To add <span class="ge">_emphasis_</span> to some part of a text, put it between underscores, and to
+</span></span><span class="line"><span class="cl">make it <span class="gs">**bold**</span>, put it between two asterisks on each side.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">To block-quote some text, like your grammar exercise, prepend each paragraph
+</span></span><span class="line"><span class="cl">with <span class="sb">`&gt;`</span> sign:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&gt;When illustrating some grammar concepts, you might want to highlight some
+</span></span><span class="line"><span class="cl">&gt;~~common misspellings~~,
+</span></span><span class="line"><span class="cl">and the <span class="gs">**correct spelling**</span> as well. You can put the misspelled text between
+</span></span><span class="line"><span class="cl">two tilde characters on both sides, and it will appear red and crossed out.
+</span></span><span class="line"><span class="cl">Marking text as <span class="gs">**bold**</span> within a blockquote will make it green, bold and
+</span></span><span class="line"><span class="cl">italic. The latter is just styling specific to Errorist.
+</span></span><span class="line"><span class="cl"><span class="k">&gt;
+</span></span></span><span class="line"><span class="cl"><span class="k"></span><span class="ge">&gt;To continue a blockquote over a paragraph boundary, use the `&gt;` sign on the
+</span></span></span><span class="line"><span class="cl"><span class="ge"></span>&gt;blank line and the beginning of the next paragraph.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">To add an external link, write [<span class="nt">Link to Google</span>](<span class="na">http://google.com</span>).
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">To add a link to a page in your website (`/manual/short` in our example), write
+</span></span><span class="line"><span class="cl">[<span class="nt">Link text</span>](<span class="na">{{&lt; ref &#34;/manual/short&#34; &gt;}}</span>)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">When using this form, the link will be checked for existence by <span class="sb">`hugo`</span>, so your
+</span></span><span class="line"><span class="cl">site is guaranteed to have no dead internal links.
+</span></span></code></pre></div><p>This is how you will be writing your blog posts.
 The top part (between triple dashes) holds some parameters of your page and is called <em>front matter</em>.
 The text of the page itself is the rest of it.</p>
 <p>Save the file, and look at <code>http://localhost:1313</code> page again. You will notice the &lsquo;Blogs&rsquo; section
@@ -355,37 +455,37 @@ Señor Díaz está vivo, pero hoy no <del>es</del> <strong>está</strong> catól
 
 
 <p>So let&rsquo;s create one. In a page bundle, create a directory <code>myhomework</code> (the name is arbitrary):</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">mkdir kontent/blog/test-page/homework
-</code></pre></div><p>In this directory create four files as shown in the following code snippets. Here, the names
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mkdir kontent/blog/test-page/homework
+</span></span></code></pre></div><p>In this directory create four files as shown in the following code snippets. Here, the names
 <em>are</em> important. If you are experiencing the &lsquo;writer&rsquo;s block&rsquo;, here&rsquo;s example contents for the said
 files:</p>
 <p><code>kontent/blog/test-page/homework/10_task.txt</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">Señor Rodriguez ... católico, pero ... muerto. 
-Señor Díaz ... vivo, pero hoy no ... católico.
-</code></pre></div><p><code>kontent/blog/test-page/homework/20_mysolution.txt</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">Señor Rodriguez es católico, pero es muerto. 
-Señor Díaz está vivo, pero hoy no es católico.
-</code></pre></div><p><code>kontent/blog/test-page/homework/30_solution.txt</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">Señor Rodriguez era católico, pero está muerto. 
-Señor Díaz está vivo, pero hoy no está católico.
-</code></pre></div><p><code>kontent/blog/test-page/homework/40_corrections.txt</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-md" data-lang="md">Señor Rodriguez <span class="gd">~~es~~</span> <span class="gs">**era**</span> católico, pero <span class="gd">~~es~~</span> <span class="gs">**está**</span> muerto. 
-Señor Díaz está vivo, pero hoy no <span class="gd">~~es~~</span> <span class="gs">**está**</span> católico.
-</code></pre></div><p>The <code>~~</code> is markdown that will be converted into <code>&lt;del&gt;</code> HTML tag, and <code>**</code> will become the <code>&lt;strong&gt;</code> tag.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-md" data-lang="md"><span class="line"><span class="cl">Señor Rodriguez ... católico, pero ... muerto. 
+</span></span><span class="line"><span class="cl">Señor Díaz ... vivo, pero hoy no ... católico.
+</span></span></code></pre></div><p><code>kontent/blog/test-page/homework/20_mysolution.txt</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-md" data-lang="md"><span class="line"><span class="cl">Señor Rodriguez es católico, pero es muerto. 
+</span></span><span class="line"><span class="cl">Señor Díaz está vivo, pero hoy no es católico.
+</span></span></code></pre></div><p><code>kontent/blog/test-page/homework/30_solution.txt</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-md" data-lang="md"><span class="line"><span class="cl">Señor Rodriguez era católico, pero está muerto. 
+</span></span><span class="line"><span class="cl">Señor Díaz está vivo, pero hoy no está católico.
+</span></span></code></pre></div><p><code>kontent/blog/test-page/homework/40_corrections.txt</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-md" data-lang="md"><span class="line"><span class="cl">Señor Rodriguez <span class="gd">~~es~~</span> <span class="gs">**era**</span> católico, pero <span class="gd">~~es~~</span> <span class="gs">**está**</span> muerto. 
+</span></span><span class="line"><span class="cl">Señor Díaz está vivo, pero hoy no <span class="gd">~~es~~</span> <span class="gs">**está**</span> católico.
+</span></span></code></pre></div><p>The <code>~~</code> is markdown that will be converted into <code>&lt;del&gt;</code> HTML tag, and <code>**</code> will become the <code>&lt;strong&gt;</code> tag.</p>
 <p>Back to our tabs. Your page bundle structure will now look like this:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">kontent/blog/test-page
-├── homework
-│   ├── 10_task.txt
-│   ├── 20_mysolution.txt
-│   ├── 30_solution.txt
-│   └── 40_corrections.txt
-├── index.md
-├── index.ru.md
-└── main-img
-</code></pre></div><p>Add the following at the bottom of <code>kontent/blog/test-page/index.md</code>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">kontent/blog/test-page
+</span></span><span class="line"><span class="cl">├── homework
+</span></span><span class="line"><span class="cl">│   ├── 10_task.txt
+</span></span><span class="line"><span class="cl">│   ├── 20_mysolution.txt
+</span></span><span class="line"><span class="cl">│   ├── 30_solution.txt
+</span></span><span class="line"><span class="cl">│   └── 40_corrections.txt
+</span></span><span class="line"><span class="cl">├── index.md
+</span></span><span class="line"><span class="cl">├── index.ru.md
+</span></span><span class="line"><span class="cl">└── main-img
+</span></span></code></pre></div><p>Add the following at the bottom of <code>kontent/blog/test-page/index.md</code>
 and <code>kontent/blog/test-page/index.ru.md</code> files:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">{{&lt; tabs_bq &#34;homework&#34; &gt;}}
-</code></pre></div><p>If you look at your test page now, you will see the clickable tabs at the bottom, showing our
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">{{&lt; tabs_bq &#34;homework&#34; &gt;}}
+</span></span></code></pre></div><p>If you look at your test page now, you will see the clickable tabs at the bottom, showing our
 fictional homework exercise.</p>
 <p>Here&rsquo;s a brief explanation how it works.</p>
 <p>The <code>*.txt</code> files in the <code>homework</code> directory are read in alphabetical order, and each becomes a tab.
@@ -394,20 +494,20 @@ The number at the beginning of a tab file name is for sorting, so that <code>10_
 <p>The name of a tab is the file name stripped of its <code>number_</code> prefix and <code>.txt</code> suffix, so
 <code>10_task.txt</code> becomes <code>task</code>. The names of the tabs will be translated into languages your site
 supports, if there are respective entries in localization file (see the documentation for details),
-or will be displayed &lsquo;as is&rsquo;, should that not be the case.  The entries for &lsquo;task&rsquo;, &lsquo;mysolution&rsquo;,
+or will be displayed &lsquo;as is&rsquo;, should that not be the case.  The entries for &rsquo;task&rsquo;, &lsquo;mysolution&rsquo;,
 &lsquo;solution&rsquo; and &lsquo;diff&rsquo; are already included.</p>
 <p>Finally, you are not required to provide <em>all</em> of the aforementioned files, if you don&rsquo;t want to.</p>
 <h3 id="using-an-archetype"><a class="h-link" href="#using-an-archetype">Using an Archetype</a></h3>
 <p>A skeleton for a blog article with a grammar exercise can be created using what&rsquo;s called an
 <em>archetype</em>, a kind of blueprint for a new page:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo new -k langblog blog/señores-vivos-y-muertos
-</code></pre></div><p>The archetype name in the example above is <code>langblog</code>. The command creates a page stub for each
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">hugo new -k langblog blog/señores-vivos-y-muertos
+</span></span></code></pre></div><p>The archetype name in the example above is <code>langblog</code>. The command creates a page stub for each
 supported language, a <code>homework</code> directory, and four empty files in it. This is handy, since now you
 just need to used tab-completion instead of remembering the names of the files. If you wish to
 include more than one tab block with exercises, just change into page bundle directory and copy the
 <code>homework</code> directory recursively:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">cp -R homework another_homework_task
-</code></pre></div><p>Explore the <code>archetypes</code> directory in your project and read the documentation for details.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cp -R homework another_homework_task
+</span></span></code></pre></div><p>Explore the <code>archetypes</code> directory in your project and read the documentation for details.</p>
 <h3 id="wdiff"><a class="h-link" href="#wdiff">wdiff</a></h3>
 <p>The exercise in our example is very short for the sake of explanation, so adding some Markdown
 symbols to highlight the corrections didn&rsquo;t seem to be a particularly gruelling task. In reality, however, the texts of the exercises
@@ -416,20 +516,20 @@ files: the one with your solution (potentially containing errors), and <em>the</
 a way to calculate the difference, right?</p>
 <p>This can be done with a program called <code>wdiff</code>. Not as famous as its cousin, <code>diff</code>, it does exactly
 what we want - calculating word-by-word difference between two text files:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">wdiff -w &#39;~~&#39; -x &#39;~~&#39; -y &#39;**&#39; -z &#39;**&#39; 20_mysolution.txt 30_solution.txt
-</code></pre></div><p>renders</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">Señor Rodriguez ~~es~~ **era** católico, pero ~~es~~ **está** muerto.
-Señor Díaz está vivo, pero hoy no ~~es~~ **está** católico.
-</code></pre></div><p>which is identical to the contents of <code>40_diff.txt</code>. The options <code>-w</code>, <code>-x</code>, <code>-y</code>, <code>-z</code> denote the
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">wdiff -w &#39;~~&#39; -x &#39;~~&#39; -y &#39;**&#39; -z &#39;**&#39; 20_mysolution.txt 30_solution.txt
+</span></span></code></pre></div><p>renders</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Señor Rodriguez ~~es~~ **era** católico, pero ~~es~~ **está** muerto.
+</span></span><span class="line"><span class="cl">Señor Díaz está vivo, pero hoy no ~~es~~ **está** católico.
+</span></span></code></pre></div><p>which is identical to the contents of <code>40_diff.txt</code>. The options <code>-w</code>, <code>-x</code>, <code>-y</code>, <code>-z</code> denote the
 start of the deletion, the end of the deletion, the start of the insertion and the end of the
 insertion, respectively. Since the command is quite a mouthful, and is likely to be used very
 repetitively, it makes sense to create an alias in <code>.bashrc</code> (Linux) or <code>.bash_profile</code> (Mac OS X)
 by adding the following at the bottom:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">alias mddiff=&#34;wdiff -w &#39;~~&#39; -x &#39;~~&#39; -y &#39;**&#39; -z &#39;**&#39;&#34;
-</code></pre></div><p>Close and re-open the terminal program for changes to take effect. From now on, to produce the
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">alias mddiff=&#34;wdiff -w &#39;~~&#39; -x &#39;~~&#39; -y &#39;**&#39; -z &#39;**&#39;&#34;
+</span></span></code></pre></div><p>Close and re-open the terminal program for changes to take effect. From now on, to produce the
 file with corrections, use the alias and redirect the output:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">mddiff 20_mysolution.txt 30_solution.txt &gt; 40_diff.txt
-</code></pre></div><h2 id="cooperating-with-your-teacher"><a class="h-link" href="#cooperating-with-your-teacher">Cooperating with Your Teacher</a></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mddiff 20_mysolution.txt 30_solution.txt &gt; 40_diff.txt
+</span></span></code></pre></div><h2 id="cooperating-with-your-teacher"><a class="h-link" href="#cooperating-with-your-teacher">Cooperating with Your Teacher</a></h2>
 <p>So far we have been considering your (the student&rsquo;s) benefits, but there are some for your teacher as well.</p>
 <p>What happens when you send your homework to your teacher? She goes through your texts, manually
 highlighting your errors, corrects them, and probably highlights the corrections. But wait, we&rsquo;ve
@@ -439,31 +539,31 @@ You can then calculate the difference, and redirect it into your blog - that&rsq
 <p>And how do you think that exercise has been created in the first place? It would be a safe bet to
 assume, that your teacher wrote a normal text first (essentially, the solution to the exercise), and
 only then punched the holes in it, making it a grammar exercise. So, no extra effort is required for
-creating &lsquo;the solution&rsquo; – just ask your teacher to create the exercises as plain text files,
+creating &rsquo;the solution&rsquo; – just ask your teacher to create the exercises as plain text files,
 separating paragraphs with empty lines, and to keep the text without the gaps in a separate file.</p>
-<p>If your teacher has got other blogging students, the time savings on checking the students' homework
+<p>If your teacher has got other blogging students, the time savings on checking the students&rsquo; homework
 might become quite considerable. This can be further optimized, though, by</p>
 <h2 id="using-git-and-github-for-homework-management"><a class="h-link" href="#using-git-and-github-for-homework-management">Using Git and GitHub for Homework Management</a></h2>
 <p>I&rsquo;ve wrote a series of articles on that, so this is just to give you a taste of it.</p>
 <p>I&rsquo;ve created a demo repository with just a single exercise. Clone it and change into the directory
 created:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">git clone https://github.com/tvendelin/language-exercise-example
-cd language-exercise-example
-</code></pre></div><p>The directory contains a single exercise file, <code>indonesian_pronouns.md</code> (the <code>README.md</code> just
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git clone https://github.com/tvendelin/language-exercise-example
+</span></span><span class="line"><span class="cl">cd language-exercise-example
+</span></span></code></pre></div><p>The directory contains a single exercise file, <code>indonesian_pronouns.md</code> (the <code>README.md</code> just
 describes the repository itself). However, there is another dimension to that. Running</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">git log --pretty=reference -- indonesian_pronouns.md
-</code></pre></div><p>will reveal the following:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">2198844 (Corrected exercise indonesian_pronouns.md, 2020-05-16)
-3f43247 (Completed exercise indonesian_pronouns.md, 2020-05-16)
-802e45b (Created an exercise on personal pronouns., 2020-05-16)
-</code></pre></div><p>Git (if you&rsquo;ve never met before) is a <em>version control system</em>. That is, it is used to create and
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git log --pretty=reference -- indonesian_pronouns.md
+</span></span></code></pre></div><p>will reveal the following:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">2198844 (Corrected exercise indonesian_pronouns.md, 2020-05-16)
+</span></span><span class="line"><span class="cl">3f43247 (Completed exercise indonesian_pronouns.md, 2020-05-16)
+</span></span><span class="line"><span class="cl">802e45b (Created an exercise on personal pronouns., 2020-05-16)
+</span></span></code></pre></div><p>Git (if you&rsquo;ve never met before) is a <em>version control system</em>. That is, it is used to create and
 keep the snapshots of text files at certain points in time. These are called <em>commits</em>, and the
 command we&rsquo;ve just run displays the <em>commit history</em> for a particular file,
 <code>indonesian_pronouns.md</code>. Each commit is identified by a checksum (left) and is supposed to have a
 meaningful <em>commit message</em> (on the right, in brackets). At any time <code>git</code> can display the contents
 of a file at the time of a particular commit. This, for example</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">git show 802e45b:./indonesian_pronouns.md
-</code></pre></div><p>will output the oldest commit with the task. Notice that you need to provide the path, so it&rsquo;s <code>./indonesian_pronouns.md</code>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git show 802e45b:./indonesian_pronouns.md
+</span></span></code></pre></div><p>will output the oldest commit with the task. Notice that you need to provide the path, so it&rsquo;s <code>./indonesian_pronouns.md</code>
 rather than just <code>indonesian_pronouns.md</code>. To populate the tab files now, you will need to run <code>git show</code> on each commit in turn, and redirect the output to the respective files.</p>
 <p>This may seem to be a tad more complicated than our previous scenario with <code>wdiff</code>, but it will help
 you and your teacher to keep things organized much better. This is where GitHub – a free online

@@ -139,25 +139,25 @@ page</a>
  to your <code>~/Downloads</code> directory.  The version and
 checksums in the examples will likely be different, of course.</p>
 <p>Calculate the checksum:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">openssl sha256 -hex -r ~/Downloads/hugo_0.69.2_macOS-64bit.tar.gz
-f58e9312ee292c082c5833a128e751c1d07c5fb0da1b7584c09131f18e2ccf52 */Users/you/Downloads/hugo_0.69.2_macOS-64bit.tar.gz
-</code></pre></div><p>Verify that the checksum matches the one listed in <code>hugo_0.69.2_checksums.txt</code> file, that can
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">openssl sha256 -hex -r ~/Downloads/hugo_0.69.2_macOS-64bit.tar.gz
+</span></span><span class="line"><span class="cl">f58e9312ee292c082c5833a128e751c1d07c5fb0da1b7584c09131f18e2ccf52 */Users/you/Downloads/hugo_0.69.2_macOS-64bit.tar.gz
+</span></span></code></pre></div><p>Verify that the checksum matches the one listed in <code>hugo_0.69.2_checksums.txt</code> file, that can
 be found on the same releases page. Extract the archive you&rsquo;ve just verified:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">tar zxvf ~/Downloads/hugo_0.69.2_macOS-64bit.tar.gz
-</code></pre></div><p>Copy the <code>hugo</code> executable to a directory in your <code>$PATH</code>.  <code>/usr/local/bin</code> should fit the bill.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo cp ~/Downloads/hugo_0.69.2_macOS-64bit/hugo /usr/local/bin/
-</code></pre></div><p>Make sure the file is globally executable (so far, it has been by default):</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo chmod 0755 /usr/local/bin/hugo
-</code></pre></div><p>Verify by running</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo help
-</code></pre></div><p>If you see a message like the one below (shortened here), you are done!</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">hugo is the main command, used to build your Hugo site.
-
-Hugo is a Fast and Flexible Static Site Generator
-built with love by spf13 and friends in Go.
-
-... snip ...
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">tar zxvf ~/Downloads/hugo_0.69.2_macOS-64bit.tar.gz
+</span></span></code></pre></div><p>Copy the <code>hugo</code> executable to a directory in your <code>$PATH</code>.  <code>/usr/local/bin</code> should fit the bill.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo cp ~/Downloads/hugo_0.69.2_macOS-64bit/hugo /usr/local/bin/
+</span></span></code></pre></div><p>Make sure the file is globally executable (so far, it has been by default):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo chmod 0755 /usr/local/bin/hugo
+</span></span></code></pre></div><p>Verify by running</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">hugo help
+</span></span></code></pre></div><p>If you see a message like the one below (shortened here), you are done!</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">hugo is the main command, used to build your Hugo site.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Hugo is a Fast and Flexible Static Site Generator
+</span></span><span class="line"><span class="cl">built with love by spf13 and friends in Go.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">... snip ...
+</span></span></code></pre></div>
             <nav class="nextprev">
 <p class="next">
     <a href="https://vendelin.org/geeky/hugo/scaffoldings/">
